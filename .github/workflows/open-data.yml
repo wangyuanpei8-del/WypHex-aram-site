@@ -1,7 +1,7 @@
 name: 每日自动更新
 
-# 每天从 Blitz (data.v2.iesdev.com) + arammayhem.com 拉取真实海克斯大乱斗数据，
-# 严格校验样本量后更新网页（不生成任何兜底假数据）。支持在任意测试分支或 main 分支运行。
+# 每天从 arammayhem.com（出场率、选取率、组合）和 Blitz（每个英雄的海克斯、装备评级）拉取数据，
+# 合并进网页。Blitz 拉取失败时跳过，网页沿用上一次的评级。支持在测试分支或 main 分支运行。
 on:
   schedule:
     - cron: '0 19 * * *'   # 每天北京时间 03:00
@@ -23,8 +23,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: 同步 Blitz 与开放数据
-        run: node scripts/sync-all-data.mjs
+      - name: 下载 arammayhem 开放数据
+        run: node scripts/fetch-open-data.mjs
+      - name: 下载 Blitz 评级
+        continue-on-error: true
+        run: node scripts/fetch-blitz.mjs
+      - name: 合并进网页数据
+        run: node scripts/import-sheet.mjs
       - name: 补齐新海克斯与装备图标
         run: node scripts/fetch-icons.mjs
       - name: 生成单文件版

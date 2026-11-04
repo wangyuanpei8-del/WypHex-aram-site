@@ -129,6 +129,33 @@ if (open) {
   console.log(`已合并 arammayhem 数据（版本 ${open.patch}，统计日 ${open.statsDate}）：英雄出场率 ${heroHit}/${heroes.length}，海克斯 ${open.augments.length} 个`);
   if (unknown.size) console.log(`提醒：英雄表里有 ${unknown.size} 个海克斯名称在 arammayhem 里找不到（可能是译名不同或已移除）：${[...unknown].slice(0, 30).join('、')}`);
 }
+/* 合并 Blitz 评级（每个英雄的海克斯、装备评级 T1~T5，没有胜率），文件由 fetch-blitz.mjs 下载 */
+let blitz = null;
+try { blitz = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'blitz.json'), 'utf8')); } catch {}
+if (blitz) {
+  const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
+  const rar = new Map(augments.map(a => [nk(a.name), a.rarity]));
+  let hit = 0;
+  for (const h of heroes) {
+    const b = blitz.champions[h.key];
+    if (!b || b.augs.length < 4 || b.items.length < 6) continue;
+    let boots = false;
+    const items = b.items.filter(i => { if (!i.boots) return true; if (boots) return false; boots = true; return true; });
+    h.coreItems = items.slice(0, 6).map(i => i.name);
+    h.altItems = items.slice(6, 12).map(i => i.name);
+    h.itemTiers = Object.fromEntries(items.slice(0, 12).map(i => [i.name, i.tier]));
+    const augs = b.augs.map(a => ({ ...a, rarity: rar.get(nk(a.name)) || a.rarity || '未知' }));
+    h.augments = augs.slice(0, 8).map(a => ({ name: a.name, rarity: a.rarity, tier: a.tier, score: 6 - a.tier, wr: null }));
+    // 选海克斯速查用：该英雄 T1~T3 的全部海克斯
+    h.augTiers = augs.filter(a => a.tier <= 3).map(a => [a.name, a.tier]);
+    h.blitz = true;
+    hit++;
+  }
+  const gt = new Map(blitz.augments.map(a => [nk(a.name), a.tier]));
+  augments.forEach(a => { const t = gt.get(nk(a.name)); if (t) a.btier = t; });
+  meta.blitz = { source: blitz.source, patch: blitz.patch, date: String(blitz.fetchedAt).slice(0, 10) };
+  console.log(`已合并 Blitz 评级（版本 ${blitz.patch}）：英雄 ${hit}/${heroes.length}，全局海克斯评级 ${gt.size}`);
+}
 await writeFile(join(ROOT, 'data', 'data.json'), JSON.stringify(out, null, 1));
 await writeFile(join(ROOT, 'data', 'data.js'), '/* 自动生成，勿手改：由 scripts/import-sheet.mjs 从 data/sheets 生成 */\nwindow.HEX_DATA = ' + JSON.stringify(out) + ';\n');
 console.log(`已导入：英雄 ${heroes.length}、海克斯 ${augments.length}、装备 ${items.length}、组合 ${combos.length}；版本 ${meta.patch}，更新日期 ${date}`);

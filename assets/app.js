@@ -37,6 +37,7 @@
   // 出场率/选取率较上个版本的变化（百分点）
   const chg = d => (d == null || d === 0 ? '' : `<span class="${d > 0 ? 'up' : 'down'}" style="font-size:11px"> ${d > 0 ? '↑' : '↓'}${Math.abs(d).toFixed(2)}</span>`);
 
+  const tb = t => `<span class="tier T${t}">T${t}</span>`; // Blitz 评级标签，T1 最强
   const OLD_PATCH = !!(D.meta.open && D.meta.open.patch && D.meta.patch && D.meta.open.patch !== D.meta.patch);
   const COMBO_TYPE = { god: '神级', strong: '强势', fun: '娱乐', meme: '整活', niche: '冷门', classic: '经典' };
   const $ = sel => document.querySelector(sel);
@@ -192,10 +193,11 @@
     $('#meta').innerHTML =
       `<span><i class="dot ${stale && !m.open ? 'stale' : ''}"></i>版本 <b>${esc((m.open && m.open.patch) || m.patch || '')}</b></span>` +
       `<span>更新于 <b>${when}</b></span>` +
-      (m.open ? `<span class="hide-md">出场率每日自动更新</span>` : manual ? `<span class="hide-md">编辑整理 · 非实时</span>` : `<span class="hide-md">样本 <b class="num">${m.sampleMatches ? fmtWan(m.sampleMatches) : '—'}</b> 局</span>`);
+      (m.open ? `<span class="hide-md">出场率${m.blitz ? '、出装评级' : ''}每日自动更新</span>` : manual ? `<span class="hide-md">编辑整理 · 非实时</span>` : `<span class="hide-md">样本 <b class="num">${m.sampleMatches ? fmtWan(m.sampleMatches) : '—'}</b> 局</span>`);
     $('#foot').innerHTML =
       `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 数据来源：${esc(m.source || '')}${manual ? `（胜率与出装为 ${esc(m.patch)} 版本整理数据，非实时统计）` : ''}</span>` +
       (m.open ? `<span>出场率、选取率与精选组合：<a href="https://arammayhem.com/data/" target="_blank" rel="noopener">数据：arammayhem.com</a>（CC BY 4.0，${esc(m.open.patch)} 版本，统计日 ${esc(m.open.statsDate)}）</span>` : '') +
+      (m.blitz ? `<span>出装与海克斯评级：<a href="https://blitz.gg/lol" target="_blank" rel="noopener">Blitz</a>（${esc(m.blitz.patch)} 版本，${esc(m.blitz.date)} 获取，仅评级、无胜率）</span>` : '') +
       `<span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
@@ -260,9 +262,9 @@
       head.style.gridTemplateColumns = GRID_X;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的海克斯。</div>'; return; }
       el.innerHTML = main.map((a, i) => xrow('aug:' + a.name, `<span class="rank">${i + 1}</span>`,
-          `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>${a.isNew ? '<em class="new">新</em>' : ''}${a.tier ? `<span class="tier T1 lite">${esc(a.tier)}</span>` : ''}`,
+          `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>${a.isNew ? '<em class="new">新</em>' : ''}${a.tier ? `<span class="tier T1 lite">${esc(a.tier)}</span>` : ''}${a.btier ? ` <span class="tier T${a.btier} lite" title="Blitz 全局评级">T${a.btier}</span>` : ''}`,
           pct(a.pick), wrCell(a.wr),
-          `${a.effect ? `<p>${esc(a.effect)}</p>` : ''}<p class="subtle">${a.score != null ? `综合分 ${a.score} · ` : ''}选取率 ${pct(a.pick)}${chg(a.pickChange)}${a.wr == null ? ' · 暂无胜率' : ''}${a.openUrl ? ` · <a href="${esc(a.openUrl)}" target="_blank" rel="noopener">arammayhem ↗</a>` : ''}</p>${heroLinks(a.heroes)}`)).join('') +
+          `${a.effect ? `<p>${esc(a.effect)}</p>` : ''}<p class="subtle">${a.score != null ? `综合分 ${a.score} · ` : ''}选取率 ${pct(a.pick)}${chg(a.pickChange)}${a.wr == null ? ' · 暂无胜率' : ''}${a.btier ? ` · Blitz 评级 T${a.btier}` : ''}${a.openUrl ? ` · <a href="${esc(a.openUrl)}" target="_blank" rel="noopener">arammayhem ↗</a>` : ''}</p>${heroLinks(a.heroes)}`)).join('') +
         (ext.length ? `<div class="divider">以下 ${ext.length} 个只出现在英雄专属推荐里，暂无全局胜率。右侧为该海克斯在推荐英雄身上的平均搭配胜率，按推荐英雄数排序。</div>` +
           ext.map(a => xrow('aug:' + a.name, '<span class="rank">–</span>',
             `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>`,
@@ -344,31 +346,31 @@
           : `<div class="stat"><div class="k">样本场次</div><div class="v">${fmtWan(h.matches)}</div></div>`}
         <div class="stat"><div class="k">加点</div><div class="v sm">${esc(h.skill)}</div></div>
       </div>
-      ${OLD_PATCH ? `<p class="note">胜率、出装和海克斯推荐是 ${esc(D.meta.patch)} 版本的整理数据，当前已是 ${esc(D.meta.open.patch)} 版本，仅供参考；出场率为最新数据。</p>` : ''}
-      ${h.generic ? '<p class="note">这位英雄的出装和海克斯目前是同定位通用推荐，仅供参考，后续会逐步补上专属内容。</p>' : ''}
+      ${h.blitz ? `<p class="note">出装和海克斯按 Blitz 评级排序（${esc(D.meta.blitz.patch)} 版本，每日更新，T1 最强，Blitz 不提供胜率）；英雄胜率是 ${esc(D.meta.patch)} 版本的整理数据，流派、要点等文字仅供参考。</p>` : OLD_PATCH ? `<p class="note">胜率、出装和海克斯推荐是 ${esc(D.meta.patch)} 版本的整理数据，当前已是 ${esc(D.meta.open.patch)} 版本，仅供参考；出场率为最新数据。</p>` : ''}
+      ${h.generic && !h.blitz ? '<p class="note">这位英雄的出装和海克斯目前是同定位通用推荐，仅供参考，后续会逐步补上专属内容。</p>' : ''}
 
       <div class="grid2">
         <div class="card full">
-          <h3>选海克斯速查 <em>点本轮稀有度，刷出的三个里谁排得最靠前就选谁</em></h3>
+          <h3>选海克斯速查 <em>点本轮稀有度，刷出的三个里谁排得最靠前就选谁${h.augTiers ? '（按 Blitz 评级）' : ''}</em></h3>
           <div class="rtabs" role="tablist">
             ${RARITIES.map(r => `<button role="tab" data-quick="${r}" aria-selected="${state.quick === r}"><span class="rar ${r}"></span>${r}</button>`).join('')}
           </div>
           <ol class="quick">${quickList(h, state.quick).map((x, i) => `<li class="${x.tag ? 'own' : ''}" title="${esc(x.effect || '')}">
-            <span class="qn num">${i + 1}</span>${augIc(x.name, state.quick)}<span class="qt">${esc(x.name)}</span>${x.tag ? `<span class="qtag">${x.tag}</span>` : ''}<span class="qw num">${pct(x.wr)}</span></li>`).join('')}</ol>
+            <span class="qn num">${i + 1}</span>${augIc(x.name, state.quick)}<span class="qt">${esc(x.name)}</span>${x.tag ? `<span class="qtag">${x.tag}</span>` : ''}<span class="qw num">${x.tier ? tb(x.tier) : pct(x.wr)}</span></li>`).join('')}</ol>
         </div>
 
         <div class="card">
-          <h3>海克斯优先级 <em>搭配胜率</em></h3>
+          <h3>海克斯优先级 <em>${h.blitz ? 'Blitz 评级' : '搭配胜率'}</em></h3>
           ${h.augments.map(a => `<div class="aug">${augIc(a.name, a.rarity)}
             <span class="nm" title="${esc((AUG_DB.get(a.name) || {}).effect || a.name)}">${esc(a.name)}</span>
             <span class="bar"><b style="width:${(a.score / augMax * 100).toFixed(0)}%"></b></span>
-            <span class="p">${pct(a.wr)}${a.games ? `<small class="g${a.low ? ' low' : ''}">${a.low ? '样本少 · ' : ''}${fmtWan(a.games)}场</small>` : ''}</span></div>`).join('')}
+            <span class="p">${a.tier ? tb(a.tier) : pct(a.wr)}${a.games ? `<small class="g${a.low ? ' low' : ''}">${a.low ? '样本少 · ' : ''}${fmtWan(a.games)}场</small>` : ''}</span></div>`).join('')}
         </div>
 
         <div class="card">
-          <h3>推荐出装 <em>${h.dataDriven ? '按该英雄出这件装的胜率排序，不是合成顺序' : '编辑推荐'}</em></h3>
+          <h3>推荐出装 <em>${h.blitz ? 'Blitz 评级排序，不是合成顺序' : h.dataDriven ? '按该英雄出这件装的胜率排序，不是合成顺序' : '编辑推荐'}</em></h3>
           <ol class="build">${h.coreItems.map(i => { const st = (h.itemStats || []).find(x => x.name === i);
-            return `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${st ? `<small class="g${st.low ? ' low' : ''}">${pct(st.wr)} · ${fmtWan(st.games)}场</small>` : ''}</span></li>`; }).join('')}</ol>
+            return `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${h.itemTiers && h.itemTiers[i] ? tb(h.itemTiers[i]) : ''}${st ? `<small class="g${st.low ? ' low' : ''}">${pct(st.wr)} · ${fmtWan(st.games)}场</small>` : ''}</span></li>`; }).join('')}</ol>
           ${h.dataDriven ? '<p class="subtle g-note">橙色数字：样本不到 100 场，仅供参考</p>' : ''}
           <div class="alt">备选 ${h.altItems.map(i => `<span class="i">${itemIc(i)}${esc(i)}</span>`).join('')}</div>
           <dl class="kv" style="margin-top:14px"><dt>锻体</dt><dd>${esc(h.anvil)}</dd></dl>
@@ -393,12 +395,15 @@
   /* ---------- 选海克斯速查：同一轮三个海克斯稀有度相同，按稀有度给出该英雄的完整排序 ---------- */
   const RARITIES = ['棱彩', '黄金', '白银'].concat(D.augments.some(a => a.rarity === '未知') ? ['未知'] : []);
   function quickList(h, rar) {
-    const own = h.augments.filter(a => a.rarity === rar)
-      .map(a => ({ name: a.name, wr: a.wr, tag: '本命', k: 2, effect: (AUG_DB.get(a.name) || {}).effect }));
+    const own = h.augTiers
+      ? h.augTiers.filter(([n]) => ((AUG_DB.get(n) || {}).rarity || '未知') === rar)
+        .map(([n, t]) => ({ name: n, tier: t, tag: t === 1 ? '本命' : '', k: 2, s: -t, effect: (AUG_DB.get(n) || {}).effect }))
+      : h.augments.filter(a => a.rarity === rar)
+        .map(a => ({ name: a.name, wr: a.wr, tag: '本命', k: 2, s: a.wr, effect: (AUG_DB.get(a.name) || {}).effect }));
     const ownNames = new Set(own.map(a => a.name));
     const rest = D.augments.filter(a => a.rarity === rar && !ownNames.has(a.name))
-      .map(a => ({ name: a.name, wr: a.wr, tag: a.heroes.includes(h.name) ? '适配' : '', k: a.heroes.includes(h.name) ? 1 : 0, effect: a.effect }));
-    return [...own, ...rest].sort((x, y) => y.k - x.k || y.wr - x.wr);
+      .map(a => ({ name: a.name, wr: a.wr, tag: !h.augTiers && a.heroes.includes(h.name) ? '适配' : '', k: !h.augTiers && a.heroes.includes(h.name) ? 1 : 0, s: a.wr ?? -1, effect: a.effect }));
+    return [...own, ...rest].sort((x, y) => y.k - x.k || y.s - x.s);
   }
 
   /* ---------- 交互 ---------- */
