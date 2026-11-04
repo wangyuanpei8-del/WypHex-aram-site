@@ -3,9 +3,7 @@
   "patch": "26.21",
   "mode": "海克斯大乱斗 4.0",
   "updatedAt": "2026-11-01T00:00:00+08:00",
-  "sampleMatches": 12078456,
   "source": "手工整理（Hexdata / ARAMGG / ARAM Mayhem / OP.GG）",
-  "pipeline": "sheet",
   "open": {
    "source": "arammayhem.com",
    "license": "CC BY 4.0",

@@ -157,8 +157,6 @@ a { color: inherit; }
 .rar.黄金 { background: var(--goldr); }
 .rar.白银 { background: var(--silver); }
 .rar.未知 { background: transparent; border: 1px dashed var(--muted); }
-.g { display: block; font-size: 10.5px; font-weight: 500; color: var(--muted); white-space: nowrap; }
-.g.low { color: #d9925b; }
 .build li .bn { display: flex; flex-direction: column; min-width: 0; }
 .build li .bn > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
@@ -330,7 +328,6 @@ ol.build { margin: 0; padding: 0; }
 .build li:has(.ic) { padding-left: 8px; }
 .build li:has(.ic)::before { position: absolute; left: 3px; top: 3px; width: 13px; height: 13px; font-size: 9px; background: var(--panel); border-color: rgba(201,169,97,0.6); z-index: 1; }
 
-.g-note { font-size: 11.5px; margin: 8px 0 0; }
 
 .ocombo { margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
 .ocombo .oc { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 9px; background: var(--bg-2); border: 1px solid var(--line); font-size: 12.5px; font-weight: 600; color: inherit; text-decoration: none; }

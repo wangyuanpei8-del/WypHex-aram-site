@@ -8,9 +8,9 @@
  *   装备图标   Data Dragon zh_CN item.json（按中文名匹配）
  *   海克斯图标 CommunityDragon：自动扫描目录里所有含 augment 的 JSON（斗魂竞技场、海克斯大乱斗等），按中文名匹配
  *
- * 用法：node scripts/fetch-icons.mjs        已下载的图片会跳过
+ * 用法：node scripts/fetch-icons.mjs        已下载的图片会跳过，网页用不到的旧图标会删掉
  */
-import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, access, readdir, unlink } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -140,6 +140,17 @@ for (const [name] of augInfo) {
   if (await save(join(ROOT, rel), [u])) augMap[name] = rel;
   else augMiss.push(name);
 }
+
+/* ---------- 删掉网页已经用不到的旧图标 ---------- */
+const keep = new Set([...Object.values(itemMap), ...Object.values(augMap), ...data.heroes.filter(h => h.key).map(h => `assets/icons/champ/${h.key}.png`)]);
+let removed = 0;
+// 只有装备和海克斯资料都下载成功时才清理，避免网络出错时误删
+if (ddv && ddItems.size && augIcons.size) for (const sub of ['champ', 'item', 'aug']) {
+  for (const f of await readdir(join(DIR, sub))) {
+    if (!keep.has(`assets/icons/${sub}/${f}`)) { await unlink(join(DIR, sub, f)); removed++; }
+  }
+}
+if (removed) console.log(`删掉了 ${removed} 个用不到的旧图标`);
 
 /* ---------- 写出映射 ---------- */
 await writeFile(join(ROOT, 'data', 'icons.js'),

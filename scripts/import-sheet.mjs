@@ -1,6 +1,7 @@
-// 把 data/sheets/*.csv 转回 data/data.json 和 data/data.js（网页加载的就是 data.js）
+// 生成网页数据 data/data.json 和 data/data.js（网页加载的是 data.js）：
+//   data/sheets/*.csv（整理数据）+ data/open/arammayhem.json（出场率等）+ data/open/blitz.json（出装与海克斯评级）
 // 用法：node scripts/import-sheet.mjs
-// 在 GitHub 上改了表格并提交后，“导入表格”任务会自动运行这个脚本。
+// 每日自动更新和“导入表格”任务都会运行这个脚本。
 import { readFile, writeFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,13 +19,10 @@ const mv = Object.fromEntries(metaRows.map(r => [r['项目'], r['内容']]));
 const date = mv['更新日期'] || new Date().toISOString().slice(0, 10);
 if (!/^\d{4}-\d{1,2}-\d{1,2}$/.test(date)) errors.push(`0-版本信息.csv：更新日期要写成 2026-11-04 这样，现在是“${date}”`);
 const meta = {
-  ...old.meta,
   patch: mv['版本'] || old.meta.patch,
   mode: mv['模式'] || old.meta.mode,
   updatedAt: `${date.replace(/-(\d)(?!\d)/g, '-0$1')}T00:00:00+08:00`,
   source: mv['数据来源'] || old.meta.source,
-  sampleMatches: num(mv['总样本局数']) || 0,
-  pipeline: 'sheet',
 };
 
 /* 英雄 */

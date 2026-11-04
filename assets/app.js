@@ -186,16 +186,15 @@
     const m = D.meta || {};
     const upd = m.updatedAt ? new Date(m.updatedAt) : null;
     const days = upd ? Math.floor((Date.now() - upd.getTime()) / 864e5) : null;
-    const manual = m.pipeline === 'sheet' || m.pipeline === 'manual';
-    const stale = days != null && days > (manual ? 21 : 3);
+    const stale = days != null && days > 21;
     const ymd = /^(\d{4})-(\d{2})-(\d{2})/.exec((m.open && m.open.statsDate) || m.updatedAt || ''); // 直接取日期，避免时区把 11月1日 显示成 10月31日
     const when = ymd ? `${+ymd[2]}月${+ymd[3]}日` : '未知';
     $('#meta').innerHTML =
       `<span><i class="dot ${stale && !m.open ? 'stale' : ''}"></i>版本 <b>${esc((m.open && m.open.patch) || m.patch || '')}</b></span>` +
       `<span>更新于 <b>${when}</b></span>` +
-      (m.open ? `<span class="hide-md">出场率${m.blitz ? '、出装评级' : ''}每日自动更新</span>` : manual ? `<span class="hide-md">编辑整理 · 非实时</span>` : `<span class="hide-md">样本 <b class="num">${m.sampleMatches ? fmtWan(m.sampleMatches) : '—'}</b> 局</span>`);
+      (m.open ? `<span class="hide-md">出场率${m.blitz ? '、出装评级' : ''}每日自动更新</span>` : `<span class="hide-md">编辑整理 · 非实时</span>`);
     $('#foot').innerHTML =
-      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 数据来源：${esc(m.source || '')}${manual ? `（胜率与出装为 ${esc(m.patch)} 版本整理数据，非实时统计）` : ''}</span>` +
+      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 胜率等整理数据：${esc(m.source || '')}（${esc(m.patch)} 版本，非实时统计）</span>` +
       (m.open ? `<span>出场率、选取率与精选组合：<a href="https://arammayhem.com/data/" target="_blank" rel="noopener">数据：arammayhem.com</a>（CC BY 4.0，${esc(m.open.patch)} 版本，统计日 ${esc(m.open.statsDate)}）</span>` : '') +
       (m.blitz ? `<span>出装与海克斯评级：<a href="https://blitz.gg/lol" target="_blank" rel="noopener">Blitz</a>（${esc(m.blitz.patch)} 版本，${esc(m.blitz.date)} 获取，仅评级、无胜率）</span>` : '') +
       `<span>非官方工具，与 Riot Games 无关联</span>`;
@@ -364,14 +363,12 @@
           ${h.augments.map(a => `<div class="aug">${augIc(a.name, a.rarity)}
             <span class="nm" title="${esc((AUG_DB.get(a.name) || {}).effect || a.name)}">${esc(a.name)}</span>
             <span class="bar"><b style="width:${(a.score / augMax * 100).toFixed(0)}%"></b></span>
-            <span class="p">${a.tier ? tb(a.tier) : pct(a.wr)}${a.games ? `<small class="g${a.low ? ' low' : ''}">${a.low ? '样本少 · ' : ''}${fmtWan(a.games)}场</small>` : ''}</span></div>`).join('')}
+            <span class="p">${a.tier ? tb(a.tier) : pct(a.wr)}</span></div>`).join('')}
         </div>
 
         <div class="card">
-          <h3>推荐出装 <em>${h.blitz ? 'Blitz 评级排序，不是合成顺序' : h.dataDriven ? '按该英雄出这件装的胜率排序，不是合成顺序' : '编辑推荐'}</em></h3>
-          <ol class="build">${h.coreItems.map(i => { const st = (h.itemStats || []).find(x => x.name === i);
-            return `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${h.itemTiers && h.itemTiers[i] ? tb(h.itemTiers[i]) : ''}${st ? `<small class="g${st.low ? ' low' : ''}">${pct(st.wr)} · ${fmtWan(st.games)}场</small>` : ''}</span></li>`; }).join('')}</ol>
-          ${h.dataDriven ? '<p class="subtle g-note">橙色数字：样本不到 100 场，仅供参考</p>' : ''}
+          <h3>推荐出装 <em>${h.blitz ? 'Blitz 评级排序，不是合成顺序' : '编辑推荐'}</em></h3>
+          <ol class="build">${h.coreItems.map(i => `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${h.itemTiers && h.itemTiers[i] ? tb(h.itemTiers[i]) : ''}</span></li>`).join('')}</ol>
           <div class="alt">备选 ${h.altItems.map(i => `<span class="i">${itemIc(i)}${esc(i)}</span>`).join('')}</div>
           <dl class="kv" style="margin-top:14px"><dt>锻体</dt><dd>${esc(h.anvil)}</dd></dl>
         </div>

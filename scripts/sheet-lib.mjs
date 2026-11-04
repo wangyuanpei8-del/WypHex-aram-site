@@ -1,4 +1,4 @@
-// 表格 <-> data.json 的共用工具：CSV 读写、列定义
+// 读表格用的共用工具：CSV 解析、单元格格式
 import { readFile } from 'node:fs/promises';
 
 export const TIER_LABEL = {
@@ -6,15 +6,6 @@ export const TIER_LABEL = {
 };
 
 /* ---------- CSV ---------- */
-export function toCSV(rows) {
-  const cell = v => {
-    const s = v == null ? '' : String(v);
-    return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  // 开头加 BOM，Excel 双击打开中文不乱码
-  return '﻿' + rows.map(r => r.map(cell).join(',')).join('\r\n') + '\r\n';
-}
-
 export function parseCSV(text) {
   text = text.replace(/^﻿/, '');
   const rows = []; let row = []; let cur = ''; let q = false;
@@ -51,7 +42,6 @@ export async function readCSV(path) {
 
 /* ---------- 单元格格式 ---------- */
 export const splitList = s => String(s || '').split(/[、,，;；|]/).map(x => x.trim()).filter(Boolean);
-export const joinList = a => (a || []).join('、');
 export const num = s => { const n = parseFloat(String(s).replace(/[%\s]/g, '')); return Number.isFinite(n) ? n : null; };
 export const yes = s => /^(是|y|yes|true|1|新)$/i.test(String(s).trim());
 
@@ -68,12 +58,3 @@ export function parseHeroAugs(s, where) {
     return { name, rarity, score: wr ?? 0, wr: wr ?? 0 };
   });
 }
-export const fmtHeroAugs = augs => (augs || []).map(a => `${a.name} ${a.rarity}${a.wr ? ' ' + a.wr : ''}`).join('；');
-
-/* ---------- 列定义（表头就是中文列名） ---------- */
-export const HERO_COLS = ['英雄', '称号', '英文ID', '别名', '梯队', '胜率', '场次', '定位', '流派', '加点', '锻体',
-  '核心装备', '备选装备', '海克斯', '组合标题', '组合说明', '上手要点', '通用模板'];
-export const AUG_COLS = ['海克斯', '稀有度', '梯队', '胜率', '选取率', '本版本新增', '效果', '推荐英雄'];
-export const ITEM_COLS = ['装备', '胜率', '场次', '标签', '说明', '推荐英雄'];
-export const COMBO_COLS = ['标题', '英雄', '梯队', '标签', '核心装备', '说明'];
-export const META_COLS = ['项目', '内容'];
