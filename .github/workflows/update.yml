@@ -4,7 +4,12 @@ name: 自动更新
 on:
   schedule:
     - cron: '25 * * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      icons:
+        description: '强制重新下载图标'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -29,7 +34,7 @@ jobs:
       - name: 有变化时补齐图标并提交
         id: commit
         run: |
-          git diff --quiet data && echo "无变化" && exit 0
+          if git diff --quiet data && [ "${{ inputs.icons }}" != "true" ]; then echo "无变化"; exit 0; fi
           node scripts/fetch-icons.mjs
           git config user.name "hexaram-bot"
           git config user.email "hexaram-bot@users.noreply.github.com"

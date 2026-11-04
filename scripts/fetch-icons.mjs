@@ -97,11 +97,14 @@ function collect(node, out) {
   if (!node || typeof node !== 'object') return;
   const name = node.nameTRA || node.name || node.displayName || node.DisplayName;
   const keys = Object.keys(node);
-  const iconKey = keys.find(k => /small.*icon|icon.*small/i.test(k) && typeof node[k] === 'string')
-    || keys.find(k => /icon/i.test(k) && typeof node[k] === 'string' && /\.(png|tex|dds)$/i.test(node[k]));
+  // 优先用游戏里显示的彩色大图标（iconLarge），没有才用单色小图标
+  const str = k => typeof node[k] === 'string' && node[k];
+  const largeKey = keys.find(k => /large.*icon|icon.*large/i.test(k) && str(k));
+  const iconKey = largeKey || keys.find(k => /small.*icon|icon.*small/i.test(k) && str(k))
+    || keys.find(k => /icon/i.test(k) && str(k) && /\.(png|tex|dds)$/i.test(node[k]));
   if (typeof name === 'string' && iconKey) {
     const k = nk(name);
-    if (k && !out.has(k)) out.set(k, iconUrl(node[iconKey]));
+    if (k && (!out.has(k) || (largeKey && !out.get(k).large))) out.set(k, { url: iconUrl(node[iconKey]), large: !!largeKey });
   }
   Object.values(node).forEach(v => { if (v && typeof v === 'object') collect(v, out); });
 }
@@ -135,9 +138,9 @@ for (const url of sources) {
 }
 const augMap = {}; const augMiss = [];
 for (const [name] of augInfo) {
-  const u = augIcons.get(nk(name));
+  const u = augIcons.get(nk(name))?.url;
   if (!u) { augMiss.push(name); continue; }
-  const rel = `assets/icons/aug/${safeName(nk(name))}.png`;
+  const rel = `assets/icons/aug/${safeName(nk(name))}-l.png`; // -l：彩色大图标（旧的单色小图标会被下面的清理删掉）
   if (await save(join(ROOT, rel), [u])) augMap[name] = rel;
   else augMiss.push(name);
 }
