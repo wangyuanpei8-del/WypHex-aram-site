@@ -14,7 +14,8 @@
  * 环境变量：
  *   RIOT_API_KEY   必填（--mock 除外）。在 https://developer.riotgames.com 申请 Personal API Key。
  *   RIOT_PLATFORM  采样服务器，默认 kr。可选 jp1 / sg2 / tw2 / vn2 / na1 / euw1 等（国服不在 Riot API 内）。
- *   QUEUE_ID       海克斯大乱斗的 queueId，默认 2400。请对照 https://static.developer.riotgames.com/docs/lol/queues.json 确认。
+ *   QUEUE_ID       海克斯大乱斗的 queueId。留空时自动识别：先查官方 queues.json 里名称含 Mayhem 的队列，
+ *                  再抽查种子玩家最近的对局，统计各队列出现次数并打印出来。
  *   MAX_REQUESTS   单次运行最多请求数，默认 2800（Personal key 约 100 次/2 分钟，2800 次约 56 分钟）。
  *   MIN_GAMES      英雄进入榜单的最少场次，默认 30。
  */
@@ -25,11 +26,12 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const MOCK = args.includes('--mock');
+if (MOCK && !process.env.QUEUE_ID) process.env.QUEUE_ID = '2400';
 const OUT = args.includes('--out') ? resolve(args[args.indexOf('--out') + 1]) : join(ROOT, 'data');
 
 const KEY = process.env.RIOT_API_KEY;
 const PLATFORM = (process.env.RIOT_PLATFORM || 'kr').toLowerCase();
-const QUEUE_ID = Number(process.env.QUEUE_ID || 2400);
+let QUEUE_ID = Number(process.env.QUEUE_ID || 0); // 0 = 自动识别
 const MAX_REQUESTS = Number(process.env.MAX_REQUESTS || 2800);
 const MIN_GAMES = Number(process.env.MIN_GAMES || 30);
 const REGION = {
@@ -152,16 +154,57 @@ function addMatch(state, m) {
   return true;
 }
 
+/* ---------------- 识别海克斯大乱斗的队列编号 ---------------- */
+async function resolveQueue(state, R) {
+  const queues = (await getJSON('https://static.developer.riotgames.com/docs/lol/queues.json').catch(() => [])) || [];
+  const desc = id => { const q = queues.find(x => x.queueId === id); return q ? `${q.map} / ${q.description || ''}` : '未知'; };
+  const mayhem = queues.filter(q => /mayhem/i.test(`${q.description} ${q.notes || ''}`));
+  console.log('queues.json 中含 Mayhem 的队列：', mayhem.map(q => `${q.queueId}（${q.description}）`).join('、') || '无');
+
+  // 抽查前 4 个种子玩家最近 10 局（不限队列），打印各队列出现次数，方便核对
+  const hist = {};
+  for (const puuid of state.seeds.slice(0, 4)) {
+    const ids = await riot(`${R}/lol/match/v5/matches/by-puuid/${puuid}/ids?count=10`) || [];
+    for (const id of ids) {
+      const m = await riot(`${R}/lol/match/v5/matches/${id}`);
+      if (!m?.info) continue;
+      const k = `${m.info.queueId}|${m.info.gameMode}`;
+      hist[k] = (hist[k] || 0) + 1;
+      // 把这些对局里的玩家也加入种子，扩大覆盖面
+      for (const p of m.info.participants) if (p.puuid && !state.seeds.includes(p.puuid)) state.seeds.push(p.puuid);
+    }
+  }
+  console.log('抽查对局的队列分布：');
+  Object.entries(hist).sort((a, b) => b[1] - a[1]).forEach(([k, n]) => {
+    const [id, mode] = k.split('|');
+    console.log(`  queueId ${id}  gameMode ${mode}  ${n} 局  ${desc(+id)}`);
+  });
+
+  if (!QUEUE_ID) {
+    const seenMayhem = Object.keys(hist).map(k => k.split('|')).find(([id, mode]) => mayhem.some(q => q.queueId === +id) || /kiwi|mayhem/i.test(mode));
+    QUEUE_ID = seenMayhem ? +seenMayhem[0] : (mayhem[0]?.queueId || 2400);
+  }
+  console.log(`使用 queueId ${QUEUE_ID}（${desc(QUEUE_ID)}）`);
+  if (state.queueId && state.queueId !== QUEUE_ID) {
+    console.log('队列编号变了，清空旧统计');
+    Object.assign(state, { patch: null, matches: 0, agg: {}, seen: [] });
+  }
+  state.queueId = QUEUE_ID;
+}
+
 /* ---------------- 采样 ---------------- */
 async function sample(state, stat) {
   if (MOCK) return mockSample(state, stat);
   const P = `https://${PLATFORM}.api.riotgames.com`;
   const R = `https://${REGION}.api.riotgames.com`;
   if (!state.seeds.length) {
-    const ladder = await riot(`${P}/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`);
-    state.seeds = (ladder?.entries || []).map(e => e.puuid).filter(Boolean);
+    for (const tier of ['challengerleagues', 'grandmasterleagues']) {
+      const ladder = await riot(`${P}/lol/league/v4/${tier}/by-queue/RANKED_SOLO_5x5`);
+      state.seeds.push(...(ladder?.entries || []).map(e => e.puuid).filter(Boolean));
+    }
     console.log(`初始种子玩家 ${state.seeds.length} 个`);
   }
+  await resolveQueue(state, R);
   const seen = new Set(state.seen);
   let added = 0;
   let scanned = 0;
@@ -320,7 +363,8 @@ function build(existing, state, stat) {
   return {
     meta: {
       ...existing.meta,
-      patch: state.patch || existing.meta.patch,
+      // 对局里的 gameVersion 是 16.x，官方版本号叫 26.x（2026 年起按年份命名）
+      patch: state.patch ? state.patch.replace(/^(\d+)\./, (m, a) => (+a < 20 ? +a + 10 : +a) + '.') : existing.meta.patch,
       updatedAt: new Date().toISOString(),
       sampleMatches: state.matches,
       source: MOCK ? '模拟数据（测试）' : `Riot API · ${SERVER_NAME}采样`,

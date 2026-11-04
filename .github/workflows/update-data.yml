@@ -25,7 +25,7 @@ jobs:
         env:
           RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
           RIOT_PLATFORM: ${{ vars.RIOT_PLATFORM || 'kr' }}
-          QUEUE_ID: ${{ vars.QUEUE_ID || '2400' }}
+          QUEUE_ID: ${{ vars.QUEUE_ID }}
           MAX_REQUESTS: ${{ vars.MAX_REQUESTS || '2800' }}
         run: node scripts/update-data.mjs
       - name: 下载英雄头像、装备和海克斯图标
