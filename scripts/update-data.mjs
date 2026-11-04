@@ -1,0 +1,355 @@
+#!/usr/bin/env node
+/**
+ * 海斗助手数据更新脚本（Node 20+，无第三方依赖）
+ *
+ * 做的事：
+ *   1. 从 Riot API 滚动采样海克斯大乱斗对局（match-v5），按英雄聚合胜率、出装、海克斯；
+ *   2. 与 data/data.json 里手写的文字（称号、外号、流派、要点、组合说明）合并；
+ *   3. 输出 data/data.json（源数据）和 data/data.js（网页加载用）。
+ *
+ * 用法：
+ *   RIOT_API_KEY=RGAPI-xxx node scripts/update-data.mjs            # 正式采样
+ *   node scripts/update-data.mjs --mock --out /tmp/test             # 不联网，用模拟对局测试整条流程
+ *
+ * 环境变量：
+ *   RIOT_API_KEY   必填（--mock 除外）。在 https://developer.riotgames.com 申请 Personal API Key。
+ *   RIOT_PLATFORM  采样服务器，默认 kr。可选 jp1 / sg2 / tw2 / vn2 / na1 / euw1 等（国服不在 Riot API 内）。
+ *   QUEUE_ID       海克斯大乱斗的 queueId，默认 2400。请对照 https://static.developer.riotgames.com/docs/lol/queues.json 确认。
+ *   MAX_REQUESTS   单次运行最多请求数，默认 2800（Personal key 约 100 次/2 分钟，2800 次约 56 分钟）。
+ *   MIN_GAMES      英雄进入榜单的最少场次，默认 30。
+ */
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const args = process.argv.slice(2);
+const MOCK = args.includes('--mock');
+const OUT = args.includes('--out') ? resolve(args[args.indexOf('--out') + 1]) : join(ROOT, 'data');
+
+const KEY = process.env.RIOT_API_KEY;
+const PLATFORM = (process.env.RIOT_PLATFORM || 'kr').toLowerCase();
+const QUEUE_ID = Number(process.env.QUEUE_ID || 2400);
+const MAX_REQUESTS = Number(process.env.MAX_REQUESTS || 2800);
+const MIN_GAMES = Number(process.env.MIN_GAMES || 30);
+const REGION = {
+  kr: 'asia', jp1: 'asia',
+  sg2: 'sea', tw2: 'sea', vn2: 'sea', ph2: 'sea', th2: 'sea', oc1: 'sea',
+  na1: 'americas', br1: 'americas', la1: 'americas', la2: 'americas',
+  euw1: 'europe', eun1: 'europe', tr1: 'europe', ru: 'europe', me1: 'europe',
+}[PLATFORM] || 'asia';
+const SERVER_NAME = { kr: '韩服', jp1: '日服', sg2: '新加坡服', tw2: '台服', vn2: '越南服', na1: '北美服', euw1: '西欧服' }[PLATFORM] || PLATFORM;
+
+if (!MOCK && !KEY) {
+  console.error('缺少 RIOT_API_KEY。测试流程可用 --mock。');
+  process.exit(1);
+}
+
+/* ---------------- HTTP（带限速与 429 重试） ---------------- */
+let requests = 0;
+let last = 0;
+const MIN_GAP_MS = 1250; // 100 次 / 120 秒
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+async function riot(url) {
+  if (requests >= MAX_REQUESTS) throw new Error('BUDGET');
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const wait = last + MIN_GAP_MS - Date.now();
+    if (wait > 0) await sleep(wait);
+    last = Date.now();
+    requests++;
+    const res = await fetch(url, { headers: { 'X-Riot-Token': KEY } });
+    if (res.ok) return res.json();
+    if (res.status === 429 || res.status >= 500) {
+      const ra = Number(res.headers.get('retry-after') || 10);
+      console.warn(`  ${res.status}，${ra}s 后重试`);
+      await sleep(ra * 1000);
+      continue;
+    }
+    if (res.status === 404) return null;
+    throw new Error(`${res.status} ${url}\n${await res.text()}`);
+  }
+  return null;
+}
+async function getJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`${r.status} ${url}`);
+  return r.json();
+}
+
+/* ---------------- 静态资料：英雄 / 装备 / 海克斯名称 ---------------- */
+async function loadStatic(existing) {
+  if (MOCK) {
+    const champs = {};
+    existing.heroes.forEach((h, i) => { champs[1000 + i] = { name: h.name, title: h.title, id: h.key }; });
+    const items = {};
+    const itemNames = [...new Set(existing.heroes.flatMap(h => [...h.coreItems, ...h.altItems]))];
+    itemNames.forEach((n, i) => { items[3000 + i] = { name: n, full: true }; });
+    const augs = {};
+    const augNames = [...new Set([...existing.augments.map(a => a.name), ...existing.heroes.flatMap(h => h.augments.map(a => a.name))])];
+    const rar = new Map([...existing.heroes.flatMap(h => h.augments), ...existing.augments].map(a => [a.name, a.rarity]));
+    augNames.forEach((n, i) => { augs[1 + i] = { name: n, rarity: rar.get(n) || '白银', desc: '' }; });
+    return { version: 'mock', champs, items, augs };
+  }
+  const version = (await getJSON('https://ddragon.leagueoflegends.com/api/versions.json'))[0];
+  const base = `https://ddragon.leagueoflegends.com/cdn/${version}/data/zh_CN`;
+  const champJson = (await getJSON(`${base}/champion.json`)).data;
+  const champs = {};
+  // zh_CN 中 name 是称号（疾风剑豪），title 是名字（亚索）
+  Object.values(champJson).forEach(c => { champs[c.key] = { name: c.title, title: c.name, id: c.id }; });
+  const itemJson = (await getJSON(`${base}/item.json`)).data;
+  const items = {};
+  Object.entries(itemJson).forEach(([id, it]) => {
+    const boots = (it.tags || []).includes('Boots') && (it.gold?.total || 0) >= 900;
+    const full = boots || ((it.gold?.total || 0) >= 2200 && !(it.into && it.into.length));
+    items[id] = { name: it.name, full };
+  });
+  let augs = {};
+  try {
+    const cd = await getJSON('https://raw.communitydragon.org/latest/cdragon/arena/zh_cn.json');
+    (cd.augments || []).forEach(a => {
+      augs[a.id] = { name: a.name, rarity: ['白银', '黄金', '棱彩'][a.rarity] || '白银', desc: (a.desc || '').replace(/<[^>]+>/g, '') };
+    });
+  } catch (e) {
+    console.warn('海克斯名称表获取失败，将以编号显示：', e.message);
+  }
+  return { version, champs, items, augs };
+}
+
+/* ---------------- 采样状态 ---------------- */
+async function loadJSON(p, fallback) {
+  try { return JSON.parse(await readFile(p, 'utf8')); } catch { return fallback; }
+}
+function emptyState() {
+  return { patch: null, seeds: [], seen: [], matches: 0, agg: {} };
+}
+const patchOf = gv => (gv || '').split('.').slice(0, 2).join('.');
+const newer = (a, b) => { const [x1, y1] = a.split('.').map(Number); const [x2, y2] = (b || '0.0').split('.').map(Number); return x1 > x2 || (x1 === x2 && y1 > y2); };
+
+function addMatch(state, m) {
+  const gv = patchOf(m.info.gameVersion);
+  if (state.patch && gv !== state.patch) {
+    if (!newer(gv, state.patch)) return false; // 旧版本的对局跳过
+    console.log(`检测到新版本 ${gv}，清空旧版本 ${state.patch} 的统计`);
+    Object.assign(state, { patch: gv, matches: 0, agg: {}, seen: [] });
+  }
+  state.patch = gv;
+  state.matches++;
+  for (const p of m.info.participants) {
+    const c = (state.agg[p.championId] ||= { g: 0, w: 0, items: {}, augs: {} });
+    const win = p.win ? 1 : 0;
+    c.g++; c.w += win;
+    for (let i = 0; i <= 5; i++) {
+      const id = p['item' + i];
+      if (id) { const s = (c.items[id] ||= [0, 0]); s[0]++; s[1] += win; }
+    }
+    for (let i = 1; i <= 6; i++) {
+      const id = p['playerAugment' + i];
+      if (id) { const s = (c.augs[id] ||= [0, 0]); s[0]++; s[1] += win; }
+    }
+    if (p.puuid && state.seeds.length < 5000 && !state.seeds.includes(p.puuid)) state.seeds.push(p.puuid);
+  }
+  return true;
+}
+
+/* ---------------- 采样 ---------------- */
+async function sample(state, stat) {
+  if (MOCK) return mockSample(state, stat);
+  const P = `https://${PLATFORM}.api.riotgames.com`;
+  const R = `https://${REGION}.api.riotgames.com`;
+  if (!state.seeds.length) {
+    const ladder = await riot(`${P}/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`);
+    state.seeds = (ladder?.entries || []).map(e => e.puuid).filter(Boolean);
+    console.log(`初始种子玩家 ${state.seeds.length} 个`);
+  }
+  const seen = new Set(state.seen);
+  let added = 0;
+  try {
+    while (state.seeds.length) {
+      // 轮转种子：取队首，处理后放到队尾
+      const puuid = state.seeds.shift();
+      state.seeds.push(puuid);
+      const ids = await riot(`${R}/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=${QUEUE_ID}&count=20`) || [];
+      for (const id of ids) {
+        if (seen.has(id)) continue;
+        seen.add(id);
+        const m = await riot(`${R}/lol/match/v5/matches/${id}`);
+        if (m && m.info && m.info.queueId === QUEUE_ID && addMatch(state, m)) added++;
+      }
+      if (added && added % 50 === 0) console.log(`  已新增 ${added} 局，请求 ${requests}/${MAX_REQUESTS}`);
+    }
+  } catch (e) {
+    if (e.message !== 'BUDGET') throw e;
+  }
+  state.seen = [...seen].slice(-50000);
+  console.log(`本次新增 ${added} 局，版本 ${state.patch} 累计 ${state.matches} 局`);
+  return added;
+}
+
+function mockSample(state, stat) {
+  const champIds = Object.keys(stat.champs).map(Number);
+  const itemIds = Object.keys(stat.items).map(Number);
+  const augIds = Object.keys(stat.augs).map(Number);
+  let seed = 42; // mulberry32
+  const rnd = () => { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const pick = arr => arr[Math.floor(rnd() * arr.length)];
+  const strength = Object.fromEntries(champIds.map(c => [c, rnd() * 0.16 - 0.08]));
+  for (let g = 0; g < 4000; g++) {
+    const ids = [];
+    while (ids.length < 10) { const c = pick(champIds); if (!ids.includes(c)) ids.push(c); }
+    const s = ids.slice(0, 5).reduce((a, c) => a + strength[c], 0) - ids.slice(5).reduce((a, c) => a + strength[c], 0);
+    const blueWin = rnd() < 0.5 + s;
+    const participants = ids.map((c, i) => {
+      const p = { championId: c, win: i < 5 ? blueWin : !blueWin, puuid: 'mock' + (g * 10 + i) % 300 };
+      for (let k = 0; k <= 5; k++) p['item' + k] = pick(itemIds);
+      for (let k = 1; k <= 4; k++) p['playerAugment' + k] = pick(augIds);
+      return p;
+    });
+    addMatch(state, { info: { gameVersion: '26.21.1.1', queueId: QUEUE_ID, participants } });
+  }
+  state.seeds = state.seeds.slice(0, 300);
+  return 4000;
+}
+
+/* ---------------- 聚合输出 ---------------- */
+// Wilson 下界：样本少时压低排名，避免小样本“100% 胜率”冲上榜首
+function wilson(w, g, z = 1.64) {
+  if (!g) return 0;
+  const p = w / g;
+  return (p + z * z / (2 * g) - z * Math.sqrt((p * (1 - p) + z * z / (4 * g)) / g)) / (1 + z * z / g);
+}
+const r1 = x => Math.round(x * 10) / 10;
+
+function build(existing, state, stat) {
+  const old = new Map(existing.heroes.map(h => [h.name, h]));
+  const tierOf = q => (q < 0.13 ? 'T1' : q < 0.33 ? 'T2' : q < 0.66 ? 'T3' : q < 0.87 ? 'T4' : 'T5');
+  const tierLabel = { T1: 'T1 · 版本强势', T2: 'T2 · 强力', T3: 'T3 · 稳健', T4: 'T4 · 偏弱', T5: 'T5 · 弱势' };
+
+  const rows = Object.entries(state.agg)
+    .filter(([id, a]) => a.g >= MIN_GAMES && stat.champs[id])
+    .map(([id, a]) => ({ id, a, wr: a.w / a.g }))
+    .sort((x, y) => y.wr - x.wr);
+
+  const heroes = rows.map((r, i) => {
+    const info = stat.champs[r.id];
+    const prev = old.get(info.name) || {};
+    const minN = Math.max(5, r.a.g * 0.03);
+    const topItems = Object.entries(r.a.items)
+      .filter(([id, s]) => stat.items[id]?.full && s[0] >= minN)
+      .sort((x, y) => wilson(y[1][1], y[1][0]) - wilson(x[1][1], x[1][0]))
+      .map(([id]) => stat.items[id].name);
+    const uniq = [...new Set(topItems)];
+    const topAugs = Object.entries(r.a.augs)
+      .filter(([, s]) => s[0] >= minN)
+      .sort((x, y) => wilson(y[1][1], y[1][0]) - wilson(x[1][1], x[1][0]))
+      .slice(0, 6)
+      .map(([id, s]) => {
+        const a = stat.augs[id] || { name: `海克斯#${id}`, rarity: '白银' };
+        return { name: a.name, rarity: a.rarity, score: r1(wilson(s[1], s[0]) * 100), wr: r1(s[1] / s[0] * 100), games: s[0] };
+      });
+    const tier = tierOf(i / rows.length);
+    const dataDriven = uniq.length >= 6 && topAugs.length >= 3;
+    return {
+      rank: i + 1,
+      title: info.title,
+      name: info.name,
+      key: info.id || prev.key,
+      aliases: prev.aliases || info.name,
+      wr: r1(r.wr * 100),
+      matches: r.a.g,
+      tier,
+      tierLabel: tierLabel[tier],
+      roles: prev.roles || [],
+      style: prev.style || '',
+      skill: prev.skill || '',
+      anvil: prev.anvil || '',
+      coreItems: dataDriven ? uniq.slice(0, 6) : (prev.coreItems || uniq.slice(0, 6)),
+      altItems: dataDriven ? uniq.slice(6, 12) : (prev.altItems || []),
+      augments: topAugs.length >= 3 ? topAugs : (prev.augments || []),
+      comboTitle: prev.comboTitle || '',
+      comboDesc: prev.comboDesc || '',
+      tips: prev.tips || '',
+      generic: dataDriven ? false : !!prev.generic,
+    };
+  });
+
+  // 全局海克斯榜
+  const augTotal = {};
+  const augHeroes = {};
+  for (const [cid, a] of Object.entries(state.agg)) {
+    for (const [id, s] of Object.entries(a.augs)) {
+      const t = (augTotal[id] ||= [0, 0]); t[0] += s[0]; t[1] += s[1];
+      (augHeroes[id] ||= []).push([cid, wilson(s[1], s[0])]);
+    }
+  }
+  const oldAug = new Map(existing.augments.map(a => [a.name, a]));
+  const players = state.matches * 10 || 1;
+  const augList = Object.entries(augTotal).filter(([, s]) => s[0] >= 50).map(([id, s]) => {
+    const a = stat.augs[id] || { name: `海克斯#${id}`, rarity: '白银', desc: '' };
+    const prev = oldAug.get(a.name) || {};
+    const score = r1(wilson(s[1], s[0]) * 100);
+    return {
+      name: a.name, rarity: a.rarity, score, wr: r1(s[1] / s[0] * 100), pick: r1(s[0] / players * 100),
+      tier: score >= 56 ? 'S+' : score >= 53 ? 'S' : score >= 50 ? 'A' : 'B',
+      isNew: !!prev.isNew, effect: prev.effect || a.desc || '',
+      heroes: (augHeroes[id] || []).sort((x, y) => y[1] - x[1]).slice(0, 6).map(([cid]) => stat.champs[cid]?.name).filter(Boolean),
+    };
+  }).sort((x, y) => y.score - x.score);
+
+  // 全局装备榜
+  const itemTotal = {}; const itemHeroes = {};
+  for (const [cid, a] of Object.entries(state.agg)) {
+    for (const [id, s] of Object.entries(a.items)) {
+      if (!stat.items[id]?.full) continue;
+      const t = (itemTotal[id] ||= [0, 0]); t[0] += s[0]; t[1] += s[1];
+      (itemHeroes[id] ||= []).push([cid, wilson(s[1], s[0])]);
+    }
+  }
+  const oldItem = new Map(existing.items.map(i => [i.name, i]));
+  const items = Object.entries(itemTotal).filter(([, s]) => s[0] >= 100).map(([id, s]) => {
+    const name = stat.items[id].name; const prev = oldItem.get(name) || {};
+    return {
+      name, score: r1(wilson(s[1], s[0]) * 100), wr: r1(s[1] / s[0] * 100),
+      matches: s[0] >= 10000 ? r1(s[0] / 10000) + '万' : String(s[0]),
+      tag: prev.tag || '', desc: prev.desc || '',
+      best: (itemHeroes[id] || []).sort((x, y) => y[1] - x[1]).slice(0, 5).map(([cid]) => stat.champs[cid]?.name).filter(Boolean),
+    };
+  }).sort((x, y) => y.score - x.score).slice(0, 30);
+
+  return {
+    meta: {
+      ...existing.meta,
+      patch: state.patch || existing.meta.patch,
+      updatedAt: new Date().toISOString(),
+      sampleMatches: state.matches,
+      source: MOCK ? '模拟数据（测试）' : `Riot API · ${SERVER_NAME}采样`,
+      pipeline: MOCK ? 'mock' : 'riot',
+      ddragon: stat.version,
+    },
+    heroes: heroes.length >= 20 ? heroes : existing.heroes,
+    augments: augList.length >= 10 ? augList : existing.augments,
+    items: items.length >= 5 ? items : existing.items,
+    combos: existing.combos,
+    bands: existing.bands,
+  };
+}
+
+/* ---------------- 主流程 ---------------- */
+const existing = JSON.parse(await readFile(join(ROOT, 'data', 'data.json'), 'utf8'));
+const statePath = join(MOCK ? OUT : join(ROOT, 'data'), 'raw', 'state.json');
+const state = await loadJSON(statePath, emptyState());
+const stat = await loadStatic(existing);
+console.log(`静态资料：${Object.keys(stat.champs).length} 英雄 / ${Object.keys(stat.augs).length} 海克斯（${stat.version}）`);
+
+const added = await sample(state, stat);
+const out = build(existing, state, stat);
+
+await mkdir(join(OUT, 'raw'), { recursive: true });
+await writeFile(statePath, JSON.stringify(state));
+if (added === 0 && !MOCK) {
+  console.log('没有新对局，数据文件不变');
+} else {
+  await writeFile(join(OUT, 'data.json'), JSON.stringify(out, null, 1));
+  await writeFile(join(OUT, 'data.js'), '/* 自动生成，勿手改：由 scripts/update-data.mjs 生成 */\nwindow.HEX_DATA = ' + JSON.stringify(out) + ';\n');
+  console.log(`已写入 ${OUT}：${out.heroes.length} 英雄，${out.augments.length} 海克斯，${out.items.length} 装备；请求 ${requests} 次`);
+}
