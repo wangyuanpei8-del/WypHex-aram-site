@@ -202,7 +202,7 @@
            <option value="matches"${state.sort === 'matches' ? ' selected' : ''}>场次多→少</option>
          </select>`;
     } else if (state.board === 'augments') {
-      const chips = [['ALL', '全部'], ['棱彩', '棱彩'], ['黄金', '黄金'], ['白银', '白银'], ['NEW', '本版本新增']];
+      const chips = [['ALL', '全部'], ['棱彩', '棱彩'], ['黄金', '黄金'], ['白银', '白银'], ...(D.augments.some(a => a.rarity === '未知') ? [['未知', '稀有度未知']] : []), ['NEW', '本版本新增']];
       f.innerHTML = chips.map(([k, l]) => `<button class="chip" data-rar="${k}" aria-pressed="${state.augRar === k}">${l}</button>`).join('') +
         sortSel('augSort', [['wr', '胜率高→低'], ['pick', '选取率高→低'], ['score', '综合分高→低']]);
     } else if (state.board === 'items') {
@@ -346,12 +346,14 @@
           ${h.augments.map(a => `<div class="aug">${augIc(a.name, a.rarity)}
             <span class="nm" title="${esc((AUG_DB.get(a.name) || {}).effect || a.name)}">${esc(a.name)}</span>
             <span class="bar"><b style="width:${(a.score / augMax * 100).toFixed(0)}%"></b></span>
-            <span class="p">${pct(a.wr)}</span></div>`).join('')}
+            <span class="p">${pct(a.wr)}${a.games ? `<small class="g${a.low ? ' low' : ''}">${a.low ? '样本少 · ' : ''}${fmtWan(a.games)}场</small>` : ''}</span></div>`).join('')}
         </div>
 
         <div class="card">
-          <h3>推荐出装 <em>按合成顺序</em></h3>
-          <ol class="build">${h.coreItems.map(i => `<li>${itemIc(i)}<span>${esc(i)}</span></li>`).join('')}</ol>
+          <h3>推荐出装 <em>${h.dataDriven ? '按该英雄出这件装的胜率排序，不是合成顺序' : '参考出装，暂无对局统计'}</em></h3>
+          <ol class="build">${h.coreItems.map(i => { const st = (h.itemStats || []).find(x => x.name === i);
+            return `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${st ? `<small class="g${st.low ? ' low' : ''}">${pct(st.wr)} · ${fmtWan(st.games)}场</small>` : ''}</span></li>`; }).join('')}</ol>
+          ${h.dataDriven ? '<p class="subtle g-note">橙色数字：样本不到 100 场，仅供参考</p>' : ''}
           <div class="alt">备选 ${h.altItems.map(i => `<span class="i">${itemIc(i)}${esc(i)}</span>`).join('')}</div>
           <dl class="kv" style="margin-top:14px"><dt>锻体</dt><dd>${esc(h.anvil)}</dd></dl>
         </div>
@@ -372,7 +374,7 @@
   }
 
   /* ---------- 选海克斯速查：同一轮三个海克斯稀有度相同，按稀有度给出该英雄的完整排序 ---------- */
-  const RARITIES = ['棱彩', '黄金', '白银'];
+  const RARITIES = ['棱彩', '黄金', '白银'].concat(D.augments.some(a => a.rarity === '未知') ? ['未知'] : []);
   function quickList(h, rar) {
     const own = h.augments.filter(a => a.rarity === rar)
       .map(a => ({ name: a.name, wr: a.wr, tag: '本命', k: 2, effect: (AUG_DB.get(a.name) || {}).effect }));

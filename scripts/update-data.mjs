@@ -26,6 +26,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
 const MOCK = args.includes('--mock');
+const REBUILD = args.includes('--rebuild'); // 只用已累计的数据重算，不采样、不需要 key
 if (MOCK && !process.env.QUEUE_ID) process.env.QUEUE_ID = '2400';
 const OUT = args.includes('--out') ? resolve(args[args.indexOf('--out') + 1]) : join(ROOT, 'data');
 
@@ -42,7 +43,7 @@ const REGION = {
 }[PLATFORM] || 'asia';
 const SERVER_NAME = { kr: '韩服', jp1: '日服', sg2: '新加坡服', tw2: '台服', vn2: '越南服', na1: '北美服', euw1: '西欧服' }[PLATFORM] || PLATFORM;
 
-if (!MOCK && !KEY) {
+if (!MOCK && !REBUILD && !KEY) {
   console.error('缺少 RIOT_API_KEY。测试流程可用 --mock。');
   process.exit(1);
 }
@@ -79,6 +80,16 @@ async function getJSON(url) {
   return r.json();
 }
 
+// 稀有度：数字 0/1/2 或 kSilver/gold/prismatic 等写法；认不出就标“未知”，不瞎猜
+function rarityOf(r) {
+  if (r === 0 || r === 1 || r === 2) return ['白银', '黄金', '棱彩'][r];
+  const s = String(r ?? '').toLowerCase();
+  if (/silver|白银/.test(s)) return '白银';
+  if (/gold|黄金/.test(s)) return '黄金';
+  if (/prism|棱彩/.test(s)) return '棱彩';
+  return '未知';
+}
+
 /* ---------------- 静态资料：英雄 / 装备 / 海克斯名称 ---------------- */
 async function loadStatic(existing) {
   if (MOCK) {
@@ -104,16 +115,38 @@ async function loadStatic(existing) {
   Object.entries(itemJson).forEach(([id, it]) => {
     const boots = (it.tags || []).includes('Boots') && (it.gold?.total || 0) >= 900;
     const full = boots || ((it.gold?.total || 0) >= 2200 && !(it.into && it.into.length));
-    items[id] = { name: it.name, full };
+    items[id] = { name: it.name, full, boots };
   });
   let augs = {};
   try {
     const cd = await getJSON('https://raw.communitydragon.org/latest/cdragon/arena/zh_cn.json');
     (cd.augments || []).forEach(a => {
-      augs[a.id] = { name: a.name, rarity: ['白银', '黄金', '棱彩'][a.rarity] || '白银', desc: (a.desc || '').replace(/<[^>]+>/g, '') };
+      augs[a.id] = { name: a.name, rarity: rarityOf(a.rarity), desc: (a.desc || '').replace(/<[^>]+>/g, '') };
     });
   } catch (e) {
-    console.warn('海克斯名称表获取失败，将以编号显示：', e.message);
+    console.warn('竞技场海克斯表获取失败：', e.message);
+  }
+  // 大乱斗专属海克斯：扫描 CommunityDragon 上其它海克斯表，只补缺的编号
+  const CD = 'https://raw.communitydragon.org/latest';
+  const extra = [`${CD}/plugins/rcp-be-lol-game-data/global/zh_cn/v1/cherry-augments.json`];
+  try {
+    const html = await (await fetch(`${CD}/plugins/rcp-be-lol-game-data/global/zh_cn/v1/`)).text();
+    [...html.matchAll(/href="([^"]+\.json)"/gi)].map(m => m[1]).filter(f => /augment|kiwi|mayhem|aram/i.test(f))
+      .forEach(f => extra.push(f.startsWith('http') ? f : `${CD}/plugins/rcp-be-lol-game-data/global/zh_cn/v1/` + f.replace(/^\.?\//, '')));
+  } catch {}
+  for (const url of new Set(extra)) {
+    const j = await getJSON(url).catch(() => null);
+    if (!j) continue;
+    const walk = n => {
+      if (Array.isArray(n)) return n.forEach(walk);
+      if (!n || typeof n !== 'object') return;
+      const name = n.nameTRA || n.name || n.displayName;
+      if (Number.isInteger(+n.id) && typeof name === 'string' && name && !augs[n.id]) {
+        augs[n.id] = { name, rarity: rarityOf(n.rarity ?? n.augmentRarity), desc: String(n.desc || n.description || n.tooltip || '').replace(/<[^>]+>/g, '') };
+      }
+      Object.values(n).forEach(v => v && typeof v === 'object' && walk(v));
+    };
+    walk(j);
   }
   return { version, champs, items, augs };
 }
@@ -295,6 +328,7 @@ function wilson(w, g, z = 1.64) {
   const p = w / g;
   return (p + z * z / (2 * g) - z * Math.sqrt((p * (1 - p) + z * z / (4 * g)) / g)) / (1 + z * z / g);
 }
+const LOW_N = 100; // 少于 100 场：页面标“样本少”
 const r1 = x => Math.round(x * 10) / 10;
 
 function build(existing, state, stat) {
@@ -311,18 +345,26 @@ function build(existing, state, stat) {
     const info = stat.champs[r.id];
     const prev = old.get(info.name) || {};
     const minN = Math.max(5, r.a.g * 0.03);
-    const topItems = Object.entries(r.a.items)
+    // 按 Wilson 下界排序；整套最多一双鞋
+    const seenName = new Set(); let hasBoots = false; const itemStats = [];
+    Object.entries(r.a.items)
       .filter(([id, s]) => stat.items[id]?.full && s[0] >= minN)
       .sort((x, y) => wilson(y[1][1], y[1][0]) - wilson(x[1][1], x[1][0]))
-      .map(([id]) => stat.items[id].name);
-    const uniq = [...new Set(topItems)];
+      .forEach(([id, s]) => {
+        const it = stat.items[id];
+        if (seenName.has(it.name)) return;
+        if (it.boots) { if (hasBoots) return; hasBoots = true; }
+        seenName.add(it.name);
+        itemStats.push({ name: it.name, wr: r1(s[1] / s[0] * 100), games: s[0] });
+      });
+    const uniq = itemStats.map(x => x.name);
     const topAugs = Object.entries(r.a.augs)
       .filter(([, s]) => s[0] >= minN)
       .sort((x, y) => wilson(y[1][1], y[1][0]) - wilson(x[1][1], x[1][0]))
       .slice(0, 6)
       .map(([id, s]) => {
-        const a = stat.augs[id] || { name: `海克斯#${id}`, rarity: '白银' };
-        return { name: a.name, rarity: a.rarity, score: r1(wilson(s[1], s[0]) * 100), wr: r1(s[1] / s[0] * 100), games: s[0] };
+        const a = stat.augs[id] || { name: `海克斯#${id}`, rarity: '未知' };
+        return { name: a.name, rarity: a.rarity, score: r1(wilson(s[1], s[0]) * 100), wr: r1(s[1] / s[0] * 100), games: s[0], low: s[0] < LOW_N };
       });
     const tier = tierOf(i / rows.length);
     const dataDriven = uniq.length >= 6 && topAugs.length >= 3;
@@ -342,6 +384,8 @@ function build(existing, state, stat) {
       anvil: prev.anvil || '',
       coreItems: dataDriven ? uniq.slice(0, 6) : (prev.coreItems || uniq.slice(0, 6)),
       altItems: dataDriven ? uniq.slice(6, 12) : (prev.altItems || []),
+      itemStats: dataDriven ? itemStats.slice(0, 12).map(x => ({ ...x, low: x.games < LOW_N })) : undefined,
+      dataDriven,
       augments: topAugs.length >= 3 ? topAugs : (prev.augments || []),
       comboTitle: prev.comboTitle || '',
       comboDesc: prev.comboDesc || '',
@@ -362,7 +406,7 @@ function build(existing, state, stat) {
   const oldAug = new Map(existing.augments.map(a => [a.name, a]));
   const players = state.matches * 10 || 1;
   const augList = Object.entries(augTotal).filter(([, s]) => s[0] >= 50).map(([id, s]) => {
-    const a = stat.augs[id] || { name: `海克斯#${id}`, rarity: '白银', desc: '' };
+    const a = stat.augs[id] || { name: `海克斯#${id}`, rarity: '未知', desc: '' };
     const prev = oldAug.get(a.name) || {};
     const score = r1(wilson(s[1], s[0]) * 100);
     return {
@@ -419,12 +463,12 @@ const state = await loadJSON(statePath, emptyState());
 const stat = await loadStatic(existing);
 console.log(`静态资料：${Object.keys(stat.champs).length} 英雄 / ${Object.keys(stat.augs).length} 海克斯（${stat.version}）`);
 
-const added = await sample(state, stat);
+const added = REBUILD ? 0 : await sample(state, stat);
 const out = build(existing, state, stat);
 
 await mkdir(join(OUT, 'raw'), { recursive: true });
 await writeFile(statePath, JSON.stringify(state));
-if (added === 0 && !MOCK) {
+if (added === 0 && !MOCK && !REBUILD) {
   console.log('没有新对局，数据文件不变');
 } else {
   await writeFile(join(OUT, 'data.json'), JSON.stringify(out, null, 1));

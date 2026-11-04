@@ -3,7 +3,12 @@ name: 更新海斗数据
 on:
   schedule:
     - cron: '0 19 * * *'   # 每天北京时间 03:00
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      rebuild:
+        description: '只重算（不采样，几分钟跑完）'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,7 +32,7 @@ jobs:
           RIOT_PLATFORM: ${{ vars.RIOT_PLATFORM || 'kr' }}
           QUEUE_ID: ${{ vars.QUEUE_ID }}
           MAX_REQUESTS: ${{ vars.MAX_REQUESTS || '9000' }}
-        run: node scripts/update-data.mjs
+        run: node scripts/update-data.mjs ${{ inputs.rebuild && '--rebuild' || '' }}
       - name: 下载英雄头像、装备和海克斯图标
         run: node scripts/fetch-icons.mjs
       - name: 生成单文件版

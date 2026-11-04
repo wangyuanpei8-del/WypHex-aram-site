@@ -156,6 +156,11 @@ a { color: inherit; }
 .rar.棱彩 { background: linear-gradient(135deg, #b394ff, #6fd6ff); }
 .rar.黄金 { background: var(--goldr); }
 .rar.白银 { background: var(--silver); }
+.rar.未知 { background: transparent; border: 1px dashed var(--muted); }
+.g { display: block; font-size: 10.5px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.g.low { color: #d9925b; }
+.build li .bn { display: flex; flex-direction: column; min-width: 0; }
+.build li .bn > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* 海克斯 / 装备 列表行（可展开） */
 .xrow { border-radius: 9px; }
@@ -214,14 +219,14 @@ a { color: inherit; }
 .card h3 em { font-style: normal; font-weight: 500; letter-spacing: 0; font-size: 11.5px; }
 .full { grid-column: 1 / -1; }
 
-.aug { display: grid; grid-template-columns: 24px 1fr 72px 44px; gap: 10px; align-items: center; padding: 7px 0; border-top: 1px solid var(--line); }
+.aug { display: grid; grid-template-columns: 24px 1fr 64px 76px; gap: 10px; align-items: center; padding: 7px 0; border-top: 1px solid var(--line); }
 .aug:first-of-type { border-top: 0; padding-top: 0; }
 .aug .nm { font-weight: 600; font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bar { height: 4px; background: var(--line-2); border-radius: 4px; overflow: hidden; }
 .bar b { display: block; height: 100%; background: linear-gradient(90deg, rgba(201,169,97,0.55), var(--gold)); border-radius: 4px; }
 .aug .p { text-align: right; font-family: var(--num); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
 
-.build { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; counter-reset: b; }
+.build { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; counter-reset: b; }
 .build li { list-style: none; display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 9px; background: var(--bg-2); border: 1px solid var(--line); font-size: 13px; font-weight: 600; min-width: 0; }
 .build li::before { counter-increment: b; content: counter(b); font-family: var(--num); font-size: 11px; color: var(--gold); width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(201,169,97,0.4); display: grid; place-items: center; flex: none; }
 .build li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -324,3 +329,5 @@ ol.build { margin: 0; padding: 0; }
 .build li { position: relative; }
 .build li:has(.ic) { padding-left: 8px; }
 .build li:has(.ic)::before { position: absolute; left: 3px; top: 3px; width: 13px; height: 13px; font-size: 9px; background: var(--panel); border-color: rgba(201,169,97,0.6); z-index: 1; }
+
+.g-note { font-size: 11.5px; margin: 8px 0 0; }
