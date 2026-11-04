@@ -14,13 +14,30 @@
   --silver: #a9b2c2;
   --font: -apple-system, BlinkMacSystemFont, "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei", "Noto Sans CJK SC", "Segoe UI", sans-serif;
   --num: "SF Pro Display", "Segoe UI", "Roboto", -apple-system, sans-serif;
+  --topbar: rgba(11, 13, 18, 0.85);
+  --glow: rgba(201, 169, 97, 0.07);
   color-scheme: dark;
+}
+/* 浅色主题：跟随系统，或用右上角按钮手动切换（记在本机） */
+:root[data-theme="light"] {
+  --bg: #f5f6f8; --panel: #ffffff; --panel-2: #eef0f4; --line: rgba(0, 0, 0, 0.08);
+  --text: #1b1f27; --text-2: #3d4452; --muted: #6b7280; --gold: #9a7428; --gold-soft: rgba(154, 116, 40, 0.12);
+  --warn: #c2620f; --topbar: rgba(245, 246, 248, 0.88); --glow: rgba(154, 116, 40, 0.06);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5f6f8; --panel: #ffffff; --panel-2: #eef0f4; --line: rgba(0, 0, 0, 0.08);
+    --text: #1b1f27; --text-2: #3d4452; --muted: #6b7280; --gold: #9a7428; --gold-soft: rgba(154, 116, 40, 0.12);
+    --warn: #c2620f; --topbar: rgba(245, 246, 248, 0.88); --glow: rgba(154, 116, 40, 0.06);
+    color-scheme: light;
+  }
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body {
   font-family: var(--font); font-size: 14px; line-height: 1.5; color: var(--text);
-  background: radial-gradient(1200px 500px at 85% -10%, rgba(201, 169, 97, 0.07), transparent 60%), var(--bg);
+  background: radial-gradient(1200px 500px at 85% -10%, var(--glow), transparent 60%), var(--bg);
   min-height: 100vh; -webkit-font-smoothing: antialiased;
 }
 button, input { font: inherit; color: inherit; }
@@ -30,14 +47,14 @@ a { color: inherit; }
 .empty { color: var(--muted); padding: 24px 8px; text-align: center; }
 
 /* 顶栏 */
-.topbar { position: sticky; top: 0; z-index: 20; background: rgba(11, 13, 18, 0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.topbar { position: sticky; top: 0; z-index: 20; background: var(--topbar); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
 .topbar-inner { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: grid; grid-template-columns: auto minmax(0, 420px) 1fr; gap: 20px; align-items: center; }
-.brand { display: flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 700; text-decoration: none; font-size: 16px; }
+.brand { display: flex; align-items: center; gap: 8px; white-space: nowrap; color: var(--gold); font-weight: 700; text-decoration: none; font-size: 16px; }
 .brand span { color: var(--text); }
 .search { display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); color: var(--muted); }
 .search:focus-within { border-color: rgba(201, 169, 97, 0.5); }
 .search input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--text); }
-.meta { display: flex; gap: 14px; justify-content: flex-end; color: var(--muted); font-size: 12.5px; }
+.meta { display: flex; gap: 14px; justify-content: flex-end; align-items: center; color: var(--muted); font-size: 12.5px; }
 .meta b { color: var(--text-2); font-weight: 600; }
 
 /* 布局 */
@@ -84,6 +101,10 @@ a { color: inherit; }
 .ic { width: 24px; height: 24px; border-radius: 6px; display: block; }
 .ic-wrap { display: inline-grid; place-items: center; width: 28px; height: 28px; }
 .ic-wrap .ic { width: 28px; height: 28px; border-radius: 6px; }
+/* 海克斯图标是浅色图案，浅色主题下垫一块深色底 */
+:root[data-theme="light"] .ic-wrap { background: #2a2f3a; border-radius: 7px; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .ic-wrap { background: #2a2f3a; border-radius: 7px; } }
+.theme { height: 30px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text-2); font-size: 12.5px; }
 .rar { display: inline-block; width: 9px; height: 9px; border-radius: 2px; transform: rotate(45deg); background: var(--silver); justify-self: center; }
 .rar.黄金 { background: var(--goldr); }
 .rar.棱彩 { background: var(--prism); }

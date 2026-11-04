@@ -77,8 +77,18 @@
       </div>`}`;
   }
 
+  /* ---------- 浅色 / 深色：默认跟随系统，点按钮切换并记在本机 ---------- */
+  const isLight = () => (document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) === 'light';
+  try { const t = localStorage.getItem('hexaram.theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* 忽略 */ }
+  function toggleTheme() {
+    const t = isLight() ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+    try { localStorage.setItem('hexaram.theme', t); } catch (e) { /* 忽略 */ }
+    renderMeta();
+  }
+
   function renderMeta() {
-    $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>数据日 <b>${esc(D.meta.date)}</b></span>`;
+    $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>数据日 <b>${esc(D.meta.date)}</b></span><button class="theme" data-theme-toggle>${isLight() ? '☾ 深色' : '☀ 浅色'}</button>`;
     $('#foot').innerHTML = `<span>数据来源：<a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）</a>，统计的是公开对局样本，自动更新。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
@@ -90,8 +100,9 @@
   }
 
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-hero],[data-rar],[data-back]');
+    const t = e.target.closest('[data-hero],[data-rar],[data-back],[data-theme-toggle]');
     if (!t) return;
+    if (t.hasAttribute('data-theme-toggle')) { toggleTheme(); return; }
     if (t.dataset.hero) select(t.dataset.hero);
     else if (t.dataset.rar) { state.rar = t.dataset.rar; renderDetail(); }
     else document.body.classList.remove('sheet');
