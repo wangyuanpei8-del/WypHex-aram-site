@@ -122,12 +122,22 @@ function augPage(a, html) {
   const m = /(棱彩|黄金|白银)海克斯/.exec(text(html));
   if (m) a.rarity = m[1];
   const list = [];
-  for (const r of rows(html, /\/hero\/(\d+)-[\w-]+/)) {
-    const st = STAT.exec(r.body.slice(r.name.length));
-    if (!st) continue;
-    const x = { id: +r.id, score: num(st[1]), wr: num(st[2]), games: num(st[3]) };
+  const add = (id, rest) => {
+    const st = STAT.exec(rest);
+    if (!id || !st) return;
+    const x = { id, score: num(st[1]), wr: num(st[2]), games: num(st[3]) };
     if (x.wr >= 20 && x.wr <= 80 && !list.some(y => y.id === x.id)) list.push(x);
+  };
+  // 适配英雄表：优先按英雄链接认人，没有链接就按“称号（名字）”认
+  for (const r of rows(html, /\/hero\/(\d+)-[\w-]+/)) add(+r.id, r.body.slice(r.name.length));
+  if (!list.length) {
+    const who = cell => { const n = cell.replace(/\s+/g, ''); return (heroes.find(h => n.includes(h.name) && (n.includes(h.title) || n === h.name)) || {}).id; };
+    for (const tr of html.match(/<tr[\s\S]*?<\/tr>/gi) || []) {
+      const cells = (tr.match(/<td\b[\s\S]*?<\/td>/gi) || []).map(text);
+      if (cells.length >= 3) add(who(cells[0]), cells.slice(1).join(' | '));
+    }
   }
+  if (!list.length) { console.log(`海克斯页 ${a.name} 没解析到适配英雄；页面开头：${text(html).slice(0, 400)}`); return; }
   a.heroes = list; a.date = listDate;
 }
 
