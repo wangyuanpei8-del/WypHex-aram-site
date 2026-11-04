@@ -16,7 +16,7 @@
  *   RIOT_PLATFORM  采样服务器，默认 kr。可选 jp1 / sg2 / tw2 / vn2 / na1 / euw1 等（国服不在 Riot API 内）。
  *   QUEUE_ID       海克斯大乱斗的 queueId。留空时自动识别：先查官方 queues.json 里名称含 Mayhem 的队列，
  *                  再抽查种子玩家最近的对局，统计各队列出现次数并打印出来。
- *   MAX_REQUESTS   单次运行最多请求数，默认 2800（Personal key 约 100 次/2 分钟，2800 次约 56 分钟）。
+ *   MAX_REQUESTS   单次运行最多请求数，默认 9000（Personal key 约 100 次/2 分钟，9000 次约 3 小时，按命中率可新增数千局）。
  *   MIN_GAMES      英雄进入榜单的最少场次，默认 30。
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -32,7 +32,7 @@ const OUT = args.includes('--out') ? resolve(args[args.indexOf('--out') + 1]) : 
 const KEY = process.env.RIOT_API_KEY;
 const PLATFORM = (process.env.RIOT_PLATFORM || 'kr').toLowerCase();
 let QUEUE_ID = Number(process.env.QUEUE_ID || 0); // 0 = 自动识别
-const MAX_REQUESTS = Number(process.env.MAX_REQUESTS || 2800);
+const MAX_REQUESTS = Number(process.env.MAX_REQUESTS || 9000);
 const MIN_GAMES = Number(process.env.MIN_GAMES || 30);
 const REGION = {
   kr: 'asia', jp1: 'asia',
@@ -149,7 +149,8 @@ function addMatch(state, m) {
       const id = p['playerAugment' + i];
       if (id) { const s = (c.augs[id] ||= [0, 0]); s[0]++; s[1] += win; }
     }
-    if (p.puuid && state.seeds.length < 5000 && !state.seeds.includes(p.puuid)) state.seeds.push(p.puuid);
+    // 打过大乱斗的玩家进入“玩家池”，下次优先查他们（覆盖所有段位，包括没打排位的玩家）
+    if (p.puuid) addPool(state, p.puuid);
   }
   return true;
 }
@@ -171,7 +172,7 @@ async function resolveQueue(state, R) {
       const k = `${m.info.queueId}|${m.info.gameMode}`;
       hist[k] = (hist[k] || 0) + 1;
       // 把这些对局里的玩家也加入种子，扩大覆盖面
-      for (const p of m.info.participants) if (p.puuid && !state.seeds.includes(p.puuid)) state.seeds.push(p.puuid);
+      if (m.info.queueId === QUEUE_ID || !QUEUE_ID) for (const p of m.info.participants) if (p.puuid) addPool(state, p.puuid);
     }
   }
   console.log('抽查对局的队列分布：');
@@ -193,26 +194,57 @@ async function resolveQueue(state, R) {
 }
 
 /* ---------------- 采样 ---------------- */
+const POOL_MAX = 20000;
+let poolSet = null;
+function addPool(state, puuid) {
+  state.pool ||= [];
+  poolSet ||= new Set(state.pool);
+  if (poolSet.has(puuid)) return;
+  poolSet.add(puuid);
+  state.pool.push(puuid);
+  if (state.pool.length > POOL_MAX) poolSet.delete(state.pool.shift());
+}
+
+// 全段位种子：从黑铁到王者，每个小段各取一页（约 205 人），合计数千名玩家
+const TIERS = ['IRON', 'BRONZE', 'SILVER', 'GOLD', 'PLATINUM', 'EMERALD', 'DIAMOND'];
+const DIVS = ['I', 'II', 'III', 'IV'];
+async function buildSeeds(P) {
+  const seeds = new Set();
+  for (const t of ['challengerleagues', 'grandmasterleagues', 'masterleagues']) {
+    const l = await riot(`${P}/lol/league/v4/${t}/by-queue/RANKED_SOLO_5x5`);
+    (l?.entries || []).slice(0, 300).forEach(e => e.puuid && seeds.add(e.puuid));
+  }
+  for (const t of TIERS) for (const d of DIVS) {
+    const page = 1 + Math.floor(Math.random() * 3); // 随机页，避免每次都是同一批人
+    const list = await riot(`${P}/lol/league-exp/v4/entries/RANKED_SOLO_5x5/${t}/${d}?page=${page}`) || [];
+    list.forEach(e => e.puuid && seeds.add(e.puuid));
+  }
+  return [...seeds];
+}
+
 async function sample(state, stat) {
   if (MOCK) return mockSample(state, stat);
   const P = `https://${PLATFORM}.api.riotgames.com`;
   const R = `https://${REGION}.api.riotgames.com`;
-  if (!state.seeds.length) {
-    for (const tier of ['challengerleagues', 'grandmasterleagues']) {
-      const ladder = await riot(`${P}/lol/league/v4/${tier}/by-queue/RANKED_SOLO_5x5`);
-      state.seeds.push(...(ladder?.entries || []).map(e => e.puuid).filter(Boolean));
-    }
-    console.log(`初始种子玩家 ${state.seeds.length} 个`);
+  // 种子名单每天重建一次（换一批随机页）
+  if (!state.seeds.length || state.seedsBuilt !== new Date().toISOString().slice(0, 10)) {
+    state.seeds = await buildSeeds(P);
+    state.seedsBuilt = new Date().toISOString().slice(0, 10);
+    console.log(`全段位种子玩家 ${state.seeds.length} 个`);
   }
   await resolveQueue(state, R);
   const seen = new Set(state.seen);
+  const visited = new Set();
   let added = 0;
   let scanned = 0;
+  const pickRandom = arr => arr[Math.floor(Math.random() * arr.length)];
   try {
-    while (state.seeds.length) {
-      // 轮转种子：取队首，处理后放到队尾
-      const puuid = state.seeds.shift();
-      state.seeds.push(puuid);
+    for (let guard = 0; guard < 1e6; guard++) {
+      // 七成从“打过大乱斗的玩家池”里抽，三成从全段位种子里抽，兼顾命中率和覆盖面
+      const pool = state.pool || [];
+      const puuid = pool.length && Math.random() < 0.7 ? pickRandom(pool) : pickRandom(state.seeds);
+      if (!puuid || visited.has(puuid)) continue;
+      visited.add(puuid);
       const ids = await riot(`${R}/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=${QUEUE_ID}&count=20`) || [];
       for (const id of ids) {
         if (seen.has(id)) continue;
@@ -220,12 +252,13 @@ async function sample(state, stat) {
         const m = await riot(`${R}/lol/match/v5/matches/${id}`);
         if (m && m.info && m.info.queueId === QUEUE_ID && addMatch(state, m)) added++;
       }
-      if (++scanned % 20 === 0) console.log(`  已查 ${scanned} 名玩家，新增 ${added} 局，请求 ${requests}/${MAX_REQUESTS}`);
+      if (++scanned % 25 === 0) console.log(`  已查 ${scanned} 名玩家，新增 ${added} 局，玩家池 ${pool.length}，请求 ${requests}/${MAX_REQUESTS}`);
+      if (visited.size >= state.seeds.length + pool.length) break;
     }
   } catch (e) {
     if (e.message !== 'BUDGET') throw e;
   }
-  state.seen = [...seen].slice(-50000);
+  state.seen = [...seen].slice(-80000);
   console.log(`本次新增 ${added} 局，版本 ${state.patch} 累计 ${state.matches} 局`);
   return added;
 }
