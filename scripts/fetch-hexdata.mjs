@@ -2,8 +2,8 @@
 // Hexdata 的 robots.txt 允许抓取这些公开页面，要求引用时注明“数据来源：Hexdata（hexdata.com.cn）”并附链接。
 // 结果写入 data/open/hexdata.json，再由 import-sheet.mjs 合并进网页数据。
 // 用法：node scripts/fetch-hexdata.mjs
-// 每天请求 3 个排行页和 173 个英雄页（每页间隔 1.5 秒，被限流时等待重试）；排行页解析异常就整体不更新（网页沿用上一次的数据），
-// 单个英雄页失败时沿用该英雄上一次的数据。
+// 每次请求 3 个排行页，再读最多 30 个需要更新的英雄页（每页间隔 2 秒，被限流就停），由 hexdata.yml 每 3 小时运行一次，
+// Hexdata 出新数据后大约一天内读完全部 173 个英雄；平时数据没变就只读 3 个排行页。排行页解析异常就整体不更新。
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,13 +13,13 @@ const BASE = 'https://hexdata.com.cn';
 const UA = { 'User-Agent': 'hexaram-site (github.com/wangyuanpei8-del/WypHex-aram-site)', 'Accept-Language': 'zh-CN,zh;q=0.9' };
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-// 对方限流（429/503）时按它说的时间等一会再试，最多试 4 次
+// 503 时等 20 秒重试一次；429（限流）直接放弃，下次再读
 async function page(path) {
   for (let i = 0; ; i++) {
     const r = await fetch(BASE + path, { headers: UA });
     if (r.ok) return r.text();
-    if (i < 3 && (r.status === 429 || r.status === 503)) {
-      const wait = Math.min(120, +r.headers.get('retry-after') || 20 * (i + 1));
+    if (i < 1 && r.status === 503) {
+      const wait = 20;
       console.log(`  ${path} 返回 ${r.status}，等 ${wait} 秒再试`);
       await sleep(wait * 1000);
       continue;
@@ -119,24 +119,25 @@ function heroPage(html) {
 let prevFile = null;
 try { prevFile = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'hexdata.json'), 'utf8')); } catch {}
 const prevHero = new Map((prevFile?.heroes?.rows || []).map(r => [r.id, r]));
-let ok = 0, sample = null, failRun = 0; const fails = {};
-for (const h of dedupe(heroes, 'id')) {
-  try {
-    const d = heroPage(await page(`/hero/${h.id}-${h.slug}`));
-    if (d.augs.length >= 3 && d.items.length >= 3) { Object.assign(h, d); ok++; failRun = 0; sample ||= { name: h.name, ...d }; }
-    else throw new Error(`解析到海克斯 ${d.augs.length}、装备 ${d.items.length}`);
-  } catch (e) {
-    const p = prevHero.get(h.id);
-    if (p && p.augs) Object.assign(h, { tier: p.tier, augs: p.augs, items: p.items });
-    const why = e.message.split(' ')[0]; fails[why] = (fails[why] || 0) + 1;
-    if (fails[why] <= 3) console.log(`英雄页 ${h.name} 读取失败：${e.message}`);
-    // 连续失败太多说明被挡住了，剩下的英雄沿用上一次的数据
-    if (++failRun >= 8) { console.log('连续失败 8 次，停止读取英雄页，其余沿用上一次的数据'); break; }
-  }
-  await sleep(1500); // 慢慢读，不给对方添负担
+const listDate = pageInfo(hh).date || '';
+// 先沿用上一次的单英雄数据
+for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { tier: p.tier, augs: p.augs, items: p.items, date: p.date || prevFile.heroes.date }); }
+// Hexdata 有访问频率限制（约 40 次就会返回 429），所以每次最多读 MAX 个英雄页，
+// 优先读还没有数据或数据日期比排行页旧的英雄；被限流就立刻停下，下次再接着读。
+const MAX = +(process.env.HEXDATA_MAX || 30);
+const todo = heroes.filter(h => !h.augs || h.date !== listDate).slice(0, MAX);
+let ok = 0, sample = null;
+for (const h of todo) {
+  let html;
+  try { html = await page(`/hero/${h.id}-${h.slug}`); }
+  catch (e) { console.log(`英雄页 ${h.name} 读取失败：${e.message}，本次停止，下次继续`); break; }
+  const d = heroPage(html);
+  if (d.augs.length >= 3 && d.items.length >= 3) { Object.assign(h, d, { date: listDate }); ok++; sample ||= { name: h.name, ...d }; }
+  else console.log(`英雄页 ${h.name} 解析到海克斯 ${d.augs.length}、装备 ${d.items.length}，跳过；页面开头：${text(html).slice(0, 300)}`);
+  await sleep(2000); // 慢慢读，不给对方添负担
 }
-console.log(`英雄页：成功 ${ok}/${heroes.length}，失败原因 ${JSON.stringify(fails)}；样例 ${JSON.stringify(sample).slice(0, 300)}`);
-if (!ok) { const h0 = heroes[0]; try { console.log('英雄页开头：', text(await page(`/hero/${h0.id}-${h0.slug}`)).slice(0, 1500)); } catch {} }
+const have = heroes.filter(h => h.augs).length, fresh = heroes.filter(h => h.augs && h.date === listDate).length;
+console.log(`英雄页：本次读取 ${ok}/${todo.length}；有数据 ${have}/${heroes.length}，其中是最新数据日（${listDate}）的 ${fresh}；样例 ${JSON.stringify(sample).slice(0, 300)}`);
 const out = {
   source: 'Hexdata（hexdata.com.cn）',
   fetchedAt: new Date().toISOString(),
