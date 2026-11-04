@@ -49,7 +49,7 @@
 |---|---|---|
 | 每日自动更新 | 每天北京时间 03:00，也可以在 Actions 里手动点 Run workflow | 依次运行 4 个脚本（见下表），然后把结果提交到仓库 |
 | Hexdata 英雄页 | 每 3 小时一次 | 读 Hexdata 排行页和最多 30 个英雄页，合并进网页数据（数据没变就不提交） |
-| 导入表格 | 改了 `data/sheets/` 里的表格并提交后自动运行 | 检查表格格式，重新生成网页数据和单文件版 |
+| 导入表格 | 改了 `data/sheets/` 里的表格并提交后自动运行 | 检查表格格式，重新生成网页数据 |
 
 “每日自动更新”运行的 4 个脚本：
 
@@ -61,7 +61,7 @@
 | `import-sheet.mjs` | 合并成网页数据 |
 | `fetch-icons.mjs` | 补齐新图标、删掉不再用的旧图标 |
 
-跑完后还会用 `build-standalone.mjs` 重新打包单文件版。
+跑完后还会用 `build-standalone.mjs` 打包单文件版，作为附件上传（不存进仓库）。
 
 - **网站多久变**：网站托管在 GitHub Pages，只发布 `main` 分支。每次有新提交，大约 1 分钟后网站自动更新。
 - **测试分支没有网站**：别的分支不会有自己的网站，可以放心拿来试东西。
@@ -69,7 +69,7 @@
 
 ## 发到微信 / QQ 群
 
-`dist/hexaram.html` 是单文件版，图标和数据都打包在里面，大约 6 MB。下载后直接把这个文件发出去就行，不联网也能打开。每天的自动更新会一起刷新它。
+单文件版（图标和数据都打包在一个 html 里，约 7 MB，不联网也能打开）不再存进仓库，免得仓库越来越大。下载方法：打开仓库的 Actions → 每日自动更新 → 点最近一次运行 → 页面底部 Artifacts 里的“hexaram-单文件版”，下载后解压就是 `hexaram.html`，直接发出去就行。每次保留 90 天。
 
 ---
 
@@ -114,7 +114,7 @@ data/open/hexdata.json         每日下载的 Hexdata 胜率
 data/open/blitz.json           每日下载的 Blitz 评级
 data/data.json, data.js        网页实际使用的数据（自动生成，不要手改）
 data/icons.js                  图标对照表（自动生成）
-dist/hexaram.html              单文件版（自动生成）
+dist/hexaram.html              单文件版（自动生成，不存进仓库）
 scripts/fetch-open-data.mjs    下载 arammayhem 数据
 scripts/fetch-hexdata.mjs      下载 Hexdata 胜率
 scripts/fetch-blitz.mjs        下载 Blitz 评级

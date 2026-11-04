@@ -29,13 +29,11 @@ jobs:
         run: node scripts/import-sheet.mjs
       - name: 补齐新海克斯与装备图标
         run: node scripts/fetch-icons.mjs
-      - name: 生成单文件版
-        run: node scripts/build-standalone.mjs
       - name: 提交到当前分支
         run: |
           git config user.name "hexaram-bot"
           git config user.email "hexaram-bot@users.noreply.github.com"
-          git add data dist assets/icons
+          git add data assets/icons
           git diff --cached --quiet && echo "无变化" && exit 0
           git commit -m "Hexdata 更新 $(date -u +%Y-%m-%d)"
           # GitHub 偶尔返回 500，失败就等一会重试
