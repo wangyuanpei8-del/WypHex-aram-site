@@ -17304,6 +17304,7 @@
    "rank": 147,
    "title": "灰烬驱魔人",
    "name": "洛克",
+   "key": "Locke",
    "aliases": "灰烬驱魔人 新刺客 locke",
    "wr": 46.6,
    "matches": 427217,
@@ -17373,7 +17374,11 @@
    "comboTitle": "【新英雄逆天改命流】将他们放倒倒倒 + 鼓声暴起低音轰鸣 + 巫妖/巫师帽",
    "comboDesc": "新英雄洛克常规胜率偏低，但拿到【将他们放倒倒倒】（胜率飙升至55.0%）与【鼓声暴起低音轰鸣】后，Q/E印记穿插巫妖强化普攻可瞬间触发满层爆发与回血，大幅提高进退场容错。",
    "tips": "先用远程技能挂印记，等敌方关键控制交出后再进场引爆印记，必出沃格勒特的巫师帽保命！",
-   "generic": false
+   "generic": false,
+   "pick": 3.62,
+   "pickChange": 0.88,
+   "pickRank": 116,
+   "openUrl": "https://arammayhem.com/build/locke/"
   },
   {
    "rank": 148,
