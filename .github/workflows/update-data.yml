@@ -1,8 +1,7 @@
-name: 更新海斗数据
+name: 更新海斗数据（Riot API，已停用定时）
 
 on:
-  schedule:
-    - cron: '0 19 * * *'   # 每天北京时间 03:00
+  # 已停用每日定时：Riot API 不公开海克斯大乱斗对局（见 README）。需要时可手动运行。
   workflow_dispatch:
     inputs:
       rebuild:

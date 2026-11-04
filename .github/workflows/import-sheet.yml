@@ -1,0 +1,38 @@
+name: 导入表格
+
+# 改了 data/sheets/ 里的表格并提交后自动运行：表格 → 网页数据 → 单文件版
+on:
+  push:
+    branches: [main]
+    paths: ['data/sheets/**']
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 检查并导入表格
+        run: node scripts/import-sheet.mjs
+      - name: 生成单文件版
+        run: node scripts/build-standalone.mjs
+      - name: 提交
+        run: |
+          git config user.name "hexaram-bot"
+          git config user.email "hexaram-bot@users.noreply.github.com"
+          git add data/data.json data/data.js dist
+          git diff --cached --quiet && echo "无变化" && exit 0
+          git commit -m "导入表格 $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push

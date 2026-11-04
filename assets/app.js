@@ -179,14 +179,16 @@
     const m = D.meta || {};
     const upd = m.updatedAt ? new Date(m.updatedAt) : null;
     const days = upd ? Math.floor((Date.now() - upd.getTime()) / 864e5) : null;
-    const stale = days != null && days > 3;
-    const when = upd ? `${upd.getMonth() + 1}月${upd.getDate()}日` : '未知';
+    const manual = m.pipeline === 'sheet' || m.pipeline === 'manual';
+    const stale = days != null && days > (manual ? 21 : 3);
+    const ymd = /^(\d{4})-(\d{2})-(\d{2})/.exec(m.updatedAt || ''); // 直接取日期，避免时区把 11月1日 显示成 10月31日
+    const when = ymd ? `${+ymd[2]}月${+ymd[3]}日` : '未知';
     $('#meta').innerHTML =
       `<span><i class="dot ${stale ? 'stale' : ''}"></i>版本 <b>${esc(m.patch || '')}</b></span>` +
       `<span>更新于 <b>${when}</b></span>` +
-      `<span class="hide-md">样本 <b class="num">${m.sampleMatches ? fmtWan(m.sampleMatches) : '—'}</b> 局</span>`;
+      (manual ? `<span class="hide-md">编辑整理 · 非实时</span>` : `<span class="hide-md">样本 <b class="num">${m.sampleMatches ? fmtWan(m.sampleMatches) : '—'}</b> 局</span>`);
     $('#foot').innerHTML =
-      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 数据来源：${esc(m.source || '')}</span>` +
+      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 数据来源：${esc(m.source || '')}${manual ? '（编辑整理，胜率为参考值，非实时统计）' : ''}</span>` +
       `<span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
@@ -329,7 +331,7 @@
         <div class="stat"><div class="k">样本场次</div><div class="v">${fmtWan(h.matches)}</div></div>
         <div class="stat"><div class="k">加点</div><div class="v sm">${esc(h.skill)}</div></div>
       </div>
-      ${h.generic ? '<p class="note">这位英雄的出装和海克斯目前是同定位通用推荐，接入实时对局数据后会自动替换为专属数据。</p>' : ''}
+      ${h.generic ? '<p class="note">这位英雄的出装和海克斯目前是同定位通用推荐，仅供参考，后续会逐步补上专属内容。</p>' : ''}
 
       <div class="grid2">
         <div class="card full">
@@ -350,7 +352,7 @@
         </div>
 
         <div class="card">
-          <h3>推荐出装 <em>${h.dataDriven ? '按该英雄出这件装的胜率排序，不是合成顺序' : '参考出装，暂无对局统计'}</em></h3>
+          <h3>推荐出装 <em>${h.dataDriven ? '按该英雄出这件装的胜率排序，不是合成顺序' : '编辑推荐'}</em></h3>
           <ol class="build">${h.coreItems.map(i => { const st = (h.itemStats || []).find(x => x.name === i);
             return `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${st ? `<small class="g${st.low ? ' low' : ''}">${pct(st.wr)} · ${fmtWan(st.games)}场</small>` : ''}</span></li>`; }).join('')}</ol>
           ${h.dataDriven ? '<p class="subtle g-note">橙色数字：样本不到 100 场，仅供参考</p>' : ''}
