@@ -344,3 +344,5 @@ a.btn { text-decoration: none; display: inline-flex; align-items: center; }
 .aug .nm, .build li span, .build li .bn > span, .quick .qt { white-space: normal; overflow: visible; overflow-wrap: anywhere; line-height: 1.35; }
 .row .n1, .row .n2 { white-space: normal; overflow-wrap: anywhere; }
 .build li .bn .tier { align-self: flex-start; margin-top: 3px; }
+.wrv { font-size: 9.5px; font-weight: 500; color: var(--muted); margin-left: 3px; font-family: var(--num); }
+.wrv.old { color: #d9925b; }

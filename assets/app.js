@@ -40,6 +40,8 @@
 
   const tb = t => `<span class="tier T${t}">T${t}</span>`; // Blitz 评级标签，T1 最强
   const OLD_PATCH = !!(D.meta.open && D.meta.open.patch && D.meta.patch && D.meta.open.patch !== D.meta.patch);
+  // 胜率是整理数据（不会每天更新），标上它的版本；过时后标“旧”
+  const WR_TAG = `<small class="wrv${OLD_PATCH ? ' old' : ''}">${String(D.meta.patch).replace(/[^\w.]/g, '')}${OLD_PATCH ? ' 旧' : ''}</small>`;
   const COMBO_TYPE = { god: '神级', strong: '强势', fun: '娱乐', meme: '整活', niche: '冷门', classic: '经典' };
   const $ = sel => document.querySelector(sel);
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -49,7 +51,7 @@
   const state = {
     board: 'heroes',
     role: 'ALL',
-    sort: 'wr',
+    sort: OLD_PATCH ? 'pick' : 'wr', // 胜率是整理数据，版本过时后默认改按每日更新的出场率排
     q: '',
     hero: HEROES[0].name,
     openRow: null,
@@ -235,7 +237,7 @@
     if (state.board === 'heroes') {
       const list = heroList();
       const byPick = state.sort === 'pick';
-      head.innerHTML = `<span>排名</span><span>英雄 · ${list.length}</span><span>胜率${OLD_PATCH ? `<small style="color:var(--muted)">(${esc(D.meta.patch)})</small>` : ''}</span><span>${byPick ? '出场率' : '场次'}</span>`;
+      head.innerHTML = `<span>排名</span><span>英雄 · ${list.length}</span><span>胜率${WR_TAG}</span><span>${byPick ? '出场率' : '场次'}</span>`;
       if (!list.length) { el.innerHTML = `<div class="empty">没有找到“${esc(state.q)}”，试试名字、称号或外号。</div>`; return; }
       const max = 60, min = 42;
       el.innerHTML = list.map(h => {
@@ -258,7 +260,7 @@
         .sort((a, b) => key(b) - key(a));
       const ext = EXT_AUGS.filter(rarOk).filter(a => !q || norm(a.name + a.heroes.join('')).includes(q))
         .sort((a, b) => b.heroes.length - a.heroes.length || b.avg - a.avg);
-      head.innerHTML = `<span>排名</span><span>海克斯 · ${main.length + ext.length}</span><span>选取率</span><span>胜率</span>`;
+      head.innerHTML = `<span>排名</span><span>海克斯 · ${main.length + ext.length}</span><span>选取率</span><span>胜率${WR_TAG}</span>`;
       head.style.gridTemplateColumns = GRID_X;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的海克斯。</div>'; return; }
       el.innerHTML = main.map((a, i) => xrow('aug:' + a.name, `<span class="rank">${i + 1}</span>`,
@@ -276,7 +278,7 @@
       const key = { wr: i => i.wr, score: i => i.score }[state.itemSort] || (i => i.wr);
       const main = D.items.filter(i => !q || norm(i.name + i.tag + i.desc + i.best.join('')).includes(q)).sort((a, b) => key(b) - key(a));
       const ext = EXT_ITEMS.filter(i => !q || norm(i.name + i.heroes.join('')).includes(q));
-      head.innerHTML = `<span>排名</span><span>装备 · ${main.length + ext.length}</span><span>胜率</span>`;
+      head.innerHTML = `<span>排名</span><span>装备 · ${main.length + ext.length}</span><span>胜率${WR_TAG}</span>`;
       head.style.gridTemplateColumns = GRID_3;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的装备。</div>'; return; }
       el.innerHTML = main.map((it, i) => {
@@ -339,7 +341,7 @@
       </div>
 
       <div class="stats">
-        <div class="stat"><div class="k">胜率</div><div class="v">${pct(h.wr)} <small class="${diff >= 0 ? 'up' : 'down'}" style="font-size:12px">${diff >= 0 ? '+' : ''}${diff.toFixed(1)}</small></div></div>
+        <div class="stat"><div class="k">胜率 ${WR_TAG}</div><div class="v">${pct(h.wr)} <small class="${diff >= 0 ? 'up' : 'down'}" style="font-size:12px">${diff >= 0 ? '+' : ''}${diff.toFixed(1)}</small></div></div>
         <div class="stat"><div class="k">排名</div><div class="v">#${h.rank}<small style="font-size:12px;color:var(--muted)"> / ${TOTAL}</small></div></div>
         ${h.pick != null
           ? `<div class="stat"><div class="k">出场率 <small style="color:var(--muted)">每日更新</small></div><div class="v">${pct(h.pick)}${chg(h.pickChange)}</div></div>`
