@@ -34,11 +34,11 @@ netlify.toml / vercel.json / _headers  各平台缓存规则
 1. 在 https://developer.riotgames.com 申请 **Personal API Key**（开发 key 24 小时过期，不适合定时任务）。
 2. GitHub 仓库 → Settings → Secrets and variables → Actions：
    - Secret `RIOT_API_KEY` = 你的 key
-   - Variable `RIOT_PLATFORM` = `kr`（或 `jp1`、`sg2`、`tw2` 等）
+   - （可选）Variable `RIOT_PLATFORMS` = 采样服务器，逗号分隔，默认 `kr,na1,euw1,sg2`。各服务器限速分开计算，同时采样
    - Variable `QUEUE_ID` = 海克斯大乱斗的 queueId（默认 2400，请对照 [queues.json](https://static.developer.riotgames.com/docs/lol/queues.json) 确认）
 3. Actions → “更新海斗数据” → Run workflow 先手动跑一次。之后每天北京时间 03:00 自动运行。
 
-每次运行约 1 小时、2,800 次请求，能新增约 2,000 局。版本号变化时自动清空旧版本统计重新累计。脚本按英雄聚合胜率，用 Wilson 下界给装备和海克斯排序，避免小样本冲榜。
+每次运行约 3 小时，每个服务器最多 9,000 次请求，四个服务器同时采样。可在 Run workflow 时勾选“只重算”，几分钟内用已累计的数据重新计算。版本号变化时自动清空旧版本统计重新累计。脚本按英雄聚合胜率，用 Wilson 下界给装备和海克斯排序，避免小样本冲榜。
 
 不联网测试整条流程：`node scripts/update-data.mjs --mock --out /tmp/test`
 
