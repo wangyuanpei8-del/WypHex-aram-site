@@ -20487,7 +20487,7 @@
    "tier": "S+",
    "score": 75,
    "wr": 61.4,
-   "pick": 41.7,
+   "pick": 41.71,
    "isNew": true,
    "effect": "【26.21新增】施放技能后，你在6秒内的下一次普攻变得更快，造成额外魔法伤害攻击特效，并提供持续衰减的移动速度。",
    "heroes": [
@@ -20497,7 +20497,9 @@
     "贾克斯",
     "赫卡里姆",
     "艾克"
-   ]
+   ],
+   "pickChange": null,
+   "openUrl": "https://arammayhem.com/augments/the-boom-and-the-bass/"
   },
   {
    "name": "质变：棱彩阶",
@@ -21354,19 +21356,6 @@
    "effect": "",
    "heroes": [],
    "openUrl": "https://arammayhem.com/augments/ultimate-recursion/"
-  },
-  {
-   "name": "鼓声暴起 低音轰鸣",
-   "rarity": "黄金",
-   "tier": "",
-   "score": null,
-   "wr": null,
-   "pick": 41.71,
-   "pickChange": null,
-   "isNew": true,
-   "effect": "",
-   "heroes": [],
-   "openUrl": "https://arammayhem.com/augments/the-boom-and-the-bass/"
   },
   {
    "name": "纯粹主义者 - 术师",
