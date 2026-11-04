@@ -28,7 +28,7 @@ jobs:
           QUEUE_ID: ${{ vars.QUEUE_ID || '2400' }}
           MAX_REQUESTS: ${{ vars.MAX_REQUESTS || '2800' }}
         run: node scripts/update-data.mjs
-      - name: 下载英雄头像
+      - name: 下载英雄头像、装备和海克斯图标
         run: node scripts/fetch-icons.mjs
       - name: 生成单文件版
         run: node scripts/build-standalone.mjs
@@ -39,4 +39,5 @@ jobs:
           git add data dist assets/icons
           git diff --cached --quiet && echo "无变化" && exit 0
           git commit -m "数据更新 $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
           git push

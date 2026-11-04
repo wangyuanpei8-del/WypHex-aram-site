@@ -99,7 +99,7 @@
 
   /* ---------- 头像：内嵌或本地图片 → 腾讯 CDN（国内快）→ Data Dragon → 文字 ---------- */
   const ICON_SRC = [
-    k => (window.HEX_ICONS && window.HEX_ICONS[k]) || `assets/icons/${k}.png`,
+    k => (window.HEX_ICONS && window.HEX_ICONS[k]) || `assets/icons/champ/${k}.png`,
     k => `https://game.gtimg.cn/images/lol/act/img/champion/${k}.png`,
     k => state.ddv ? `https://ddragon.leagueoflegends.com/cdn/${state.ddv}/img/champion/${k}.png` : null,
   ];
