@@ -135,6 +135,7 @@ try { blitz = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'blitz.json')
 if (blitz) {
   const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
   const rar = new Map(augments.map(a => [nk(a.name), a.rarity]));
+  const pickOf = new Map(augments.map(a => [nk(a.name), a.pick]));
   let hit = 0;
   for (const h of heroes) {
     const b = blitz.champions[h.key];
@@ -145,6 +146,8 @@ if (blitz) {
     h.altItems = items.slice(6, 12).map(i => i.name);
     h.itemTiers = Object.fromEntries(items.slice(0, 12).map(i => [i.name, i.tier]));
     const augs = b.augs.map(a => ({ ...a, rarity: rar.get(nk(a.name)) || a.rarity || '未知' }));
+    // 同一评级里按全服选取率排（Blitz 同级之间没有先后）
+    augs.sort((x, y) => x.tier - y.tier || (pickOf.get(nk(y.name)) ?? -1) - (pickOf.get(nk(x.name)) ?? -1));
     h.augments = augs.slice(0, 8).map(a => ({ name: a.name, rarity: a.rarity, tier: a.tier, score: 6 - a.tier, wr: null }));
     // 选海克斯速查用：该英雄 T1~T3 的全部海克斯
     h.augTiers = augs.filter(a => a.tier <= 3).map(a => [a.name, a.tier]);
