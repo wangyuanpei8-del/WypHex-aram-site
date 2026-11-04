@@ -45,5 +45,9 @@ jobs:
           git add data dist assets/icons
           git diff --cached --quiet && echo "无变化" && exit 0
           git commit -m "每日更新 $(date -u +%Y-%m-%d)"
-          git pull --rebase origin ${{ github.ref_name }}
-          git push origin HEAD:${{ github.ref_name }}
+          # GitHub 偶尔返回 500，失败就等一会重试
+          for i in 1 2 3 4; do
+            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            sleep $((i * 15))
+          done
+          exit 1
