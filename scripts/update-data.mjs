@@ -13,7 +13,7 @@
  *
  * 环境变量：
  *   RIOT_API_KEY   必填（--mock 除外）。在 https://developer.riotgames.com 申请 Personal API Key。
- *   RIOT_PLATFORMS 采样服务器，逗号分隔，默认 kr,jp1,na1,sg2（限速按 asia/americas/sea 等路由分别计算，韩服和日服共用 asia；国服不在 Riot API 内）。
+ *   RIOT_PLATFORMS 采样服务器，逗号分隔，默认 kr,na1,euw1,sg2（限速按 asia/americas/sea 等路由分别计算，韩服和日服共用 asia；国服不在 Riot API 内）。
  *   QUEUE_ID       海克斯大乱斗的 queueId。留空时自动识别：先查官方 queues.json 里名称含 Mayhem 的队列，
  *                  再抽查种子玩家最近的对局，统计各队列出现次数并打印出来。
  *   MAX_REQUESTS   单次运行最多请求数，默认 9000（Personal key 约 100 次/2 分钟，9000 次约 3 小时，按命中率可新增数千局）。
@@ -31,7 +31,7 @@ if (MOCK && !process.env.QUEUE_ID) process.env.QUEUE_ID = '2400';
 const OUT = args.includes('--out') ? resolve(args[args.indexOf('--out') + 1]) : join(ROOT, 'data');
 
 const KEY = process.env.RIOT_API_KEY;
-const PLATFORMS = (process.env.RIOT_PLATFORMS || process.env.RIOT_PLATFORM || 'kr,jp1,na1,sg2')
+const PLATFORMS = (process.env.RIOT_PLATFORMS || process.env.RIOT_PLATFORM || 'kr,na1,euw1,sg2')
   .toLowerCase().split(/[,\s]+/).filter(Boolean);
 let QUEUE_ID = Number(process.env.QUEUE_ID || 0); // 0 = 自动识别
 const MAX_REQUESTS = Number(process.env.MAX_REQUESTS || 9000);

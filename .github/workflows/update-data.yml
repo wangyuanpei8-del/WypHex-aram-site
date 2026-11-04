@@ -29,7 +29,7 @@ jobs:
       - name: 采样对局并重算数据
         env:
           RIOT_API_KEY: ${{ secrets.RIOT_API_KEY }}
-          RIOT_PLATFORMS: ${{ vars.RIOT_PLATFORMS || 'kr,jp1,na1,sg2' }}
+          RIOT_PLATFORMS: ${{ vars.RIOT_PLATFORMS || 'kr,na1,euw1,sg2' }}
           QUEUE_ID: ${{ vars.QUEUE_ID }}
           MAX_REQUESTS: ${{ vars.MAX_REQUESTS || '9000' }}
         run: node scripts/update-data.mjs ${{ inputs.rebuild && '--rebuild' || '' }}
