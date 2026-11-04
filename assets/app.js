@@ -13,6 +13,7 @@
   const ROLES = ['战士', '法师', '射手', '刺客', '坦克', '辅助'];
   const FAV_KEY = 'hexaram.fav.v1';
   const GRID_X = '28px 1fr 64px 64px';
+  const GRID_3 = '28px 1fr 64px';
 
   // 英雄出装 / 海克斯推荐里出现、但全局榜没有统计的条目
   const ITEM_USE = new Map();
@@ -218,7 +219,7 @@
         sortSel('augSort', [['wr', '胜率高→低'], ['pick', '选取率高→低'], ['score', '综合分高→低']]);
     } else if (state.board === 'items') {
       f.innerHTML = `<span class="subtle">点击任一行查看推荐英雄</span>` +
-        sortSel('itemSort', [['wr', '胜率高→低'], ['score', '综合分高→低'], ['heroes', '推荐英雄数多→少']]);
+        sortSel('itemSort', [['wr', '胜率高→低'], ['score', '综合分高→低']]);
     } else {
       f.innerHTML = '';
     }
@@ -261,7 +262,7 @@
       head.style.gridTemplateColumns = GRID_X;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的海克斯。</div>'; return; }
       el.innerHTML = main.map((a, i) => xrow('aug:' + a.name, `<span class="rank">${i + 1}</span>`,
-          `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>${a.isNew ? '<em class="new">新</em>' : ''}${a.tier ? `<span class="tier T1 lite">${esc(a.tier)}</span>` : ''}${a.btier ? ` <span class="tier T${a.btier} lite" title="Blitz 全局评级">T${a.btier}</span>` : ''}`,
+          `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>${a.isNew ? '<em class="new">新</em>' : ''}${a.btier ? `<span class="tier T${a.btier} lite" title="Blitz 全局评级">T${a.btier}</span>` : a.tier ? `<span class="tier T1 lite">${esc(a.tier)}</span>` : ''}`,
           pct(a.pick), wrCell(a.wr),
           `${a.effect ? `<p>${esc(a.effect)}</p>` : ''}<p class="subtle">${a.score != null ? `综合分 ${a.score} · ` : ''}选取率 ${pct(a.pick)}${chg(a.pickChange)}${a.wr == null ? ' · 暂无胜率' : ''}${a.btier ? ` · Blitz 评级 T${a.btier}` : ''}${a.openUrl ? ` · <a href="${esc(a.openUrl)}" target="_blank" rel="noopener">arammayhem ↗</a>` : ''}</p>${heroLinks(a.heroes)}`)).join('') +
         (ext.length ? `<div class="divider">以下 ${ext.length} 个只出现在英雄专属推荐里，暂无全局胜率。右侧为该海克斯在推荐英雄身上的平均搭配胜率，按推荐英雄数排序。</div>` +
@@ -272,23 +273,23 @@
       return;
     } else if (state.board === 'items') {
       const q = norm(state.q);
-      const key = { wr: i => i.wr, score: i => i.score, heroes: i => (ITEM_USE.get(i.name) || []).length }[state.itemSort];
+      const key = { wr: i => i.wr, score: i => i.score }[state.itemSort] || (i => i.wr);
       const main = D.items.filter(i => !q || norm(i.name + i.tag + i.desc + i.best.join('')).includes(q)).sort((a, b) => key(b) - key(a));
       const ext = EXT_ITEMS.filter(i => !q || norm(i.name + i.heroes.join('')).includes(q));
-      head.innerHTML = `<span>排名</span><span>装备 · ${main.length + ext.length}</span><span>推荐英雄</span><span>胜率</span>`;
-      head.style.gridTemplateColumns = GRID_X;
+      head.innerHTML = `<span>排名</span><span>装备 · ${main.length + ext.length}</span><span>胜率</span>`;
+      head.style.gridTemplateColumns = GRID_3;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的装备。</div>'; return; }
       el.innerHTML = main.map((it, i) => {
         const users = ITEM_USE.get(it.name) || [];
         return xrow('item:' + it.name, `<span class="rank">${i + 1}</span>`, `${itemIc(it.name)}<span>${esc(it.name)}</span>`,
-          `${users.length}`, wrCell(it.wr),
+          null, wrCell(it.wr),
           `<p>${esc(it.desc)}</p><p class="subtle">${esc(it.tag)} · 样本 ${esc(it.matches)} · 综合分 ${it.score}</p>${heroLinks(it.best)}` +
-          (users.length ? `<p class="subtle" style="margin-top:8px">出现在 ${users.length} 位英雄的推荐出装中</p>${heroLinks(users)}` : ''));
+          (users.length ? `<p class="subtle" style="margin-top:8px">这些英雄的推荐出装里有它</p>${heroLinks(users)}` : ''));
       }).join('') +
-        (ext.length ? `<div class="divider">以下 ${ext.length} 件出现在英雄推荐出装里，暂无全局胜率，按推荐英雄数排序。</div>` +
+        (ext.length ? `<div class="divider">以下 ${ext.length} 件出现在英雄推荐出装里，暂无全局胜率。点开可以看哪些英雄推荐它。</div>` +
           ext.map(it => xrow('item:' + it.name, '<span class="rank">–</span>', `${itemIc(it.name)}<span>${esc(it.name)}</span>`,
-            `${it.heroes.length}`, '<span class="dim">—</span>',
-            `<p class="subtle">出现在 ${it.heroes.length} 位英雄的推荐出装中（核心 ${it.core} 次，备选 ${it.alt} 次）</p>${heroLinks(it.heroes)}`)).join('') : '');
+            null, '<span class="dim">—</span>',
+            `<p class="subtle">这些英雄的推荐出装里有它</p>${heroLinks(it.heroes)}`)).join('') : '');
       return;
     } else {
       head.hidden = true;
@@ -301,8 +302,8 @@
 
   function xrow(id, lead, title, mid, right, body) {
     const open = state.openRow === id;
-    return `<div class="xrow ${open ? 'open' : ''}"><button data-toggle="${esc(id)}" aria-expanded="${open}">
-      ${lead}<span class="t">${title}</span><span class="g">${mid}</span><span class="g num">${right}</span></button>
+    return `<div class="xrow ${open ? 'open' : ''}${mid == null ? ' x3' : ''}"><button data-toggle="${esc(id)}" aria-expanded="${open}">
+      ${lead}<span class="t">${title}</span>${mid == null ? '' : `<span class="g">${mid}</span>`}<span class="g num">${right}</span></button>
       ${open ? `<div class="body">${body}</div>` : ''}</div>`;
   }
   function heroLinks(names) {

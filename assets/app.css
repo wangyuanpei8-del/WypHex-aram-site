@@ -336,3 +336,11 @@ ol.build { margin: 0; padding: 0; }
 .ocombo .oc em { margin-left: auto; font-style: normal; font-size: 11px; color: var(--gold); }
 .foot a { color: var(--gold); }
 a.btn { text-decoration: none; display: inline-flex; align-items: center; }
+
+/* 手机上名称不截断：长名字换行显示 */
+.xrow.x3 > button { grid-template-columns: 28px 1fr 64px; }
+.xrow .t { flex-wrap: wrap; row-gap: 3px; }
+.xrow .t span { white-space: normal; overflow: visible; overflow-wrap: anywhere; }
+.aug .nm, .build li span, .build li .bn > span, .quick .qt { white-space: normal; overflow: visible; overflow-wrap: anywhere; line-height: 1.35; }
+.row .n1, .row .n2 { white-space: normal; overflow-wrap: anywhere; }
+.build li .bn .tier { align-self: flex-start; margin-top: 3px; }
