@@ -201,7 +201,8 @@ function addMatch(state, m, reg) {
 }
 
 /* ---------------- 识别海克斯大乱斗的队列编号 ---------------- */
-async function resolveQueue(state, reg, riot, R) {
+async function resolveQueue(state, reg, riot, R, tag = '') {
+  const log = (...a) => console.log(tag ? `[${tag}]` : '', ...a);
   // 1) 队列名称表：Riot 官方 queues.json + CommunityDragon（有中文名，更新更及时）
   const names = {};
   const official = (await getJSON('https://static.developer.riotgames.com/docs/lol/queues.json').catch(() => [])) || [];
@@ -212,7 +213,7 @@ async function resolveQueue(state, reg, riot, R) {
   const desc = id => names[id] || '名称表里没有';
   const isMayhemName = id => /mayhem|海克斯|kiwi/i.test(names[id] || '');
   const named = Object.keys(names).map(Number).filter(isMayhemName);
-  console.log('名称表里像海克斯大乱斗的队列：', named.map(id => `${id}（${desc(id)}）`).join('、') || '无');
+  log('名称表里像海克斯大乱斗的队列：', named.map(id => `${id}（${desc(id)}）`).join('、') || '无');
 
   // 2) 抽查：随机 40 名玩家最近的匹配/娱乐对局（type=normal，排除排位），每人看 3 局
   const hist = {};
@@ -227,9 +228,9 @@ async function resolveQueue(state, reg, riot, R) {
       hist[k].puuids.push(...m.info.participants.map(p => p.puuid).filter(Boolean));
     }
   }
-  console.log('抽查对局的队列分布（非排位）：');
+  log('抽查对局的队列分布（非排位）：');
   const rows = Object.entries(hist).sort((a, b) => b[1].n - a[1].n).map(([k, v]) => { const [id, mode, map] = k.split('|'); return { id: +id, mode, map: +map, n: v.n, puuids: v.puuids }; });
-  rows.forEach(r => console.log(`  queueId ${r.id}  gameMode ${r.mode}  mapId ${r.map}  ${r.n} 局  ${desc(r.id)}`));
+  rows.forEach(r => log(`  queueId ${r.id}  gameMode ${r.mode}  mapId ${r.map}  ${r.n} 局  ${desc(r.id)}`));
 
   // 3) 名称表里的候选编号逐个试：20 名玩家里有几个人打过
   const cands = [...new Set([...named, ...rows.filter(r => r.map === 12 && r.id !== 450).map(r => r.id), 2400])].slice(0, 8);
@@ -240,7 +241,7 @@ async function resolveQueue(state, reg, riot, R) {
       const ids = await riot(`${R}/lol/match/v5/matches/by-puuid/${puuid}/ids?queue=${q}&count=1`) || [];
       if (ids.length) hits[q]++;
     }
-    console.log(`  试 queueId ${q}：20 名玩家中 ${hits[q]} 人打过  ${desc(q)}`);
+    log(`  试 queueId ${q}：20 名玩家中 ${hits[q]} 人打过  ${desc(q)}`);
   }
 
   if (!QUEUE_ID) {
@@ -251,12 +252,12 @@ async function resolveQueue(state, reg, riot, R) {
     if (kiwi || aramOther) for (const r of rows) if (r.id === QUEUE_ID) r.puuids.forEach(p => addPool(reg, p));
   }
   if (!QUEUE_ID) {
-    console.log('没能识别出海克斯大乱斗的队列编号，本次不采样。请把上面的队列分布发给维护者。');
+    log('没能识别出海克斯大乱斗的队列编号，本次不采样。请把上面的队列分布发给维护者。');
     return false;
   }
-  console.log(`使用 queueId ${QUEUE_ID}（${desc(QUEUE_ID)}）`);
+  log(`使用 queueId ${QUEUE_ID}（${desc(QUEUE_ID)}）`);
   if (state.queueId !== QUEUE_ID) {
-    console.log('队列编号和上次不同，清空旧统计和玩家池');
+    log('队列编号和上次不同，清空旧统计和玩家池');
     Object.assign(state, { patch: null, matches: 0, agg: {}, seen: [] });
     for (const [pf, r] of Object.entries(state.regions || {})) if (r !== reg) r.pool = [];
     reg.pool = (reg.pool || []).filter(Boolean);
@@ -313,14 +314,14 @@ async function sample(state, stat) {
     const P = `https://${pf}.api.riotgames.com`;
     const R = `https://${REGION_OF[pf] || 'asia'}.api.riotgames.com`;
     let added = 0;
-    if (DETECT && idx > 0) return 0;
     try {
       if (!reg.seeds.length || reg.seedsBuilt !== today) {
         reg.seeds = await buildSeeds(P, riot);
         reg.seedsBuilt = today;
         console.log(`[${nameOf(pf)}] 全段位种子玩家 ${reg.seeds.length} 个`);
       }
-      if (idx === 0) queueDone(await resolveQueue(state, reg, riot, R).catch(e => { queueDone(false); throw e; }));
+      if (DETECT) { await resolveQueue(state, reg, riot, R, nameOf(pf)); return 0; } // 只识别：每个服务器各自抽查
+      if (idx === 0) queueDone(await resolveQueue(state, reg, riot, R, nameOf(pf)).catch(e => { queueDone(false); throw e; }));
       if (!(await queueReady) || DETECT) return 0;
       const visited = new Set();
       let scanned = 0;
