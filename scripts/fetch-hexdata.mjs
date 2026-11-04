@@ -2,7 +2,8 @@
 // Hexdata 的 robots.txt 允许抓取这些公开页面，要求引用时注明“数据来源：Hexdata（hexdata.com.cn）”并附链接。
 // 结果写入 data/open/hexdata.json，再由 import-sheet.mjs 合并进网页数据。
 // 用法：node scripts/fetch-hexdata.mjs
-// 每天只请求 3 个页面；任何一页解析异常就整体不更新（网页沿用上一次的数据）。
+// 每天请求 3 个排行页和 173 个英雄页（每页间隔 0.4 秒）；排行页解析异常就整体不更新（网页沿用上一次的数据），
+// 单个英雄页失败时沿用该英雄上一次的数据。
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -69,6 +70,61 @@ const items = rows(ih, /\/item\/(\d+)/).map(r => ({
 })).filter(i => i.name && i.wr != null);
 
 const dedupe = (list, k) => [...new Map(list.map(x => [x[k], x])).values()];
+
+/* 单英雄页：该英雄的推荐海克斯和装备（综合分、胜率、样本），以及层级 */
+// 一行的文字形如“科学狂人 84.8 56.9% 19,793”
+const STAT = /(\d+(?:\.\d+)?)[^\d%]{0,14}?(\d+(?:\.\d+)?)\s*%[^\d]{0,14}?(\d[\d,]*)/;
+function heroPage(html) {
+  const list = { augs: [], items: [] };
+  const push = (kind, name, rest) => {
+    const m = STAT.exec(rest); name = name.replace(/\s+/g, ' ').trim();
+    if (!m || !name || name.length > 20) return;
+    const r = { name, score: num(m[1]), wr: num(m[2]), games: num(m[3]) };
+    if (r.wr < 20 || r.wr > 80) return;
+    if (!list[kind].some(x => x.name === r.name)) list[kind].push(r);
+  };
+  const tables = html.match(/<table[\s\S]*?<\/table>/gi) || [];
+  for (const t of tables) {
+    // 看表格前面的标题和表头判断是海克斯还是装备
+    const before = text(html.slice(Math.max(0, html.indexOf(t) - 400), html.indexOf(t)));
+    const head = text((/<thead[\s\S]*?<\/thead>/i.exec(t) || [''])[0]) || before;
+    for (const tr of t.match(/<tr[\s\S]*?<\/tr>/gi) || []) {
+      if (/<th\b/i.test(tr)) continue;
+      const cells = (tr.match(/<t[dh]\b[\s\S]*?<\/t[dh]>/gi) || []).map(text);
+      if (cells.length < 3) continue;
+      const kind = /\/item\//.test(tr) ? 'items' : /\/augments?\//.test(tr) ? 'augs' : /装备|出装/.test(head) && !/海克斯|符文/.test(head) ? 'items' : /海克斯|符文/.test(head) ? 'augs' : null;
+      if (kind) push(kind, cells[0], cells.slice(1).join(' | '));
+    }
+  }
+  if (!list.augs.length && !list.items.length) {
+    // 没有表格时：按链接切行
+    for (const r of rows(html, /\/augments?\/([^"'?#/]+)/)) push('augs', r.name, r.body.slice(r.name.length));
+    for (const r of rows(html, /\/item\/(\d+)/)) push('items', r.name, r.body.slice(r.name.length));
+  }
+  const t = text(html);
+  const tier = (/层级\s*[:：]?\s*(T\d)/.exec(t) || [])[1] || null;
+  return { tier, ...list };
+}
+
+let prevFile = null;
+try { prevFile = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'hexdata.json'), 'utf8')); } catch {}
+const prevHero = new Map((prevFile?.heroes?.rows || []).map(r => [r.id, r]));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+let ok = 0, sample = null;
+for (const h of dedupe(heroes, 'id')) {
+  try {
+    const d = heroPage(await page(`/hero/${h.id}-${h.slug}`));
+    if (d.augs.length >= 3 && d.items.length >= 3) { Object.assign(h, d); ok++; sample ||= { name: h.name, ...d }; }
+    else throw new Error(`解析到海克斯 ${d.augs.length}、装备 ${d.items.length}`);
+  } catch (e) {
+    const p = prevHero.get(h.id);
+    if (p && p.augs) Object.assign(h, { tier: p.tier, augs: p.augs, items: p.items });
+    if (ok === 0) console.log(`英雄页 ${h.name} 读取失败：${e.message}`);
+  }
+  await sleep(400); // 慢慢读，不给对方添负担
+}
+console.log(`英雄页：成功 ${ok}/${heroes.length}；样例 ${JSON.stringify(sample)}`);
+if (!ok) { const h0 = heroes[0]; try { console.log('英雄页开头：', text(await page(`/hero/${h0.id}-${h0.slug}`)).slice(0, 1500)); } catch {} }
 const out = {
   source: 'Hexdata（hexdata.com.cn）',
   fetchedAt: new Date().toISOString(),

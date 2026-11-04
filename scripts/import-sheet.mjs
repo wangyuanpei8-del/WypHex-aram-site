@@ -112,7 +112,11 @@ if (hex) {
   const miss = [];
   for (const h of heroes) {
     const r = byName.get(h.name) || byTitle.get(h.title) || (h.key && bySlug.get(h.key.toLowerCase()));
-    if (r) { h.wr = r.wr; h.matches = r.games || h.matches; h.hexUrl = `https://hexdata.com.cn/hero/${r.id}-${r.slug}`; } else miss.push(h.name);
+    if (r) {
+      h.wr = r.wr; h.matches = r.games || h.matches; h.hexUrl = `https://hexdata.com.cn/hero/${r.id}-${r.slug}`;
+      if (r.tier && TIER_LABEL[r.tier]) { h.tier = r.tier; h.tierLabel = TIER_LABEL[r.tier]; }
+      if (r.augs && r.augs.length) { h.hxAugs = r.augs; h.hxItems = r.items; }
+    } else miss.push(h.name);
   }
   heroes.sort((a, b) => b.wr - a.wr).forEach((h, i) => { h.rank = i + 1; });
   if (miss.length) console.log(`提醒：${miss.length} 位英雄在 Hexdata 里没找到，沿用表格胜率：${miss.join('、')}`);
@@ -200,6 +204,32 @@ if (blitz) {
   augments.forEach(a => { const t = gt.get(nk(a.name)); if (t) a.btier = t; });
   meta.blitz = { source: blitz.source, patch: blitz.patch, date: String(blitz.fetchedAt).slice(0, 10) };
   console.log(`已合并 Blitz 评级（版本 ${blitz.patch}）：英雄 ${hit}/${heroes.length}，全局海克斯评级 ${gt.size}`);
+}
+/* 英雄详情以 Hexdata 单英雄页为主（带胜率和场次），Blitz 评级只用来补充“选海克斯速查”和备选装备 */
+{
+  const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
+  const augBy = new Map(augments.map(a => [nk(a.name), a]));
+  const itemBy = new Map(items.map(i => [nk(i.name), i]));
+  const bestA = new Map(); const bestI = new Map();
+  let n = 0;
+  for (const h of heroes) {
+    if (!h.hxAugs) continue;
+    n++;
+    h.augments = h.hxAugs.map(a => ({ name: a.name, rarity: (augBy.get(nk(a.name)) || {}).rarity || '未知', score: a.score, wr: a.wr, games: a.games }));
+    const blitzItems = [...(h.coreItems || []), ...(h.altItems || [])];
+    h.coreItems = h.hxItems.map(i => i.name);
+    h.itemStats = Object.fromEntries(h.hxItems.map(i => [i.name, { wr: i.wr, games: i.games, score: i.score }]));
+    h.altItems = [...new Set(blitzItems)].filter(x => !h.itemStats[x]).slice(0, 6);
+    h.hexdata = true;
+    for (const a of h.hxAugs) (bestA.get(nk(a.name)) || bestA.set(nk(a.name), []).get(nk(a.name))).push({ hero: h.name, wr: a.wr, games: a.games });
+    for (const i of h.hxItems) (bestI.get(nk(i.name)) || bestI.set(nk(i.name), []).get(nk(i.name))).push({ hero: h.name, wr: i.wr, games: i.games });
+    delete h.hxAugs; delete h.hxItems;
+  }
+  // 海克斯榜、装备榜：哪些英雄最适合（该英雄 Hexdata 推荐里有它），按搭配胜率排
+  const top = l => l.sort((x, y) => y.wr - x.wr).slice(0, 12);
+  for (const [k, l] of bestA) { const a = augBy.get(k); if (a) a.best = top(l); }
+  for (const [k, l] of bestI) { const i = itemBy.get(k); if (i) i.bestHx = top(l); }
+  if (n) console.log(`英雄详情用 Hexdata 单英雄数据：${n}/${heroes.length}`);
 }
 await writeFile(join(ROOT, 'data', 'data.json'), JSON.stringify(out, null, 1));
 await writeFile(join(ROOT, 'data', 'data.js'), '/* 自动生成，勿手改：由 scripts/import-sheet.mjs 从 data/sheets 生成 */\nwindow.HEX_DATA = ' + JSON.stringify(out) + ';\n');
