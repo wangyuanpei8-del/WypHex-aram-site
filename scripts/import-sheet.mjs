@@ -125,10 +125,10 @@ if (hex) {
   const mineA = new Set(augments.map(a => nk(a.name)));
   for (const a of augments) {
     const r = ha.get(nk(a.name));
-    if (r) Object.assign(a, { wr: r.wr, score: r.score ?? a.score });
+    if (r) Object.assign(a, { wr: r.wr, score: r.score ?? a.score, ...(r.rarity && a.rarity === '未知' ? { rarity: r.rarity } : {}) });
     else { a.wr = null; a.score = null; } // 没有 Hexdata 胜率的就不显示旧数字
   }
-  for (const r of hex.augments.rows) if (!mineA.has(nk(r.name))) augments.push({ name: r.name, rarity: '未知', tier: '', score: r.score, wr: r.wr, pick: null, isNew: false, effect: '', heroes: [] });
+  for (const r of hex.augments.rows) if (!mineA.has(nk(r.name))) augments.push({ name: r.name, rarity: r.rarity || '未知', tier: '', score: r.score, wr: r.wr, pick: null, isNew: false, effect: '', heroes: [] });
 
   const wan = n => (n >= 10000 ? (n / 10000).toFixed(1) + '万' : String(n));
   const hi = new Map(hex.items.rows.map(r => [nk(r.name), r]));
@@ -190,13 +190,14 @@ if (blitz) {
     const items = b.items.filter(i => { if (!i.boots) return true; if (boots) return false; boots = true; return true; });
     h.coreItems = items.slice(0, 6).map(i => i.name);
     h.altItems = items.slice(6, 12).map(i => i.name);
-    h.itemTiers = Object.fromEntries(items.slice(0, 12).map(i => [i.name, i.tier]));
+    h.itemTiers = Object.fromEntries(items.map(i => [i.name, i.tier]));
     const augs = b.augs.map(a => ({ ...a, rarity: rar.get(nk(a.name)) || a.rarity || '未知' }));
     // 同一评级里按全服选取率排（Blitz 同级之间没有先后）
     augs.sort((x, y) => x.tier - y.tier || (pickOf.get(nk(y.name)) ?? -1) - (pickOf.get(nk(x.name)) ?? -1));
     h.augments = augs.slice(0, 8).map(a => ({ name: a.name, rarity: a.rarity, tier: a.tier, score: 6 - a.tier, wr: null }));
     // 选海克斯速查用：该英雄 T1~T3 的全部海克斯
-    h.augTiers = augs.filter(a => a.tier <= 3).map(a => [a.name, a.tier]);
+    // 该英雄全部海克斯的 Blitz 评级（选海克斯速查里每一行都标 T 级）
+    h.augTiers = augs.map(a => [a.name, a.tier]);
     h.blitz = true;
     hit++;
   }

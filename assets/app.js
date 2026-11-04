@@ -370,25 +370,25 @@
 
       <div class="grid2">
         <div class="card full">
-          <h3>选海克斯速查 <em>点本轮稀有度，刷出的三个里谁排得最靠前就选谁。“本命”是 ${h.hexdata ? 'Hexdata 给这位英雄的推荐（显示搭配胜率）' : '该英雄的推荐'}${h.augTiers ? '，T1~T3 是 Blitz 评级' : ''}，其余按全服胜率</em></h3>
+          <h3>选海克斯速查 <em>点本轮稀有度，刷出的三个里谁排得最靠前就选谁。T 级是 Blitz 对这位英雄的评级（T1 最强）；<b class="hi">金色胜率</b>是这位英雄带它的搭配胜率（Hexdata），灰色是全服平均胜率</em></h3>
           <div class="rtabs" role="tablist">
             ${RARITIES.map(r => `<button role="tab" data-quick="${r}" aria-selected="${state.quick === r}"><span class="rar ${r}"></span>${r}</button>`).join('')}
           </div>
-          <ol class="quick">${quickList(h, state.quick).map((x, i) => `<li class="${x.tag ? 'own' : ''}" title="${esc(x.effect || '')}">
-            <span class="qn num">${i + 1}</span>${augIc(x.name, state.quick)}<span class="qt">${esc(x.name)}</span>${x.tag ? `<span class="qtag">${x.tag}</span>` : ''}<span class="qw num">${x.tier ? tb(x.tier) : `<span class="${x.k === 2 && x.wr >= 55 ? 'hi' : ''}">${pct(x.wr)}</span>`}</span></li>`).join('')}</ol>
+          <ol class="quick">${quickList(h, state.quick).map((x, i) => `<li class="${x.mine ? 'own' : ''}" title="${esc(x.effect || '')}">
+            <span class="qn num">${i + 1}</span>${augIc(x.name, state.quick)}<span class="qt">${esc(x.name)}</span>${x.tier ? tb(x.tier) : ''}<span class="qw num"><span class="${x.mine ? 'hi' : 'dim'}" title="${x.mine ? '这位英雄的搭配胜率' : '全服平均胜率'}">${pct(x.wr)}</span></span></li>`).join('')}</ol>
         </div>
 
         <div class="card">
-          <h3>海克斯优先级 <em>${h.hexdata ? '按 Hexdata 综合分排 · 搭配胜率 · 场次' : h.blitz ? 'Blitz 评级' : '搭配胜率'}</em></h3>
+          <h3>海克斯优先级 <em>${h.hexdata ? '按 Hexdata 综合分排 · Blitz 评级 · 搭配胜率 · 场次' : h.blitz ? 'Blitz 评级' : '搭配胜率'}</em></h3>
           ${h.augments.map(a => `<div class="aug">${augIc(a.name, a.rarity)}
             <span class="nm" title="${esc((AUG_DB.get(a.name) || {}).effect || a.name)}">${esc(a.name)}</span>
             <span class="bar"><b style="width:${(a.score / augMax * 100).toFixed(0)}%"></b></span>
-            <span class="p">${a.tier ? tb(a.tier) : `<span class="${a.wr >= 55 ? 'hi' : ''}">${pct(a.wr)}</span>${games(a.games)}`}</span></div>`).join('')}
+            <span class="p">${a.wr != null ? `${h.augTiers && new Map(h.augTiers).get(a.name) ? tb(new Map(h.augTiers).get(a.name)) + ' ' : ''}<span class="${a.wr >= 55 ? 'hi' : ''}">${pct(a.wr)}</span>${games(a.games)}` : a.tier ? tb(a.tier) : ''}</span></div>`).join('')}
         </div>
 
         <div class="card">
-          <h3>推荐出装 <em>${h.hexdata ? '按 Hexdata 综合分排，不是合成顺序 · 胜率 · 场次' : h.blitz ? 'Blitz 评级排序，不是合成顺序' : '编辑推荐'}</em></h3>
-          <ol class="build">${h.coreItems.map(i => `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${h.itemStats && h.itemStats[i] ? `<span class="iw"><span class="${h.itemStats[i].wr >= 55 ? 'hi' : ''}">${pct(h.itemStats[i].wr)}</span>${games(h.itemStats[i].games)}</span>` : h.itemTiers && h.itemTiers[i] ? tb(h.itemTiers[i]) : ''}</span></li>`).join('')}</ol>
+          <h3>推荐出装 <em>${h.hexdata ? '按 Hexdata 综合分排，不是合成顺序 · Blitz 评级 · 胜率 · 场次' : h.blitz ? 'Blitz 评级排序，不是合成顺序' : '编辑推荐'}</em></h3>
+          <ol class="build">${h.coreItems.map(i => `<li>${itemIc(i)}<span class="bn"><span>${esc(i)}</span>${h.itemStats && h.itemStats[i] ? `<span class="iw">${h.itemTiers && h.itemTiers[i] ? tb(h.itemTiers[i]) : ''}<span class="${h.itemStats[i].wr >= 55 ? 'hi' : ''}">${pct(h.itemStats[i].wr)}</span>${games(h.itemStats[i].games)}</span>` : h.itemTiers && h.itemTiers[i] ? tb(h.itemTiers[i]) : ''}</span></li>`).join('')}</ol>
           ${h.altItems.length ? `<div class="alt">${h.hexdata ? '其他常见' : '备选'} ${h.altItems.map(i => `<span class="i">${itemIc(i)}${esc(i)}</span>`).join('')}</div>` : ''}
           <dl class="kv" style="margin-top:14px">${h.hexdata ? `<dt>加点</dt><dd>${esc(h.skill)}</dd>` : ''}<dt>锻体</dt><dd>${esc(h.anvil)}</dd></dl>
         </div>
@@ -413,21 +413,20 @@
   const RARITIES = ['棱彩', '黄金', '白银'].concat(D.augments.some(a => a.rarity === '未知') ? ['未知'] : []);
   function quickList(h, rar) {
     const rarOf = n => (AUG_DB.get(n) || {}).rarity || '未知';
-    const seen = new Set();
-    // 1. 该英雄的推荐（Hexdata 带搭配胜率；没有时用 Blitz 评级或表格）
-    const own = h.hexdata
-      ? h.augments.filter(a => rarOf(a.name) === rar).map(a => ({ name: a.name, wr: a.wr, tag: '本命', k: 3, s: a.score ?? a.wr, effect: (AUG_DB.get(a.name) || {}).effect }))
-      : !h.augTiers ? h.augments.filter(a => a.rarity === rar).map(a => ({ name: a.name, wr: a.wr, tag: '本命', k: 3, s: a.wr, effect: (AUG_DB.get(a.name) || {}).effect })) : [];
-    own.forEach(a => seen.add(a.name));
-    // 2. Blitz 评级 T1~T3
-    const bl = (h.augTiers || []).filter(([n]) => !seen.has(n) && rarOf(n) === rar)
-      .map(([n, t]) => ({ name: n, tier: t, tag: !h.hexdata && t === 1 ? '本命' : '', k: 2, s: -t, effect: (AUG_DB.get(n) || {}).effect }));
-    bl.forEach(a => seen.add(a.name));
-    // 3. 其余按全服胜率
-    const rest = D.augments.filter(a => a.rarity === rar && !seen.has(a.name))
-      .map(a => ({ name: a.name, wr: a.wr, tag: !h.augTiers && !h.hexdata && a.heroes.includes(h.name) ? '适配' : '', k: 0, s: a.wr ?? -1, effect: a.effect }));
-    return [...own, ...bl, ...rest].sort((x, y) => y.k - x.k || y.s - x.s);
+    const tierOf = new Map(h.augTiers || []);
+    const own = new Map(h.augments.map(a => [a.name, a]));
+    // 每一行都给出：这位英雄的 Blitz 评级（有的话）+ 胜率（这位英雄的搭配胜率优先，没有就用全服胜率）
+    // 排序：1. Hexdata 给这位英雄列出的高胜率搭配（按综合分）2. Blitz 评级 T1~T3 3. 其余按全服胜率
+    const names = new Set([...D.augments.filter(a => a.rarity === rar).map(a => a.name), ...h.augments.map(a => a.name), ...tierOf.keys()]);
+    return [...names].filter(n => rarOf(n) === rar).map(n => {
+      const o = h.hexdata ? own.get(n) : null, t = tierOf.get(n), g = AUG_DB.get(n) || {};
+      return {
+        name: n, tier: t, wr: o ? o.wr : g.wr, mine: !!o, effect: g.effect,
+        k: o ? 3 : t && t <= 3 ? 2 : 0, s: o ? (o.score ?? o.wr) : t && t <= 3 ? -t * 100 + (g.wr ?? 0) : (g.wr ?? -1),
+      };
+    }).sort((x, y) => y.k - x.k || y.s - x.s);
   }
+
 
 
   /* ---------- 交互 ---------- */

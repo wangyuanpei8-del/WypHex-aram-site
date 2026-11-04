@@ -71,7 +71,7 @@ const heroes = rows(hh, /\/hero\/(\d+-[\w-]+)/).map(r => {
 
 // 海克斯：链接路径未知，接受 /augment/xxx 或 /augments/xxx（不含排行页本身）
 const augments = rows(ah, /\/augments?\/([^"'?#/]+)/).map(r => ({
-  name: r.name, score: val(r.body, '综合评分') ?? val(r.body, 'HexScore'), wr: pct(r.body, '胜率'), pick: pct(r.body, '选取率'), games: val(r.body, '样本'),
+  name: r.name, slug: r.id, score: val(r.body, '综合评分') ?? val(r.body, 'HexScore'), wr: pct(r.body, '胜率'), pick: pct(r.body, '选取率'), games: val(r.body, '样本'),
 })).filter(a => a.name && a.wr != null);
 
 // 装备：链接形如 /item/994403
@@ -124,8 +124,27 @@ const listDate = pageInfo(hh).date || '';
 for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { tier: p.tier, augs: p.augs, items: p.items, date: p.date || prevFile.heroes.date }); }
 // Hexdata 有访问频率限制（约 40 次就会返回 429），所以每次最多读 MAX 个英雄页，
 // 优先读还没有数据或数据日期比排行页旧的英雄；被限流就立刻停下，下次再接着读。
-const MAX = +(process.env.HEXDATA_MAX || 30);
-const todo = heroes.filter(h => !h.augs || h.date !== listDate).slice(0, MAX);
+let MAX = +(process.env.HEXDATA_MAX || 30);
+let blocked = false;
+
+/* 稀有度：arammayhem 里查不到稀有度的海克斯，读它在 Hexdata 的详情页（“xx是棱彩海克斯”）。稀有度不会变，读到一次就一直沿用 */
+const nkey = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
+const knownRar = new Map();
+try { JSON.parse(await readFile(join(ROOT, 'data', 'open', 'arammayhem.json'), 'utf8')).augments.forEach(a => { if (a.rarity !== '未知') knownRar.set(nkey(a.name), a.rarity); }); } catch {}
+const prevRar = new Map((prevFile?.augments?.rows || []).filter(a => a.rarity).map(a => [a.name, a.rarity]));
+for (const a of augments) if (prevRar.has(a.name)) a.rarity = prevRar.get(a.name);
+const needRar = augments.filter(a => !a.rarity && !knownRar.has(nkey(a.name)) && a.slug).slice(0, MAX);
+for (const a of needRar) {
+  try {
+    const m = /(棱彩|黄金|白银)海克斯/.exec(text(await page(`/augment/${a.slug}`)));
+    if (m) a.rarity = m[1];
+    MAX--;
+  } catch (e) { console.log(`海克斯页 ${a.name} 读取失败：${e.message}，本次停止，下次继续`); blocked = true; break; }
+  await sleep(2000);
+}
+if (needRar.length) console.log(`海克斯稀有度：读取 ${needRar.filter(a => a.rarity).length}/${needRar.length}：${needRar.map(a => `${a.name}=${a.rarity || '?'}`).join('、')}`);
+
+const todo = blocked ? [] : heroes.filter(h => !h.augs || h.date !== listDate).slice(0, Math.max(0, MAX));
 let ok = 0, sample = null;
 for (const h of todo) {
   let html;

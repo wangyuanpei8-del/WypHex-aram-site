@@ -354,3 +354,9 @@ a.btn { text-decoration: none; display: inline-flex; align-items: center; }
 .build li .iw { display: flex; gap: 6px; align-items: baseline; font-family: var(--num); font-size: 12px; font-weight: 600; color: var(--text-2); }
 .build li .iw .gm { display: inline; }
 .link .lw { font-family: var(--num); font-weight: 600; margin-left: 2px; }
+.aug { grid-template-columns: 24px 1fr 48px 112px; }
+.aug .p .tier { margin-right: 4px; vertical-align: 1px; }
+.quick li .tier { flex: none; }
+.quick .qw { min-width: 46px; text-align: right; }
+.build li .iw { flex-wrap: wrap; row-gap: 2px; }
+.build li .iw > *, .build li .iw .tier { white-space: nowrap; overflow-wrap: normal; overflow: visible; }
