@@ -164,6 +164,7 @@ async function sample(state, stat) {
   }
   const seen = new Set(state.seen);
   let added = 0;
+  let scanned = 0;
   try {
     while (state.seeds.length) {
       // 轮转种子：取队首，处理后放到队尾
@@ -176,7 +177,7 @@ async function sample(state, stat) {
         const m = await riot(`${R}/lol/match/v5/matches/${id}`);
         if (m && m.info && m.info.queueId === QUEUE_ID && addMatch(state, m)) added++;
       }
-      if (added && added % 50 === 0) console.log(`  已新增 ${added} 局，请求 ${requests}/${MAX_REQUESTS}`);
+      if (++scanned % 20 === 0) console.log(`  已查 ${scanned} 名玩家，新增 ${added} 局，请求 ${requests}/${MAX_REQUESTS}`);
     }
   } catch (e) {
     if (e.message !== 'BUDGET') throw e;
