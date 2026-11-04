@@ -1,90 +1,84 @@
-# 海斗助手 · 海克斯大乱斗胜率与出装
+# 海斗助手 · 海克斯大乱斗出装与海克斯速查
 
-一屏看榜单、搜英雄、查出装和海克斯。没有后端，也不依赖任何外部 CSS/字体 CDN，国内网络和离线都能正常显示。
+## 👉 打开网站：https://wangyuanpei8-del.github.io/WypHex-aram-site/
 
-## 目录
+一屏看榜单、搜英雄、查出装和海克斯，手机电脑都能用。把上面的链接发给朋友就能直接打开。
 
-```
-index.html                 页面骨架
-assets/app.css             样式（系统中文字体，无 Tailwind）
-assets/app.js              交互逻辑
-data/sheets/*.csv          数据源（改这里，见下文）
-data/data.json             由表格生成
-data/data.js               网页实际加载的数据（由脚本生成）
-data/raw/state.json        采样进度与累计统计（脚本自动维护）
-scripts/update-data.mjs    从 Riot API 采样对局并重算数据
-scripts/build-standalone.mjs  打包成单文件 dist/hexaram.html
-.github/workflows/import-sheet.yml  改表格后自动更新网页
-netlify.toml / vercel.json / _headers  各平台缓存规则
-```
+---
 
-## 本地预览
+## 数据从哪来，多久更新
 
-直接双击 `index.html` 即可。英雄头像从 Data Dragon 加载，连不上时显示文字头像。
+| 内容 | 来源 | 更新方式 |
+|---|---|---|
+| 英雄出场率（及较上版本变化） | [arammayhem.com 开放数据](https://arammayhem.com/data/)（CC BY 4.0） | **每天自动** |
+| 海克斯选取率、稀有度、本版本新增 | 同上 | **每天自动** |
+| 精选组合（英雄 + 海克斯） | 同上 | **每天自动** |
+| 胜率、梯队、推荐出装、海克斯优先级、玩法要点 | 原站整理数据（26.21 版本） | 不自动更新；版本过时后页面会提示“仅供参考” |
+| 英雄头像、装备和海克斯图标 | Data Dragon、CommunityDragon | 每天自动补齐 |
 
-## 部署（推荐 Cloudflare Pages，国内访问较稳）
+**为什么胜率不能自动更新？** 拳头不在官方 API 里公开海克斯大乱斗的对局，有意不让外部网站统计这个模式的胜率（见 [#1109](https://github.com/RiotGames/developer-relations/issues/1109)、[#1204](https://github.com/RiotGames/developer-relations/issues/1204)）。arammayhem.com 的开放数据也只有出场率和选取率，没有胜率。
 
-1. 把整个目录推到一个 GitHub 仓库。
-2. Cloudflare Pages → 连接这个仓库，构建命令留空，输出目录填 `/`。
-3. 之后每次数据提交都会自动重新部署。
+## 自动任务（GitHub → Actions）
 
-想发到微信/QQ 群：运行 `node scripts/build-standalone.mjs`，把生成的 `dist/hexaram.html` 发出去即可，约 310 KB。
+| 任务 | 什么时候运行 | 做什么 |
+|---|---|---|
+| 每日自动更新 | 每天北京时间 03:00，也可以手动点 Run workflow | 拉取开放数据 → 合并 → 补图标 → 更新网页 |
+| 导入表格 | 修改 `data/sheets/` 里的表格后自动运行 | 检查表格格式 → 更新网页 |
+| 下载图标 | 只能手动运行 | 重新下载全部图标 |
+| 更新海斗数据（Riot API） | 只能手动运行，目前用不上 | 见文末 |
 
-## 每日自动更新
+网站托管在 GitHub Pages 上，每次有提交，大约 1 分钟后网站会自动更新。
 
-“每日自动更新”任务（`.github/workflows/open-data.yml`）每天北京时间 03:00 运行，从 [arammayhem.com 开放数据](https://arammayhem.com/data/)（CC BY 4.0，页面已注明出处）拉取以下内容，合并后更新网页：
+## 发到微信 / QQ 群
 
-- 英雄出场率，以及和上个版本相比的变化
-- 海克斯选取率、稀有度和本版本新增
-- 精选组合
+`dist/hexaram.html` 是单文件版，图标和数据都已打包在里面（约 6 MB），下载后直接发文件就行，不联网也能打开。每天的自动更新会一起刷新这个文件。
 
-这份开放数据**不含胜率和出装**，所以这两项沿用 `data/sheets` 里整理好的那个版本的数据。版本更新后，页面会提示这部分数据“仅供参考”。
+## 手工修改数据（可选）
 
-## 手工修改（可选）
-
-拳头**不在 Riot API 里公开海克斯大乱斗的对局**：按玩家查对局列表时，海斗对局不会出现；直接按编号查会返回 403。官方答复是有意为之，见 [developer-relations #1109](https://github.com/RiotGames/developer-relations/issues/1109) 和 [#1204](https://github.com/RiotGames/developer-relations/issues/1204)。所以网站数据靠手工整理，存放在 `data/sheets/` 的 5 张表里：
+整理数据存放在 `data/sheets/` 的 5 张表里：
 
 | 文件 | 内容 |
 |---|---|
 | `0-版本信息.csv` | 版本号、更新日期、数据来源 |
 | `1-英雄.csv` | 每行一个英雄：梯队、胜率、出装、海克斯、要点…… |
-| `2-海克斯.csv` | 海克斯榜 |
+| `2-海克斯.csv` | 海克斯榜（胜率、效果说明） |
 | `3-装备.csv` | 装备榜 |
 | `4-王牌组合.csv` | 王牌组合 |
 
-怎么改：
-
-1. **在 GitHub 网页上改**：打开表格文件，点右上角铅笔图标，改完点 Commit changes。
-2. **用 Excel 改**：下载表格，改完另存为 “CSV UTF-8”，再到 GitHub 上传覆盖（Add file → Upload files）。
-
-提交后，“导入表格”任务会自动检查格式并更新网页，大约 1 分钟。格式有错时这次不会更新网页，Actions 日志会写明是第几行、哪一列出了问题。
+修改方法：在 GitHub 上打开表格，点右上角的铅笔图标，改完点 Commit changes；也可以下载后用 Excel 改，另存为 “CSV UTF-8”，再上传覆盖。提交后，“导入表格”任务会自动检查格式。如果有错，这次不会更新网页，日志里会写明是第几行哪一列出错。
 
 填写规则：
 
-- 多件装备用顿号分隔：`毁坏仪式、金铲铲、死亡之舞`
-- 英雄的海克斯格式为“名称 稀有度 胜率”，多个之间用分号分隔：`鼓声暴起低音轰鸣 黄金 68.3；秘术冲拳 棱彩 65.8`
-- 梯队填 T1 到 T5，胜率填数字，不要带 %
-- 英雄的排名按胜率自动计算，不用填
-- 内容还是同定位通用推荐的英雄，“通用模板”一列填“是”，页面上会显示提示
+- 多件装备之间用顿号分隔：`毁坏仪式、金铲铲、死亡之舞`
+- 英雄的海克斯按“名称 稀有度 胜率”填写，多个之间用分号分隔：`鼓声暴起低音轰鸣 黄金 68.3；秘术冲拳 棱彩 65.8`
+- 梯队填 T1~T5；胜率填数字，不带 %
+- 英雄的排名按胜率自动算出，不需要填
+- 如果某个英雄的内容仍是同定位通用推荐（目前有 134 位），“通用模板”一列填“是”，页面上会显示提示
 
-本地运行：`node scripts/import-sheet.mjs` 导入表格；`node scripts/export-sheet.mjs` 把 data.json 导出回表格。
+## 目录
 
-## Riot API 采样（已停用定时）
+```
+index.html                    网页入口
+assets/app.css, app.js        样式与交互
+assets/icons/                 头像、装备、海克斯图标
+data/sheets/*.csv             整理数据（可手工改）
+data/open/arammayhem.json     每日下载的开放数据
+data/data.json, data.js       网页实际使用的数据（自动生成，不要手改）
+dist/hexaram.html             单文件版（自动生成）
+scripts/fetch-open-data.mjs   下载开放数据
+scripts/import-sheet.mjs      表格 + 开放数据 → data.js
+scripts/export-sheet.mjs      data.json → 表格
+scripts/fetch-icons.mjs       下载图标
+scripts/build-standalone.mjs  打包单文件版
+scripts/update-data.mjs       Riot API 采样（目前用不上）
+```
 
+本地预览：直接双击 `index.html` 即可。
 
-1. 在 https://developer.riotgames.com 申请 **Personal API Key**（开发 key 24 小时过期，不适合定时任务）。
-2. GitHub 仓库 → Settings → Secrets and variables → Actions：
-   - Secret `RIOT_API_KEY` = 你的 key
-   - （可选）Variable `RIOT_PLATFORMS` = 采样服务器，逗号分隔，默认 `kr,na1,euw1,sg2`。限速按地区分别计算（韩服、日服共用亚洲额度），同时采样
-   - Variable `QUEUE_ID` = 海克斯大乱斗的 queueId（默认 2400，请对照 [queues.json](https://static.developer.riotgames.com/docs/lol/queues.json) 确认）
-3. Actions → “更新海斗数据” → Run workflow 先手动跑一次。之后每天北京时间 03:00 自动运行。
+## Riot API 采样（备用）
 
-如果以后拳头开放了这个模式的数据，可以手动运行这个任务（每天定时已停用）。每次运行约 3 小时，每个服务器最多 9,000 次请求，四个服务器同时采样。可在 Run workflow 时勾选“只重算”，几分钟内用已累计的数据重新计算。版本号变化时自动清空旧版本统计重新累计。脚本按英雄聚合胜率，用 Wilson 下界给装备和海克斯排序，避免小样本冲榜。
+`scripts/update-data.mjs` 可以从 Riot API 采样对局并统计胜率和出装，需要在仓库 Secret 里设置 `RIOT_API_KEY`。但这个模式的对局被拉取屏蔽了，所以每日定时已经关掉。哪天拳头开放了数据，可以到 Actions 里手动运行“更新海斗数据”：先勾选“只识别”确认能找到对局，再正式运行。
 
-不联网测试整条流程：`node scripts/update-data.mjs --mock --out /tmp/test`
+---
 
-### 限制
-
-- Riot API 不包含国服（腾讯运营），数据来自所选外服。
-- 称号、外号、流派、上手要点、组合说明是手写文字，脚本只会保留，不会生成。
-- 目前 134 位英雄的出装和海克斯是按定位套的通用推荐，页面上有提示。在 1-英雄.csv 里补好内容后，把“通用模板”改成“否”即可。
+非官方工具，与 Riot Games 无关联。出场率、选取率与精选组合数据来自 arammayhem.com，按 CC BY 4.0 协议使用。
