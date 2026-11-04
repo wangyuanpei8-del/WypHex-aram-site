@@ -27,6 +27,7 @@ jobs:
         run: node scripts/fetch-open-data.mjs
       - name: 下载 Hexdata 胜率
         continue-on-error: true
+        timeout-minutes: 15
         run: node scripts/fetch-hexdata.mjs
       - name: 下载 Blitz 评级
         continue-on-error: true
