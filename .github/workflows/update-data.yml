@@ -9,6 +9,10 @@ on:
         description: '只重算（不采样，几分钟跑完）'
         type: boolean
         default: false
+      detect:
+        description: '只识别大乱斗队列编号（几分钟，不保存）'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -32,12 +36,15 @@ jobs:
           RIOT_PLATFORMS: ${{ vars.RIOT_PLATFORMS || 'kr,na1,euw1,sg2' }}
           QUEUE_ID: ${{ vars.QUEUE_ID }}
           MAX_REQUESTS: ${{ vars.MAX_REQUESTS || '9000' }}
-        run: node scripts/update-data.mjs ${{ inputs.rebuild && '--rebuild' || '' }}
+        run: node scripts/update-data.mjs ${{ inputs.rebuild && '--rebuild' || '' }} ${{ inputs.detect && '--detect' || '' }}
       - name: 下载英雄头像、装备和海克斯图标
+        if: ${{ !inputs.detect }}
         run: node scripts/fetch-icons.mjs
       - name: 生成单文件版
+        if: ${{ !inputs.detect }}
         run: node scripts/build-standalone.mjs
       - name: 提交数据
+        if: ${{ !inputs.detect }}
         run: |
           git config user.name "hexaram-bot"
           git config user.email "hexaram-bot@users.noreply.github.com"
