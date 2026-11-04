@@ -1,0 +1,54 @@
+name: 自动更新
+
+# 每小时从 Hexdata 读一批页面（被限流就停，下次接着读），有新数据才提交并重新打包单文件版。
+on:
+  schedule:
+    - cron: '25 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 读取 Hexdata
+        run: node scripts/fetch-hexdata.mjs
+      - name: 生成网页数据
+        run: node scripts/build-data.mjs
+      - name: 有变化时补齐图标并提交
+        id: commit
+        run: |
+          git diff --quiet data && echo "无变化" && exit 0
+          node scripts/fetch-icons.mjs
+          git config user.name "hexaram-bot"
+          git config user.email "hexaram-bot@users.noreply.github.com"
+          git add data assets/icons
+          git commit -m "数据更新 $(date -u +%Y-%m-%d)"
+          echo "changed=1" >> "$GITHUB_OUTPUT"
+          # GitHub 偶尔返回 500，失败就等一会重试
+          for i in 1 2 3 4; do
+            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            sleep $((i * 15))
+          done
+          exit 1
+      - name: 打包单文件版
+        if: steps.commit.outputs.changed == '1'
+        run: node scripts/build-standalone.mjs
+      - name: 上传单文件版（在本次运行页面底部的 Artifacts 里下载，保留 90 天）
+        if: steps.commit.outputs.changed == '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: hexaram-单文件版
+          path: dist/hexaram.html
+          retention-days: 90

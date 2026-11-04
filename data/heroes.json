@@ -1,0 +1,1040 @@
+[
+ {
+  "name": "亚索",
+  "title": "疾风剑豪",
+  "key": "Yasuo",
+  "aliases": "快乐风男 托儿索 yasuo"
+ },
+ {
+  "name": "菲奥娜",
+  "title": "无双剑姬",
+  "key": "Fiora",
+  "aliases": "剑姬 JJ fiora"
+ },
+ {
+  "name": "崔斯特",
+  "title": "卡牌大师",
+  "key": "TwistedFate",
+  "aliases": "卡牌 TF twistedfate"
+ },
+ {
+  "name": "格温",
+  "title": "灵罗娃娃",
+  "key": "Gwen",
+  "aliases": "剪刀妹 gwen"
+ },
+ {
+  "name": "赵信",
+  "title": "德邦总管",
+  "key": "XinZhao",
+  "aliases": "信爷 菊花信 xinzhao"
+ },
+ {
+  "name": "艾克",
+  "title": "时间刺客",
+  "key": "Ekko",
+  "aliases": "时间刺客 ekko"
+ },
+ {
+  "name": "永恩",
+  "title": "封魔剑魂",
+  "key": "Yone",
+  "aliases": "亚索他哥 yone"
+ },
+ {
+  "name": "亚恒",
+  "title": "不落魔锋",
+  "key": "Zaahen",
+  "aliases": "扎亨 新英雄 zaahen"
+ },
+ {
+  "name": "凯尔",
+  "title": "正义天使",
+  "key": "Kayle",
+  "aliases": "天使 审判天使 kayle"
+ },
+ {
+  "name": "易",
+  "title": "无极剑圣",
+  "key": "MasterYi",
+  "aliases": "剑圣 JS masteryi"
+ },
+ {
+  "name": "卑尔维斯",
+  "title": "虚空女皇",
+  "key": "Belveth",
+  "aliases": "大卑 女皇 belveth"
+ },
+ {
+  "name": "提莫",
+  "title": "迅捷斥候",
+  "key": "Teemo",
+  "aliases": "提百万 蘑菇 teemo"
+ },
+ {
+  "name": "莉莉娅",
+  "title": "含羞蓓蕾",
+  "key": "Lillia",
+  "aliases": "小鹿 lillia"
+ },
+ {
+  "name": "塔姆",
+  "title": "河流之王",
+  "key": "TahmKench",
+  "aliases": "蛤蟆 鲶鱼 tahmkench"
+ },
+ {
+  "name": "希瓦娜",
+  "title": "龙血武姬",
+  "key": "Shyvana",
+  "aliases": "龙女 shyvana"
+ },
+ {
+  "name": "莫甘娜",
+  "title": "堕落天使",
+  "key": "Morgana",
+  "aliases": "堕落天使 morgana"
+ },
+ {
+  "name": "贾克斯",
+  "title": "武器大师",
+  "key": "Jax",
+  "aliases": "武器 武器大师 jax"
+ },
+ {
+  "name": "芮尔",
+  "title": "镕铁少女",
+  "key": "Rell",
+  "aliases": "镕铁少女 铁骑 rell"
+ },
+ {
+  "name": "安蓓萨",
+  "title": "铁血狼母",
+  "key": "Ambessa",
+  "aliases": "狼母 铁血狼母 ambessa"
+ },
+ {
+  "name": "瑞兹",
+  "title": "符文法师",
+  "key": "Ryze",
+  "aliases": "流浪 瑞天帝 光头 ryze"
+ },
+ {
+  "name": "彗",
+  "title": "异画师",
+  "key": "Hwei",
+  "aliases": "异画师 画家 hwei"
+ },
+ {
+  "name": "佛耶戈",
+  "title": "破败之王",
+  "key": "Viego",
+  "aliases": "破败王 痛贯天灵 viego"
+ },
+ {
+  "name": "凯隐",
+  "title": "影流之镰",
+  "key": "Kayn",
+  "aliases": "影流之镰 红凯 蓝凯 kayn"
+ },
+ {
+  "name": "赫卡里姆",
+  "title": "战争之影",
+  "key": "Hecarim",
+  "aliases": "人马 旋转木马 hecarim"
+ },
+ {
+  "name": "阿狸",
+  "title": "九尾妖狐",
+  "key": "Ahri",
+  "aliases": "狐狸 九尾 ahri"
+ },
+ {
+  "name": "维克托",
+  "title": "奥术先驱",
+  "key": "Viktor",
+  "aliases": "三只手 机械先驱 viktor"
+ },
+ {
+  "name": "基兰",
+  "title": "时光守护者",
+  "key": "Zilean",
+  "aliases": "时光 老头 zilean"
+ },
+ {
+  "name": "孙悟空",
+  "title": "齐天大圣",
+  "key": "MonkeyKing",
+  "aliases": "猴子 猴哥 wukong monkeyking"
+ },
+ {
+  "name": "特朗德尔",
+  "title": "巨魔之王",
+  "key": "Trundle",
+  "aliases": "巨魔 柱子 trundle"
+ },
+ {
+  "name": "娑娜",
+  "title": "琴瑟仙女",
+  "key": "Sona",
+  "aliases": "琴女 36E sona"
+ },
+ {
+  "name": "塔里克",
+  "title": "瓦洛兰之盾",
+  "key": "Taric",
+  "aliases": "宝石 瓦洛兰之盾 taric"
+ },
+ {
+  "name": "萨勒芬妮",
+  "title": "星籁歌姬",
+  "key": "Seraphine",
+  "aliases": "歌姬 星籁歌姬 seraphine"
+ },
+ {
+  "name": "迦娜",
+  "title": "风暴之怒",
+  "key": "Janna",
+  "aliases": "风女 janna"
+ },
+ {
+  "name": "沃利贝尔",
+  "title": "不灭狂雷",
+  "key": "Volibear",
+  "aliases": "狗熊 雷霆咆哮 volibear"
+ },
+ {
+  "name": "波比",
+  "title": "圣锤之毅",
+  "key": "Poppy",
+  "aliases": "圣锤之毅 锤石克星 poppy"
+ },
+ {
+  "name": "尼菈",
+  "title": "不羁之悦",
+  "key": "Nilah",
+  "aliases": "水弥拉 鞭子 nilah"
+ },
+ {
+  "name": "艾瑞莉娅",
+  "title": "刀锋舞者",
+  "key": "Irelia",
+  "aliases": "刀妹 女刀 irelia"
+ },
+ {
+  "name": "玛尔扎哈",
+  "title": "虚空先知",
+  "key": "Malzahar",
+  "aliases": "蚂蚱 虚空先知 malzahar"
+ },
+ {
+  "name": "阿利斯塔",
+  "title": "牛头酋长",
+  "key": "Alistar",
+  "aliases": "牛头 老牛 alistar"
+ },
+ {
+  "name": "泰达米尔",
+  "title": "蛮族之王",
+  "key": "Tryndamere",
+  "aliases": "蛮王 五秒真男人 tryndamere"
+ },
+ {
+  "name": "悠米",
+  "title": "魔法猫咪",
+  "key": "Yuumi",
+  "aliases": "猫咪 猫 yuumi"
+ },
+ {
+  "name": "瑟提",
+  "title": "腕豪",
+  "key": "Sett",
+  "aliases": "腕豪 劲夫 sett"
+ },
+ {
+  "name": "卡萨丁",
+  "title": "虚空行者",
+  "key": "Kassadin",
+  "aliases": "虚空行者 电灯泡 kassadin"
+ },
+ {
+  "name": "卢锡安",
+  "title": "圣枪游侠",
+  "key": "Lucian",
+  "aliases": "奥巴马 圣枪游侠 lucian"
+ },
+ {
+  "name": "辛德拉",
+  "title": "暗黑元首",
+  "key": "Syndra",
+  "aliases": "球女 暗黑元首 syndra"
+ },
+ {
+  "name": "慎",
+  "title": "暮光之眼",
+  "key": "Shen",
+  "aliases": "腰子 暮光之眼 shen"
+ },
+ {
+  "name": "格雷福斯",
+  "title": "法外狂徒",
+  "key": "Graves",
+  "aliases": "男枪 法外狂徒 graves"
+ },
+ {
+  "name": "库奇",
+  "title": "英勇投弹手",
+  "key": "Corki",
+  "aliases": "飞机 英勇投弹手 corki"
+ },
+ {
+  "name": "维克兹",
+  "title": "虚空之眼",
+  "key": "Velkoz",
+  "aliases": "大眼 虚空之眼 velkoz"
+ },
+ {
+  "name": "锤石",
+  "title": "魂锁典狱长",
+  "key": "Thresh",
+  "aliases": "典狱长 灯笼 thresh"
+ },
+ {
+  "name": "蒙多医生",
+  "title": "祖安狂人",
+  "key": "DrMundo",
+  "aliases": "蒙多 祖安狂人 drmundo"
+ },
+ {
+  "name": "奥瑞利安·索尔",
+  "title": "铸星龙王",
+  "key": "AurelionSol",
+  "aliases": "龙王 铸星龙王 aurelionsol"
+ },
+ {
+  "name": "雷克塞",
+  "title": "虚空遁地兽",
+  "key": "RekSai",
+  "aliases": "挖掘机 女皇 reksai"
+ },
+ {
+  "name": "蕾欧娜",
+  "title": "曙光女神",
+  "key": "Leona",
+  "aliases": "日女 曙光 leona"
+ },
+ {
+  "name": "潘森",
+  "title": "不屈之枪",
+  "key": "Pantheon",
+  "aliases": "斯巴达 不屈之枪 pantheon"
+ },
+ {
+  "name": "厄运小姐",
+  "title": "赏金猎人",
+  "key": "MissFortune",
+  "aliases": "女枪 好运姐 MF missfortune"
+ },
+ {
+  "name": "菲兹",
+  "title": "潮汐海灵",
+  "key": "Fizz",
+  "aliases": "小鱼人 潮汐海灵 fizz"
+ },
+ {
+  "name": "阿萝拉",
+  "title": "双界灵兔",
+  "key": "Aurora",
+  "aliases": "兔子 双界灵兔 aurora"
+ },
+ {
+  "name": "黑默丁格",
+  "title": "大发明家",
+  "key": "Heimerdinger",
+  "aliases": "大头 大发明家 heimerdinger"
+ },
+ {
+  "name": "赛恩",
+  "title": "亡灵战神",
+  "key": "Sion",
+  "aliases": "老司机 亡灵战神 sion"
+ },
+ {
+  "name": "加里奥",
+  "title": "正义巨像",
+  "key": "Galio",
+  "aliases": "石像 城墙 正义巨像 galio"
+ },
+ {
+  "name": "内瑟斯",
+  "title": "沙漠死神",
+  "key": "Nasus",
+  "aliases": "狗头 沙漠死神 nasus"
+ },
+ {
+  "name": "艾翁",
+  "title": "翠神",
+  "key": "Ivern",
+  "aliases": "小菊 翠神 ivern"
+ },
+ {
+  "name": "克烈",
+  "title": "暴怒骑士",
+  "key": "Kled",
+  "aliases": "暴怒骑士 蜥蜴 kled"
+ },
+ {
+  "name": "薇古丝",
+  "title": "愁云使者",
+  "key": "Vex",
+  "aliases": "熬夜波比 愁云使者 vex"
+ },
+ {
+  "name": "烈娜塔·戈拉斯克",
+  "title": "炼金男爵",
+  "key": "Renata",
+  "aliases": "烈娜塔 炼金男爵 renata"
+ },
+ {
+  "name": "沃里克",
+  "title": "祖安怒兽",
+  "key": "Warwick",
+  "aliases": "狼人 嗜血猎手 warwick"
+ },
+ {
+  "name": "婕拉",
+  "title": "荆棘之兴",
+  "key": "Zyra",
+  "aliases": "植物人 荆棘之兴 zyra"
+ },
+ {
+  "name": "贝蕾亚",
+  "title": "狂厄蔷薇",
+  "key": "Briar",
+  "aliases": "狂厄蔷薇 吸血鬼萝莉 briar"
+ },
+ {
+  "name": "薇恩",
+  "title": "暗夜猎手",
+  "key": "Vayne",
+  "aliases": "VN 暗夜猎手 vayne"
+ },
+ {
+  "name": "凯特琳",
+  "title": "皮城女警",
+  "key": "Caitlyn",
+  "aliases": "女警 皮城女警 caitlyn"
+ },
+ {
+  "name": "德莱文",
+  "title": "荣耀行刑官",
+  "key": "Draven",
+  "aliases": "文森特 荣耀行刑官 draven"
+ },
+ {
+  "name": "辛吉德",
+  "title": "炼金术士",
+  "key": "Singed",
+  "aliases": "炼金 摇摇乐 singed"
+ },
+ {
+  "name": "塞拉斯",
+  "title": "解脱者",
+  "key": "Sylas",
+  "aliases": "偷男 解脱者 sylas"
+ },
+ {
+  "name": "泰隆",
+  "title": "刀锋之影",
+  "key": "Talon",
+  "aliases": "男刀 刀锋之影 talon"
+ },
+ {
+  "name": "普朗克",
+  "title": "海洋之灾",
+  "key": "Gangplank",
+  "aliases": "船长 橘子 gangplank"
+ },
+ {
+  "name": "魔腾",
+  "title": "永恒梦魇",
+  "key": "Nocturne",
+  "aliases": "梦魇 关灯 nocturne"
+ },
+ {
+  "name": "卡蜜尔",
+  "title": "青钢影",
+  "key": "Camille",
+  "aliases": "青钢影 钢影 camille"
+ },
+ {
+  "name": "雷恩加尔",
+  "title": "傲之追猎者",
+  "key": "Rengar",
+  "aliases": "狮子狗 跳跳虎 rengar"
+ },
+ {
+  "name": "德莱厄斯",
+  "title": "诺克萨斯之手",
+  "key": "Darius",
+  "aliases": "诺手 小学生之手 darius"
+ },
+ {
+  "name": "卡莎",
+  "title": "虚空之女",
+  "key": "Kaisa",
+  "aliases": "虚空之女 电浆 kaisa"
+ },
+ {
+  "name": "维迦",
+  "title": "邪恶小法师",
+  "key": "Veigar",
+  "aliases": "小法 邪恶小法师 veigar"
+ },
+ {
+  "name": "兰博",
+  "title": "机械公敌",
+  "key": "Rumble",
+  "aliases": "红温 机械公敌 rumble"
+ },
+ {
+  "name": "泽拉斯",
+  "title": "远古巫灵",
+  "key": "Xerath",
+  "aliases": "泽三炮 远古巫灵 xerath"
+ },
+ {
+  "name": "芸阿娜",
+  "title": "不破之誓",
+  "key": "Yunara",
+  "aliases": "不破之誓 新射手 yunara"
+ },
+ {
+  "name": "卡特琳娜",
+  "title": "不祥之刃",
+  "key": "Katarina",
+  "aliases": "卡特 不详旋转陀螺 katarina"
+ },
+ {
+  "name": "斯维因",
+  "title": "诺克萨斯统领",
+  "key": "Swain",
+  "aliases": "乌鸦 诺克萨斯统领 swain"
+ },
+ {
+  "name": "索拉卡",
+  "title": "众星之子",
+  "key": "Soraka",
+  "aliases": "奶妈 星妈 soraka"
+ },
+ {
+  "name": "厄斐琉斯",
+  "title": "残月之肃",
+  "key": "Aphelios",
+  "aliases": "月男 吴亦凡 aphelios"
+ },
+ {
+  "name": "劫",
+  "title": "影流之主",
+  "key": "Zed",
+  "aliases": "火影 儿童劫 zed"
+ },
+ {
+  "name": "娜美",
+  "title": "唤潮鲛姬",
+  "key": "Nami",
+  "aliases": "人鱼 唤潮鲛姬 nami"
+ },
+ {
+  "name": "古拉加斯",
+  "title": "酒桶",
+  "key": "Gragas",
+  "aliases": "酒桶 肉蛋葱鸡 gragas"
+ },
+ {
+  "name": "茂凯",
+  "title": "扭曲树精",
+  "key": "Maokai",
+  "aliases": "大树 树精 maokai"
+ },
+ {
+  "name": "墨菲特",
+  "title": "熔岩巨兽",
+  "key": "Malphite",
+  "aliases": "石头人 核弹石头 malphite"
+ },
+ {
+  "name": "伊莉丝",
+  "title": "蜘蛛女皇",
+  "key": "Elise",
+  "aliases": "蜘蛛 女皇 elise"
+ },
+ {
+  "name": "安妮",
+  "title": "黑暗之女",
+  "key": "Annie",
+  "aliases": "火女 提伯斯 annie"
+ },
+ {
+  "name": "锐雯",
+  "title": "放逐之刃",
+  "key": "Riven",
+  "aliases": "瑞萌萌 放逐之刃 riven"
+ },
+ {
+  "name": "奥拉夫",
+  "title": "狂战士",
+  "key": "Olaf",
+  "aliases": "狂战士 疯狗 olaf"
+ },
+ {
+  "name": "米利欧",
+  "title": "明烛",
+  "key": "Milio",
+  "aliases": "明烛 丁真 milio"
+ },
+ {
+  "name": "布兰德",
+  "title": "复仇焰魂",
+  "key": "Brand",
+  "aliases": "火男 复仇焰魂 brand"
+ },
+ {
+  "name": "塔莉垭",
+  "title": "岩雀",
+  "key": "Taliyah",
+  "aliases": "岩雀 撒石阵 taliyah"
+ },
+ {
+  "name": "诺提勒斯",
+  "title": "深海泰坦",
+  "key": "Nautilus",
+  "aliases": "泰坦 深海泰坦 nautilus"
+ },
+ {
+  "name": "斯莫德",
+  "title": "炽炎雏龙",
+  "key": "Smolder",
+  "aliases": "小火龙 妈宝龙 smolder"
+ },
+ {
+  "name": "克格莫",
+  "title": "深渊巨口",
+  "key": "KogMaw",
+  "aliases": "大嘴 深渊巨口 kogmaw"
+ },
+ {
+  "name": "卡兹克",
+  "title": "虚空掠夺者",
+  "key": "Khazix",
+  "aliases": "螳螂 飞天螳螂 khazix"
+ },
+ {
+  "name": "卡尔玛",
+  "title": "天启者",
+  "key": "Karma",
+  "aliases": "扇子妈 天启者 karma"
+ },
+ {
+  "name": "乌迪尔",
+  "title": "兽灵行者",
+  "key": "Udyr",
+  "aliases": "兽灵行者 拍拍熊 udyr"
+ },
+ {
+  "name": "吉格斯",
+  "title": "爆破鬼才",
+  "key": "Ziggs",
+  "aliases": "炸弹人 拆塔狂魔 ziggs"
+ },
+ {
+  "name": "阿木木",
+  "title": "殇之木乃伊",
+  "key": "Amumu",
+  "aliases": "木木 哭泣木乃伊 amumu"
+ },
+ {
+  "name": "伊芙琳",
+  "title": "痛苦之拥",
+  "key": "Evelynn",
+  "aliases": "寡妇 痛苦之拥 evelynn"
+ },
+ {
+  "name": "金克丝",
+  "title": "暴走萝莉",
+  "key": "Jinx",
+  "aliases": "暴走萝莉 金克斯 jinx"
+ },
+ {
+  "name": "蔚",
+  "title": "皮城执法官",
+  "key": "Vi",
+  "aliases": "拳姐 皮城执法官 vi"
+ },
+ {
+  "name": "奥莉安娜",
+  "title": "发条魔灵",
+  "key": "Orianna",
+  "aliases": "发条 魔灵 orianna"
+ },
+ {
+  "name": "烬",
+  "title": "戏命师",
+  "key": "Jhin",
+  "aliases": "戏命师 四枪 jhin"
+ },
+ {
+  "name": "萨科",
+  "title": "恶魔小丑",
+  "key": "Shaco",
+  "aliases": "小丑 盒子精 shaco"
+ },
+ {
+  "name": "拉克丝",
+  "title": "光辉女郎",
+  "key": "Lux",
+  "aliases": "光辉 大元素使 lux"
+ },
+ {
+  "name": "瑟庄妮",
+  "title": "北地之怒",
+  "key": "Sejuani",
+  "aliases": "猪妹 凛冬之怒 sejuani"
+ },
+ {
+  "name": "韦鲁斯",
+  "title": "惩戒之箭",
+  "key": "Varus",
+  "aliases": "维鲁斯 惩戒之箭 varus"
+ },
+ {
+  "name": "卡尔萨斯",
+  "title": "死亡颂唱者",
+  "key": "Karthus",
+  "aliases": "死歌 唱大戏 karthus"
+ },
+ {
+  "name": "阿兹尔",
+  "title": "沙漠皇帝",
+  "key": "Azir",
+  "aliases": "沙皇 黄鸡 azir"
+ },
+ {
+  "name": "斯卡纳",
+  "title": "上古领主",
+  "key": "Skarner",
+  "aliases": "蝎子 水晶先锋 skarner"
+ },
+ {
+  "name": "费德提克",
+  "title": "远古恐惧",
+  "key": "Fiddlesticks",
+  "aliases": "稻草人 末日使者 fiddlesticks"
+ },
+ {
+  "name": "卡莉丝塔",
+  "title": "复仇之矛",
+  "key": "Kalista",
+  "aliases": "滑板鞋 复仇之矛 kalista"
+ },
+ {
+  "name": "霞",
+  "title": "逆羽",
+  "key": "Xayah",
+  "aliases": "逆羽 漫天飞羽 xayah"
+ },
+ {
+  "name": "弗拉基米尔",
+  "title": "猩红收割者",
+  "key": "Vladimir",
+  "aliases": "吸血鬼 血魔 vladimir"
+ },
+ {
+  "name": "派克",
+  "title": "血港鬼影",
+  "key": "Pyke",
+  "aliases": "水鬼 血港鬼影 pyke"
+ },
+ {
+  "name": "布隆",
+  "title": "弗雷尔卓德之心",
+  "key": "Braum",
+  "aliases": "大叔 盾牌 braum"
+ },
+ {
+  "name": "丽桑卓",
+  "title": "冰霜女巫",
+  "key": "Lissandra",
+  "aliases": "冰女 冰霜女巫 lissandra"
+ },
+ {
+  "name": "黛安娜",
+  "title": "皎月女神",
+  "key": "Diana",
+  "aliases": "皎月 月亮女神 diana"
+ },
+ {
+  "name": "莎弥拉",
+  "title": "沙漠玫瑰",
+  "key": "Samira",
+  "aliases": "沙漠玫瑰 转转转 samira"
+ },
+ {
+  "name": "科加斯",
+  "title": "虚空恐惧",
+  "key": "Chogath",
+  "aliases": "大虫子 虚空恐惧 chogath"
+ },
+ {
+  "name": "佐伊",
+  "title": "暮光星灵",
+  "key": "Zoe",
+  "aliases": "暮光星灵 飞星 zoe"
+ },
+ {
+  "name": "璐璐",
+  "title": "仙灵女巫",
+  "key": "Lulu",
+  "aliases": "仙灵女巫 紫皮大蒜 lulu"
+ },
+ {
+  "name": "嘉文四世",
+  "title": "德玛西亚皇子",
+  "key": "JarvanIV",
+  "aliases": "皇子 EQ二连 jarvaniv"
+ },
+ {
+  "name": "奈德丽",
+  "title": "狂野女猎手",
+  "key": "Nidalee",
+  "aliases": "豹女 标枪 nidalee"
+ },
+ {
+  "name": "泽丽",
+  "title": "祖安花火",
+  "key": "Zeri",
+  "aliases": "电妹 祖安花火 zeri"
+ },
+ {
+  "name": "图奇",
+  "title": "瘟疫之源",
+  "key": "Twitch",
+  "aliases": "老鼠 瘟疫之源 twitch"
+ },
+ {
+  "name": "亚托克斯",
+  "title": "暗裔剑魔",
+  "key": "Aatrox",
+  "aliases": "剑魔 天神下凡 aatrox"
+ },
+ {
+  "name": "奥恩",
+  "title": "山隐之焰",
+  "key": "Ornn",
+  "aliases": "羊来 打铁匠 ornn"
+ },
+ {
+  "name": "俄洛伊",
+  "title": "海兽祭司",
+  "key": "Illaoi",
+  "aliases": "触手妈 俄洛依 illaoi"
+ },
+ {
+  "name": "杰斯",
+  "title": "未来守护者",
+  "key": "Jayce",
+  "aliases": "高富帅 电磁炮 jayce"
+ },
+ {
+  "name": "梅尔",
+  "title": "流光镜影",
+  "key": "Mel",
+  "aliases": "流光镜影 反弹护盾 mel"
+ },
+ {
+  "name": "伊泽瑞尔",
+  "title": "探险家",
+  "key": "Ezreal",
+  "aliases": "小黄毛 EZ ezreal"
+ },
+ {
+  "name": "洛",
+  "title": "幻翎",
+  "key": "Rakan",
+  "aliases": "幻翎 凤凰传奇 rakan"
+ },
+ {
+  "name": "崔丝塔娜",
+  "title": "麦林炮手",
+  "key": "Tristana",
+  "aliases": "小炮 麦林炮手 tristana"
+ },
+ {
+  "name": "莫德凯撒",
+  "title": "铁铠冥魂",
+  "key": "Mordekaiser",
+  "aliases": "铁男 关小黑屋 mordekaiser"
+ },
+ {
+  "name": "洛克",
+  "title": "灰烬驱魔人",
+  "key": "Locke",
+  "aliases": "灰烬驱魔人 新刺客 locke"
+ },
+ {
+  "name": "拉莫斯",
+  "title": "披甲龙龟",
+  "key": "Rammus",
+  "aliases": "龙龟 披甲龙龟 rammus"
+ },
+ {
+  "name": "李青",
+  "title": "盲僧",
+  "key": "LeeSin",
+  "aliases": "瞎子 盲僧 leesin"
+ },
+ {
+  "name": "布里茨",
+  "title": "蒸汽机器人",
+  "key": "Blitzcrank",
+  "aliases": "机器人 钩子 blitzcrank"
+ },
+ {
+  "name": "努努和威朗普",
+  "title": "雪原双子",
+  "key": "Nunu",
+  "aliases": "雪人 滚雪球 nunu"
+ },
+ {
+  "name": "希维尔",
+  "title": "战争女神",
+  "key": "Sivir",
+  "aliases": "轮子妈 弹射 sivir"
+ },
+ {
+  "name": "千珏",
+  "title": "永猎双子",
+  "key": "Kindred",
+  "aliases": "永猎双子 羊灵 kindred"
+ },
+ {
+  "name": "奇亚娜",
+  "title": "元素女皇",
+  "key": "Qiyana",
+  "aliases": "元素女皇 超模姐 qiyana"
+ },
+ {
+  "name": "妮蔻",
+  "title": "万花通灵",
+  "key": "Neeko",
+  "aliases": "变色龙 万花通灵 neeko"
+ },
+ {
+  "name": "巴德",
+  "title": "星界游神",
+  "key": "Bard",
+  "aliases": "星界游神 捡木灵 bard"
+ },
+ {
+  "name": "卡西奥佩娅",
+  "title": "魔蛇之拥",
+  "key": "Cassiopeia",
+  "aliases": "蛇女 不买鞋 cassiopeia"
+ },
+ {
+  "name": "盖伦",
+  "title": "德玛西亚之力",
+  "key": "Garen",
+  "aliases": "大宝剑 旋转陀螺 garen"
+ },
+ {
+  "name": "雷克顿",
+  "title": "荒漠屠夫",
+  "key": "Renekton",
+  "aliases": "鳄鱼 红怒W renekton"
+ },
+ {
+  "name": "纳尔",
+  "title": "迷失之牙",
+  "key": "Gnar",
+  "aliases": "如来神掌 迷失之牙 gnar"
+ },
+ {
+  "name": "纳亚菲利",
+  "title": "百裂冥犬",
+  "key": "Naafiri",
+  "aliases": "狗群 百裂冥犬 naafiri"
+ },
+ {
+  "name": "厄加特",
+  "title": "无畏战车",
+  "key": "Urgot",
+  "aliases": "螃蟹 加特林 urgot"
+ },
+ {
+  "name": "赛娜",
+  "title": "涤魂圣枪",
+  "key": "Senna",
+  "aliases": "涤魂圣枪 捡魂 senna"
+ },
+ {
+  "name": "阿克尚",
+  "title": "影哨",
+  "key": "Akshan",
+  "aliases": "荡秋千 复活甲 akshan"
+ },
+ {
+  "name": "奎因",
+  "title": "德玛西亚之翼",
+  "key": "Quinn",
+  "aliases": "鸟人 德玛西亚之翼 quinn"
+ },
+ {
+  "name": "艾尼维亚",
+  "title": "冰晶凤凰",
+  "key": "Anivia",
+  "aliases": "冰鸟 凤凰 anivia"
+ },
+ {
+  "name": "约里克",
+  "title": "牧魂人",
+  "key": "Yorick",
+  "aliases": "掘墓 老婆大人 yorick"
+ },
+ {
+  "name": "凯南",
+  "title": "狂暴之心",
+  "key": "Kennen",
+  "aliases": "电耗子 天雷 kennan"
+ },
+ {
+  "name": "阿卡丽",
+  "title": "离群之刺",
+  "key": "Akali",
+  "aliases": "离群之刺 霞阵 akali"
+ },
+ {
+  "name": "乐芙兰",
+  "title": "诡术妖姬",
+  "key": "Leblanc",
+  "aliases": "妖姬 诡术妖姬 leblanc"
+ },
+ {
+  "name": "扎克",
+  "title": "生化魔人",
+  "key": "Zac",
+  "aliases": "橡皮人 生化魔人 zac"
+ },
+ {
+  "name": "奎桑提",
+  "title": "纳祖芒荣耀",
+  "key": "KSante",
+  "aliases": "黑哥 纳祖芒荣耀 ksante"
+ },
+ {
+  "name": "艾希",
+  "title": "寒冰射手",
+  "key": "Ashe",
+  "aliases": "寒冰 刮痧女王 泉水指挥官 ashe"
+ }
+]

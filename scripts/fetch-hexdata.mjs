@@ -1,9 +1,7 @@
-// 下载 Hexdata（hexdata.com.cn）公开排行页上的胜率数据：英雄胜率与场次、海克斯综合分与胜率、装备综合分与胜率。
+// 下载 Hexdata（hexdata.com.cn）的公开页面：英雄排行、海克斯排行、单英雄页（8 个海克斯、8 件装备）、海克斯详情页（稀有度、12 位英雄的搭配胜率）。
 // Hexdata 的 robots.txt 允许抓取这些公开页面，要求引用时注明“数据来源：Hexdata（hexdata.com.cn）”并附链接。
-// 结果写入 data/open/hexdata.json，再由 import-sheet.mjs 合并进网页数据。
-// 用法：node scripts/fetch-hexdata.mjs
-// 每次请求 3 个排行页，再读最多 30 个需要更新的英雄页（每页间隔 2 秒，被限流就停），由 hexdata.yml 每 3 小时运行一次，
-// Hexdata 出新数据后大约一天内读完全部 173 个英雄；平时数据没变就只读 3 个排行页。排行页解析异常就整体不更新。
+// 结果写入 data/open/hexdata.json，再由 build-data.mjs 生成网页数据。
+// 用法：node scripts/fetch-hexdata.mjs        （自动任务每小时运行一次）
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -61,7 +59,7 @@ function rows(html, re) {
 const pct = (t, label) => num((new RegExp(label + '\\s*[:：]?\\s*([\\d.]+)\\s*%').exec(t) || [])[1]);
 const val = (t, label) => num((new RegExp(label + '\\s*[:：]?\\s*([\\d.,]+)').exec(t) || [])[1]);
 
-const [hh, ah, ih] = await Promise.all([page('/heroes'), page('/augments'), page('/items')]);
+const [hh, ah] = await Promise.all([page('/heroes'), page('/augments')]);
 
 // 英雄：链接形如 /hero/157-yasuo，名称形如“疾风剑豪（亚索）”
 const heroes = rows(hh, /\/hero\/(\d+-[\w-]+)/).map(r => {
@@ -74,14 +72,9 @@ const augments = rows(ah, /\/augments?\/([^"'?#/]+)/).map(r => ({
   name: r.name, slug: r.id, score: val(r.body, '综合评分') ?? val(r.body, 'HexScore'), wr: pct(r.body, '胜率'), pick: pct(r.body, '选取率'), games: val(r.body, '样本'),
 })).filter(a => a.name && a.wr != null);
 
-// 装备：链接形如 /item/994403
-const items = rows(ih, /\/item\/(\d+)/).map(r => ({
-  id: +r.id, name: r.name, score: val(r.body, 'HexScore') ?? val(r.body, '综合评分'), wr: pct(r.body, '胜率'), games: val(r.body, '样本'),
-})).filter(i => i.name && i.wr != null);
-
 const dedupe = (list, k) => [...new Map(list.map(x => [x[k], x])).values()];
 
-/* 单英雄页：该英雄的推荐海克斯和装备（综合分、胜率、样本），以及层级 */
+/* 单英雄页：该英雄的推荐海克斯和装备（综合分、胜率、样本） */
 // 一行的文字形如“科学狂人 84.8 56.9% 19,793”
 const STAT = /(\d+(?:\.\d+)?)[^\d%]{0,14}?(\d+(?:\.\d+)?)\s*%[^\d]{0,14}?(\d[\d,]*)/;
 function heroPage(html) {
@@ -111,73 +104,69 @@ function heroPage(html) {
     for (const r of rows(html, /\/augments?\/([^"'?#/]+)/)) push('augs', r.name, r.body.slice(r.name.length));
     for (const r of rows(html, /\/item\/(\d+)/)) push('items', r.name, r.body.slice(r.name.length));
   }
-  const t = text(html);
-  const tier = (/层级\s*[:：]?\s*(T\d)/.exec(t) || [])[1] || null;
-  return { tier, ...list };
+  return list;
 }
 
-let prevFile = null;
-try { prevFile = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'hexdata.json'), 'utf8')); } catch {}
-const prevHero = new Map((prevFile?.heroes?.rows || []).map(r => [r.id, r]));
+let prev = null;
+try { prev = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'hexdata.json'), 'utf8')); } catch {}
 const listDate = pageInfo(hh).date || '';
-// 先沿用上一次的单英雄数据
-for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { tier: p.tier, augs: p.augs, items: p.items, date: p.date || prevFile.heroes.date }); }
-// Hexdata 有访问频率限制（约 40 次就会返回 429），所以每次最多读 MAX 个英雄页，
-// 优先读还没有数据或数据日期比排行页旧的英雄；被限流就立刻停下，下次再接着读。
-let MAX = +(process.env.HEXDATA_MAX || 30);
-let blocked = false;
 
-/* 稀有度：arammayhem 里查不到稀有度的海克斯，读它在 Hexdata 的详情页（“xx是棱彩海克斯”）。稀有度不会变，读到一次就一直沿用 */
-const nkey = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
-const knownRar = new Map();
-try { JSON.parse(await readFile(join(ROOT, 'data', 'open', 'arammayhem.json'), 'utf8')).augments.forEach(a => { if (a.rarity !== '未知') knownRar.set(nkey(a.name), a.rarity); }); } catch {}
-const prevRar = new Map((prevFile?.augments?.rows || []).filter(a => a.rarity).map(a => [a.name, a.rarity]));
-for (const a of augments) if (prevRar.has(a.name)) a.rarity = prevRar.get(a.name);
-const needRar = augments.filter(a => !a.rarity && !knownRar.has(nkey(a.name)) && a.slug).slice(0, MAX);
-for (const a of needRar) {
-  try {
-    const m = /(棱彩|黄金|白银)海克斯/.exec(text(await page(`/augment/${a.slug}`)));
-    if (m) a.rarity = m[1];
-    MAX--;
-  } catch (e) { console.log(`海克斯页 ${a.name} 读取失败：${e.message}，本次停止，下次继续`); blocked = true; break; }
-  await sleep(2000);
+// 先沿用上一次读到的英雄页、海克斯页数据
+const prevHero = new Map((prev?.heroes?.rows || []).map(r => [r.id, r]));
+for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { augs: p.augs, items: p.items, date: p.date }); }
+const prevAug = new Map((prev?.augments?.rows || []).map(a => [a.name, a]));
+for (const a of augments) { const p = prevAug.get(a.name); if (p) Object.assign(a, { rarity: p.rarity, heroes: p.heroes, date: p.date }); }
+
+/* 海克斯详情页：稀有度（“xx是棱彩海克斯”）和最适合的 12 位英雄的搭配胜率 */
+function augPage(a, html) {
+  const m = /(棱彩|黄金|白银)海克斯/.exec(text(html));
+  if (m) a.rarity = m[1];
+  const list = [];
+  for (const r of rows(html, /\/hero\/(\d+)-[\w-]+/)) {
+    const st = STAT.exec(r.body.slice(r.name.length));
+    if (!st) continue;
+    const x = { id: +r.id, score: num(st[1]), wr: num(st[2]), games: num(st[3]) };
+    if (x.wr >= 20 && x.wr <= 80 && !list.some(y => y.id === x.id)) list.push(x);
+  }
+  a.heroes = list; a.date = listDate;
 }
-if (needRar.length) console.log(`海克斯稀有度：读取 ${needRar.filter(a => a.rarity).length}/${needRar.length}：${needRar.map(a => `${a.name}=${a.rarity || '?'}`).join('、')}`);
 
-const todo = blocked ? [] : heroes.filter(h => !h.augs || h.date !== listDate).slice(0, Math.max(0, MAX));
-let ok = 0, sample = null;
-for (const h of todo) {
+// Hexdata 连续读 40 个左右页面就会限流（429），所以每次最多读 MAX 个页面，被限流就停下，下次接着读。
+// 顺序：没有稀有度的新海克斯 → 数据过时的英雄页 → 数据过时的海克斯页。数据没变时一个都不用读。
+const MAX = +(process.env.HEXDATA_MAX || 30);
+const queue = [
+  ...augments.filter(a => !a.rarity).map(a => ['aug', a]),
+  ...heroes.filter(h => !h.augs || h.date !== listDate).map(h => ['hero', h]),
+  ...augments.filter(a => a.rarity && (!a.heroes || a.date !== listDate)).map(a => ['aug', a]),
+].slice(0, MAX);
+let done = 0;
+for (const [kind, x] of queue) {
+  const path = kind === 'hero' ? `/hero/${x.id}-${x.slug}` : `/augment/${x.slug}`;
   let html;
-  try { html = await page(`/hero/${h.id}-${h.slug}`); }
-  catch (e) { console.log(`英雄页 ${h.name} 读取失败：${e.message}，本次停止，下次继续`); break; }
-  const d = heroPage(html);
-  if (d.augs.length >= 3 && d.items.length >= 3) { Object.assign(h, d, { date: listDate }); ok++; sample ||= { name: h.name, ...d }; }
-  else console.log(`英雄页 ${h.name} 解析到海克斯 ${d.augs.length}、装备 ${d.items.length}，跳过；页面开头：${text(html).slice(0, 300)}`);
+  try { html = await page(path); } catch (e) { console.log(`${path} 读取失败：${e.message}，本次停止，下次继续`); break; }
+  if (kind === 'aug') augPage(x, html);
+  else {
+    const d = heroPage(html);
+    if (d.augs.length >= 3 && d.items.length >= 3) Object.assign(x, d, { date: listDate });
+    else console.log(`英雄页 ${x.name} 解析到海克斯 ${d.augs.length}、装备 ${d.items.length}，跳过；页面开头：${text(html).slice(0, 300)}`);
+  }
+  done++;
   await sleep(2000); // 慢慢读，不给对方添负担
 }
-const have = heroes.filter(h => h.augs).length, fresh = heroes.filter(h => h.augs && h.date === listDate).length;
-console.log(`英雄页：本次读取 ${ok}/${todo.length}；有数据 ${have}/${heroes.length}，其中是最新数据日（${listDate}）的 ${fresh}；样例 ${JSON.stringify(sample).slice(0, 300)}`);
+const fresh = list => list.filter(x => x.date === listDate).length;
+console.log(`本次读取 ${done}/${queue.length} 个页面；英雄页最新 ${fresh(heroes)}/${heroes.length}，海克斯页最新 ${fresh(augments)}/${augments.length}（数据日 ${listDate}）`);
+
 const out = {
   source: 'Hexdata（hexdata.com.cn）',
-  fetchedAt: new Date().toISOString(),
   heroes: { ...pageInfo(hh), rows: dedupe(heroes, 'id') },
   augments: { ...pageInfo(ah), rows: dedupe(augments, 'name') },
-  items: { ...pageInfo(ih), rows: dedupe(items, 'id') },
 };
-console.log(`Hexdata：英雄 ${out.heroes.rows.length}（${out.heroes.patch}，${out.heroes.date}），海克斯 ${out.augments.rows.length}（${out.augments.patch}，${out.augments.date}），装备 ${out.items.rows.length}（${out.items.patch}，${out.items.date}）`);
-console.log('样例：', JSON.stringify([out.heroes.rows[0], out.augments.rows[0], out.items.rows[0]]));
-
 const bad = out.heroes.rows.length < 100 || out.augments.rows.length < 50 || !out.heroes.patch ||
   out.heroes.rows.some(h => h.wr < 20 || h.wr > 80) || out.augments.rows.some(a => a.wr < 20 || a.wr > 80);
 if (bad) {
-  console.error('Hexdata 数据量或数值异常，不更新（网页沿用上一次的数据）。页面开头：', text(hh).slice(0, 600));
+  console.error(`Hexdata 数据异常（英雄 ${out.heroes.rows.length}、海克斯 ${out.augments.rows.length}），不更新。页面开头：`, text(hh).slice(0, 600));
   process.exit(1);
 }
-
 const file = join(ROOT, 'data', 'open', 'hexdata.json');
 await mkdir(dirname(file), { recursive: true });
-let prev = null;
-try { prev = JSON.parse(await readFile(file, 'utf8')); } catch {}
-const same = prev && JSON.stringify({ ...prev, fetchedAt: 0 }) === JSON.stringify({ ...out, fetchedAt: 0 });
-if (same) console.log('Hexdata 数据没有变化');
-else { await writeFile(file, JSON.stringify(out, null, 1)); console.log('已更新 data/open/hexdata.json'); }
+await writeFile(file, JSON.stringify(out, null, 1));

@@ -15,7 +15,8 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const data = JSON.parse(await readFile(join(ROOT, 'data', 'data.json'), 'utf8'));
+const js = await readFile(join(ROOT, 'data', 'data.js'), 'utf8');
+const data = JSON.parse(js.slice(js.indexOf('{'), js.lastIndexOf('}') + 1));
 const DIR = join(ROOT, 'assets', 'icons');
 const CD = 'https://raw.communitydragon.org/latest';
 const DD = 'https://ddragon.leagueoflegends.com';
@@ -40,9 +41,9 @@ async function save(file, urls) {
 const safeName = s => s.replace(/[\\/:*?"<>|]/g, '_');
 
 /* ---------- 需要图标的名称 ---------- */
-const itemNames = new Set([...data.items.map(i => i.name), ...data.heroes.flatMap(h => [...h.coreItems, ...h.altItems])]);
+const itemNames = new Set(data.heroes.flatMap(h => h.items.map(i => i.n)));
 const augInfo = new Map();
-[...data.augments, ...data.heroes.flatMap(h => h.augments)].forEach(a => { if (!augInfo.has(a.name)) augInfo.set(a.name, a.rarity); });
+data.heroes.flatMap(h => h.augs).forEach(a => { if (!augInfo.has(a.n)) augInfo.set(a.n, a.r); });
 
 await mkdir(join(DIR, 'champ'), { recursive: true });
 await mkdir(join(DIR, 'item'), { recursive: true });
