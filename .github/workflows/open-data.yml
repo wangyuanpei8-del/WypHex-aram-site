@@ -1,0 +1,42 @@
+name: 每日自动更新
+
+# 每天从 arammayhem.com 开放数据（CC BY 4.0）拉取英雄出场率、海克斯选取率/稀有度、精选组合，
+# 与 data/sheets 里的整理数据合并后更新网页。
+on:
+  schedule:
+    - cron: '0 19 * * *'   # 每天北京时间 03:00
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 下载开放数据
+        run: node scripts/fetch-open-data.mjs
+      - name: 合并到网页数据
+        run: node scripts/import-sheet.mjs
+      - name: 补齐新海克斯图标
+        run: node scripts/fetch-icons.mjs
+      - name: 生成单文件版
+        run: node scripts/build-standalone.mjs
+      - name: 提交
+        run: |
+          git config user.name "hexaram-bot"
+          git config user.email "hexaram-bot@users.noreply.github.com"
+          git add data dist assets/icons
+          git diff --cached --quiet && echo "无变化" && exit 0
+          git commit -m "每日更新 $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push

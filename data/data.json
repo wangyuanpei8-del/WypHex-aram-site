@@ -5,7 +5,13 @@
   "updatedAt": "2026-11-01T00:00:00+08:00",
   "sampleMatches": 12078456,
   "source": "手工整理（Hexdata / ARAMGG / ARAM Mayhem / OP.GG）",
-  "pipeline": "sheet"
+  "pipeline": "sheet",
+  "open": {
+   "source": "arammayhem.com",
+   "license": "CC BY 4.0",
+   "patch": "26.21",
+   "statsDate": "2026-11-02"
+  }
  },
  "heroes": [
   {

@@ -100,6 +100,33 @@ if (heroes.length < 20) { console.error('英雄表少于 20 行，可能是表�
 
 heroes = heroes.map(h => { if (!h.key) delete h.key; return h; });
 const out = { meta, heroes, augments, items, combos, bands: old.bands };
+
+/* 合并 arammayhem.com 开放数据（出场率、选取率、稀有度、精选组合），文件由 fetch-open-data.mjs 下载 */
+let open = null;
+try { open = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'arammayhem.json'), 'utf8')); } catch {}
+if (open) {
+  const champ = new Map(open.champions.map(c => [c.key, c]));
+  const oa = new Map(open.augments.map(a => [a.name, a]));
+  const combosBy = new Map();
+  open.combos.forEach(c => { (combosBy.get(c.key) || combosBy.set(c.key, []).get(c.key)).push({ augs: c.augs, types: c.types, url: c.url }); });
+  let heroHit = 0;
+  for (const h of heroes) {
+    const c = champ.get(h.key);
+    if (c) { h.pick = c.pick; h.pickChange = c.pickChange; h.pickRank = c.pickRank; h.openUrl = c.url; heroHit++; }
+    if (combosBy.has(h.key)) h.openCombos = combosBy.get(h.key);
+    h.augments.forEach(a => { const o = oa.get(a.name); if (o && o.rarity !== '未知') a.rarity = o.rarity; });
+  }
+  const mine = new Map(augments.map(a => [a.name, a]));
+  for (const o of open.augments) {
+    const a = mine.get(o.name);
+    if (a) Object.assign(a, { pick: o.pick, pickChange: o.pickChange, isNew: o.isNew, openUrl: o.url, ...(o.rarity !== '未知' ? { rarity: o.rarity } : {}) });
+    else augments.push({ name: o.name, rarity: o.rarity, tier: '', score: null, wr: null, pick: o.pick, pickChange: o.pickChange, isNew: o.isNew, effect: '', heroes: [], openUrl: o.url });
+  }
+  const unknown = new Set(heroes.flatMap(h => h.augments.map(a => a.name)).filter(n => !oa.has(n)));
+  meta.open = { source: open.source, license: open.license, patch: open.patch, statsDate: open.statsDate };
+  console.log(`已合并 arammayhem 数据（版本 ${open.patch}，统计日 ${open.statsDate}）：英雄出场率 ${heroHit}/${heroes.length}，海克斯 ${open.augments.length} 个`);
+  if (unknown.size) console.log(`提醒：英雄表里有 ${unknown.size} 个海克斯名称在 arammayhem 里找不到（可能是译名不同或已移除）：${[...unknown].slice(0, 30).join('、')}`);
+}
 await writeFile(join(ROOT, 'data', 'data.json'), JSON.stringify(out, null, 1));
 await writeFile(join(ROOT, 'data', 'data.js'), '/* 自动生成，勿手改：由 scripts/import-sheet.mjs 从 data/sheets 生成 */\nwindow.HEX_DATA = ' + JSON.stringify(out) + ';\n');
 console.log(`已导入：英雄 ${heroes.length}、海克斯 ${augments.length}、装备 ${items.length}、组合 ${combos.length}；版本 ${meta.patch}，更新日期 ${date}`);

@@ -30,7 +30,17 @@ netlify.toml / vercel.json / _headers  各平台缓存规则
 
 想发到微信/QQ 群：运行 `node scripts/build-standalone.mjs`，把生成的 `dist/hexaram.html` 发出去即可，约 310 KB。
 
-## 更新数据（改表格）
+## 每日自动更新
+
+“每日自动更新”任务（`.github/workflows/open-data.yml`）每天北京时间 03:00 运行，从 [arammayhem.com 开放数据](https://arammayhem.com/data/)（CC BY 4.0，页面已注明出处）拉取以下内容，合并后更新网页：
+
+- 英雄出场率，以及和上个版本相比的变化
+- 海克斯选取率、稀有度和本版本新增
+- 精选组合
+
+这份开放数据**不含胜率和出装**，所以这两项沿用 `data/sheets` 里整理好的那个版本的数据。版本更新后，页面会提示这部分数据“仅供参考”。
+
+## 手工修改（可选）
 
 拳头**不在 Riot API 里公开海克斯大乱斗的对局**：按玩家查对局列表时，海斗对局不会出现；直接按编号查会返回 403。官方答复是有意为之，见 [developer-relations #1109](https://github.com/RiotGames/developer-relations/issues/1109) 和 [#1204](https://github.com/RiotGames/developer-relations/issues/1204)。所以网站数据靠手工整理，存放在 `data/sheets/` 的 5 张表里：
 

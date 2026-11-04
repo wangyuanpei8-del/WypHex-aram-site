@@ -34,11 +34,15 @@
   }));
   const EXT_AUGS = [...EXT_AUG_MAP.values()].map(e => ({ ...e, avg: e.sum / e.heroes.length, isNew: false }));
   const wrCell = wr => `<span class="${wr >= 53 ? 'hi' : ''}">${pct(wr)}</span>`;
+  // 出场率/选取率较上个版本的变化（百分点）
+  const chg = d => (d == null || d === 0 ? '' : `<span class="${d > 0 ? 'up' : 'down'}" style="font-size:11px"> ${d > 0 ? '↑' : '↓'}${Math.abs(d).toFixed(2)}</span>`);
 
+  const OLD_PATCH = !!(D.meta.open && D.meta.open.patch && D.meta.patch && D.meta.open.patch !== D.meta.patch);
+  const COMBO_TYPE = { god: '神级', strong: '强势', fun: '娱乐', meme: '整活', niche: '冷门', classic: '经典' };
   const $ = sel => document.querySelector(sel);
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const fmtWan = n => (n >= 10000 ? (n / 10000).toFixed(n >= 1e6 ? 0 : 1) + '万' : String(n));
-  const pct = n => Number(n).toFixed(1) + '%';
+  const pct = n => (n == null || n === '' ? '—' : Number(n).toFixed(1) + '%');
 
   const state = {
     board: 'heroes',
@@ -48,7 +52,7 @@
     hero: HEROES[0].name,
     openRow: null,
     augRar: 'ALL',
-    augSort: 'wr',
+    augSort: 'pick',
     quick: '棱彩',
     itemSort: 'wr',
     fav: loadFav(),
@@ -89,6 +93,8 @@
       list.sort((a, b) => matchScore(b, q) - matchScore(a, q) || a.rank - b.rank);
     } else if (state.sort === 'matches') {
       list.sort((a, b) => b.matches - a.matches);
+    } else if (state.sort === 'pick') {
+      list.sort((a, b) => (b.pick ?? -1) - (a.pick ?? -1));
     } else if (state.sort === 'low') {
       list.sort((a, b) => a.wr - b.wr);
     } else {
@@ -181,14 +187,15 @@
     const days = upd ? Math.floor((Date.now() - upd.getTime()) / 864e5) : null;
     const manual = m.pipeline === 'sheet' || m.pipeline === 'manual';
     const stale = days != null && days > (manual ? 21 : 3);
-    const ymd = /^(\d{4})-(\d{2})-(\d{2})/.exec(m.updatedAt || ''); // 直接取日期，避免时区把 11月1日 显示成 10月31日
+    const ymd = /^(\d{4})-(\d{2})-(\d{2})/.exec((m.open && m.open.statsDate) || m.updatedAt || ''); // 直接取日期，避免时区把 11月1日 显示成 10月31日
     const when = ymd ? `${+ymd[2]}月${+ymd[3]}日` : '未知';
     $('#meta').innerHTML =
-      `<span><i class="dot ${stale ? 'stale' : ''}"></i>版本 <b>${esc(m.patch || '')}</b></span>` +
+      `<span><i class="dot ${stale && !m.open ? 'stale' : ''}"></i>版本 <b>${esc((m.open && m.open.patch) || m.patch || '')}</b></span>` +
       `<span>更新于 <b>${when}</b></span>` +
-      (manual ? `<span class="hide-md">编辑整理 · 非实时</span>` : `<span class="hide-md">样本 <b class="num">${m.sampleMatches ? fmtWan(m.sampleMatches) : '—'}</b> 局</span>`);
+      (m.open ? `<span class="hide-md">出场率每日自动更新</span>` : manual ? `<span class="hide-md">编辑整理 · 非实时</span>` : `<span class="hide-md">样本 <b class="num">${m.sampleMatches ? fmtWan(m.sampleMatches) : '—'}</b> 局</span>`);
     $('#foot').innerHTML =
-      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 数据来源：${esc(m.source || '')}${manual ? '（编辑整理，胜率为参考值，非实时统计）' : ''}</span>` +
+      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 数据来源：${esc(m.source || '')}${manual ? `（胜率与出装为 ${esc(m.patch)} 版本整理数据，非实时统计）` : ''}</span>` +
+      (m.open ? `<span>出场率、选取率与精选组合：<a href="https://arammayhem.com/data/" target="_blank" rel="noopener">数据：arammayhem.com</a>（CC BY 4.0，${esc(m.open.patch)} 版本，统计日 ${esc(m.open.statsDate)}）</span>` : '') +
       `<span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
@@ -202,6 +209,7 @@
            <option value="wr"${state.sort === 'wr' ? ' selected' : ''}>胜率高→低</option>
            <option value="low"${state.sort === 'low' ? ' selected' : ''}>胜率低→高</option>
            <option value="matches"${state.sort === 'matches' ? ' selected' : ''}>场次多→少</option>
+           ${HEROES.some(h => h.pick != null) ? `<option value="pick"${state.sort === 'pick' ? ' selected' : ''}>出场率高→低</option>` : ''}
          </select>`;
     } else if (state.board === 'augments') {
       const chips = [['ALL', '全部'], ['棱彩', '棱彩'], ['黄金', '黄金'], ['白银', '白银'], ...(D.augments.some(a => a.rarity === '未知') ? [['未知', '稀有度未知']] : []), ['NEW', '本版本新增']];
@@ -224,7 +232,8 @@
     head.hidden = false;
     if (state.board === 'heroes') {
       const list = heroList();
-      head.innerHTML = `<span>排名</span><span>英雄 · ${list.length}</span><span>胜率</span><span>场次</span>`;
+      const byPick = state.sort === 'pick';
+      head.innerHTML = `<span>排名</span><span>英雄 · ${list.length}</span><span>胜率${OLD_PATCH ? `<small style="color:var(--muted)">(${esc(D.meta.patch)})</small>` : ''}</span><span>${byPick ? '出场率' : '场次'}</span>`;
       if (!list.length) { el.innerHTML = `<div class="empty">没有找到“${esc(state.q)}”，试试名字、称号或外号。</div>`; return; }
       const max = 60, min = 42;
       el.innerHTML = list.map(h => {
@@ -235,13 +244,14 @@
             <span class="n1">${esc(h.name)} <span class="tier ${esc(h.tier)}">${esc(h.tier)}</span>${state.fav.has(h.name) ? '<span class="star">★</span>' : ''}</span>
             <span class="n2">${esc(h.title)} · ${esc(h.roles.join('/'))}</span></span></span>
           <span class="wr ${h.wr >= 53 ? 'hi' : ''}">${pct(h.wr)}<i><b style="width:${w}%"></b></i></span>
-          <span class="mt">${fmtWan(h.matches)}</span>
+          <span class="mt">${byPick ? pct(h.pick) : fmtWan(h.matches)}</span>
         </button>`;
       }).join('');
     } else if (state.board === 'augments') {
       const q = norm(state.q);
       const rarOk = a => state.augRar === 'ALL' || (state.augRar === 'NEW' ? a.isNew : a.rarity === state.augRar);
-      const key = { wr: a => a.wr, pick: a => a.pick, score: a => a.score }[state.augSort];
+      const key0 = { wr: a => a.wr, pick: a => a.pick, score: a => a.score }[state.augSort];
+      const key = a => key0(a) ?? -1; // 没有数据的排在最后
       const main = D.augments.filter(rarOk).filter(a => !q || norm(a.name + a.effect + a.heroes.join('')).includes(q))
         .sort((a, b) => key(b) - key(a));
       const ext = EXT_AUGS.filter(rarOk).filter(a => !q || norm(a.name + a.heroes.join('')).includes(q))
@@ -250,9 +260,9 @@
       head.style.gridTemplateColumns = GRID_X;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的海克斯。</div>'; return; }
       el.innerHTML = main.map((a, i) => xrow('aug:' + a.name, `<span class="rank">${i + 1}</span>`,
-          `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>${a.isNew ? '<em class="new">新</em>' : ''}<span class="tier T1 lite">${esc(a.tier)}</span>`,
+          `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>${a.isNew ? '<em class="new">新</em>' : ''}${a.tier ? `<span class="tier T1 lite">${esc(a.tier)}</span>` : ''}`,
           pct(a.pick), wrCell(a.wr),
-          `<p>${esc(a.effect)}</p><p class="subtle">综合分 ${a.score} · 选取率 ${pct(a.pick)}</p>${heroLinks(a.heroes)}`)).join('') +
+          `${a.effect ? `<p>${esc(a.effect)}</p>` : ''}<p class="subtle">${a.score != null ? `综合分 ${a.score} · ` : ''}选取率 ${pct(a.pick)}${chg(a.pickChange)}${a.wr == null ? ' · 暂无胜率' : ''}${a.openUrl ? ` · <a href="${esc(a.openUrl)}" target="_blank" rel="noopener">arammayhem ↗</a>` : ''}</p>${heroLinks(a.heroes)}`)).join('') +
         (ext.length ? `<div class="divider">以下 ${ext.length} 个只出现在英雄专属推荐里，暂无全局胜率。右侧为该海克斯在推荐英雄身上的平均搭配胜率，按推荐英雄数排序。</div>` +
           ext.map(a => xrow('aug:' + a.name, '<span class="rank">–</span>',
             `${augIc(a.name, a.rarity)}<span>${esc(a.name)}</span>`,
@@ -320,6 +330,7 @@
         </div>
         <div class="actions">
           <button class="btn ${fav ? 'on' : ''}" data-action="fav" aria-pressed="${fav}">${fav ? '★ 已设常用' : '☆ 设为常用'}</button>
+          ${h.openUrl ? `<a class="btn" href="${esc(h.openUrl)}" target="_blank" rel="noopener" title="arammayhem.com 上的最新数据">最新数据 ↗</a>` : ''}
           <button class="btn" data-action="link">复制链接</button>
           <button class="btn primary" data-action="copy">复制攻略</button>
         </div>
@@ -328,9 +339,12 @@
       <div class="stats">
         <div class="stat"><div class="k">胜率</div><div class="v">${pct(h.wr)} <small class="${diff >= 0 ? 'up' : 'down'}" style="font-size:12px">${diff >= 0 ? '+' : ''}${diff.toFixed(1)}</small></div></div>
         <div class="stat"><div class="k">排名</div><div class="v">#${h.rank}<small style="font-size:12px;color:var(--muted)"> / ${TOTAL}</small></div></div>
-        <div class="stat"><div class="k">样本场次</div><div class="v">${fmtWan(h.matches)}</div></div>
+        ${h.pick != null
+          ? `<div class="stat"><div class="k">出场率 <small style="color:var(--muted)">每日更新</small></div><div class="v">${pct(h.pick)}${chg(h.pickChange)}</div></div>`
+          : `<div class="stat"><div class="k">样本场次</div><div class="v">${fmtWan(h.matches)}</div></div>`}
         <div class="stat"><div class="k">加点</div><div class="v sm">${esc(h.skill)}</div></div>
       </div>
+      ${OLD_PATCH ? `<p class="note">胜率、出装和海克斯推荐是 ${esc(D.meta.patch)} 版本的整理数据，当前已是 ${esc(D.meta.open.patch)} 版本，仅供参考；出场率为最新数据。</p>` : ''}
       ${h.generic ? '<p class="note">这位英雄的出装和海克斯目前是同定位通用推荐，仅供参考，后续会逐步补上专属内容。</p>' : ''}
 
       <div class="grid2">
@@ -365,6 +379,7 @@
           <p class="combo-t">${esc(h.comboTitle)}</p>
           <p class="txt">${esc(h.comboDesc)}</p>
           ${combo ? `<p class="subtle" style="margin-top:8px">${esc(combo.tag)} · 核心装 ${esc(combo.items.join(' → '))}</p>` : ''}
+          ${(h.openCombos || []).length ? `<div class="ocombo"><div class="subtle">arammayhem 精选组合</div>${h.openCombos.map(c => `<a class="oc" href="${esc(c.url)}" target="_blank" rel="noopener">${c.augs.map(n => `${augIc(n, (AUG_DB.get(n) || {}).rarity || '未知')}<span>${esc(n)}</span>`).join('<i>+</i>')}${c.types.length ? `<em>${esc(c.types.map(t => COMBO_TYPE[t] || t).join(' / '))}</em>` : ''}</a>`).join('')}</div>` : ''}
         </div>
 
         <div class="card">
