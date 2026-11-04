@@ -39,9 +39,14 @@
   const chg = d => (d == null || d === 0 ? '' : `<span class="${d > 0 ? 'up' : 'down'}" style="font-size:11px"> ${d > 0 ? '↑' : '↓'}${Math.abs(d).toFixed(2)}</span>`);
 
   const tb = t => `<span class="tier T${t}">T${t}</span>`; // Blitz 评级标签，T1 最强
-  const OLD_PATCH = !!(D.meta.open && D.meta.open.patch && D.meta.patch && D.meta.open.patch !== D.meta.patch);
-  // 胜率是整理数据（不会每天更新），标上它的版本；过时后标“旧”
-  const WR_TAG = `<small class="wrv${OLD_PATCH ? ' old' : ''}">${String(D.meta.patch).replace(/[^\w.]/g, '')}${OLD_PATCH ? ' 旧' : ''}</small>`;
+  // 胜率来自 Hexdata（每日更新）；没有时用表格里的整理数据。标上胜率的版本，落后于当前版本时标“旧”
+  const WR = D.meta.wr || { patch: D.meta.patch };
+  const CUR = (D.meta.open && D.meta.open.patch) || D.meta.patch;
+  const wrTag = p => { const old = !!(p && CUR && p !== CUR); return `<small class="wrv${old ? ' old' : ''}">${String(p || '').replace(/[^\w.]/g, '')}${old ? ' 旧' : ''}</small>`; };
+  const OLD_PATCH = !!(WR.patch && CUR && WR.patch !== CUR);
+  const WR_TAG = wrTag(WR.patch);
+  const AUG_WR_TAG = wrTag(WR.augPatch || WR.patch);
+  const ITEM_WR_TAG = wrTag(WR.itemPatch || WR.patch);
   const COMBO_TYPE = { god: '神级', strong: '强势', fun: '娱乐', meme: '整活', niche: '冷门', classic: '经典' };
   const $ = sel => document.querySelector(sel);
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -195,9 +200,11 @@
     $('#meta').innerHTML =
       `<span><i class="dot ${stale && !m.open ? 'stale' : ''}"></i>版本 <b>${esc((m.open && m.open.patch) || m.patch || '')}</b></span>` +
       `<span>更新于 <b>${when}</b></span>` +
-      (m.open ? `<span class="hide-md">出场率${m.blitz ? '、出装评级' : ''}每日自动更新</span>` : `<span class="hide-md">编辑整理 · 非实时</span>`);
+      (m.open ? `<span class="hide-md">${m.wr ? '胜率、' : ''}出场率${m.blitz ? '、出装评级' : ''}每日自动更新</span>` : `<span class="hide-md">编辑整理 · 非实时</span>`);
     $('#foot').innerHTML =
-      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(m.patch || '')} · 胜率等整理数据：${esc(m.source || '')}（${esc(m.patch)} 版本，非实时统计）</span>` +
+      `<span>${esc(m.mode || '海克斯大乱斗')} · Patch ${esc(CUR || '')}</span>` +
+      (m.wr ? `<span>胜率与综合分：<a href="https://hexdata.com.cn" target="_blank" rel="noopener">数据来源：Hexdata（hexdata.com.cn）</a>（英雄 ${esc(m.wr.patch)} 版本，数据日 ${esc(m.wr.date || '')}；装备 ${esc(m.wr.itemPatch)} 版本）</span>` : '') +
+      `<span>流派、加点、要点、王牌组合等文字：手工整理（${esc(m.patch)} 版本，仅供参考）</span>` +
       (m.open ? `<span>出场率、选取率与精选组合：<a href="https://arammayhem.com/data/" target="_blank" rel="noopener">数据：arammayhem.com</a>（CC BY 4.0，${esc(m.open.patch)} 版本，统计日 ${esc(m.open.statsDate)}）</span>` : '') +
       (m.blitz ? `<span>出装与海克斯评级：<a href="https://blitz.gg/lol" target="_blank" rel="noopener">Blitz</a>（${esc(m.blitz.patch)} 版本，${esc(m.blitz.date)} 获取，仅评级、无胜率）</span>` : '') +
       `<span>非官方工具，与 Riot Games 无关联</span>`;
@@ -260,7 +267,7 @@
         .sort((a, b) => key(b) - key(a));
       const ext = EXT_AUGS.filter(rarOk).filter(a => !q || norm(a.name + a.heroes.join('')).includes(q))
         .sort((a, b) => b.heroes.length - a.heroes.length || b.avg - a.avg);
-      head.innerHTML = `<span>排名</span><span>海克斯 · ${main.length + ext.length}</span><span>选取率</span><span>胜率${WR_TAG}</span>`;
+      head.innerHTML = `<span>排名</span><span>海克斯 · ${main.length + ext.length}</span><span>选取率</span><span>胜率${AUG_WR_TAG}</span>`;
       head.style.gridTemplateColumns = GRID_X;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的海克斯。</div>'; return; }
       el.innerHTML = main.map((a, i) => xrow('aug:' + a.name, `<span class="rank">${i + 1}</span>`,
@@ -278,14 +285,14 @@
       const key = { wr: i => i.wr, score: i => i.score }[state.itemSort] || (i => i.wr);
       const main = D.items.filter(i => !q || norm(i.name + i.tag + i.desc + i.best.join('')).includes(q)).sort((a, b) => key(b) - key(a));
       const ext = EXT_ITEMS.filter(i => !q || norm(i.name + i.heroes.join('')).includes(q));
-      head.innerHTML = `<span>排名</span><span>装备 · ${main.length + ext.length}</span><span>胜率${WR_TAG}</span>`;
+      head.innerHTML = `<span>排名</span><span>装备 · ${main.length + ext.length}</span><span>胜率${ITEM_WR_TAG}</span>`;
       head.style.gridTemplateColumns = GRID_3;
       if (!main.length && !ext.length) { el.innerHTML = '<div class="empty">没有匹配的装备。</div>'; return; }
       el.innerHTML = main.map((it, i) => {
         const users = ITEM_USE.get(it.name) || [];
         return xrow('item:' + it.name, `<span class="rank">${i + 1}</span>`, `${itemIc(it.name)}<span>${esc(it.name)}</span>`,
           null, wrCell(it.wr),
-          `<p>${esc(it.desc)}</p><p class="subtle">${esc(it.tag)} · 样本 ${esc(it.matches)} · 综合分 ${it.score}</p>${heroLinks(it.best)}` +
+          `${it.desc ? `<p>${esc(it.desc)}</p>` : ''}<p class="subtle">${[it.tag && esc(it.tag), it.matches && `样本 ${esc(it.matches)}`, it.score != null && `综合分 ${it.score}`, it.wr == null && '暂无胜率'].filter(Boolean).join(' · ')}</p>${heroLinks(it.best)}` +
           (users.length ? `<p class="subtle" style="margin-top:8px">这些英雄的推荐出装里有它</p>${heroLinks(users)}` : ''));
       }).join('') +
         (ext.length ? `<div class="divider">以下 ${ext.length} 件出现在英雄推荐出装里，暂无全局胜率。点开可以看哪些英雄推荐它。</div>` +
@@ -348,7 +355,7 @@
           : `<div class="stat"><div class="k">样本场次</div><div class="v">${fmtWan(h.matches)}</div></div>`}
         <div class="stat"><div class="k">加点</div><div class="v sm">${esc(h.skill)}</div></div>
       </div>
-      ${h.blitz ? `<p class="note">出装和海克斯按 Blitz 评级排序（${esc(D.meta.blitz.patch)} 版本，每日更新，T1 最强，Blitz 不提供胜率）；英雄胜率是 ${esc(D.meta.patch)} 版本的整理数据，流派、要点等文字仅供参考。</p>` : OLD_PATCH ? `<p class="note">胜率、出装和海克斯推荐是 ${esc(D.meta.patch)} 版本的整理数据，当前已是 ${esc(D.meta.open.patch)} 版本，仅供参考；出场率为最新数据。</p>` : ''}
+      ${h.blitz ? `<p class="note">出装和海克斯按 Blitz 评级排序（${esc(D.meta.blitz.patch)} 版本，每日更新，T1 最强，Blitz 不提供胜率）；${D.meta.wr ? `英雄胜率来自 <a href="${esc(h.hexUrl || 'https://hexdata.com.cn/heroes')}" target="_blank" rel="noopener">Hexdata</a>（${esc(WR.patch)} 版本，每日更新）` : `英雄胜率是 ${esc(D.meta.patch)} 版本的整理数据`}；流派、要点等文字仅供参考。</p>` : OLD_PATCH ? `<p class="note">胜率是 ${esc(WR.patch)} 版本的数据，当前已是 ${esc(CUR)} 版本，仅供参考；出场率为最新数据。</p>` : ''}
       ${h.generic && !h.blitz ? '<p class="note">这位英雄的出装和海克斯目前是同定位通用推荐，仅供参考，后续会逐步补上专属内容。</p>' : ''}
 
       <div class="grid2">
@@ -458,7 +465,7 @@
   }
   function guideText(h) {
     return [
-      `【海克斯大乱斗 ${D.meta.patch}】${h.name}（${h.title}）胜率 ${pct(h.wr)} · 第 ${h.rank}/${TOTAL}`,
+      `【海克斯大乱斗 ${CUR}】${h.name}（${h.title}）胜率 ${pct(h.wr)} · 第 ${h.rank}/${TOTAL}`,
       `流派：${h.style}（${h.skill}）`,
       `海克斯：${h.augments.slice(0, 4).map(a => a.name).join(' > ')}`,
       `出装：${h.coreItems.join(' → ')}`,

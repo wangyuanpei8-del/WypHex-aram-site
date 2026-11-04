@@ -20,13 +20,15 @@
 | 海克斯选取率、稀有度、是否本版本新增 | arammayhem.com | **每天自动** |
 | 精选组合（英雄 + 海克斯） | arammayhem.com | **每天自动** |
 | 英雄头像、装备和海克斯图标 | Data Dragon、CommunityDragon | **每天自动**补齐 |
-| 英雄胜率与梯队、流派、加点、锻体、上手要点、王牌组合、装备榜、乐队 | 最早那版网页（单文件 index.html）里自带的数据，标注来源为 Hexdata / ARAMGG / ARAM Mayhem / OP.GG 手工整理，26.21 版本；现存放在 `data/sheets/` | 不会自动更新，页面上注明“仅供参考” |
+| 英雄胜率与场次、海克斯和装备的胜率与综合分 | [Hexdata](https://hexdata.com.cn)（公开排行页，需注明“数据来源：Hexdata（hexdata.com.cn）”） | **每天自动**（失败时沿用上一次） |
+| 英雄梯队、流派、加点、锻体、上手要点、王牌组合、装备说明、乐队 | 最早那版网页（单文件 index.html）里自带的手工整理数据，26.21 版本；现存放在 `data/sheets/` | 不会自动更新，页面上注明“仅供参考” |
 
-### 为什么胜率没法自动更新
+### 胜率从哪来
 
-- **拳头官方 API 拿不到**：拳头有意不在官方 API 里公开海克斯大乱斗的对局，不让外部网站统计这个模式的胜率（见 [#1109](https://github.com/RiotGames/developer-relations/issues/1109)、[#1204](https://github.com/RiotGames/developer-relations/issues/1204)）。
-- **两个自动来源都只给相对强弱**：arammayhem.com 只提供出场率和选取率，Blitz 只提供评级，都没有胜率。
-- **所以网页这样显示**：出装和海克斯用 Blitz 评级排序，显示 T1~T5，不显示胜率。英雄胜率沿用 26.21 版本的整理数据。
+- **拳头官方 API 拿不到**：拳头有意不在官方 API 里公开海克斯大乱斗的对局（见 [#1109](https://github.com/RiotGames/developer-relations/issues/1109)、[#1204](https://github.com/RiotGames/developer-relations/issues/1204)）。arammayhem.com 只有出场率，Blitz 只有评级。
+- **Hexdata 公开了胜率**：`scripts/fetch-hexdata.mjs` 每天读取 hexdata.com.cn 的英雄、海克斯、装备三个排行页（它的 robots.txt 允许抓取这些页面），提取胜率、场次和综合分。Hexdata 的样本是公开可查的对局，不是全服所有对局。
+- **版本标签**：胜率旁边标着数据所属版本。Hexdata 写的是客户端版本号（如 16.21），网页换算成赛季版本号（26.21）显示。落后于当前版本时标橙色“旧”，首页改按出场率排。Hexdata 的装备页更新得比较慢，所以装备胜率单独标版本。
+- **失败时**：页面改版或打不开时这一步自动跳过，网页沿用上一次的胜率。Hexdata 里找不到的海克斯和装备不显示胜率。
 
 ### Blitz 评级的可靠性
 
@@ -49,6 +51,7 @@
 | 脚本 | 做什么 |
 |---|---|
 | `fetch-open-data.mjs` | 下载 arammayhem 数据 |
+| `fetch-hexdata.mjs` | 下载 Hexdata 胜率（失败就跳过这一步） |
 | `fetch-blitz.mjs` | 下载 Blitz 评级（失败就跳过这一步） |
 | `import-sheet.mjs` | 合并成网页数据 |
 | `fetch-icons.mjs` | 补齐新图标、删掉不再用的旧图标 |
@@ -102,11 +105,13 @@ assets/app.js, app.css         网页交互与样式
 assets/icons/                  英雄头像、装备和海克斯图标（自动下载）
 data/sheets/*.csv              整理数据（可手工改）
 data/open/arammayhem.json      每日下载的 arammayhem 数据
+data/open/hexdata.json         每日下载的 Hexdata 胜率
 data/open/blitz.json           每日下载的 Blitz 评级
 data/data.json, data.js        网页实际使用的数据（自动生成，不要手改）
 data/icons.js                  图标对照表（自动生成）
 dist/hexaram.html              单文件版（自动生成）
 scripts/fetch-open-data.mjs    下载 arammayhem 数据
+scripts/fetch-hexdata.mjs      下载 Hexdata 胜率
 scripts/fetch-blitz.mjs        下载 Blitz 评级
 scripts/import-sheet.mjs       表格 + 两份下载数据 → 网页数据
 scripts/sheet-lib.mjs          读表格用的工具
@@ -132,4 +137,5 @@ node scripts/build-standalone.mjs
 非官方工具，与 Riot Games 无关联。
 
 - 出场率、选取率与精选组合数据来自 [arammayhem.com](https://arammayhem.com/data/)，按 CC BY 4.0 协议使用。
+- 胜率、场次与综合分数据来源：Hexdata（[hexdata.com.cn](https://hexdata.com.cn)）。
 - 出装与海克斯评级来自 [Blitz](https://blitz.gg/lol)。

@@ -1,7 +1,7 @@
 name: 每日自动更新
 
-# 每天从 arammayhem.com（出场率、选取率、组合）和 Blitz（每个英雄的海克斯、装备评级）拉取数据，
-# 合并进网页。Blitz 拉取失败时跳过，网页沿用上一次的评级。支持在测试分支或 main 分支运行。
+# 每天从 arammayhem.com（出场率、选取率、组合）、Hexdata（胜率）和 Blitz（每个英雄的海克斯、装备评级）拉取数据，
+# 合并进网页。Hexdata、Blitz 拉取失败时跳过，网页沿用上一次的数据。支持在测试分支或 main 分支运行。
 on:
   schedule:
     - cron: '0 19 * * *'   # 每天北京时间 03:00
@@ -25,6 +25,9 @@ jobs:
           node-version: 20
       - name: 下载 arammayhem 开放数据
         run: node scripts/fetch-open-data.mjs
+      - name: 下载 Hexdata 胜率
+        continue-on-error: true
+        run: node scripts/fetch-hexdata.mjs
       - name: 下载 Blitz 评级
         continue-on-error: true
         run: node scripts/fetch-blitz.mjs

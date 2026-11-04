@@ -99,6 +99,50 @@ if (heroes.length < 20) { console.error('英雄表少于 20 行，可能是表�
 heroes = heroes.map(h => { if (!h.key) delete h.key; return h; });
 const out = { meta, heroes, augments, items, combos, bands: old.bands };
 
+/* 合并 Hexdata 胜率（英雄胜率与场次、海克斯与装备的综合分和胜率），文件由 fetch-hexdata.mjs 下载 */
+let hex = null;
+try { hex = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'hexdata.json'), 'utf8')); } catch {}
+if (hex) {
+  const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
+  // Hexdata 用客户端版本号（16.21），本站用赛季版本号（26.21）
+  const P = p => { const m = /^(\d+)\.(\d+)/.exec(p || ''); return m ? `${+m[1] < 20 ? +m[1] + 10 : +m[1]}.${m[2]}` : null; };
+  const byName = new Map(hex.heroes.rows.map(r => [r.name, r]));
+  const byTitle = new Map(hex.heroes.rows.map(r => [r.title, r]));
+  const bySlug = new Map(hex.heroes.rows.map(r => [r.slug.replace(/-/g, ''), r]));
+  const miss = [];
+  for (const h of heroes) {
+    const r = byName.get(h.name) || byTitle.get(h.title) || (h.key && bySlug.get(h.key.toLowerCase()));
+    if (r) { h.wr = r.wr; h.matches = r.games || h.matches; h.hexUrl = `https://hexdata.com.cn/hero/${r.id}-${r.slug}`; } else miss.push(h.name);
+  }
+  heroes.sort((a, b) => b.wr - a.wr).forEach((h, i) => { h.rank = i + 1; });
+  if (miss.length) console.log(`提醒：${miss.length} 位英雄在 Hexdata 里没找到，沿用表格胜率：${miss.join('、')}`);
+
+  const ha = new Map(hex.augments.rows.map(r => [nk(r.name), r]));
+  const mineA = new Set(augments.map(a => nk(a.name)));
+  for (const a of augments) {
+    const r = ha.get(nk(a.name));
+    if (r) Object.assign(a, { wr: r.wr, score: r.score ?? a.score });
+    else { a.wr = null; a.score = null; } // 没有 Hexdata 胜率的就不显示旧数字
+  }
+  for (const r of hex.augments.rows) if (!mineA.has(nk(r.name))) augments.push({ name: r.name, rarity: '未知', tier: '', score: r.score, wr: r.wr, pick: null, isNew: false, effect: '', heroes: [] });
+
+  const wan = n => (n >= 10000 ? (n / 10000).toFixed(1) + '万' : String(n));
+  const hi = new Map(hex.items.rows.map(r => [nk(r.name), r]));
+  const mineI = new Set(items.map(i => nk(i.name)));
+  for (const i of items) {
+    const r = hi.get(nk(i.name));
+    if (r) Object.assign(i, { wr: r.wr, score: r.score ?? i.score, matches: r.games ? wan(r.games) : i.matches });
+    else { i.wr = null; i.score = null; }
+  }
+  for (const r of hex.items.rows) if (!mineI.has(nk(r.name))) items.push({ name: r.name, score: r.score, wr: r.wr, matches: r.games ? wan(r.games) : '', tag: '', best: [], desc: '' });
+
+  meta.wr = {
+    source: hex.source, patch: P(hex.heroes.patch), date: hex.heroes.date,
+    augPatch: P(hex.augments.patch) || P(hex.heroes.patch), itemPatch: P(hex.items.patch) || P(hex.heroes.patch), itemDate: hex.items.date,
+  };
+  console.log(`已合并 Hexdata 胜率（英雄 ${hex.heroes.patch} 版 ${heroes.length - miss.length}/${heroes.length}，海克斯 ${hex.augments.rows.length}，装备 ${hex.items.patch} 版 ${hex.items.rows.length}）`);
+}
+
 /* 合并 arammayhem.com 开放数据（出场率、选取率、稀有度、精选组合），文件由 fetch-open-data.mjs 下载 */
 let open = null;
 try { open = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'arammayhem.json'), 'utf8')); } catch {}
