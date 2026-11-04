@@ -106,7 +106,9 @@ let open = null;
 try { open = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'arammayhem.json'), 'utf8')); } catch {}
 if (open) {
   const champ = new Map(open.champions.map(c => [c.key, c]));
-  const oa = new Map(open.augments.map(a => [a.name, a]));
+  // 名称比较时忽略空格和标点（如“鼓声暴起 低音轰鸣”与“鼓声暴起低音轰鸣”是同一个）
+  const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
+  const oa = new Map(open.augments.map(a => [nk(a.name), a]));
   const combosBy = new Map();
   open.combos.forEach(c => { (combosBy.get(c.key) || combosBy.set(c.key, []).get(c.key)).push({ augs: c.augs, types: c.types, url: c.url }); });
   let heroHit = 0;
@@ -114,15 +116,15 @@ if (open) {
     const c = champ.get(h.key);
     if (c) { h.pick = c.pick; h.pickChange = c.pickChange; h.pickRank = c.pickRank; h.openUrl = c.url; heroHit++; }
     if (combosBy.has(h.key)) h.openCombos = combosBy.get(h.key);
-    h.augments.forEach(a => { const o = oa.get(a.name); if (o && o.rarity !== '未知') a.rarity = o.rarity; });
+    h.augments.forEach(a => { const o = oa.get(nk(a.name)); if (o && o.rarity !== '未知') a.rarity = o.rarity; });
   }
-  const mine = new Map(augments.map(a => [a.name, a]));
+  const mine = new Map(augments.map(a => [nk(a.name), a]));
   for (const o of open.augments) {
-    const a = mine.get(o.name);
+    const a = mine.get(nk(o.name));
     if (a) Object.assign(a, { pick: o.pick, pickChange: o.pickChange, isNew: o.isNew, openUrl: o.url, ...(o.rarity !== '未知' ? { rarity: o.rarity } : {}) });
     else augments.push({ name: o.name, rarity: o.rarity, tier: '', score: null, wr: null, pick: o.pick, pickChange: o.pickChange, isNew: o.isNew, effect: '', heroes: [], openUrl: o.url });
   }
-  const unknown = new Set(heroes.flatMap(h => h.augments.map(a => a.name)).filter(n => !oa.has(n)));
+  const unknown = new Set(heroes.flatMap(h => h.augments.map(a => a.name)).filter(n => !oa.has(nk(n))));
   meta.open = { source: open.source, license: open.license, patch: open.patch, statsDate: open.statsDate };
   console.log(`已合并 arammayhem 数据（版本 ${open.patch}，统计日 ${open.statsDate}）：英雄出场率 ${heroHit}/${heroes.length}，海克斯 ${open.augments.length} 个`);
   if (unknown.size) console.log(`提醒：英雄表里有 ${unknown.size} 个海克斯名称在 arammayhem 里找不到（可能是译名不同或已移除）：${[...unknown].slice(0, 30).join('、')}`);
