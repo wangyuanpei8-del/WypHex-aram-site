@@ -1,0 +1,3737 @@
+{
+ "source": "Hexdata（hexdata.com.cn）",
+ "fetchedAt": "2026-11-04T08:45:11.691Z",
+ "heroes": {
+  "patch": "16.21",
+  "date": "2026-10-30",
+  "rows": [
+   {
+    "id": 157,
+    "slug": "yasuo",
+    "title": "疾风剑豪",
+    "name": "亚索",
+    "wr": 58.3,
+    "games": 1384002
+   },
+   {
+    "id": 114,
+    "slug": "fiora",
+    "title": "无双剑姬",
+    "name": "菲奥娜",
+    "wr": 57.1,
+    "games": 701830
+   },
+   {
+    "id": 4,
+    "slug": "twistedfate",
+    "title": "卡牌大师",
+    "name": "崔斯特",
+    "wr": 57.1,
+    "games": 1276578
+   },
+   {
+    "id": 887,
+    "slug": "gwen",
+    "title": "灵罗娃娃",
+    "name": "格温",
+    "wr": 57,
+    "games": 502655
+   },
+   {
+    "id": 5,
+    "slug": "xinzhao",
+    "title": "德邦总管",
+    "name": "赵信",
+    "wr": 55.9,
+    "games": 1105675
+   },
+   {
+    "id": 245,
+    "slug": "ekko",
+    "title": "时间刺客",
+    "name": "艾克",
+    "wr": 55.5,
+    "games": 1070250
+   },
+   {
+    "id": 777,
+    "slug": "yone",
+    "title": "封魔剑魂",
+    "name": "永恩",
+    "wr": 55.4,
+    "games": 1109812
+   },
+   {
+    "id": 904,
+    "slug": "zaahen",
+    "title": "不落魔锋",
+    "name": "亚恒",
+    "wr": 55.3,
+    "games": 347619
+   },
+   {
+    "id": 10,
+    "slug": "kayle",
+    "title": "正义天使",
+    "name": "凯尔",
+    "wr": 55.2,
+    "games": 766510
+   },
+   {
+    "id": 11,
+    "slug": "masteryi",
+    "title": "无极剑圣",
+    "name": "易",
+    "wr": 55.2,
+    "games": 1304043
+   },
+   {
+    "id": 200,
+    "slug": "belveth",
+    "title": "虚空女皇",
+    "name": "卑尔维斯",
+    "wr": 54.9,
+    "games": 506377
+   },
+   {
+    "id": 17,
+    "slug": "teemo",
+    "title": "迅捷斥候",
+    "name": "提莫",
+    "wr": 54.7,
+    "games": 1659907
+   },
+   {
+    "id": 876,
+    "slug": "lillia",
+    "title": "含羞蓓蕾",
+    "name": "莉莉娅",
+    "wr": 54.5,
+    "games": 1013784
+   },
+   {
+    "id": 223,
+    "slug": "tahmkench",
+    "title": "河流之王",
+    "name": "塔姆",
+    "wr": 54.4,
+    "games": 1534609
+   },
+   {
+    "id": 102,
+    "slug": "shyvana",
+    "title": "龙血武姬",
+    "name": "希瓦娜",
+    "wr": 53.7,
+    "games": 465316
+   },
+   {
+    "id": 25,
+    "slug": "morgana",
+    "title": "堕落天使",
+    "name": "莫甘娜",
+    "wr": 53.6,
+    "games": 1246036
+   },
+   {
+    "id": 24,
+    "slug": "jax",
+    "title": "武器大师",
+    "name": "贾克斯",
+    "wr": 53.5,
+    "games": 794609
+   },
+   {
+    "id": 526,
+    "slug": "rell",
+    "title": "镕铁少女",
+    "name": "芮尔",
+    "wr": 53.5,
+    "games": 603188
+   },
+   {
+    "id": 799,
+    "slug": "ambessa",
+    "title": "铁血狼母",
+    "name": "安蓓萨",
+    "wr": 52.8,
+    "games": 511236
+   },
+   {
+    "id": 13,
+    "slug": "ryze",
+    "title": "符文法师",
+    "name": "瑞兹",
+    "wr": 52.6,
+    "games": 1409633
+   },
+   {
+    "id": 910,
+    "slug": "hwei",
+    "title": "异画师",
+    "name": "彗",
+    "wr": 52.6,
+    "games": 595203
+   },
+   {
+    "id": 234,
+    "slug": "viego",
+    "title": "破败之王",
+    "name": "佛耶戈",
+    "wr": 52.5,
+    "games": 565749
+   },
+   {
+    "id": 141,
+    "slug": "kayn",
+    "title": "影流之镰",
+    "name": "凯隐",
+    "wr": 52.5,
+    "games": 893978
+   },
+   {
+    "id": 120,
+    "slug": "hecarim",
+    "title": "战争之影",
+    "name": "赫卡里姆",
+    "wr": 52.4,
+    "games": 1286709
+   },
+   {
+    "id": 103,
+    "slug": "ahri",
+    "title": "九尾妖狐",
+    "name": "阿狸",
+    "wr": 52.2,
+    "games": 633186
+   },
+   {
+    "id": 112,
+    "slug": "viktor",
+    "title": "奥术先驱",
+    "name": "维克托",
+    "wr": 52.2,
+    "games": 596933
+   },
+   {
+    "id": 26,
+    "slug": "zilean",
+    "title": "时光守护者",
+    "name": "基兰",
+    "wr": 52.1,
+    "games": 526055
+   },
+   {
+    "id": 62,
+    "slug": "monkeyking",
+    "title": "齐天大圣",
+    "name": "孙悟空",
+    "wr": 52,
+    "games": 827569
+   },
+   {
+    "id": 48,
+    "slug": "trundle",
+    "title": "巨魔之王",
+    "name": "特朗德尔",
+    "wr": 51.9,
+    "games": 1130507
+   },
+   {
+    "id": 37,
+    "slug": "sona",
+    "title": "琴瑟仙女",
+    "name": "娑娜",
+    "wr": 51.8,
+    "games": 436255
+   },
+   {
+    "id": 44,
+    "slug": "taric",
+    "title": "瓦洛兰之盾",
+    "name": "塔里克",
+    "wr": 51.8,
+    "games": 232245
+   },
+   {
+    "id": 147,
+    "slug": "seraphine",
+    "title": "星籁歌姬",
+    "name": "萨勒芬妮",
+    "wr": 51.8,
+    "games": 812621
+   },
+   {
+    "id": 40,
+    "slug": "janna",
+    "title": "风暴之怒",
+    "name": "迦娜",
+    "wr": 51.8,
+    "games": 278745
+   },
+   {
+    "id": 106,
+    "slug": "volibear",
+    "title": "不灭狂雷",
+    "name": "沃利贝尔",
+    "wr": 51.7,
+    "games": 600476
+   },
+   {
+    "id": 78,
+    "slug": "poppy",
+    "title": "圣锤之毅",
+    "name": "波比",
+    "wr": 51.7,
+    "games": 514282
+   },
+   {
+    "id": 895,
+    "slug": "nilah",
+    "title": "不羁之悦",
+    "name": "尼菈",
+    "wr": 51.5,
+    "games": 103889
+   },
+   {
+    "id": 39,
+    "slug": "irelia",
+    "title": "刀锋舞者",
+    "name": "艾瑞莉娅",
+    "wr": 51.5,
+    "games": 456310
+   },
+   {
+    "id": 90,
+    "slug": "malzahar",
+    "title": "虚空先知",
+    "name": "玛尔扎哈",
+    "wr": 51.5,
+    "games": 780932
+   },
+   {
+    "id": 12,
+    "slug": "alistar",
+    "title": "牛头酋长",
+    "name": "阿利斯塔",
+    "wr": 51.4,
+    "games": 645575
+   },
+   {
+    "id": 23,
+    "slug": "tryndamere",
+    "title": "蛮族之王",
+    "name": "泰达米尔",
+    "wr": 51.4,
+    "games": 801953
+   },
+   {
+    "id": 350,
+    "slug": "yuumi",
+    "title": "魔法猫咪",
+    "name": "悠米",
+    "wr": 51.3,
+    "games": 341004
+   },
+   {
+    "id": 875,
+    "slug": "sett",
+    "title": "腕豪",
+    "name": "瑟提",
+    "wr": 51.3,
+    "games": 1280965
+   },
+   {
+    "id": 38,
+    "slug": "kassadin",
+    "title": "虚空行者",
+    "name": "卡萨丁",
+    "wr": 51.3,
+    "games": 416835
+   },
+   {
+    "id": 236,
+    "slug": "lucian",
+    "title": "圣枪游侠",
+    "name": "卢锡安",
+    "wr": 51.1,
+    "games": 1584303
+   },
+   {
+    "id": 134,
+    "slug": "syndra",
+    "title": "暗黑元首",
+    "name": "辛德拉",
+    "wr": 51,
+    "games": 601153
+   },
+   {
+    "id": 98,
+    "slug": "shen",
+    "title": "暮光之眼",
+    "name": "慎",
+    "wr": 50.9,
+    "games": 543441
+   },
+   {
+    "id": 104,
+    "slug": "graves",
+    "title": "法外狂徒",
+    "name": "格雷福斯",
+    "wr": 50.9,
+    "games": 1369144
+   },
+   {
+    "id": 42,
+    "slug": "corki",
+    "title": "英勇投弹手",
+    "name": "库奇",
+    "wr": 50.9,
+    "games": 765365
+   },
+   {
+    "id": 161,
+    "slug": "velkoz",
+    "title": "虚空之眼",
+    "name": "维克兹",
+    "wr": 50.9,
+    "games": 656639
+   },
+   {
+    "id": 412,
+    "slug": "thresh",
+    "title": "魂锁典狱长",
+    "name": "锤石",
+    "wr": 50.8,
+    "games": 842008
+   },
+   {
+    "id": 36,
+    "slug": "drmundo",
+    "title": "祖安狂人",
+    "name": "蒙多医生",
+    "wr": 50.8,
+    "games": 1014318
+   },
+   {
+    "id": 136,
+    "slug": "aurelionsol",
+    "title": "铸星龙王",
+    "name": "奥瑞利安·索尔",
+    "wr": 50.8,
+    "games": 1296233
+   },
+   {
+    "id": 421,
+    "slug": "reksai",
+    "title": "虚空遁地兽",
+    "name": "雷克塞",
+    "wr": 50.8,
+    "games": 80995
+   },
+   {
+    "id": 89,
+    "slug": "leona",
+    "title": "曙光女神",
+    "name": "蕾欧娜",
+    "wr": 50.8,
+    "games": 759061
+   },
+   {
+    "id": 80,
+    "slug": "pantheon",
+    "title": "不屈之枪",
+    "name": "潘森",
+    "wr": 50.7,
+    "games": 707011
+   },
+   {
+    "id": 21,
+    "slug": "missfortune",
+    "title": "赏金猎人",
+    "name": "厄运小姐",
+    "wr": 50.7,
+    "games": 1700846
+   },
+   {
+    "id": 105,
+    "slug": "fizz",
+    "title": "潮汐海灵",
+    "name": "菲兹",
+    "wr": 50.7,
+    "games": 1091357
+   },
+   {
+    "id": 893,
+    "slug": "aurora",
+    "title": "双界灵兔",
+    "name": "阿萝拉",
+    "wr": 50.7,
+    "games": 776413
+   },
+   {
+    "id": 74,
+    "slug": "heimerdinger",
+    "title": "大发明家",
+    "name": "黑默丁格",
+    "wr": 50.6,
+    "games": 427668
+   },
+   {
+    "id": 14,
+    "slug": "sion",
+    "title": "亡灵战神",
+    "name": "赛恩",
+    "wr": 50.6,
+    "games": 747498
+   },
+   {
+    "id": 3,
+    "slug": "galio",
+    "title": "正义巨像",
+    "name": "加里奥",
+    "wr": 50.6,
+    "games": 655933
+   },
+   {
+    "id": 75,
+    "slug": "nasus",
+    "title": "沙漠死神",
+    "name": "内瑟斯",
+    "wr": 50.6,
+    "games": 666295
+   },
+   {
+    "id": 427,
+    "slug": "ivern",
+    "title": "翠神",
+    "name": "艾翁",
+    "wr": 50.5,
+    "games": 80961
+   },
+   {
+    "id": 240,
+    "slug": "kled",
+    "title": "暴怒骑士",
+    "name": "克烈",
+    "wr": 50.4,
+    "games": 114625
+   },
+   {
+    "id": 711,
+    "slug": "vex",
+    "title": "愁云使者",
+    "name": "薇古丝",
+    "wr": 50.4,
+    "games": 254408
+   },
+   {
+    "id": 888,
+    "slug": "renata",
+    "title": "炼金男爵",
+    "name": "烈娜塔 · 戈拉斯克",
+    "wr": 50.3,
+    "games": 196193
+   },
+   {
+    "id": 19,
+    "slug": "warwick",
+    "title": "祖安怒兽",
+    "name": "沃里克",
+    "wr": 50.2,
+    "games": 270604
+   },
+   {
+    "id": 143,
+    "slug": "zyra",
+    "title": "荆棘之兴",
+    "name": "婕拉",
+    "wr": 50.1,
+    "games": 550573
+   },
+   {
+    "id": 233,
+    "slug": "briar",
+    "title": "狂厄蔷薇",
+    "name": "贝蕾亚",
+    "wr": 50.1,
+    "games": 418255
+   },
+   {
+    "id": 67,
+    "slug": "vayne",
+    "title": "暗夜猎手",
+    "name": "薇恩",
+    "wr": 50,
+    "games": 1224623
+   },
+   {
+    "id": 51,
+    "slug": "caitlyn",
+    "title": "皮城女警",
+    "name": "凯特琳",
+    "wr": 50,
+    "games": 1562198
+   },
+   {
+    "id": 119,
+    "slug": "draven",
+    "title": "荣耀行刑官",
+    "name": "德莱文",
+    "wr": 49.9,
+    "games": 812148
+   },
+   {
+    "id": 27,
+    "slug": "singed",
+    "title": "炼金术士",
+    "name": "辛吉德",
+    "wr": 49.9,
+    "games": 777718
+   },
+   {
+    "id": 517,
+    "slug": "sylas",
+    "title": "解脱者",
+    "name": "塞拉斯",
+    "wr": 49.8,
+    "games": 1031870
+   },
+   {
+    "id": 91,
+    "slug": "talon",
+    "title": "刀锋之影",
+    "name": "泰隆",
+    "wr": 49.7,
+    "games": 576662
+   },
+   {
+    "id": 41,
+    "slug": "gangplank",
+    "title": "海洋之灾",
+    "name": "普朗克",
+    "wr": 49.7,
+    "games": 1002496
+   },
+   {
+    "id": 56,
+    "slug": "nocturne",
+    "title": "永恒梦魇",
+    "name": "魔腾",
+    "wr": 49.7,
+    "games": 523011
+   },
+   {
+    "id": 164,
+    "slug": "camille",
+    "title": "青钢影",
+    "name": "卡蜜尔",
+    "wr": 49.7,
+    "games": 372068
+   },
+   {
+    "id": 107,
+    "slug": "rengar",
+    "title": "傲之追猎者",
+    "name": "雷恩加尔",
+    "wr": 49.6,
+    "games": 835619
+   },
+   {
+    "id": 122,
+    "slug": "darius",
+    "title": "诺克萨斯之手",
+    "name": "德莱厄斯",
+    "wr": 49.6,
+    "games": 886297
+   },
+   {
+    "id": 145,
+    "slug": "kaisa",
+    "title": "虚空之女",
+    "name": "卡莎",
+    "wr": 49.6,
+    "games": 1693274
+   },
+   {
+    "id": 45,
+    "slug": "veigar",
+    "title": "邪恶小法师",
+    "name": "维迦",
+    "wr": 49.6,
+    "games": 837492
+   },
+   {
+    "id": 68,
+    "slug": "rumble",
+    "title": "机械公敌",
+    "name": "兰博",
+    "wr": 49.6,
+    "games": 770879
+   },
+   {
+    "id": 101,
+    "slug": "xerath",
+    "title": "远古巫灵",
+    "name": "泽拉斯",
+    "wr": 49.4,
+    "games": 941954
+   },
+   {
+    "id": 804,
+    "slug": "yunara",
+    "title": "不破之誓",
+    "name": "芸阿娜",
+    "wr": 49.4,
+    "games": 735387
+   },
+   {
+    "id": 55,
+    "slug": "katarina",
+    "title": "不祥之刃",
+    "name": "卡特琳娜",
+    "wr": 49.3,
+    "games": 860643
+   },
+   {
+    "id": 50,
+    "slug": "swain",
+    "title": "诺克萨斯统领",
+    "name": "斯维因",
+    "wr": 49.3,
+    "games": 1166528
+   },
+   {
+    "id": 16,
+    "slug": "soraka",
+    "title": "众星之子",
+    "name": "索拉卡",
+    "wr": 49.3,
+    "games": 418519
+   },
+   {
+    "id": 523,
+    "slug": "aphelios",
+    "title": "残月之肃",
+    "name": "厄斐琉斯",
+    "wr": 49.2,
+    "games": 490626
+   },
+   {
+    "id": 238,
+    "slug": "zed",
+    "title": "影流之主",
+    "name": "劫",
+    "wr": 49.2,
+    "games": 1092683
+   },
+   {
+    "id": 267,
+    "slug": "nami",
+    "title": "唤潮鲛姬",
+    "name": "娜美",
+    "wr": 49.2,
+    "games": 189714
+   },
+   {
+    "id": 79,
+    "slug": "gragas",
+    "title": "酒桶",
+    "name": "古拉加斯",
+    "wr": 49.1,
+    "games": 601479
+   },
+   {
+    "id": 57,
+    "slug": "maokai",
+    "title": "扭曲树精",
+    "name": "茂凯",
+    "wr": 49.1,
+    "games": 895254
+   },
+   {
+    "id": 54,
+    "slug": "malphite",
+    "title": "熔岩巨兽",
+    "name": "墨菲特",
+    "wr": 49.1,
+    "games": 1395309
+   },
+   {
+    "id": 60,
+    "slug": "elise",
+    "title": "蜘蛛女皇",
+    "name": "伊莉丝",
+    "wr": 49,
+    "games": 114850
+   },
+   {
+    "id": 1,
+    "slug": "annie",
+    "title": "黑暗之女",
+    "name": "安妮",
+    "wr": 49,
+    "games": 279681
+   },
+   {
+    "id": 92,
+    "slug": "riven",
+    "title": "放逐之刃",
+    "name": "锐雯",
+    "wr": 49,
+    "games": 384243
+   },
+   {
+    "id": 2,
+    "slug": "olaf",
+    "title": "狂战士",
+    "name": "奥拉夫",
+    "wr": 48.9,
+    "games": 221405
+   },
+   {
+    "id": 902,
+    "slug": "milio",
+    "title": "明烛",
+    "name": "米利欧",
+    "wr": 48.9,
+    "games": 287088
+   },
+   {
+    "id": 63,
+    "slug": "brand",
+    "title": "复仇焰魂",
+    "name": "布兰德",
+    "wr": 48.8,
+    "games": 1521619
+   },
+   {
+    "id": 163,
+    "slug": "taliyah",
+    "title": "岩雀",
+    "name": "塔莉垭",
+    "wr": 48.8,
+    "games": 265965
+   },
+   {
+    "id": 111,
+    "slug": "nautilus",
+    "title": "深海泰坦",
+    "name": "诺提勒斯",
+    "wr": 48.8,
+    "games": 846513
+   },
+   {
+    "id": 901,
+    "slug": "smolder",
+    "title": "炽炎雏龙",
+    "name": "斯莫德",
+    "wr": 48.7,
+    "games": 1475346
+   },
+   {
+    "id": 96,
+    "slug": "kogmaw",
+    "title": "深渊巨口",
+    "name": "克格莫",
+    "wr": 48.6,
+    "games": 681077
+   },
+   {
+    "id": 121,
+    "slug": "khazix",
+    "title": "虚空掠夺者",
+    "name": "卡兹克",
+    "wr": 48.6,
+    "games": 714572
+   },
+   {
+    "id": 43,
+    "slug": "karma",
+    "title": "天启者",
+    "name": "卡尔玛",
+    "wr": 48.6,
+    "games": 438525
+   },
+   {
+    "id": 77,
+    "slug": "udyr",
+    "title": "兽灵行者",
+    "name": "乌迪尔",
+    "wr": 48.6,
+    "games": 761482
+   },
+   {
+    "id": 115,
+    "slug": "ziggs",
+    "title": "爆破鬼才",
+    "name": "吉格斯",
+    "wr": 48.6,
+    "games": 700281
+   },
+   {
+    "id": 32,
+    "slug": "amumu",
+    "title": "殇之木乃伊",
+    "name": "阿木木",
+    "wr": 48.6,
+    "games": 555339
+   },
+   {
+    "id": 28,
+    "slug": "evelynn",
+    "title": "痛苦之拥",
+    "name": "伊芙琳",
+    "wr": 48.5,
+    "games": 93666
+   },
+   {
+    "id": 222,
+    "slug": "jinx",
+    "title": "暴走萝莉",
+    "name": "金克丝",
+    "wr": 48.5,
+    "games": 1094095
+   },
+   {
+    "id": 254,
+    "slug": "vi",
+    "title": "皮城执法官",
+    "name": "蔚",
+    "wr": 48.5,
+    "games": 392280
+   },
+   {
+    "id": 61,
+    "slug": "orianna",
+    "title": "发条魔灵",
+    "name": "奥莉安娜",
+    "wr": 48.4,
+    "games": 399953
+   },
+   {
+    "id": 202,
+    "slug": "jhin",
+    "title": "戏命师",
+    "name": "烬",
+    "wr": 48.4,
+    "games": 1439943
+   },
+   {
+    "id": 35,
+    "slug": "shaco",
+    "title": "恶魔小丑",
+    "name": "萨科",
+    "wr": 48.3,
+    "games": 1180578
+   },
+   {
+    "id": 99,
+    "slug": "lux",
+    "title": "光辉女郎",
+    "name": "拉克丝",
+    "wr": 48.2,
+    "games": 821267
+   },
+   {
+    "id": 113,
+    "slug": "sejuani",
+    "title": "北地之怒",
+    "name": "瑟庄妮",
+    "wr": 48.1,
+    "games": 456637
+   },
+   {
+    "id": 110,
+    "slug": "varus",
+    "title": "惩戒之箭",
+    "name": "韦鲁斯",
+    "wr": 48.1,
+    "games": 1185838
+   },
+   {
+    "id": 30,
+    "slug": "karthus",
+    "title": "死亡颂唱者",
+    "name": "卡尔萨斯",
+    "wr": 48,
+    "games": 1376195
+   },
+   {
+    "id": 268,
+    "slug": "azir",
+    "title": "沙漠皇帝",
+    "name": "阿兹尔",
+    "wr": 48,
+    "games": 238255
+   },
+   {
+    "id": 72,
+    "slug": "skarner",
+    "title": "上古领主",
+    "name": "斯卡纳",
+    "wr": 48,
+    "games": 218985
+   },
+   {
+    "id": 9,
+    "slug": "fiddlesticks",
+    "title": "远古恐惧",
+    "name": "费德提克",
+    "wr": 47.9,
+    "games": 460851
+   },
+   {
+    "id": 429,
+    "slug": "kalista",
+    "title": "复仇之矛",
+    "name": "卡莉丝塔",
+    "wr": 47.9,
+    "games": 325481
+   },
+   {
+    "id": 498,
+    "slug": "xayah",
+    "title": "逆羽",
+    "name": "霞",
+    "wr": 47.9,
+    "games": 504257
+   },
+   {
+    "id": 8,
+    "slug": "vladimir",
+    "title": "猩红收割者",
+    "name": "弗拉基米尔",
+    "wr": 47.8,
+    "games": 844154
+   },
+   {
+    "id": 555,
+    "slug": "pyke",
+    "title": "血港鬼影",
+    "name": "派克",
+    "wr": 47.7,
+    "games": 601649
+   },
+   {
+    "id": 201,
+    "slug": "braum",
+    "title": "弗雷尔卓德之心",
+    "name": "布隆",
+    "wr": 47.7,
+    "games": 276012
+   },
+   {
+    "id": 127,
+    "slug": "lissandra",
+    "title": "冰霜女巫",
+    "name": "丽桑卓",
+    "wr": 47.7,
+    "games": 399124
+   },
+   {
+    "id": 131,
+    "slug": "diana",
+    "title": "皎月女神",
+    "name": "黛安娜",
+    "wr": 47.5,
+    "games": 445525
+   },
+   {
+    "id": 360,
+    "slug": "samira",
+    "title": "沙漠玫瑰",
+    "name": "莎弥拉",
+    "wr": 47.4,
+    "games": 569254
+   },
+   {
+    "id": 31,
+    "slug": "chogath",
+    "title": "虚空恐惧",
+    "name": "科加斯",
+    "wr": 47.3,
+    "games": 868341
+   },
+   {
+    "id": 142,
+    "slug": "zoe",
+    "title": "暮光星灵",
+    "name": "佐伊",
+    "wr": 47.2,
+    "games": 261944
+   },
+   {
+    "id": 117,
+    "slug": "lulu",
+    "title": "仙灵女巫",
+    "name": "璐璐",
+    "wr": 47.2,
+    "games": 183931
+   },
+   {
+    "id": 59,
+    "slug": "jarvaniv",
+    "title": "德玛西亚皇子",
+    "name": "嘉文四世",
+    "wr": 47.2,
+    "games": 1113329
+   },
+   {
+    "id": 76,
+    "slug": "nidalee",
+    "title": "狂野女猎手",
+    "name": "奈德丽",
+    "wr": 47.2,
+    "games": 858986
+   },
+   {
+    "id": 221,
+    "slug": "zeri",
+    "title": "祖安花火",
+    "name": "泽丽",
+    "wr": 47.1,
+    "games": 238433
+   },
+   {
+    "id": 29,
+    "slug": "twitch",
+    "title": "瘟疫之源",
+    "name": "图奇",
+    "wr": 47,
+    "games": 1007248
+   },
+   {
+    "id": 266,
+    "slug": "aatrox",
+    "title": "暗裔剑魔",
+    "name": "亚托克斯",
+    "wr": 47,
+    "games": 691629
+   },
+   {
+    "id": 516,
+    "slug": "ornn",
+    "title": "山隐之焰",
+    "name": "奥恩",
+    "wr": 47,
+    "games": 543994
+   },
+   {
+    "id": 420,
+    "slug": "illaoi",
+    "title": "海兽祭司",
+    "name": "俄洛伊",
+    "wr": 47,
+    "games": 447102
+   },
+   {
+    "id": 126,
+    "slug": "jayce",
+    "title": "未来守护者",
+    "name": "杰斯",
+    "wr": 46.9,
+    "games": 1005821
+   },
+   {
+    "id": 800,
+    "slug": "mel",
+    "title": "流光镜影",
+    "name": "梅尔",
+    "wr": 46.9,
+    "games": 847188
+   },
+   {
+    "id": 81,
+    "slug": "ezreal",
+    "title": "探险家",
+    "name": "伊泽瑞尔",
+    "wr": 46.8,
+    "games": 1406567
+   },
+   {
+    "id": 497,
+    "slug": "rakan",
+    "title": "幻翎",
+    "name": "洛",
+    "wr": 46.7,
+    "games": 124746
+   },
+   {
+    "id": 18,
+    "slug": "tristana",
+    "title": "麦林炮手",
+    "name": "崔丝塔娜",
+    "wr": 46.7,
+    "games": 891588
+   },
+   {
+    "id": 82,
+    "slug": "mordekaiser",
+    "title": "铁铠冥魂",
+    "name": "莫德凯撒",
+    "wr": 46.7,
+    "games": 884192
+   },
+   {
+    "id": 805,
+    "slug": "locke",
+    "title": "",
+    "name": "洛克",
+    "wr": 46.6,
+    "games": 427217
+   },
+   {
+    "id": 33,
+    "slug": "rammus",
+    "title": "披甲龙龟",
+    "name": "拉莫斯",
+    "wr": 46.4,
+    "games": 453349
+   },
+   {
+    "id": 64,
+    "slug": "leesin",
+    "title": "盲僧",
+    "name": "李青",
+    "wr": 46.4,
+    "games": 813427
+   },
+   {
+    "id": 53,
+    "slug": "blitzcrank",
+    "title": "蒸汽机器人",
+    "name": "布里茨",
+    "wr": 46.4,
+    "games": 841840
+   },
+   {
+    "id": 20,
+    "slug": "nunu",
+    "title": "雪原双子",
+    "name": "努努和威朗普",
+    "wr": 46.3,
+    "games": 281236
+   },
+   {
+    "id": 15,
+    "slug": "sivir",
+    "title": "战争女神",
+    "name": "希维尔",
+    "wr": 46.3,
+    "games": 570711
+   },
+   {
+    "id": 203,
+    "slug": "kindred",
+    "title": "永猎双子",
+    "name": "千珏",
+    "wr": 46.2,
+    "games": 370037
+   },
+   {
+    "id": 246,
+    "slug": "qiyana",
+    "title": "元素女皇",
+    "name": "奇亚娜",
+    "wr": 46.2,
+    "games": 421719
+   },
+   {
+    "id": 518,
+    "slug": "neeko",
+    "title": "万花通灵",
+    "name": "妮蔻",
+    "wr": 46.1,
+    "games": 310006
+   },
+   {
+    "id": 432,
+    "slug": "bard",
+    "title": "星界游神",
+    "name": "巴德",
+    "wr": 46.1,
+    "games": 151440
+   },
+   {
+    "id": 69,
+    "slug": "cassiopeia",
+    "title": "魔蛇之拥",
+    "name": "卡西奥佩娅",
+    "wr": 46.1,
+    "games": 242989
+   },
+   {
+    "id": 86,
+    "slug": "garen",
+    "title": "德玛西亚之力",
+    "name": "盖伦",
+    "wr": 46.1,
+    "games": 886141
+   },
+   {
+    "id": 58,
+    "slug": "renekton",
+    "title": "荒漠屠夫",
+    "name": "雷克顿",
+    "wr": 46,
+    "games": 295102
+   },
+   {
+    "id": 150,
+    "slug": "gnar",
+    "title": "迷失之牙",
+    "name": "纳尔",
+    "wr": 45.9,
+    "games": 498089
+   },
+   {
+    "id": 950,
+    "slug": "naafiri",
+    "title": "百裂冥犬",
+    "name": "纳亚菲利",
+    "wr": 45.9,
+    "games": 325600
+   },
+   {
+    "id": 6,
+    "slug": "urgot",
+    "title": "无畏战车",
+    "name": "厄加特",
+    "wr": 45.8,
+    "games": 420626
+   },
+   {
+    "id": 235,
+    "slug": "senna",
+    "title": "涤魂圣枪",
+    "name": "赛娜",
+    "wr": 45.7,
+    "games": 1158297
+   },
+   {
+    "id": 166,
+    "slug": "akshan",
+    "title": "影哨",
+    "name": "阿克尚",
+    "wr": 45.4,
+    "games": 319899
+   },
+   {
+    "id": 133,
+    "slug": "quinn",
+    "title": "德玛西亚之翼",
+    "name": "奎因",
+    "wr": 45.4,
+    "games": 263386
+   },
+   {
+    "id": 34,
+    "slug": "anivia",
+    "title": "冰晶凤凰",
+    "name": "艾尼维亚",
+    "wr": 45.4,
+    "games": 288487
+   },
+   {
+    "id": 83,
+    "slug": "yorick",
+    "title": "牧魂人",
+    "name": "约里克",
+    "wr": 44.7,
+    "games": 148531
+   },
+   {
+    "id": 85,
+    "slug": "kennen",
+    "title": "狂暴之心",
+    "name": "凯南",
+    "wr": 44.7,
+    "games": 344639
+   },
+   {
+    "id": 84,
+    "slug": "akali",
+    "title": "离群之刺",
+    "name": "阿卡丽",
+    "wr": 44.6,
+    "games": 319293
+   },
+   {
+    "id": 7,
+    "slug": "leblanc",
+    "title": "诡术妖姬",
+    "name": "乐芙兰",
+    "wr": 44.5,
+    "games": 388593
+   },
+   {
+    "id": 154,
+    "slug": "zac",
+    "title": "生化魔人",
+    "name": "扎克",
+    "wr": 44.4,
+    "games": 298993
+   },
+   {
+    "id": 897,
+    "slug": "ksante",
+    "title": "纳祖芒荣耀",
+    "name": "奎桑提",
+    "wr": 44.1,
+    "games": 341290
+   },
+   {
+    "id": 22,
+    "slug": "ashe",
+    "title": "寒冰射手",
+    "name": "艾希",
+    "wr": 44,
+    "games": 1719203
+   }
+  ]
+ },
+ "augments": {
+  "patch": "16.21",
+  "date": "2026-10-30",
+  "rows": [
+   {
+    "name": "亮出你的剑",
+    "score": 85.4,
+    "wr": 57.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "风语者的祝福",
+    "score": 82.1,
+    "wr": 56.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "科学狂人",
+    "score": 79.5,
+    "wr": 53.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "男爵之手",
+    "score": 79.1,
+    "wr": 53.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "装甲冲击",
+    "score": 79,
+    "wr": 54.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "逃跑计划",
+    "score": 76.6,
+    "wr": 52.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "鼓声暴起 低音轰鸣",
+    "score": 75.2,
+    "wr": 54.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "命运之武器",
+    "score": 75,
+    "wr": 52.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "叠角龙",
+    "score": 74.7,
+    "wr": 52.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "迷人蝴蝶",
+    "score": 74.7,
+    "wr": 52.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "巨人杀手",
+    "score": 74.5,
+    "wr": 52.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "保持坚定",
+    "score": 74.1,
+    "wr": 51.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "喂呜喂呜",
+    "score": 74,
+    "wr": 52.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "咏叹奏鸣",
+    "score": 73.4,
+    "wr": 52.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "终极九头蛇",
+    "score": 72.5,
+    "wr": 52.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "蓝色屏障",
+    "score": 71.8,
+    "wr": 53.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "水果化",
+    "score": 71.5,
+    "wr": 51.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "全能龙魂",
+    "score": 71.5,
+    "wr": 51.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "回归基本功",
+    "score": 71.4,
+    "wr": 53.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "家园卫士",
+    "score": 71.4,
+    "wr": 51.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "小丑学院",
+    "score": 71.1,
+    "wr": 52.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "吸元秘术",
+    "score": 70.6,
+    "wr": 51.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "暗影疾奔",
+    "score": 70.3,
+    "wr": 52.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "大力",
+    "score": 69.3,
+    "wr": 51.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：献祭",
+    "score": 69.2,
+    "wr": 51.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "重量级打击手",
+    "score": 68.6,
+    "wr": 51.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "无限循环往复",
+    "score": 68.4,
+    "wr": 51.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "魔法转物理",
+    "score": 67.5,
+    "wr": 51,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "屹立不倒",
+    "score": 67.3,
+    "wr": 52.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "沃格勒特的巫师帽",
+    "score": 67.2,
+    "wr": 51.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "小蜜蜂！！！",
+    "score": 67.1,
+    "wr": 51.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "歌利亚巨人",
+    "score": 67,
+    "wr": 51.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "会心防御",
+    "score": 67,
+    "wr": 51.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "快中求稳",
+    "score": 66.4,
+    "wr": 52.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "有始有终",
+    "score": 66.1,
+    "wr": 50.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "唯快不破",
+    "score": 65.5,
+    "wr": 51.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "钢化你心",
+    "score": 64.8,
+    "wr": 50.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "捐赠",
+    "score": 64.2,
+    "wr": 50.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "急救用具",
+    "score": 64,
+    "wr": 50.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "练腿日",
+    "score": 63.9,
+    "wr": 50.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "双刀流",
+    "score": 63.7,
+    "wr": 51.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "将他们放倒倒倒",
+    "score": 63.4,
+    "wr": 51.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "属性叠属性！",
+    "score": 63.4,
+    "wr": 50.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "海洋龙魂",
+    "score": 63.1,
+    "wr": 50.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "坦克引擎",
+    "score": 62.8,
+    "wr": 50.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "尤里卡",
+    "score": 62.7,
+    "wr": 50.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "炼狱导管",
+    "score": 62.6,
+    "wr": 51.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "术士果汁盒",
+    "score": 62.5,
+    "wr": 51,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "缩小引擎",
+    "score": 62.2,
+    "wr": 50.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "海牛阿福的勇士",
+    "score": 62.1,
+    "wr": 50.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "一起抱抱",
+    "score": 62,
+    "wr": 51,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "蛋白粉奶昔",
+    "score": 61.9,
+    "wr": 50.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "最终形态",
+    "score": 61.8,
+    "wr": 50.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "渴血",
+    "score": 61.7,
+    "wr": 50.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "音之屏障",
+    "score": 61.6,
+    "wr": 50.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "邦！",
+    "score": 61.4,
+    "wr": 51.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "灵魂乐流",
+    "score": 61.2,
+    "wr": 51.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "狂徒豪气",
+    "score": 61.2,
+    "wr": 52.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "灵魂虹吸",
+    "score": 60.7,
+    "wr": 50.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "质变：棱彩阶",
+    "score": 60.5,
+    "wr": 50,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "高压锅",
+    "score": 60.5,
+    "wr": 49.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "仆从大师",
+    "score": 60.4,
+    "wr": 49.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "狂热者",
+    "score": 60.3,
+    "wr": 50.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "吃过路兵",
+    "score": 60.1,
+    "wr": 50.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "旋转至胜",
+    "score": 60,
+    "wr": 51.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "地形专家",
+    "score": 60,
+    "wr": 50.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "超凡邪恶",
+    "score": 59.9,
+    "wr": 50.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "侵蚀",
+    "score": 59.7,
+    "wr": 50.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "质变：混沌",
+    "score": 59.6,
+    "wr": 49.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "超强大脑",
+    "score": 59.6,
+    "wr": 50,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "属性叠属性叠属性！",
+    "score": 59.5,
+    "wr": 49.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "夺金",
+    "score": 59.4,
+    "wr": 50.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "天音爆",
+    "score": 59.4,
+    "wr": 50,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "热舞怪兽",
+    "score": 59.1,
+    "wr": 48.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "至高天诺言",
+    "score": 59,
+    "wr": 50,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "王冠之重",
+    "score": 58.4,
+    "wr": 49.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "巫妖大脑",
+    "score": 58.3,
+    "wr": 50.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "灵巧",
+    "score": 58.2,
+    "wr": 50.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：风暴狂涌",
+    "score": 57.9,
+    "wr": 49.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "扇巴掌",
+    "score": 57.4,
+    "wr": 49.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "由心及物",
+    "score": 57.1,
+    "wr": 51.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "死亡之环",
+    "score": 57,
+    "wr": 51.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "三重射击",
+    "score": 56.9,
+    "wr": 48.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "孤勇者",
+    "score": 56.5,
+    "wr": 50.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "防护面纱",
+    "score": 56.2,
+    "wr": 49.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "狙神飞星",
+    "score": 56.1,
+    "wr": 49.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "星界躯体",
+    "score": 56,
+    "wr": 49.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "急急小子",
+    "score": 55.9,
+    "wr": 49.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "生机迸发",
+    "score": 55.6,
+    "wr": 49.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "仁慈打击",
+    "score": 55.4,
+    "wr": 48.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：死亡之舞",
+    "score": 55.3,
+    "wr": 50.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "双生火焰",
+    "score": 55.2,
+    "wr": 49.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "杀意翻涌",
+    "score": 55.2,
+    "wr": 49.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "最万用的瞄准镜",
+    "score": 55,
+    "wr": 49.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "回力OK镖",
+    "score": 55,
+    "wr": 49,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "史上最大雪球",
+    "score": 54.9,
+    "wr": 49.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "活力焕发",
+    "score": 54.9,
+    "wr": 48.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "黎明使者的坚决",
+    "score": 54.8,
+    "wr": 49.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "质变：黄金阶",
+    "score": 54.7,
+    "wr": 49.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "易损",
+    "score": 54.7,
+    "wr": 49.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "咒语裂变",
+    "score": 54.7,
+    "wr": 48.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "点亮他们！",
+    "score": 54.7,
+    "wr": 48.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "循环往复",
+    "score": 54.5,
+    "wr": 49.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "属性！",
+    "score": 54.5,
+    "wr": 49.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "前进时间到",
+    "score": 54.4,
+    "wr": 48.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "踢踏舞",
+    "score": 54.3,
+    "wr": 48.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：中娅",
+    "score": 54.2,
+    "wr": 49.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "物理转魔法",
+    "score": 54.1,
+    "wr": 49.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "虚幻武器",
+    "score": 53.9,
+    "wr": 51,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "更万用的瞄准镜",
+    "score": 53.8,
+    "wr": 49.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "别停止引导",
+    "score": 53.7,
+    "wr": 50.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "利刃华尔兹",
+    "score": 53.6,
+    "wr": 49.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "火狐",
+    "score": 53.6,
+    "wr": 49.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "珠光手镯",
+    "score": 53.5,
+    "wr": 49.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "闪现向前",
+    "score": 53.4,
+    "wr": 49,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "巨像的勇气",
+    "score": 53.3,
+    "wr": 49.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "巫师式思考",
+    "score": 52.8,
+    "wr": 49,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "小小的额外帮助",
+    "score": 52.8,
+    "wr": 48.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "秘术冲拳",
+    "score": 52.7,
+    "wr": 52.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "全心为你",
+    "score": 52.5,
+    "wr": 48.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "吞噬灵魂",
+    "score": 52.4,
+    "wr": 49.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "死之舞",
+    "score": 52.1,
+    "wr": 49,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "海克斯科技龙魂",
+    "score": 51.9,
+    "wr": 48.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "会心治疗",
+    "score": 51.9,
+    "wr": 48.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：花晓之剑",
+    "score": 51.7,
+    "wr": 48.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "罪恶快感",
+    "score": 51.6,
+    "wr": 48.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "残忍",
+    "score": 51.5,
+    "wr": 48.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "俯冲轰炸",
+    "score": 51.4,
+    "wr": 48.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "珠光护手",
+    "score": 51.3,
+    "wr": 48.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "战争交响乐",
+    "score": 51.2,
+    "wr": 49.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "不祥契约",
+    "score": 51.2,
+    "wr": 49.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：无尽之刃",
+    "score": 51.1,
+    "wr": 48.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：贪欲九头蛇",
+    "score": 51.1,
+    "wr": 49.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "贪欲束缚",
+    "score": 51,
+    "wr": 48.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "纯粹主义者 - 术师",
+    "score": 50.9,
+    "wr": 49,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "闪光弹",
+    "score": 50.6,
+    "wr": 48.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：收集者",
+    "score": 50.4,
+    "wr": 47.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "回响施放",
+    "score": 50.4,
+    "wr": 51.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "罪恶快感！",
+    "score": 50.3,
+    "wr": 48.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "台风",
+    "score": 50.3,
+    "wr": 48.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "反冲",
+    "score": 50.1,
+    "wr": 48.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "魔法飞弹",
+    "score": 50,
+    "wr": 48.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "豪猪",
+    "score": 49.9,
+    "wr": 48.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "神射法师",
+    "score": 49.8,
+    "wr": 49.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "关键暴击",
+    "score": 49.8,
+    "wr": 48.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "溺水之赠礼",
+    "score": 49.6,
+    "wr": 46.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "和我一起困在这里",
+    "score": 49.4,
+    "wr": 47.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "炼狱龙魂",
+    "score": 49.3,
+    "wr": 48.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "暴击律动",
+    "score": 49,
+    "wr": 48.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "终极唤醒",
+    "score": 49,
+    "wr": 48.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "大地苏醒",
+    "score": 49,
+    "wr": 49.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "万用瞄准镜",
+    "score": 48.8,
+    "wr": 48.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "闪闪现现",
+    "score": 48.5,
+    "wr": 47.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "全凭身法",
+    "score": 48.3,
+    "wr": 49,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "强力护盾",
+    "score": 48.2,
+    "wr": 49,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "注魔",
+    "score": 48,
+    "wr": 48.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "双发快射",
+    "score": 47.9,
+    "wr": 47.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "虹吸",
+    "score": 47.9,
+    "wr": 48.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：耀光",
+    "score": 47.8,
+    "wr": 49.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "舞会女王",
+    "score": 47.6,
+    "wr": 48.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "飞升仪式",
+    "score": 47.3,
+    "wr": 48.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "精怪魔法",
+    "score": 47.3,
+    "wr": 47.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "泰坦的坚决",
+    "score": 47.2,
+    "wr": 48.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "山脉龙魂",
+    "score": 47.1,
+    "wr": 48,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "加固护盾",
+    "score": 47,
+    "wr": 47.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "信念者的强化",
+    "score": 47,
+    "wr": 48.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "溢流",
+    "score": 46.9,
+    "wr": 50.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "大腕",
+    "score": 46.7,
+    "wr": 47,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "不动如山",
+    "score": 46.7,
+    "wr": 47.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "扳机炼狱",
+    "score": 46.5,
+    "wr": 48,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "物法皆修",
+    "score": 45.6,
+    "wr": 48.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "老练狙神",
+    "score": 45.2,
+    "wr": 47.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "冰寒",
+    "score": 45.2,
+    "wr": 48.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "翻倍时间",
+    "score": 45.1,
+    "wr": 48.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "奥术公理",
+    "score": 45,
+    "wr": 47.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "你摸不到",
+    "score": 44.5,
+    "wr": 47.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "炽烈黎明",
+    "score": 44.4,
+    "wr": 47.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "大法师",
+    "score": 44.1,
+    "wr": 48,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "面包和奶酪",
+    "score": 44,
+    "wr": 47.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "下雪天",
+    "score": 43.9,
+    "wr": 47.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "面包和果酱",
+    "score": 43.8,
+    "wr": 47,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "火上浇油",
+    "score": 43.8,
+    "wr": 47.5,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "深红钴蓝闪光",
+    "score": 43.6,
+    "wr": 47.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "伤不过三",
+    "score": 43.6,
+    "wr": 47.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "杀戮时间到了",
+    "score": 43.4,
+    "wr": 46.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "多重射击",
+    "score": 43.4,
+    "wr": 45.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "急速之追求",
+    "score": 43.3,
+    "wr": 47.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "终极循环往复",
+    "score": 43.2,
+    "wr": 47.1,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "吵闹鬼",
+    "score": 43,
+    "wr": 46.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "穿针引线",
+    "score": 42.9,
+    "wr": 46.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "超负荷",
+    "score": 42.7,
+    "wr": 47.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "终极刷新",
+    "score": 42.6,
+    "wr": 46.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "面包和黄油",
+    "score": 42.5,
+    "wr": 47.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "威能之追求",
+    "score": 42.3,
+    "wr": 46.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "夜狩",
+    "score": 42,
+    "wr": 46.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "针插垫",
+    "score": 41.6,
+    "wr": 45.6,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "尖端发明家",
+    "score": 41.5,
+    "wr": 47,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "远射天资",
+    "score": 41.5,
+    "wr": 45.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "弹球",
+    "score": 41.1,
+    "wr": 46.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "连锁反应",
+    "score": 41,
+    "wr": 45.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "自适应防护",
+    "score": 41,
+    "wr": 48.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "终极不可阻挡",
+    "score": 40.9,
+    "wr": 46.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "快步",
+    "score": 40.9,
+    "wr": 46.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "可靠武器",
+    "score": 40.7,
+    "wr": 47.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "潘朵拉的盒子",
+    "score": 39.7,
+    "wr": 46.2,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "神圣干预",
+    "score": 39.5,
+    "wr": 46.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "惊惧",
+    "score": 39,
+    "wr": 46.8,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "神圣雪球",
+    "score": 38.7,
+    "wr": 46.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "转得我眩晕了",
+    "score": 37.7,
+    "wr": 44.9,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "缩小射线",
+    "score": 37.2,
+    "wr": 45.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "升级：焚天",
+    "score": 36.4,
+    "wr": 45.4,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "黄铜爆音",
+    "score": 36.1,
+    "wr": 44.7,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "玻璃大炮",
+    "score": 35.4,
+    "wr": 44.3,
+    "pick": null,
+    "games": null
+   },
+   {
+    "name": "尊我为王",
+    "score": 0,
+    "wr": 36.3,
+    "pick": null,
+    "games": null
+   }
+  ]
+ },
+ "items": {
+  "patch": "16.21",
+  "date": "2026-10-30",
+  "rows": [
+   {
+    "id": 994403,
+    "name": "金铲铲",
+    "score": 86.3,
+    "wr": 56.6,
+    "games": 1571937
+   },
+   {
+    "id": 6616,
+    "name": "流水法杖",
+    "score": 84.7,
+    "wr": 54.8,
+    "games": 495098
+   },
+   {
+    "id": 123430,
+    "name": "毁坏仪式",
+    "score": 83.2,
+    "wr": 59,
+    "games": 1836017
+   },
+   {
+    "id": 226668,
+    "name": "终极九头蛇",
+    "score": 80.8,
+    "wr": 54.7,
+    "games": 2161587
+   },
+   {
+    "id": 2517,
+    "name": "无穷饥渴",
+    "score": 80.3,
+    "wr": 54.1,
+    "games": 5082739
+   },
+   {
+    "id": 6621,
+    "name": "黎明核心",
+    "score": 79.7,
+    "wr": 53,
+    "games": 727288
+   },
+   {
+    "id": 2526,
+    "name": "耳语头环",
+    "score": 34.8,
+    "wr": 42.4,
+    "games": 129119
+   },
+   {
+    "id": 3008,
+    "name": "暴食胫甲",
+    "score": 78.3,
+    "wr": 53.1,
+    "games": 11294954
+   },
+   {
+    "id": 3109,
+    "name": "骑士之誓",
+    "score": 77.8,
+    "wr": 53.6,
+    "games": 266454
+   },
+   {
+    "id": 6662,
+    "name": "冰脉护手",
+    "score": 77.3,
+    "wr": 53.5,
+    "games": 1849415
+   },
+   {
+    "id": 124011,
+    "name": "花晓之剑",
+    "score": 76.9,
+    "wr": 52.2,
+    "games": 356625
+   },
+   {
+    "id": 3504,
+    "name": "炽热香炉",
+    "score": 74.7,
+    "wr": 51.8,
+    "games": 1008241
+   },
+   {
+    "id": 6333,
+    "name": "死亡之舞",
+    "score": 74.6,
+    "wr": 53.5,
+    "games": 11809966
+   },
+   {
+    "id": 6617,
+    "name": "月石再生器",
+    "score": 74.2,
+    "wr": 51.3,
+    "games": 1718129
+   },
+   {
+    "id": 3110,
+    "name": "冰霜之心",
+    "score": 73.2,
+    "wr": 53,
+    "games": 1961904
+   },
+   {
+    "id": 3302,
+    "name": "界弓",
+    "score": 72.7,
+    "wr": 52,
+    "games": 2146654
+   },
+   {
+    "id": 228002,
+    "name": "沃格勒特的巫师帽",
+    "score": 72.4,
+    "wr": 52.1,
+    "games": 2062846
+   },
+   {
+    "id": 2510,
+    "name": "黄昏与黎明",
+    "score": 72.2,
+    "wr": 54.2,
+    "games": 5486136
+   },
+   {
+    "id": 3742,
+    "name": "亡者的板甲",
+    "score": 70.7,
+    "wr": 52.7,
+    "games": 1068181
+   },
+   {
+    "id": 2501,
+    "name": "霸王血铠",
+    "score": 70.7,
+    "wr": 51.5,
+    "games": 3540501
+   },
+   {
+    "id": 3068,
+    "name": "日炎圣盾",
+    "score": 70.4,
+    "wr": 51,
+    "games": 1575124
+   },
+   {
+    "id": 3142,
+    "name": "幽梦之灵",
+    "score": 69.7,
+    "wr": 50.3,
+    "games": 653932
+   },
+   {
+    "id": 3087,
+    "name": "斯塔缇克电刃",
+    "score": 69.6,
+    "wr": 52.1,
+    "games": 3484125
+   },
+   {
+    "id": 2503,
+    "name": "黯炎火炬",
+    "score": 69.2,
+    "wr": 51.2,
+    "games": 13923121
+   },
+   {
+    "id": 3036,
+    "name": "多米尼克领主的致意",
+    "score": 68.7,
+    "wr": 50.4,
+    "games": 14466528
+   },
+   {
+    "id": 2523,
+    "name": "海克斯镜片 C44",
+    "score": 68.3,
+    "wr": 50.1,
+    "games": 961704
+   },
+   {
+    "id": 6699,
+    "name": "电震涡流剑",
+    "score": 68.2,
+    "wr": 49.8,
+    "games": 3398568
+   },
+   {
+    "id": 3003,
+    "name": "大天使之杖",
+    "score": 40.1,
+    "wr": 45,
+    "games": 484740
+   },
+   {
+    "id": 3181,
+    "name": "破舰者",
+    "score": 68,
+    "wr": 53.5,
+    "games": 42357
+   },
+   {
+    "id": 6665,
+    "name": "千变者贾修",
+    "score": 67.9,
+    "wr": 51.3,
+    "games": 7296695
+   },
+   {
+    "id": 3031,
+    "name": "无尽之刃",
+    "score": 66.9,
+    "wr": 50.1,
+    "games": 22429911
+   },
+   {
+    "id": 3004,
+    "name": "魔宗",
+    "score": 44,
+    "wr": 46.7,
+    "games": 515244
+   },
+   {
+    "id": 3050,
+    "name": "基克的聚合",
+    "score": 65.9,
+    "wr": 51.1,
+    "games": 128691
+   },
+   {
+    "id": 3085,
+    "name": "卢安娜的飓风",
+    "score": 65.6,
+    "wr": 48.5,
+    "games": 4488607
+   },
+   {
+    "id": 3083,
+    "name": "狂徒铠甲",
+    "score": 65.5,
+    "wr": 50.2,
+    "games": 13287110
+   },
+   {
+    "id": 6696,
+    "name": "公理圆弧",
+    "score": 65.4,
+    "wr": 50,
+    "games": 6372812
+   },
+   {
+    "id": 3009,
+    "name": "轻灵之靴",
+    "score": 65,
+    "wr": 50,
+    "games": 2316770
+   },
+   {
+    "id": 3072,
+    "name": "饮血剑",
+    "score": 64.8,
+    "wr": 50.6,
+    "games": 4190548
+   },
+   {
+    "id": 8020,
+    "name": "深渊面具",
+    "score": 64.6,
+    "wr": 50.2,
+    "games": 295262
+   },
+   {
+    "id": 3179,
+    "name": "黯影阔剑",
+    "score": 64.5,
+    "wr": 49.6,
+    "games": 78269
+   },
+   {
+    "id": 4633,
+    "name": "裂隙制造者",
+    "score": 64.4,
+    "wr": 51.1,
+    "games": 5934241
+   },
+   {
+    "id": 3089,
+    "name": "灭世者的死亡之帽",
+    "score": 64.4,
+    "wr": 50.3,
+    "games": 22007953
+   },
+   {
+    "id": 2502,
+    "name": "无终恨意",
+    "score": 64.2,
+    "wr": 50.1,
+    "games": 10464701
+   },
+   {
+    "id": 6653,
+    "name": "兰德里的折磨",
+    "score": 63.6,
+    "wr": 50.5,
+    "games": 18152551
+   },
+   {
+    "id": 3032,
+    "name": "育恩塔尔荒野箭",
+    "score": 63.5,
+    "wr": 50.8,
+    "games": 4861467
+   },
+   {
+    "id": 8010,
+    "name": "放血者的诅咒",
+    "score": 63.3,
+    "wr": 50.7,
+    "games": 1361237
+   },
+   {
+    "id": 3156,
+    "name": "玛莫提乌斯之噬",
+    "score": 63.1,
+    "wr": 50.6,
+    "games": 807776
+   },
+   {
+    "id": 6620,
+    "name": "海力亚的回响",
+    "score": 63.1,
+    "wr": 50.5,
+    "games": 167497
+   },
+   {
+    "id": 2522,
+    "name": "实现器",
+    "score": 63,
+    "wr": 52.7,
+    "games": 422233
+   },
+   {
+    "id": 3508,
+    "name": "夺萃之镰",
+    "score": 62.7,
+    "wr": 49.8,
+    "games": 3658459
+   },
+   {
+    "id": 2512,
+    "name": "猎魔人弩箭",
+    "score": 62.4,
+    "wr": 49.9,
+    "games": 1374989
+   },
+   {
+    "id": 3095,
+    "name": "岚切",
+    "score": 62,
+    "wr": 49.6,
+    "games": 308303
+   },
+   {
+    "id": 126697,
+    "name": "狂妄",
+    "score": 61.6,
+    "wr": 49.5,
+    "games": 13596360
+   },
+   {
+    "id": 2065,
+    "name": "舒瑞娅的战歌",
+    "score": 61.6,
+    "wr": 50,
+    "games": 167764
+   },
+   {
+    "id": 2525,
+    "name": "原生质护带",
+    "score": 61.3,
+    "wr": 50.1,
+    "games": 100184
+   },
+   {
+    "id": 6664,
+    "name": "璀璨回响",
+    "score": 61.1,
+    "wr": 49.8,
+    "games": 2115321
+   },
+   {
+    "id": 3119,
+    "name": "凛冬之临",
+    "score": 51.1,
+    "wr": 48.9,
+    "games": 694706
+   },
+   {
+    "id": 3139,
+    "name": "水银弯刀",
+    "score": 61,
+    "wr": 50.8,
+    "games": 367863
+   },
+   {
+    "id": 3222,
+    "name": "米凯尔的祝福",
+    "score": 60.8,
+    "wr": 50.4,
+    "games": 216590
+   },
+   {
+    "id": 3190,
+    "name": "钢铁烈阳之匣",
+    "score": 60.7,
+    "wr": 49.4,
+    "games": 176623
+   },
+   {
+    "id": 3814,
+    "name": "夜之锋刃",
+    "score": 60.4,
+    "wr": 49.1,
+    "games": 1428471
+   },
+   {
+    "id": 3100,
+    "name": "巫妖之祸",
+    "score": 60.3,
+    "wr": 50.3,
+    "games": 4160305
+   },
+   {
+    "id": 2524,
+    "name": "班德尔音管",
+    "score": 60.1,
+    "wr": 51.6,
+    "games": 114967
+   },
+   {
+    "id": 3102,
+    "name": "女妖面纱",
+    "score": 60,
+    "wr": 49.4,
+    "games": 864719
+   },
+   {
+    "id": 6657,
+    "name": "时光之杖",
+    "score": 59.7,
+    "wr": 50,
+    "games": 5175115
+   },
+   {
+    "id": 3046,
+    "name": "幻影之舞",
+    "score": 59.6,
+    "wr": 50.1,
+    "games": 2272124
+   },
+   {
+    "id": 3073,
+    "name": "海克斯注力刚壁",
+    "score": 59.6,
+    "wr": 50.3,
+    "games": 1082902
+   },
+   {
+    "id": 6655,
+    "name": "卢登的回声",
+    "score": 59.5,
+    "wr": 49.5,
+    "games": 11956687
+   },
+   {
+    "id": 3075,
+    "name": "荆棘之甲",
+    "score": 59,
+    "wr": 49.6,
+    "games": 9188524
+   },
+   {
+    "id": 4646,
+    "name": "风暴狂涌",
+    "score": 58.8,
+    "wr": 49,
+    "games": 8821719
+   },
+   {
+    "id": 6672,
+    "name": "海妖杀手",
+    "score": 58.8,
+    "wr": 49.8,
+    "games": 3431963
+   },
+   {
+    "id": 3115,
+    "name": "纳什之牙",
+    "score": 58.8,
+    "wr": 50.7,
+    "games": 4115794
+   },
+   {
+    "id": 6694,
+    "name": "赛瑞尔达的怨恨",
+    "score": 57.6,
+    "wr": 48.1,
+    "games": 2371802
+   },
+   {
+    "id": 6698,
+    "name": "亵渎九头蛇",
+    "score": 57.2,
+    "wr": 48.7,
+    "games": 824090
+   },
+   {
+    "id": 3020,
+    "name": "法师之靴",
+    "score": 57.2,
+    "wr": 49.4,
+    "games": 13526647
+   },
+   {
+    "id": 3124,
+    "name": "鬼索的狂暴之刃",
+    "score": 57.1,
+    "wr": 50.6,
+    "games": 2409937
+   },
+   {
+    "id": 3748,
+    "name": "巨型九头蛇",
+    "score": 56.9,
+    "wr": 49.6,
+    "games": 1771174
+   },
+   {
+    "id": 3161,
+    "name": "朔极之矛",
+    "score": 56.9,
+    "wr": 50.4,
+    "games": 3313939
+   },
+   {
+    "id": 4004,
+    "name": "幽魂弯刀",
+    "score": 56.5,
+    "wr": 48.9,
+    "games": 19648
+   },
+   {
+    "id": 3053,
+    "name": "斯特拉克的挑战护手",
+    "score": 56.3,
+    "wr": 49.6,
+    "games": 973137
+   },
+   {
+    "id": 3146,
+    "name": "海克斯科技枪刃",
+    "score": 56,
+    "wr": 49,
+    "games": 785746
+   },
+   {
+    "id": 3047,
+    "name": "铁板靴",
+    "score": 55.9,
+    "wr": 49.3,
+    "games": 4399929
+   },
+   {
+    "id": 3078,
+    "name": "三相之力",
+    "score": 55.8,
+    "wr": 50.3,
+    "games": 2997224
+   },
+   {
+    "id": 4401,
+    "name": "自然之力",
+    "score": 55.4,
+    "wr": 49.1,
+    "games": 1236718
+   },
+   {
+    "id": 3084,
+    "name": "心之钢",
+    "score": 55.3,
+    "wr": 49.1,
+    "games": 22988164
+   },
+   {
+    "id": 4645,
+    "name": "影焰",
+    "score": 55.2,
+    "wr": 49.2,
+    "games": 26121369
+   },
+   {
+    "id": 3143,
+    "name": "兰顿之兆",
+    "score": 54.9,
+    "wr": 49.1,
+    "games": 5123398
+   },
+   {
+    "id": 3071,
+    "name": "黑色切割者",
+    "score": 54.6,
+    "wr": 48.3,
+    "games": 1162603
+   },
+   {
+    "id": 3135,
+    "name": "虚空之杖",
+    "score": 54.5,
+    "wr": 48.9,
+    "games": 9261536
+   },
+   {
+    "id": 3107,
+    "name": "救赎",
+    "score": 54.3,
+    "wr": 49.2,
+    "games": 483472
+   },
+   {
+    "id": 6676,
+    "name": "收集者",
+    "score": 54.3,
+    "wr": 48.6,
+    "games": 24314045
+   },
+   {
+    "id": 3116,
+    "name": "瑞莱的冰晶节杖",
+    "score": 54,
+    "wr": 49.4,
+    "games": 7990748
+   },
+   {
+    "id": 3153,
+    "name": "破败王者之刃",
+    "score": 53.8,
+    "wr": 49.7,
+    "games": 12266902
+   },
+   {
+    "id": 3065,
+    "name": "振奋盔甲",
+    "score": 53.8,
+    "wr": 49.3,
+    "games": 7534217
+   },
+   {
+    "id": 6675,
+    "name": "纳沃利烁刃",
+    "score": 53.2,
+    "wr": 49.1,
+    "games": 2283710
+   },
+   {
+    "id": 6631,
+    "name": "挺进破坏者",
+    "score": 53.1,
+    "wr": 47.7,
+    "games": 1024861
+   },
+   {
+    "id": 3137,
+    "name": "蜕生",
+    "score": 53.1,
+    "wr": 48.2,
+    "games": 2227711
+   },
+   {
+    "id": 3091,
+    "name": "智慧末刃",
+    "score": 53,
+    "wr": 51.1,
+    "games": 1743811
+   },
+   {
+    "id": 3074,
+    "name": "贪欲九头蛇",
+    "score": 52.6,
+    "wr": 50.5,
+    "games": 2216266
+   },
+   {
+    "id": 3006,
+    "name": "狂战士胫甲",
+    "score": 52.5,
+    "wr": 49.2,
+    "games": 11279752
+   },
+   {
+    "id": 3158,
+    "name": "明朗之靴",
+    "score": 51.8,
+    "wr": 48.1,
+    "games": 6986938
+   },
+   {
+    "id": 3118,
+    "name": "残疫",
+    "score": 51.6,
+    "wr": 47.9,
+    "games": 11026273
+   },
+   {
+    "id": 3111,
+    "name": "水银之靴",
+    "score": 51.6,
+    "wr": 49.2,
+    "games": 14195805
+   },
+   {
+    "id": 4628,
+    "name": "视界专注",
+    "score": 51,
+    "wr": 46.8,
+    "games": 3096846
+   },
+   {
+    "id": 4629,
+    "name": "星界驱驰",
+    "score": 50.9,
+    "wr": 48.6,
+    "games": 1350172
+   },
+   {
+    "id": 6673,
+    "name": "不朽盾弓",
+    "score": 49.9,
+    "wr": 50.2,
+    "games": 1052923
+   },
+   {
+    "id": 2504,
+    "name": "败魔",
+    "score": 49.8,
+    "wr": 48.1,
+    "games": 3135787
+   },
+   {
+    "id": 3039,
+    "name": "阿塔玛的清算",
+    "score": 49.7,
+    "wr": 48.3,
+    "games": 102819
+   },
+   {
+    "id": 6695,
+    "name": "巨蛇之牙",
+    "score": 48.9,
+    "wr": 47.5,
+    "games": 2482610
+   },
+   {
+    "id": 4005,
+    "name": "帝国指令",
+    "score": 48.6,
+    "wr": 46.5,
+    "games": 2301727
+   },
+   {
+    "id": 6692,
+    "name": "星蚀",
+    "score": 45.8,
+    "wr": 47.6,
+    "games": 2070333
+   },
+   {
+    "id": 3033,
+    "name": "凡性的提醒",
+    "score": 45.1,
+    "wr": 47.1,
+    "games": 3651795
+   },
+   {
+    "id": 3157,
+    "name": "中娅沙漏",
+    "score": 44.1,
+    "wr": 47.3,
+    "games": 6040320
+   },
+   {
+    "id": 3152,
+    "name": "海克斯科技火箭腰带",
+    "score": 43,
+    "wr": 45.8,
+    "games": 847138
+   },
+   {
+    "id": 3094,
+    "name": "疾射火炮",
+    "score": 42.7,
+    "wr": 46.4,
+    "games": 2722465
+   },
+   {
+    "id": 6610,
+    "name": "焚天",
+    "score": 41.8,
+    "wr": 47.7,
+    "games": 3286710
+   },
+   {
+    "id": 3165,
+    "name": "莫雷洛秘典",
+    "score": 33.1,
+    "wr": 44.5,
+    "games": 3311801
+   },
+   {
+    "id": 6609,
+    "name": "炼金朋克链锯剑",
+    "score": 28.3,
+    "wr": 40.8,
+    "games": 230504
+   },
+   {
+    "id": 1001,
+    "name": "草鞋",
+    "score": 0,
+    "wr": 51.4,
+    "games": 8561752
+   }
+  ]
+ }
+}
