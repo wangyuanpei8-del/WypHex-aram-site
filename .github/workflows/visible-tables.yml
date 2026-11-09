@@ -1,0 +1,49 @@
+name: 同步英雄可见搭配表
+on:
+  push:
+    paths:
+      - 'scripts/fetch-visible-heroes.cjs'
+      - '.github/workflows/visible-tables.yml'
+  schedule:
+    - cron: '45 * * * *'
+  workflow_dispatch:
+    inputs:
+      maximum:
+        description: '本次最多检查英雄数（1–173）'
+        default: '20'
+permissions:
+  contents: write
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --prefix work/browser --no-save playwright
+      - name: 检查表格解析
+        run: node --test
+      - name: 读取来源公开可见表
+        env:
+          MAX_HEROES: ${{ github.event_name == 'push' && '173' || inputs.maximum || '20' }}
+        run: node scripts/fetch-visible-heroes.cjs
+      - name: 生成并保存数据
+        run: |
+          if git diff --quiet data/open/hexdata.json; then exit 0; fi
+          node scripts/build-data.mjs
+          node scripts/build-augment-descriptions.mjs
+          node scripts/build-standalone.mjs
+          node scripts/update-readme.mjs data
+          git config user.name "hexaram-bot"
+          git config user.email "hexaram-bot@users.noreply.github.com"
+          git add data README.md
+          git commit -m "同步英雄可见海克斯表"
+          git pull --rebase origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
