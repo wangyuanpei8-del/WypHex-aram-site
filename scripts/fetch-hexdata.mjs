@@ -2,6 +2,7 @@
 // Hexdata 的 robots.txt 允许抓取这些公开页面，要求引用时注明“数据来源：Hexdata（hexdata.com.cn）”并附链接。
 // 结果写入 data/open/hexdata.json，再由 build-data.mjs 生成网页数据。
 // 用法：node scripts/fetch-hexdata.mjs        （自动任务每小时运行一次）
+import { parseHeroTables } from './hero-tables.mjs';
 import { validDescription } from './data-quality.mjs';
 import { extractDescription } from './hexdata-descriptions.mjs';
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
@@ -80,33 +81,7 @@ const dedupe = (list, k) => [...new Map(list.map(x => [x[k], x])).values()];
 // 一行的文字形如“科学狂人 84.8 56.9% 19,793”
 const STAT = /(\d+(?:\.\d+)?)[^\d%]{0,14}?(\d+(?:\.\d+)?)\s*%[^\d]{0,14}?(\d[\d,]*)/;
 function heroPage(html) {
-  const list = { augs: [], items: [] };
-  const push = (kind, name, rest) => {
-    const m = STAT.exec(rest); name = name.replace(/\s+/g, ' ').trim();
-    if (!m || !name || name.length > 20) return;
-    const r = { name, score: num(m[1]), wr: num(m[2]), games: num(m[3]) };
-    if (r.wr < 20 || r.wr > 80) return;
-    if (!list[kind].some(x => x.name === r.name)) list[kind].push(r);
-  };
-  const tables = html.match(/<table[\s\S]*?<\/table>/gi) || [];
-  for (const t of tables) {
-    // 看表格前面的标题和表头判断是海克斯还是装备
-    const before = text(html.slice(Math.max(0, html.indexOf(t) - 400), html.indexOf(t)));
-    const head = text((/<thead[\s\S]*?<\/thead>/i.exec(t) || [''])[0]) || before;
-    for (const tr of t.match(/<tr[\s\S]*?<\/tr>/gi) || []) {
-      if (/<th\b/i.test(tr)) continue;
-      const cells = (tr.match(/<t[dh]\b[\s\S]*?<\/t[dh]>/gi) || []).map(text);
-      if (cells.length < 3) continue;
-      const kind = /\/item\//.test(tr) ? 'items' : /\/augments?\//.test(tr) ? 'augs' : /装备|出装/.test(head) && !/海克斯|符文/.test(head) ? 'items' : /海克斯|符文/.test(head) ? 'augs' : null;
-      if (kind) push(kind, cells[0], cells.slice(1).join(' | '));
-    }
-  }
-  if (!list.augs.length && !list.items.length) {
-    // 没有表格时：按链接切行
-    for (const r of rows(html, /\/augments?\/([^"'?#/]+)/)) push('augs', r.name, r.body.slice(r.name.length));
-    for (const r of rows(html, /\/item\/(\d+)/)) push('items', r.name, r.body.slice(r.name.length));
-  }
-  return list;
+  return parseHeroTables(html);
 }
 
 let prev = null;
@@ -115,7 +90,7 @@ const listDate = pageInfo(hh).date || '';
 
 // 先沿用上一次读到的英雄页、海克斯页数据
 const prevHero = new Map((prev?.heroes?.rows || []).map(r => [r.id, r]));
-for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { augs: p.augs, items: p.items, date: p.date, detailPatch: p.detailPatch }); }
+for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { augs: p.augs, items: p.items, date: p.date, detailPatch: p.detailPatch, coverage: p.coverage, sourceCount: p.sourceCount, augmentDate: p.augmentDate, augmentPatch: p.augmentPatch }); }
 const prevAug = new Map((prev?.augments?.rows || []).map(a => [a.name, a]));
 for (const a of augments) { const p = prevAug.get(a.name); if (p) Object.assign(a, { rarity: p.rarity, heroes: p.heroes, date: p.date, description: p.description, descriptionChecked: p.descriptionChecked, detailPatch: p.detailPatch, descriptionPatch: p.descriptionPatch, descriptionDate: p.descriptionDate, descriptionCheckedAt: p.descriptionCheckedAt }); }
 
@@ -171,7 +146,12 @@ for (const [kind, x] of queue) {
   if (kind === 'aug') augPage(x, html);
   else {
     const d = heroPage(html);
-    if (d.augs.length >= 3 && d.items.length >= 3) Object.assign(x, d, { date: pageInfo(html).date, detailPatch: pageInfo(html).patch });
+    if (x.coverage === 'visible-table' && d.coverage !== 'visible-table') {
+      if (d.items.length >= 3) Object.assign(x, { items: d.items, date: pageInfo(html).date, detailPatch: pageInfo(html).patch });
+      console.log(`保留 ${x.name} 已导入的完整可见表，不用精选摘要覆盖`);
+      done++; await sleep(2000); continue;
+    }
+    if (d.augs.length >= 3 && d.items.length >= 3) Object.assign(x, d, { date: pageInfo(html).date, detailPatch: pageInfo(html).patch, augmentDate: pageInfo(html).date, augmentPatch: pageInfo(html).patch });
     else console.log(`英雄页 ${x.name} 解析到海克斯 ${d.augs.length}、装备 ${d.items.length}，跳过；页面开头：${text(html).slice(0, 300)}`);
   }
   done++;

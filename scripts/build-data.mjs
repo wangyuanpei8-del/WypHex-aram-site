@@ -26,14 +26,14 @@ const out = heroes.map(h => {
   const r = rows.find(x => x.name === h.name) || rows.find(x => x.title === h.title) || rows.find(x => h.key && x.slug.replace(/-/g, '') === h.key.toLowerCase());
   if (!r) { miss.push(h.name); return { ...h, wr: null, games: null, url: '', augs: [], items: [] }; }
   const m = new Map();
-  for (const a of r.augs || []) m.set(nk(a.name), { ...a, date: r.date, patch: r.detailPatch });
-  if (r.augs) for (const a of pairs.get(r.id) || []) if (!m.has(nk(a.name))) m.set(nk(a.name), a);
+  for (const a of r.augs || []) m.set(nk(a.name), { ...a, date: r.augmentDate || r.date, patch: r.augmentPatch || r.detailPatch });
+  if (r.augs && r.coverage !== 'visible-table') for (const a of pairs.get(r.id) || []) if (!m.has(nk(a.name))) m.set(nk(a.name), a);
   const augs = [...m.entries()].map(([k, a]) => {
     const g = augByKey.get(k);
     return { n: g ? g.name : a.name, r: (g && g.rarity) || '', w: a.wr, g: a.games, date: a.date || null, patch: a.patch || null };
   }).sort((x, y) => y.w - x.w);
   return {
-    ...h, detailDate: r.date || null, detailPatch: r.detailPatch || (r.date === hex.heroes.date ? hex.heroes.patch : null), freshness: detailDates(r.date, augs, hex.heroes.date), wr: r.wr, games: r.games, url: `https://hexdata.com.cn/hero/${r.id}-${r.slug}`,
+    ...h, coverage: r.coverage || 'summary', sourceCount: r.sourceCount || null, detailDate: r.date || null, detailPatch: r.detailPatch || (r.date === hex.heroes.date ? hex.heroes.patch : null), freshness: detailDates(r.date, augs, hex.heroes.date), wr: r.wr, games: r.games, url: `https://hexdata.com.cn/hero/${r.id}-${r.slug}`,
     augs, items: (r.items || []).map(i => ({ n: i.name, w: i.wr, g: i.games })),
   };
 }).sort((a, b) => (b.wr ?? 0) - (a.wr ?? 0));

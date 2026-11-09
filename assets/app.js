@@ -125,9 +125,9 @@
       <div class="data-freshness"><span>英雄榜单：${esc(D.meta.date || '未知')}</span><span>该英雄详情：${esc(h.detailDate || '日期未知')}${h.detailDate !== D.meta.date ? ' · 待更新' : ''}</span><span>海克斯搭配数据：${esc(h.freshness?.oldest || '未知')} ～ ${esc(h.freshness?.newest || '未知')}${h.freshness?.old ? ` · ${h.freshness.old} 项为较早数据` : ''}${h.freshness?.unknown ? ` · ${h.freshness.unknown} 项日期未知` : ''}</span></div>
       ${!h.augs.length ? '<div class="card"><p class="empty">这位英雄的数据还在自动补充中（Hexdata 有访问频率限制，每小时补一批），稍后再看。</p></div>' : `
       <div class="card">
-        <h3>已收录海克斯胜率前 20 名 <em>这位英雄带该海克斯时的胜率 · 悬停图标或名称查看效果</em></h3>
+        <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率 · 悬停图标或名称查看效果</em></h3>
         <div class="tabs">${rars.map(r => `<button data-rar="${r}" aria-selected="${state.rar === r}">${r === '全部' ? '' : `<span class="rar ${r}"></span>`}${r}</button>`).join('')}</div>
-        <p class="coverage-note">${augs.length < 20 ? `当前${state.rar === '全部' ? '' : esc(state.rar)}可用搭配 ${augs.length} 个，暂不足 20 个。` : '按已收录搭配的胜率降序显示前 20 个。'}公开数据未覆盖全部搭配，不能视为完整榜单。</p>
+        <p class="coverage-note">${h.coverage === 'visible-table' ? `来源可见表共 ${h.sourceCount} 个搭配，按胜率排序，当前显示 ${augs.length} 个（最多 20 个）。` : `当前只同步了精选摘要及部分搭配，显示 ${augs.length} 个；尚未同步完整可见表。`}</p>
         <ol class="rank">${augs.map((a, i) => `<li class="aug-row">
           <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t"><button class="aug-info" type="button" data-aug="${esc(a.n)}" data-rarity="${esc(a.r)}" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button></span>
           <span class="w num">${pct(a.w)}</span><span class="g num${a.g < LOW ? ' low' : ''}">${wan(a.g)}场</span></li>`).join('') || '<li class="empty">这个稀有度暂无数据</li>'}</ol>
