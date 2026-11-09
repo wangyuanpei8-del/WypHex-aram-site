@@ -33,6 +33,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -58,7 +60,11 @@ jobs:
           echo "changed=1" >> "$GITHUB_OUTPUT"
           # GitHub 偶尔返回 500，失败就等一会重试
           for i in 1 2 3 4; do
-            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            if ! git pull --rebase origin ${{ github.ref_name }}; then
+              git rebase --abort || true
+              exit 1 # 数据冲突不能靠重试解决，避免在冲突状态继续执行
+            fi
+            git push origin HEAD:${{ github.ref_name }} && exit 0
             sleep $((i * 15))
           done
           exit 1
