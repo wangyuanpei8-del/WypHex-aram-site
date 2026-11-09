@@ -55,7 +55,8 @@ jobs:
           node scripts/fetch-icons.mjs
           git config user.name "hexaram-bot"
           git config user.email "hexaram-bot@users.noreply.github.com"
-          git add data assets/icons
+          node scripts/update-readme.mjs data
+          git add data assets/icons README.md
           git commit -m "数据更新 $(date -u +%Y-%m-%d)"
           echo "changed=1" >> "$GITHUB_OUTPUT"
           # GitHub 偶尔返回 500，失败就等一会重试
