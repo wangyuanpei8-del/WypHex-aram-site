@@ -1,72 +1,70 @@
 # 海斗助手
 
-英雄联盟“海克斯大乱斗”查询网站：选一个英雄，看它的**海克斯胜率排名**和**推荐出装**。
+查询英雄联盟“海克斯大乱斗”中每个英雄的海克斯胜率排名与推荐出装。
 
-网站：https://wangyuanpei8-del.github.io/WypHex-aram-site/ （GitHub Pages 发布 main 分支，提交后约 1 分钟生效）
+网站：https://wangyuanpei8-del.github.io/WypHex-aram-site/
 
-## 页面内容
+## 使用
 
-- 左边：英雄列表，按英雄胜率排序，可以搜名字、称号、外号、英文名。
-- 右边：
-  - **海克斯胜率排名**：这位英雄带每个海克斯时的胜率和场次，从高到低排，可按棱彩 / 黄金 / 白银筛选。
-  - **推荐出装**：Hexdata 给这位英雄的 8 件推荐装备，带胜率和场次。
-- 鼠标放在海克斯名称上可查看效果描述；键盘 Tab 聚焦也可查看，手机点击名称展开，再点一次收起。描述来自 CommunityDragon，本地缓存并随单文件版打包；缺项显示“暂无效果描述”。
-- 场次少于 1000 的标橙色，样本少，仅供参考。
-- 手机上点英雄后详情全屏显示，左上角返回。
+- 搜索英雄中文名、称号、外号或英文名，选择英雄查看详情。
+- 海克斯按该英雄的搭配胜率排序，可筛选棱彩、黄金和白银。
+- **鼠标停在海克斯图标或名称文字上**时显示效果浮层；排名、胜率、场次和名称旁空白不触发。浮层显示名称、稀有度、效果说明和 Hexdata 原页面链接，自动避让窗口边缘，并跟随浅色或深色主题。
+- 键盘 Tab 聚焦名称可查看说明，Esc 关闭。手机点击名称展开，再次点击或点外部关闭；滚动、筛选或切换英雄时也会关闭。
+- 推荐出装展示胜率与场次。少于 1000 场的样本标橙色，仅供参考。
+- 手机上选择英雄后进入全屏详情，点击“返回”回到列表。
 
-## 数据来源
+## 数据与正确性
 
-全部来自 [Hexdata](https://hexdata.com.cn)（数据来源：Hexdata（hexdata.com.cn）），它的 robots.txt 允许抓取公开页面，要求注明出处。Hexdata 统计的是公开可查的对局样本，不是全服所有对局。
+**胜率、出装和海克斯效果描述均来自 [Hexdata（hexdata.com.cn）](https://hexdata.com.cn/)**。效果说明提取自海克斯详情页“适合英雄和出装思路”中的效果段落，保留来源文字和数值，不混入其他网站的描述，也不把推荐英雄、阵容建议或统计数字当作效果。每个浮层附对应详情页链接。
 
-拳头官方 API 故意不公开海克斯大乱斗的对局（见 [#1109](https://github.com/RiotGames/developer-relations/issues/1109)、[#1204](https://github.com/RiotGames/developer-relations/issues/1204)），所以没有官方数据可用。
+暂未读取到的效果明确显示“Hexdata 的效果描述暂未收录”，可点击来源链接核对；自动更新会优先补齐缺项。页面结构不匹配或获取失败时保留已有 Hexdata 描述，不猜测内容。
 
-每个英雄的海克斯排名由两部分合起来：
+英雄的海克斯排名合并英雄详情页列出的搭配与海克斯详情页的适配英雄表，按搭配胜率排序。统计是公开对局样本，并非全服所有对局；跨版本和低样本结果应谨慎比较。网页将来源客户端版本号（例如 16.22）换算为游戏显示版本号（26.22）。
 
-1. 英雄页（`/hero/...`）列出的 8 个海克斯；
-2. 海克斯详情页（`/augment/...`）里“适配英雄”表的搭配胜率（每个海克斯 12 位英雄）。
+名称、图标使用游戏资源，图标通过 CommunityDragon 等资源接口下载；图标资源来源与效果描述来源分别处理。本站为非官方工具，与 Riot Games 无关联。
 
-Hexdata 写的是客户端版本号（16.21），网页换算成游戏里的版本号（26.21）显示。
+## 更新与发布
 
-## 自动更新
+`.github/workflows/update.yml` 每小时运行，也支持在 GitHub Actions 中手动执行“自动更新”：
 
-只有一个自动任务 `.github/workflows/update.yml`（GitHub → Actions → 自动更新），**每小时**运行一次，也可以手动点 Run workflow：
+1. `fetch-hexdata.mjs` 抓取英雄榜、海克斯榜和最多 30 个详情页，保存到 `data/open/hexdata.json`。优先补齐缺少稀有度或效果描述的海克斯，再更新过时的英雄及海克斯搭配。
+2. `build-data.mjs` 生成胜率与出装数据；`build-augment-descriptions.mjs` 从缓存生成描述及对应来源链接，无需再访问其他描述数据源。
+3. 数据有变化时补齐图标并提交，随后生成单文件版，上传到该次运行的 Artifacts（保留 90 天）。
 
-1. `scripts/fetch-hexdata.mjs`：读英雄排行页和海克斯排行页，再读最多 30 个需要更新的详情页，结果存到 `data/open/hexdata.json`。
-2. `scripts/build-data.mjs`：把 `data/heroes.json`（英雄中文名、称号、头像编号、外号）和上面的数据合成网页用的 `data/data.js`。
-3. 有变化时：`scripts/fetch-icons.mjs` 补齐图标（`assets/icons/`、`data/icons.js`），提交到仓库；`scripts/build-standalone.mjs` 打包单文件版并上传。
+为尊重 Hexdata 的访问限制，详情页之间间隔 2 秒，遇到限流停止，留待下次继续。缺项和过期数据会分批补齐；页面标明的数据日期不代表所有详情页都已刷新。
 
-**Hexdata 有访问频率限制**：连续读 40 个左右页面就会返回 429。所以每次最多读 30 个，每页间隔 2 秒，一被限流就停，下次接着读。Hexdata 出新数据后，大约 13 小时内全部更新完；数据没变时每次只读 2 个排行页，不会产生提交。
+GitHub Pages 发布 `main` 分支。修改推送后，在 Actions 中确认 `pages build and deployment` 成功。更改交互或样式时，同时更新 `index.html` 的静态资源版本参数，避免浏览器使用旧缓存。
 
-自动任务在 GitHub 上运行，公开仓库免费，不需要任何手工操作。任务失败时 GitHub 会给仓库主人发邮件，网页继续显示上一次的数据。
+## 本地开发
 
-## 单文件版
+使用 Node.js 20+，不需要安装前端依赖：
 
-单文件版把网页、数据、图标打包成一个 `hexaram.html`（约 7 MB），不联网也能打开，适合发到微信 / QQ 群。它不存进仓库，免得仓库越来越大。下载方法：Actions → 自动更新 → 点最近一次**有数据更新**的运行 → 页面底部 Artifacts 里的“hexaram-单文件版”，解压即可。每份保留 90 天。
+```sh
+node --test
+node scripts/build-data.mjs
+node scripts/build-augment-descriptions.mjs
+node scripts/build-standalone.mjs
+```
+
+双击 `index.html` 或启动静态服务器预览。单文件版位于 `dist/hexaram.html`，内嵌网页、数据、描述和图标，可离线打开；`dist/` 不提交到仓库。线上更新不会修改已经下载的旧 HTML 文件。
 
 ## 文件
 
-```
-index.html                     网页入口
-assets/app.js, app.css         交互与样式
-assets/icons/                  英雄头像、装备和海克斯图标（自动下载）
-data/heroes.json               英雄中文名、称号、头像编号、外号（新英雄出来时手动加一行）
-data/open/hexdata.json         从 Hexdata 读到的数据（自动生成）
-data/data.js                   网页数据（自动生成）
-data/icons.js                  图标对照表（自动生成）
-scripts/fetch-hexdata.mjs      读取 Hexdata
-scripts/build-data.mjs         生成网页数据
-scripts/fetch-icons.mjs        下载图标
-scripts/build-standalone.mjs   打包单文件版
-.github/workflows/update.yml   自动任务
-```
+| 文件 | 用途 |
+| --- | --- |
+| `index.html` | 页面入口与资源版本 |
+| `assets/app.js` / `assets/app.css` | 交互、主题与效果浮层 |
+| `data/heroes.json` | 英雄中文名、称号、英文标识和别名 |
+| `data/open/hexdata.json` | Hexdata 原始统计与效果缓存 |
+| `data/data.js` | 生成的英雄搭配与出装数据 |
+| `data/augment-descriptions.js` | 生成的 Hexdata 效果及来源链接 |
+| `data/icons.js` / `assets/icons/` | 图标映射与本地图标 |
+| `scripts/fetch-hexdata.mjs` | 分批获取 Hexdata 页面 |
+| `scripts/hexdata-descriptions.mjs` | 提取并校验 Hexdata 效果段落 |
+| `scripts/build-data.mjs` | 生成英雄页面数据 |
+| `scripts/build-augment-descriptions.mjs` | 生成效果描述与来源链接 |
+| `scripts/fetch-icons.mjs` | 补齐图标 |
+| `scripts/build-standalone.mjs` | 生成离线单文件版 |
+| `tests/augment-descriptions.test.mjs` | 效果提取与缺项检查 |
 
-## 注意
-
-- 新英雄上线时要在 `data/heroes.json` 加一行（`key` 是 Data Dragon 的英雄英文 id，用来找头像），否则列表里没有它。
-- 改了网页代码后可以本地双击 `index.html` 预览。
-
----
-
-非官方工具，与 Riot Games 无关联。数据来源：Hexdata（hexdata.com.cn）。
-
-海克斯效果描述更新：`node scripts/fetch-augment-descriptions.mjs`（需访问 `raw.communitydragon.org`），生成 `data/augment-descriptions.js`。自动更新任务会尝试刷新，失败时保留已有文件。描述中的未解析数值会明确标注以游戏内为准。
+新英雄需要在 `data/heroes.json` 中补上对应的英文标识与中文资料。

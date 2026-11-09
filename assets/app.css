@@ -127,10 +127,25 @@ a { color: inherit; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
-/* 海克斯效果：鼠标悬停、键盘聚焦或手机点击名称。 */
-.aug-description { position: relative; }
-.aug-info { padding: 0; border: 0; background: none; text-align: left; font-weight: inherit; text-decoration: underline dotted var(--muted); text-underline-offset: 4px; }
-.aug-info:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
-.aug-tooltip { display: none; position: absolute; z-index: 40; left: 0; top: 100%; width: min(320px, 65vw); padding: 12px 14px; border: 1px solid var(--gold); border-radius: 8px; background: var(--panel-2); color: var(--text); box-shadow: 0 6px 24px rgba(0, 0, 0, .25); font-size: 13px; font-weight: 400; line-height: 1.7; white-space: pre-line; overflow-wrap: anywhere; }
-.aug-row:hover .aug-tooltip, .aug-info:focus-visible + .aug-tooltip, .aug-info[aria-expanded="true"] + .aug-tooltip, .aug-tooltip:hover { display: block; }
-@media (max-width: 860px) { .aug-tooltip { width: min(260px, 52vw); } }
+/* 海克斯说明浮层：桌面和移动端共用，颜色跟随主题。 */
+.aug-info { padding: 0; border: 0; background: none; text-align: left; font-weight: inherit; cursor: help; }
+.aug-icon { cursor: help; }
+.aug-info:hover, .aug-info[aria-expanded="true"] { color: var(--gold); }
+.aug-info:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 3px; }
+.aug-tooltip[hidden] { display: none; }
+.aug-tooltip {
+  position: fixed; z-index: 100; width: 340px; max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 24px); overflow-y: auto; padding: 18px;
+  border: 1px solid var(--line); border-top: 2px solid var(--gold); border-radius: 12px;
+  background: var(--panel); color: var(--text); box-shadow: 0 12px 40px rgba(0, 0, 0, .28);
+  animation: aug-appear .14s ease-out; font-size: 13px; line-height: 1.75;
+}
+.aug-tooltip-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.aug-tooltip-head strong { font-size: 15px; }
+.aug-tooltip-head span { flex: none; padding: 1px 8px; border-radius: 5px; background: var(--gold-soft); color: var(--gold); font-size: 11px; }
+.aug-tooltip p { margin: 12px 0 14px; color: var(--text-2); white-space: pre-line; overflow-wrap: anywhere; }
+.aug-tooltip-source { padding-top: 10px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
+.aug-tooltip-source a { color: var(--gold); text-decoration: none; }
+.aug-tooltip-source a:hover { text-decoration: underline; }
+@keyframes aug-appear { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .aug-tooltip { animation: none; } }

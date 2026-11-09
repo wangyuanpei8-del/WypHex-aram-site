@@ -25,10 +25,11 @@
   const icMap = m => new Map(Object.entries(m || {}).map(([k, v]) => [ik(k), v]));
   const AUG_IC = icMap(window.HEX_AUG_ICONS), ITEM_IC = icMap(window.HEX_ITEM_ICONS);
   const AUG_DESC = icMap(window.HEX_AUG_DESCRIPTIONS);
-  const augDescription = n => AUG_DESC.get(ik(n)) || '暂无效果描述，等待数据补充。';
+  const AUG_SOURCES = icMap(window.HEX_AUG_SOURCES);
+  const augDescription = n => AUG_DESC.get(ik(n)) || 'Hexdata 的效果描述暂未收录，可查看原页面。';
   const augIc = (n, r) => {
     const u = AUG_IC.get(ik(n));
-    return u ? `<span class="ic-wrap r-${esc(r)}"><img class="ic" src="${esc(u)}" alt="" loading="lazy"></span>` : `<span class="rar ${esc(r || '未知')}"></span>`;
+    return u ? `<span class="ic-wrap aug-icon r-${esc(r)}"><img class="ic" src="${esc(u)}" alt="" loading="lazy"></span>` : `<span class="rar aug-icon ${esc(r || '未知')}"></span>`;
   };
   const itemIc = n => { const u = ITEM_IC.get(ik(n)); return u ? `<img class="ic" src="${esc(u)}" alt="" loading="lazy">` : ''; };
   document.addEventListener('error', e => {
@@ -39,6 +40,65 @@
     if (box && box.classList.contains('ava')) box.textContent = box.dataset.fb || '';
     else img.remove();
   }, true);
+
+  /* ---------- 海克斯说明：统一浮层，只响应图标和名称 ---------- */
+  const tooltip = document.createElement('aside');
+  tooltip.className = 'aug-tooltip';
+  tooltip.id = 'aug-tooltip';
+  tooltip.hidden = true;
+  tooltip.setAttribute('aria-label', '海克斯效果描述');
+  document.body.append(tooltip);
+  let activeInfo = null, pinnedInfo = null, showTimer, hideTimer;
+  function hideAugTooltip() {
+    clearTimeout(showTimer); clearTimeout(hideTimer);
+    if (activeInfo) { activeInfo.removeAttribute('aria-describedby'); activeInfo.setAttribute('aria-expanded', 'false'); }
+    tooltip.hidden = true;
+    activeInfo = pinnedInfo = null;
+  }
+  function positionTooltip() {
+    if (!activeInfo || tooltip.hidden) return;
+    const box = activeInfo.getBoundingClientRect();
+    const rect = tooltip.getBoundingClientRect(), gap = 10, margin = 12;
+    const left = Math.max(margin, Math.min(box.left - 8, innerWidth - rect.width - margin));
+    const below = box.bottom + gap;
+    const top = below + rect.height <= innerHeight - margin ? below : Math.max(margin, box.top - rect.height - gap);
+    tooltip.style.left = left + 'px'; tooltip.style.top = top + 'px';
+  }
+  function showAugTooltip(info) {
+    clearTimeout(showTimer); clearTimeout(hideTimer);
+    if (activeInfo && activeInfo !== info) hideAugTooltip();
+    activeInfo = info;
+    const name = info.dataset.aug, source = AUG_SOURCES.get(ik(name));
+    tooltip.innerHTML = `<div class="aug-tooltip-head"><strong>${esc(name)}</strong><span>${esc(info.dataset.rarity)}</span></div><p>${esc(augDescription(name))}</p><div class="aug-tooltip-source">数据来源：${source ? `<a href="${esc(source)}" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）↗</a>` : 'Hexdata（hexdata.com.cn）'}</div>`;
+    tooltip.hidden = false;
+    info.setAttribute('aria-describedby', tooltip.id); info.setAttribute('aria-expanded', 'true');
+    positionTooltip();
+  }
+  function triggerInfo(target) {
+    const trigger = target.closest('.aug-info, .aug-icon');
+    return trigger?.closest('.aug-row')?.querySelector('.aug-info');
+  }
+  document.addEventListener('pointerover', e => {
+    if (e.pointerType === 'touch') return;
+    const info = triggerInfo(e.target);
+    if (!info) return;
+    clearTimeout(hideTimer); clearTimeout(showTimer);
+    showTimer = setTimeout(() => showAugTooltip(info), 160);
+  });
+  document.addEventListener('pointerout', e => {
+    if (!triggerInfo(e.target) && !e.target.closest('.aug-tooltip')) return;
+    if (e.relatedTarget && (e.relatedTarget.closest('.aug-tooltip') || triggerInfo(e.relatedTarget))) return;
+    clearTimeout(showTimer);
+    if (!pinnedInfo) hideTimer = setTimeout(hideAugTooltip, 100);
+  });
+  tooltip.addEventListener('pointerenter', () => clearTimeout(hideTimer));
+  document.addEventListener('focusin', e => {
+    if (e.target.matches('.aug-info')) showAugTooltip(e.target);
+    else if (!tooltip.contains(e.target)) hideAugTooltip();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') hideAugTooltip(); });
+  document.addEventListener('scroll', hideAugTooltip, true);
+  window.addEventListener('resize', hideAugTooltip);
 
   /* ---------- 左边：英雄列表（按胜率） ---------- */
   function renderList() {
@@ -53,6 +113,7 @@
 
   /* ---------- 右边：海克斯胜率排名 + 推荐出装 ---------- */
   function renderDetail() {
+    hideAugTooltip();
     const h = HEROES.find(x => x.name === state.hero) || HEROES[0];
     const rars = ['全部', '棱彩', '黄金', '白银'];
     const augs = h.augs.filter(a => state.rar === '全部' || a.r === state.rar);
@@ -65,10 +126,10 @@
       </div>
       ${!h.augs.length ? '<div class="card"><p class="empty">这位英雄的数据还在自动补充中（Hexdata 有访问频率限制，每小时补一批），稍后再看。</p></div>' : `
       <div class="card">
-        <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率 · 悬停或点击查看效果</em></h3>
+        <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率 · 悬停图标或名称查看效果</em></h3>
         <div class="tabs">${rars.map(r => `<button data-rar="${r}" aria-selected="${state.rar === r}">${r === '全部' ? '' : `<span class="rar ${r}"></span>`}${r}</button>`).join('')}</div>
         <ol class="rank">${augs.map((a, i) => `<li class="aug-row">
-          <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t aug-description"><button class="aug-info" type="button" aria-describedby="aug-tip-${i}" aria-expanded="false" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button><span class="aug-tooltip" id="aug-tip-${i}" role="tooltip">${esc(augDescription(a.n))}</span></span>
+          <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t"><button class="aug-info" type="button" data-aug="${esc(a.n)}" data-rarity="${esc(a.r)}" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button></span>
           <span class="w num">${pct(a.w)}</span><span class="g num${a.g < LOW ? ' low' : ''}">${wan(a.g)}场</span></li>`).join('') || '<li class="empty">这个稀有度暂无数据</li>'}</ol>
       </div>
       <div class="card">
@@ -103,20 +164,18 @@
 
   document.addEventListener('click', e => {
     const info = e.target.closest('.aug-info');
-    document.querySelectorAll('.aug-info[aria-expanded="true"]').forEach(b => { if (b !== info) b.setAttribute('aria-expanded', 'false'); });
-    if (info) { info.setAttribute('aria-expanded', String(info.getAttribute('aria-expanded') !== 'true')); return; }
+    if (info) {
+      if (pinnedInfo === info) hideAugTooltip();
+      else { showAugTooltip(info); if (!matchMedia('(hover: hover)').matches) pinnedInfo = info; }
+      return;
+    }
+    if (!e.target.closest('.aug-tooltip')) hideAugTooltip();
     const t = e.target.closest('[data-hero],[data-rar],[data-back],[data-theme-toggle]');
     if (!t) return;
     if (t.hasAttribute('data-theme-toggle')) { toggleTheme(); return; }
     if (t.dataset.hero) select(t.dataset.hero);
     else if (t.dataset.rar) { state.rar = t.dataset.rar; renderDetail(); }
     else document.body.classList.remove('sheet');
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.aug-info').forEach(b => b.setAttribute('aria-expanded', 'false'));
-      if (document.activeElement?.matches('.aug-info')) document.activeElement.blur();
-    }
   });
   $('#search').addEventListener('input', e => { state.q = e.target.value; renderList(); });
 
