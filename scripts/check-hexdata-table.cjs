@@ -6,6 +6,8 @@ const {chromium}=require('../work/browser/node_modules/playwright');
  page.on('requestfailed',r=>console.log('NETWORK FAILURE',r.url(),r.failure()?.errorText));
  try { await page.goto('https://hexdata.com.cn/hero/157-yasuo',{waitUntil:'commit',timeout:30000}); } catch(e) { console.log('NAVIGATION FAILURE',e.message); }
  await page.waitForTimeout(12000);
+ const interactive = page.getByRole('link',{name:'打开交互详情',exact:true});
+ if(await interactive.count()){console.log('INTERACTIVE LINK',await interactive.getAttribute('href'));await interactive.click();await page.waitForTimeout(15000);}
  console.log('PAGE URL',page.url());
  console.log('PAGE TITLE',await page.title());
  const body=await page.locator('body').innerText();
