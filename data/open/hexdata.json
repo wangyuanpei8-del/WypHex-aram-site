@@ -4844,51 +4844,99 @@
     "augs": [
      {
       "name": "秘术冲拳",
-      "score": 98.6,
       "wr": 66,
-      "games": 69182
+      "games": 69182,
+      "score": 99
      },
      {
       "name": "小蜜蜂！！！",
-      "score": 89.4,
       "wr": 58.9,
-      "games": 69515
+      "games": 69515,
+      "score": 89
      },
      {
       "name": "回归基本功",
-      "score": 85.9,
       "wr": 57.3,
-      "games": 17165
+      "games": 17165,
+      "score": 86
      },
      {
       "name": "巫妖大脑",
-      "score": 83.3,
       "wr": 56.3,
-      "games": 27089
+      "games": 27089,
+      "score": 83
      },
      {
       "name": "鼓声暴起 低音轰鸣",
-      "score": 82.4,
       "wr": 56,
-      "games": 53755
+      "games": 53755,
+      "score": 82
      },
      {
       "name": "无限循环往复",
-      "score": 80.9,
       "wr": 55.6,
-      "games": 18486
+      "games": 18486,
+      "score": 81
      },
      {
       "name": "逃跑计划",
-      "score": 80.4,
       "wr": 55.4,
-      "games": 33347
+      "games": 33347,
+      "score": 80
      },
      {
       "name": "科学狂人",
-      "score": 80,
       "wr": 55.3,
-      "games": 24252
+      "games": 24252,
+      "score": 80
+     },
+     {
+      "name": "男爵之手",
+      "wr": 56.2,
+      "games": 1901,
+      "score": 80
+     },
+     {
+      "name": "虚幻武器",
+      "wr": 55,
+      "games": 85291,
+      "score": 79
+     },
+     {
+      "name": "艾卡西亚的陷落",
+      "wr": 55,
+      "games": 11051,
+      "score": 78
+     },
+     {
+      "name": "重量级打击手",
+      "wr": 54.7,
+      "games": 40356,
+      "score": 78
+     },
+     {
+      "name": "泰坦的坚决",
+      "wr": 54.7,
+      "games": 26520,
+      "score": 78
+     },
+     {
+      "name": "台风",
+      "wr": 54.5,
+      "games": 19288,
+      "score": 77
+     },
+     {
+      "name": "双刀流",
+      "wr": 54.3,
+      "games": 22572,
+      "score": 76
+     },
+     {
+      "name": "注魔",
+      "wr": 54.2,
+      "games": 22135,
+      "score": 75
      }
     ],
     "items": [
@@ -4941,7 +4989,11 @@
       "games": 466998
      }
     ],
-    "date": "2026-11-09"
+    "date": "2026-11-09",
+    "coverage": "visible-table",
+    "sourceCount": 16,
+    "augmentDate": "2026-11-09",
+    "augmentPatch": "16.22"
    },
    {
     "id": 147,
