@@ -32,6 +32,7 @@ export function parseHeroTables(html) {
 export function parseVisibleHeroText(body) {
   const count=/显示\s*(\d+)\s*\/\s*(\d+)\s*条/.exec(body);
   if(!count)throw Error('尚未出现英雄可见表条目数');
+  if(Number(count[2])<1)throw Error('来源表尚未加载，不能用空表覆盖缓存');
   if(count[1]!==count[2])throw Error('来源表存在筛选或分页，不能标记完整');
   const begin=count.index, next=body.indexOf('\n装备表现',begin);
   const section=body.slice(begin,next<0?undefined:next);

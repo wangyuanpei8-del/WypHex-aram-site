@@ -6,3 +6,5 @@ test('rejects partial captures instead of replacing the complete table',()=>asse
 test('distinguishes 8-row summaries from the full visible table',()=>{const d=parseHeroTables('<table><tr><th>推荐海克斯</th><th>HexScore</th><th>胜率</th><th>样本</th></tr><tr><td>弹跳蜜蜂</td><td>100</td><td>76.1%</td><td>22,201</td></tr></table>');assert.equal(d.augs.length,1);assert.equal(d.coverage,'summary');assert.equal(d.augs[0].wr,76.1)});
 
 test('reads the real public Yasuo table with 16 rows and preserves win rate and games',()=>{const d=parseVisibleHeroText(readFileSync(new URL('./fixtures/yasuo-visible.txt',import.meta.url),'utf8'));assert.equal(d.augs.length,16);assert.deepEqual(d.augs.find(a=>a.name==='泰坦的坚决'),{name:'泰坦的坚决',wr:61,games:17085,score:75});assert.equal(d.augs.find(a=>a.name==='屹立不倒').games,245089);});
+
+test('does not replace cache with an empty loading state',()=>assert.throws(()=>parseVisibleHeroText('显示 0 / 0 条'),/尚未加载/));

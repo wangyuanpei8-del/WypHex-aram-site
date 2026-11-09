@@ -20,6 +20,7 @@ if(parsed.coverage!=='visible-table'||parsed.sourceCount===null)throw Error('未
 const norm=s=>s.replace(/[\s·・!！?？:：,，.。'"“”]/g,'').toLowerCase();
 const known=new Map(data.augments.rows.map(a=>[norm(a.name),a.name]));
 for(const a of parsed.augs){const name=known.get(norm(a.name));if(!name)throw Error(`未知海克斯：${a.name}`);a.name=name;}
+if(new Set(parsed.augs.map(a=>norm(a.name))).size!==parsed.augs.length)throw Error('来源表存在重复海克斯，保留缓存');
 // 仅替换海克斯搭配，不覆盖来源不同的出装统计。
 Object.assign(hero,{augs:parsed.augs,coverage:parsed.coverage,sourceCount:parsed.sourceCount,augmentDate:date,augmentPatch:patch});
 const temporary=new URL('data/open/hexdata.json.tmp',root);

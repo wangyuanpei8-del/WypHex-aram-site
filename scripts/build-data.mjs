@@ -1,6 +1,6 @@
 // 生成网页数据 data/data.js：每个英雄的海克斯胜率排名和推荐出装。
 // 输入：data/heroes.json（英雄中文名、称号、头像编号、外号）+ data/open/hexdata.json（fetch-hexdata.mjs 下载）
-// 海克斯排名 = 英雄页列出的 8 个 + 海克斯详情页里这位英雄的搭配胜率，按胜率从高到低排。
+// 海克斯排名以英雄可见表为准，摘要只作标记明确的回退，不从其他页面拼补。
 // 用法：node scripts/build-data.mjs
 import { detailDates } from './data-quality.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
@@ -17,8 +17,6 @@ const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').
 const patch = p => { const m = /^(\d+)\.(\d+)/.exec(p || ''); return m ? `${+m[1] < 20 ? +m[1] + 10 : +m[1]}.${m[2]}` : ''; };
 
 const augByKey = new Map(hex.augments.rows.map(a => [nk(a.name), a]));
-const pairs = new Map(); // 英雄编号 -> 海克斯详情页里的搭配
-for (const a of hex.augments.rows) for (const x of a.heroes || []) (pairs.get(x.id) || pairs.set(x.id, []).get(x.id)).push({ name: a.name, wr: x.wr, games: x.games, date: a.date, patch: a.detailPatch });
 
 const rows = hex.heroes.rows;
 const miss = [];
@@ -27,7 +25,6 @@ const out = heroes.map(h => {
   if (!r) { miss.push(h.name); return { ...h, wr: null, games: null, url: '', augs: [], items: [] }; }
   const m = new Map();
   for (const a of r.augs || []) m.set(nk(a.name), { ...a, date: r.augmentDate || r.date, patch: r.augmentPatch || r.detailPatch });
-  if (r.augs && r.coverage !== 'visible-table') for (const a of pairs.get(r.id) || []) if (!m.has(nk(a.name))) m.set(nk(a.name), a);
   const augs = [...m.entries()].map(([k, a]) => {
     const g = augByKey.get(k);
     return { n: g ? g.name : a.name, r: (g && g.rarity) || '', w: a.wr, g: a.games, date: a.date || null, patch: a.patch || null };
