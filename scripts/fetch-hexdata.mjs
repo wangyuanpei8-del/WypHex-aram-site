@@ -16,7 +16,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 // 503 时等 20 秒重试一次；429（限流）直接放弃，下次再读
 async function page(path) {
   for (let i = 0; ; i++) {
-    const r = await fetch(BASE + path, { headers: UA });
+    const r = await fetch(BASE + path, { headers: UA, signal: AbortSignal.timeout(30000) });
     if (r.ok) return r.text();
     if (i < 1 && r.status === 503) {
       const wait = 20;
