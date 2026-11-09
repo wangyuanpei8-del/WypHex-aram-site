@@ -152,7 +152,7 @@ function augPage(a, html) {
 // 顺序：稀有度或描述缺项（同一数据日最多检查一次）→ 过时的英雄页 → 过时的海克斯页。
 const MAX = +(process.env.HEXDATA_MAX || 30);
 // 每批保留英雄更新名额；描述核对按上次尝试时间轮转，避免缺项阻塞。
-const audit = augments.filter(a => !a.description || a.descriptionPatch !== pageInfo(ah).patch || a.descriptionDate !== listDate)
+const audit = augments.filter(a => !a.description || a.descriptionPatch !== pageInfo(hh).patch || a.descriptionDate !== listDate)
   .sort((a,b) => Number(Boolean(a.description)) - Number(Boolean(b.description)) || String(a.descriptionCheckedAt || '').localeCompare(String(b.descriptionCheckedAt || '')));
 const descriptionOnly = process.env.HEXDATA_MODE === 'descriptions';
 const candidates = descriptionOnly ? audit.map(a => ['aug', a]) : [
