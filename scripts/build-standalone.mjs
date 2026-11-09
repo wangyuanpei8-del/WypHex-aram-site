@@ -35,11 +35,11 @@ const augIcons = await inlineMap('HEX_AUG_ICONS');
 const iconJs = `window.HEX_ICONS = ${JSON.stringify(icons)};\nwindow.HEX_ITEM_ICONS = ${JSON.stringify(itemIcons)};\nwindow.HEX_AUG_ICONS = ${JSON.stringify(augIcons)};`;
 const safe = s => s.replace(/<\/script/gi, '<\\/script');
 html = html
-  .replace('<link rel="stylesheet" href="assets/app.css" />', () => `<style>\n${css}\n</style>`)
+  .replace(/<link rel="stylesheet" href="assets\/app\.css(?:\?[^"]*)?" \/>/, () => `<style>\n${css}\n</style>`)
   .replace('<script src="data/data.js"></script>', () => `<script>\n${safe(data)}\n${iconJs}\n</script>`)
   .replace('<script src="data/icons.js"></script>', () => '')
-  .replace('<script src="data/augment-descriptions.js"></script>', () => `<script>\n${safe(descriptions)}\n</script>`)
-  .replace('<script src="assets/app.js"></script>', () => `<script>\n${safe(app)}\n</script>`);
+  .replace(/<script src="data\/augment-descriptions\.js(?:\?[^"]*)?"><\/script>/, () => `<script>\n${safe(descriptions)}\n</script>`)
+  .replace(/<script src="assets\/app\.js(?:\?[^"]*)?"><\/script>/, () => `<script>\n${safe(app)}\n</script>`);
 await mkdir(join(ROOT, 'dist'), { recursive: true });
 await writeFile(join(ROOT, 'dist', 'hexaram.html'), html);
 console.log(`dist/hexaram.html ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB，内嵌头像 ${Object.keys(icons).length} / 装备 ${Object.keys(itemIcons).length} / 海克斯 ${Object.keys(augIcons).length} 张`);

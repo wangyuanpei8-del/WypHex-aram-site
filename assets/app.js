@@ -65,7 +65,7 @@
       </div>
       ${!h.augs.length ? '<div class="card"><p class="empty">这位英雄的数据还在自动补充中（Hexdata 有访问频率限制，每小时补一批），稍后再看。</p></div>' : `
       <div class="card">
-        <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率</em></h3>
+        <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率 · 悬停或点击查看效果</em></h3>
         <div class="tabs">${rars.map(r => `<button data-rar="${r}" aria-selected="${state.rar === r}">${r === '全部' ? '' : `<span class="rar ${r}"></span>`}${r}</button>`).join('')}</div>
         <ol class="rank">${augs.map((a, i) => `<li class="aug-row">
           <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t aug-description"><button class="aug-info" type="button" aria-describedby="aug-tip-${i}" aria-expanded="false" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button><span class="aug-tooltip" id="aug-tip-${i}" role="tooltip">${esc(augDescription(a.n))}</span></span>
