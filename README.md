@@ -25,7 +25,7 @@
 
 ## 更新与发布
 
-`.github/workflows/update.yml` 每小时运行，也支持在 GitHub Actions 中手动执行“自动更新”：
+`.github/workflows/update.yml` 每小时运行，也支持在 GitHub Actions 中手动执行“自动更新”（勾选 `descriptions` 可只补齐和核对描述）：
 
 1. `fetch-hexdata.mjs` 抓取英雄榜、海克斯榜和最多 30 个详情页，保存到 `data/open/hexdata.json`。优先补齐缺少稀有度或效果描述的海克斯，再更新过时的英雄及海克斯搭配。
 2. `build-data.mjs` 生成胜率与出装数据；`build-augment-descriptions.mjs` 从缓存生成描述及对应来源链接，无需再访问其他描述数据源。

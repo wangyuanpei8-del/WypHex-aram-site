@@ -4,12 +4,17 @@ name: 自动更新
 on:
   push:
     paths:
+      - '.github/workflows/update.yml'
       - 'scripts/data-quality.mjs'
       - 'scripts/hexdata-descriptions.mjs'
   schedule:
     - cron: '25 * * * *'
   workflow_dispatch:
     inputs:
+      descriptions:
+        description: '仅补齐并核对海克斯效果描述'
+        type: boolean
+        default: false
       icons:
         description: '强制重新下载图标'
         type: boolean
@@ -31,9 +36,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: 检查数据解析与版本判断
+        run: node --test
       - name: 读取 Hexdata
         env:
-          HEXDATA_MODE: ${{ github.event_name == 'push' && 'descriptions' || '' }}
+          HEXDATA_MODE: ${{ (github.event_name == 'push' || inputs.descriptions) && 'descriptions' || '' }}
         run: node scripts/fetch-hexdata.mjs
       - name: 生成网页数据
         run: node scripts/build-data.mjs
