@@ -48,9 +48,8 @@
   tooltip.hidden = true;
   tooltip.setAttribute('aria-label', '海克斯效果描述');
   document.body.append(tooltip);
-  let activeInfo = null, pinnedInfo = null, showTimer, hideTimer;
+  let activeInfo = null, pinnedInfo = null;
   function hideAugTooltip() {
-    clearTimeout(showTimer); clearTimeout(hideTimer);
     if (activeInfo) { activeInfo.removeAttribute('aria-describedby'); activeInfo.setAttribute('aria-expanded', 'false'); }
     tooltip.hidden = true;
     activeInfo = pinnedInfo = null;
@@ -65,7 +64,6 @@
     tooltip.style.left = left + 'px'; tooltip.style.top = top + 'px';
   }
   function showAugTooltip(info) {
-    clearTimeout(showTimer); clearTimeout(hideTimer);
     if (activeInfo && activeInfo !== info) hideAugTooltip();
     activeInfo = info;
     const name = info.dataset.aug, source = AUG_SOURCES.get(ik(name));
@@ -81,17 +79,15 @@
   document.addEventListener('pointerover', e => {
     if (e.pointerType === 'touch') return;
     const info = triggerInfo(e.target);
-    if (!info) return;
-    clearTimeout(hideTimer); clearTimeout(showTimer);
-    showTimer = setTimeout(() => showAugTooltip(info), 160);
+    if (info && activeInfo !== info) showAugTooltip(info);
   });
   document.addEventListener('pointerout', e => {
-    if (!triggerInfo(e.target) && !e.target.closest('.aug-tooltip')) return;
-    if (e.relatedTarget && (e.relatedTarget.closest('.aug-tooltip') || triggerInfo(e.relatedTarget))) return;
-    clearTimeout(showTimer);
-    if (!pinnedInfo) hideTimer = setTimeout(hideAugTooltip, 100);
+    if (e.pointerType === 'touch') return;
+    const trigger = e.target.closest('.aug-info, .aug-icon');
+    if (!trigger) return;
+    if (e.relatedTarget && trigger.contains(e.relatedTarget)) return;
+    hideAugTooltip();
   });
-  tooltip.addEventListener('pointerenter', () => clearTimeout(hideTimer));
   document.addEventListener('focusin', e => {
     if (e.target.matches('.aug-info')) showAugTooltip(e.target);
     else if (!tooltip.contains(e.target)) hideAugTooltip();
