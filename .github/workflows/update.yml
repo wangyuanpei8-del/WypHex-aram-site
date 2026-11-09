@@ -2,6 +2,10 @@ name: 自动更新
 
 # 每小时从 Hexdata 读一批页面（被限流就停，下次接着读），有新数据才提交并重新打包单文件版。
 on:
+  push:
+    paths:
+      - 'scripts/data-quality.mjs'
+      - 'scripts/hexdata-descriptions.mjs'
   schedule:
     - cron: '25 * * * *'
   workflow_dispatch:
@@ -28,6 +32,8 @@ jobs:
         with:
           node-version: 20
       - name: 读取 Hexdata
+        env:
+          HEXDATA_MODE: ${{ github.event_name == 'push' && 'descriptions' || '' }}
         run: node scripts/fetch-hexdata.mjs
       - name: 生成网页数据
         run: node scripts/build-data.mjs

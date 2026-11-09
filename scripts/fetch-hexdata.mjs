@@ -2,6 +2,7 @@
 // Hexdata 的 robots.txt 允许抓取这些公开页面，要求引用时注明“数据来源：Hexdata（hexdata.com.cn）”并附链接。
 // 结果写入 data/open/hexdata.json，再由 build-data.mjs 生成网页数据。
 // 用法：node scripts/fetch-hexdata.mjs        （自动任务每小时运行一次）
+import { validDescription } from './data-quality.mjs';
 import { extractDescription } from './hexdata-descriptions.mjs';
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
@@ -114,15 +115,17 @@ const listDate = pageInfo(hh).date || '';
 
 // 先沿用上一次读到的英雄页、海克斯页数据
 const prevHero = new Map((prev?.heroes?.rows || []).map(r => [r.id, r]));
-for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { augs: p.augs, items: p.items, date: p.date }); }
+for (const h of heroes) { const p = prevHero.get(h.id); if (p && p.augs) Object.assign(h, { augs: p.augs, items: p.items, date: p.date, detailPatch: p.detailPatch }); }
 const prevAug = new Map((prev?.augments?.rows || []).map(a => [a.name, a]));
-for (const a of augments) { const p = prevAug.get(a.name); if (p) Object.assign(a, { rarity: p.rarity, heroes: p.heroes, date: p.date, description: p.description, descriptionChecked: p.descriptionChecked }); }
+for (const a of augments) { const p = prevAug.get(a.name); if (p) Object.assign(a, { rarity: p.rarity, heroes: p.heroes, date: p.date, description: p.description, descriptionChecked: p.descriptionChecked, detailPatch: p.detailPatch, descriptionPatch: p.descriptionPatch, descriptionDate: p.descriptionDate, descriptionCheckedAt: p.descriptionCheckedAt }); }
 
 /* 海克斯详情页：稀有度（“xx是棱彩海克斯”）和最适合的 12 位英雄的搭配胜率 */
 function augPage(a, html) {
+  const info = pageInfo(html);
   a.descriptionChecked = listDate;
+  a.descriptionCheckedAt = new Date().toISOString();
   const description = extractDescription(html);
-  if (description) a.description = description;
+  if (validDescription(description)) Object.assign(a, { description, descriptionPatch: info.patch, descriptionDate: info.date });
   const m = /(棱彩|黄金|白银)海克斯/.exec(text(html));
   if (m) a.rarity = m[1];
   const list = [];
@@ -142,17 +145,24 @@ function augPage(a, html) {
     }
   }
   if (!list.length) { console.log(`海克斯页 ${a.name} 没解析到适配英雄；页面开头：${text(html).slice(0, 400)}`); return; }
-  a.heroes = list; a.date = listDate;
+  a.heroes = list; a.date = info.date; a.detailPatch = info.patch;
 }
 
 // Hexdata 连续读 40 个左右页面就会限流（429），所以每次最多读 MAX 个页面，被限流就停下，下次接着读。
 // 顺序：稀有度或描述缺项（同一数据日最多检查一次）→ 过时的英雄页 → 过时的海克斯页。
 const MAX = +(process.env.HEXDATA_MAX || 30);
-const queue = [
-  ...augments.filter(a => (!a.rarity || (!a.description && a.descriptionChecked !== listDate))).map(a => ['aug', a]),
+// 每批保留英雄更新名额；描述核对按上次尝试时间轮转，避免缺项阻塞。
+const audit = augments.filter(a => !a.description || a.descriptionPatch !== pageInfo(ah).patch || a.descriptionDate !== listDate)
+  .sort((a,b) => Number(Boolean(a.description)) - Number(Boolean(b.description)) || String(a.descriptionCheckedAt || '').localeCompare(String(b.descriptionCheckedAt || '')));
+const descriptionOnly = process.env.HEXDATA_MODE === 'descriptions';
+const candidates = descriptionOnly ? audit.map(a => ['aug', a]) : [
+  ...audit.slice(0, Math.min(10, MAX)).map(a => ['aug', a]),
   ...heroes.filter(h => !h.augs || h.date !== listDate).map(h => ['hero', h]),
-  ...augments.filter(a => a.rarity && (a.description || a.descriptionChecked === listDate) && (!a.heroes || a.date !== listDate)).map(a => ['aug', a]),
-].slice(0, MAX);
+  ...audit.slice(10).map(a => ['aug', a]),
+  ...augments.filter(a => !a.heroes || a.date !== listDate).map(a => ['aug', a]),
+];
+const seen = new Set();
+const queue = candidates.filter(([kind,x]) => { const key = kind + (x.id || x.slug); if (seen.has(key)) return false; seen.add(key); return true; }).slice(0, MAX);
 let done = 0;
 for (const [kind, x] of queue) {
   const path = kind === 'hero' ? `/hero/${x.id}-${x.slug}` : `/augment/${x.slug}`;
@@ -161,7 +171,7 @@ for (const [kind, x] of queue) {
   if (kind === 'aug') augPage(x, html);
   else {
     const d = heroPage(html);
-    if (d.augs.length >= 3 && d.items.length >= 3) Object.assign(x, d, { date: listDate });
+    if (d.augs.length >= 3 && d.items.length >= 3) Object.assign(x, d, { date: pageInfo(html).date, detailPatch: pageInfo(html).patch });
     else console.log(`英雄页 ${x.name} 解析到海克斯 ${d.augs.length}、装备 ${d.items.length}，跳过；页面开头：${text(html).slice(0, 300)}`);
   }
   done++;

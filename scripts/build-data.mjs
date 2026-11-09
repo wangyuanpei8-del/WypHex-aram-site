@@ -2,6 +2,7 @@
 // 输入：data/heroes.json（英雄中文名、称号、头像编号、外号）+ data/open/hexdata.json（fetch-hexdata.mjs 下载）
 // 海克斯排名 = 英雄页列出的 8 个 + 海克斯详情页里这位英雄的搭配胜率，按胜率从高到低排。
 // 用法：node scripts/build-data.mjs
+import { detailDates } from './data-quality.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,7 +18,7 @@ const patch = p => { const m = /^(\d+)\.(\d+)/.exec(p || ''); return m ? `${+m[1
 
 const augByKey = new Map(hex.augments.rows.map(a => [nk(a.name), a]));
 const pairs = new Map(); // 英雄编号 -> 海克斯详情页里的搭配
-for (const a of hex.augments.rows) for (const x of a.heroes || []) (pairs.get(x.id) || pairs.set(x.id, []).get(x.id)).push({ name: a.name, wr: x.wr, games: x.games });
+for (const a of hex.augments.rows) for (const x of a.heroes || []) (pairs.get(x.id) || pairs.set(x.id, []).get(x.id)).push({ name: a.name, wr: x.wr, games: x.games, date: a.date, patch: a.detailPatch });
 
 const rows = hex.heroes.rows;
 const miss = [];
@@ -25,14 +26,14 @@ const out = heroes.map(h => {
   const r = rows.find(x => x.name === h.name) || rows.find(x => x.title === h.title) || rows.find(x => h.key && x.slug.replace(/-/g, '') === h.key.toLowerCase());
   if (!r) { miss.push(h.name); return { ...h, wr: null, games: null, url: '', augs: [], items: [] }; }
   const m = new Map();
-  for (const a of r.augs || []) m.set(nk(a.name), a);
+  for (const a of r.augs || []) m.set(nk(a.name), { ...a, date: r.date, patch: r.detailPatch });
   if (r.augs) for (const a of pairs.get(r.id) || []) if (!m.has(nk(a.name))) m.set(nk(a.name), a);
   const augs = [...m.entries()].map(([k, a]) => {
     const g = augByKey.get(k);
-    return { n: g ? g.name : a.name, r: (g && g.rarity) || '', w: a.wr, g: a.games };
+    return { n: g ? g.name : a.name, r: (g && g.rarity) || '', w: a.wr, g: a.games, date: a.date || null, patch: a.patch || null };
   }).sort((x, y) => y.w - x.w);
   return {
-    ...h, wr: r.wr, games: r.games, url: `https://hexdata.com.cn/hero/${r.id}-${r.slug}`,
+    ...h, detailDate: r.date || null, detailPatch: r.detailPatch || (r.date === hex.heroes.date ? hex.heroes.patch : null), freshness: detailDates(r.date, augs, hex.heroes.date), wr: r.wr, games: r.games, url: `https://hexdata.com.cn/hero/${r.id}-${r.slug}`,
     augs, items: (r.items || []).map(i => ({ n: i.name, w: i.wr, g: i.games })),
   };
 }).sort((a, b) => (b.wr ?? 0) - (a.wr ?? 0));

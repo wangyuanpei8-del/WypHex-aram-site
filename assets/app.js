@@ -26,6 +26,7 @@
   const AUG_IC = icMap(window.HEX_AUG_ICONS), ITEM_IC = icMap(window.HEX_ITEM_ICONS);
   const AUG_DESC = icMap(window.HEX_AUG_DESCRIPTIONS);
   const AUG_SOURCES = icMap(window.HEX_AUG_SOURCES);
+  const AUG_META = icMap(window.HEX_AUG_DESCRIPTION_META);
   const augDescription = n => AUG_DESC.get(ik(n)) || 'Hexdata 的效果描述暂未收录，可查看原页面。';
   const augIc = (n, r) => {
     const u = AUG_IC.get(ik(n));
@@ -67,7 +68,9 @@
     if (activeInfo && activeInfo !== info) hideAugTooltip();
     activeInfo = info;
     const name = info.dataset.aug, source = AUG_SOURCES.get(ik(name));
-    tooltip.innerHTML = `<div class="aug-tooltip-head"><strong>${esc(name)}</strong><span>${esc(info.dataset.rarity)}</span></div><p>${esc(augDescription(name))}</p><div class="aug-tooltip-source">数据来源：${source ? `<a href="${esc(source)}" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）↗</a>` : 'Hexdata（hexdata.com.cn）'}</div>`;
+    const meta = AUG_META.get(ik(name));
+    const verification = !meta || meta.status === 'unknown' ? '版本待核对' : meta.status === 'missing' ? '描述待补齐' : meta.status === 'outdated' ? `旧版描述 · ${meta.patch || '未知版本'}，请以游戏内为准` : `已核对 · ${D.meta.patch} · ${meta.date || '日期未知'}`;
+    tooltip.innerHTML = `<div class="aug-tooltip-head"><strong>${esc(name)}</strong><span>${esc(info.dataset.rarity)}</span></div><p>${esc(augDescription(name))}</p><div class="aug-verification">${esc(verification)}</div><div class="aug-tooltip-source">数据来源：${source ? `<a href="${esc(source)}" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）↗</a>` : 'Hexdata（hexdata.com.cn）'}</div>`;
     tooltip.hidden = false;
     info.setAttribute('aria-describedby', tooltip.id); info.setAttribute('aria-expanded', 'true');
     positionTooltip();
@@ -120,6 +123,7 @@
         <div><h1>${esc(h.name)}<small>${esc(h.title)}</small></h1>
           <p class="sub">胜率 <b class="num">${pct(h.wr)}</b> · ${wan(h.games)}场${h.url ? ` · <a href="${esc(h.url)}" target="_blank" rel="noopener">Hexdata 原页面 ↗</a>` : ''}</p></div>
       </div>
+      <div class="data-freshness"><span>英雄榜单：${esc(D.meta.date || '未知')}</span><span>该英雄详情：${esc(h.detailDate || '日期未知')}${h.detailDate !== D.meta.date ? ' · 待更新' : ''}</span><span>海克斯搭配数据：${esc(h.freshness?.oldest || '未知')} ～ ${esc(h.freshness?.newest || '未知')}${h.freshness?.old ? ` · ${h.freshness.old} 项为较早数据` : ''}${h.freshness?.unknown ? ` · ${h.freshness.unknown} 项日期未知` : ''}</span></div>
       ${!h.augs.length ? '<div class="card"><p class="empty">这位英雄的数据还在自动补充中（Hexdata 有访问频率限制，每小时补一批），稍后再看。</p></div>' : `
       <div class="card">
         <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率 · 悬停图标或名称查看效果</em></h3>
@@ -129,7 +133,7 @@
           <span class="w num">${pct(a.w)}</span><span class="g num${a.g < LOW ? ' low' : ''}">${wan(a.g)}场</span></li>`).join('') || '<li class="empty">这个稀有度暂无数据</li>'}</ol>
       </div>
       <div class="card">
-        <h3>推荐出装 <em>Hexdata 综合推荐 · 胜率 · 场次</em></h3>
+        <h3>推荐出装 <em>Hexdata 综合推荐 · 数据日期 ${esc(h.detailDate || '未知')}</em></h3>
         <ol class="rank items">${h.items.map((it, i) => `<li>
           <span class="n num">${i + 1}</span>${itemIc(it.n)}<span class="t">${esc(it.n)}</span>
           <span class="w num">${pct(it.w)}</span><span class="g num${it.g < LOW ? ' low' : ''}">${wan(it.g)}场</span></li>`).join('')}</ol>
@@ -147,7 +151,7 @@
   }
 
   function renderMeta() {
-    $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>数据日 <b>${esc(D.meta.date)}</b></span><button class="theme" data-theme-toggle>${isLight() ? '☾ 深色' : '☀ 浅色'}</button>`;
+    $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>英雄榜单日期 <b>${esc(D.meta.date)}</b></span><button class="theme" data-theme-toggle>${isLight() ? '☾ 深色' : '☀ 浅色'}</button>`;
     $('#foot').innerHTML = `<span>数据来源：<a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）</a>，统计的是公开对局样本，自动更新。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
