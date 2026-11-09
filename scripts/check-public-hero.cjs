@@ -1,0 +1,3 @@
+// 仅诊断一个普通页面的可见状态，不请求私有数据入口。
+const {chromium}=require('../work/browser/node_modules/playwright');
+(async()=>{const b=await chromium.launch({executablePath:'/usr/bin/google-chrome'});const p=await b.newPage({locale:'zh-CN'});try{await p.goto('https://hexdata.com.cn/hero/106-volibear',{waitUntil:'commit',timeout:30000});await p.waitForTimeout(12000);const entry=p.getByRole('link',{name:'打开交互详情',exact:true});if(await entry.count()&&await entry.isVisible()){await entry.click();await p.waitForTimeout(12000)}console.log('TITLE',await p.title());console.log('VISIBLE',await p.locator('body').innerText());}finally{await b.close()}})().catch(e=>{console.error(e.message);process.exit(1)});

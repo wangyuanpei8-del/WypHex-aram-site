@@ -36,8 +36,8 @@ const iconJs = `window.HEX_ICONS = ${JSON.stringify(icons)};\nwindow.HEX_ITEM_IC
 const safe = s => s.replace(/<\/script/gi, '<\\/script');
 html = html
   .replace(/<link rel="stylesheet" href="assets\/app\.css(?:\?[^"]*)?" \/>/, () => `<style>\n${css}\n</style>`)
-  .replace('<script src="data/data.js"></script>', () => `<script>\n${safe(data)}\n${iconJs}\n</script>`)
-  .replace('<script src="data/icons.js"></script>', () => '')
+  .replace(/<script src="data\/data\.js(?:\?[^"]*)?"><\/script>/, () => `<script>\n${safe(data)}\n${iconJs}\n</script>`)
+  .replace(/<script src="data\/icons\.js(?:\?[^"]*)?"><\/script>/, () => '')
   .replace(/<script src="data\/augment-descriptions\.js(?:\?[^"]*)?"><\/script>/, () => `<script>\n${safe(descriptions)}\n</script>`)
   .replace(/<script src="assets\/app\.js(?:\?[^"]*)?"><\/script>/, () => `<script>\n${safe(app)}\n</script>`);
 await mkdir(join(ROOT, 'dist'), { recursive: true });
