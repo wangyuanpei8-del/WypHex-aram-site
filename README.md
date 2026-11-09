@@ -10,6 +10,7 @@
 - 右边：
   - **海克斯胜率排名**：这位英雄带每个海克斯时的胜率和场次，从高到低排，可按棱彩 / 黄金 / 白银筛选。
   - **推荐出装**：Hexdata 给这位英雄的 8 件推荐装备，带胜率和场次。
+- 鼠标放在海克斯名称上可查看效果描述；键盘 Tab 聚焦也可查看，手机点击名称展开，再点一次收起。描述来自 CommunityDragon，本地缓存并随单文件版打包；缺项显示“暂无效果描述”。
 - 场次少于 1000 的标橙色，样本少，仅供参考。
 - 手机上点英雄后详情全屏显示，左上角返回。
 
@@ -67,3 +68,5 @@ scripts/build-standalone.mjs   打包单文件版
 ---
 
 非官方工具，与 Riot Games 无关联。数据来源：Hexdata（hexdata.com.cn）。
+
+海克斯效果描述更新：`node scripts/fetch-augment-descriptions.mjs`（需访问 `raw.communitydragon.org`），生成 `data/augment-descriptions.js`。自动更新任务会尝试刷新，失败时保留已有文件。描述中的未解析数值会明确标注以游戏内为准。

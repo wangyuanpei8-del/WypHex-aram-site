@@ -10,6 +10,7 @@ let html = await read('index.html');
 const css = await read('assets/app.css');
 const data = await read('data/data.js');
 const app = await read('assets/app.js');
+const descriptions = await read('data/augment-descriptions.js');
 // 把 scripts/fetch-icons.mjs 下载的图标嵌进单文件，在任何地方打开都能显示
 const b64 = async rel => 'data:image/png;base64,' + (await readFile(join(ROOT, rel))).toString('base64');
 const icons = {};
@@ -37,6 +38,7 @@ html = html
   .replace('<link rel="stylesheet" href="assets/app.css" />', () => `<style>\n${css}\n</style>`)
   .replace('<script src="data/data.js"></script>', () => `<script>\n${safe(data)}\n${iconJs}\n</script>`)
   .replace('<script src="data/icons.js"></script>', () => '')
+  .replace('<script src="data/augment-descriptions.js"></script>', () => `<script>\n${safe(descriptions)}\n</script>`)
   .replace('<script src="assets/app.js"></script>', () => `<script>\n${safe(app)}\n</script>`);
 await mkdir(join(ROOT, 'dist'), { recursive: true });
 await writeFile(join(ROOT, 'dist', 'hexaram.html'), html);

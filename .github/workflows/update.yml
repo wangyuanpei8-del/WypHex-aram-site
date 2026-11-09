@@ -31,6 +31,9 @@ jobs:
         run: node scripts/fetch-hexdata.mjs
       - name: 生成网页数据
         run: node scripts/build-data.mjs
+      - name: 更新海克斯效果描述
+        continue-on-error: true # 数据源暂时不可用时保留已有描述，继续更新胜率
+        run: node scripts/fetch-augment-descriptions.mjs
       - name: 有变化时补齐图标并提交
         id: commit
         run: |

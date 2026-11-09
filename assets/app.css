@@ -126,3 +126,11 @@ a { color: inherit; }
   .rank li { grid-template-columns: 20px 28px minmax(0, 1fr) 50px 56px; gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* 海克斯效果：鼠标悬停、键盘聚焦或手机点击名称。 */
+.aug-description { position: relative; }
+.aug-info { padding: 0; border: 0; background: none; text-align: left; font-weight: inherit; text-decoration: underline dotted var(--muted); text-underline-offset: 4px; }
+.aug-info:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+.aug-tooltip { display: none; position: absolute; z-index: 40; left: 0; top: 100%; width: min(320px, 65vw); padding: 12px 14px; border: 1px solid var(--gold); border-radius: 8px; background: var(--panel-2); color: var(--text); box-shadow: 0 6px 24px rgba(0, 0, 0, .25); font-size: 13px; font-weight: 400; line-height: 1.7; white-space: pre-line; overflow-wrap: anywhere; }
+.aug-row:hover .aug-tooltip, .aug-info:focus-visible + .aug-tooltip, .aug-info[aria-expanded="true"] + .aug-tooltip, .aug-tooltip:hover { display: block; }
+@media (max-width: 860px) { .aug-tooltip { width: min(260px, 52vw); } }

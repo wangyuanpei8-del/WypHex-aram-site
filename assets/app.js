@@ -21,9 +21,11 @@
     return `<span class="ava ${cls || ''}" data-fb="${fb}"><img src="${esc((window.HEX_ICONS && window.HEX_ICONS[h.key]) || `assets/icons/champ/${h.key}.png`)}" data-alt="https://game.gtimg.cn/images/lol/act/img/champion/${esc(h.key)}.png" alt="" loading="lazy" referrerpolicy="no-referrer"></span>`;
   }
   // 图标按名称查找，忽略空格和标点
-  const ik = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”]/g, '').toLowerCase();
+  const ik = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”（）()]/g, '').toLowerCase();
   const icMap = m => new Map(Object.entries(m || {}).map(([k, v]) => [ik(k), v]));
   const AUG_IC = icMap(window.HEX_AUG_ICONS), ITEM_IC = icMap(window.HEX_ITEM_ICONS);
+  const AUG_DESC = icMap(window.HEX_AUG_DESCRIPTIONS);
+  const augDescription = n => AUG_DESC.get(ik(n)) || '暂无效果描述，等待数据补充。';
   const augIc = (n, r) => {
     const u = AUG_IC.get(ik(n));
     return u ? `<span class="ic-wrap r-${esc(r)}"><img class="ic" src="${esc(u)}" alt="" loading="lazy"></span>` : `<span class="rar ${esc(r || '未知')}"></span>`;
@@ -65,8 +67,8 @@
       <div class="card">
         <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率</em></h3>
         <div class="tabs">${rars.map(r => `<button data-rar="${r}" aria-selected="${state.rar === r}">${r === '全部' ? '' : `<span class="rar ${r}"></span>`}${r}</button>`).join('')}</div>
-        <ol class="rank">${augs.map((a, i) => `<li>
-          <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t">${esc(a.n)}</span>
+        <ol class="rank">${augs.map((a, i) => `<li class="aug-row">
+          <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t aug-description"><button class="aug-info" type="button" aria-describedby="aug-tip-${i}" aria-expanded="false" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button><span class="aug-tooltip" id="aug-tip-${i}" role="tooltip">${esc(augDescription(a.n))}</span></span>
           <span class="w num">${pct(a.w)}</span><span class="g num${a.g < LOW ? ' low' : ''}">${wan(a.g)}场</span></li>`).join('') || '<li class="empty">这个稀有度暂无数据</li>'}</ol>
       </div>
       <div class="card">
@@ -100,12 +102,21 @@
   }
 
   document.addEventListener('click', e => {
+    const info = e.target.closest('.aug-info');
+    document.querySelectorAll('.aug-info[aria-expanded="true"]').forEach(b => { if (b !== info) b.setAttribute('aria-expanded', 'false'); });
+    if (info) { info.setAttribute('aria-expanded', String(info.getAttribute('aria-expanded') !== 'true')); return; }
     const t = e.target.closest('[data-hero],[data-rar],[data-back],[data-theme-toggle]');
     if (!t) return;
     if (t.hasAttribute('data-theme-toggle')) { toggleTheme(); return; }
     if (t.dataset.hero) select(t.dataset.hero);
     else if (t.dataset.rar) { state.rar = t.dataset.rar; renderDetail(); }
     else document.body.classList.remove('sheet');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.aug-info').forEach(b => b.setAttribute('aria-expanded', 'false'));
+      if (document.activeElement?.matches('.aug-info')) document.activeElement.blur();
+    }
   });
   $('#search').addEventListener('input', e => { state.q = e.target.value; renderList(); });
 
