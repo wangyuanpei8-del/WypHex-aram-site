@@ -8,6 +8,8 @@ const {chromium}=require('../work/browser/node_modules/playwright');
  await page.waitForTimeout(12000);
  const interactive = page.getByRole('link',{name:'打开交互详情',exact:true});
  if(await interactive.count()){console.log('INTERACTIVE LINK',await interactive.getAttribute('href'));await interactive.click();await page.waitForTimeout(15000);}
+ const header = page.getByText('海克斯名',{exact:true}).first();
+ if(await header.count()) console.log('TABLE STRUCTURE',JSON.stringify(await header.evaluate(el=>{const a=[];for(let n=el,i=0;n&&i<7;n=n.parentElement,i++)a.push({tag:n.tagName,role:n.getAttribute('role'),className:n.className,html:n.outerHTML.slice(0,2200)});return a})));
  console.log('PAGE URL',page.url());
  console.log('PAGE TITLE',await page.title());
  const body=await page.locator('body').innerText();
