@@ -14,51 +14,99 @@
     "augs": [
      {
       "name": "弹跳蜜蜂",
-      "score": 100,
       "wr": 76.1,
-      "games": 22201
+      "games": 22201,
+      "score": 100
      },
      {
       "name": "鼓声暴起 低音轰鸣",
-      "score": 93.4,
       "wr": 68.2,
-      "games": 239179
+      "games": 239179,
+      "score": 93
      },
      {
       "name": "秘术冲拳",
-      "score": 89.4,
       "wr": 65.7,
-      "games": 224056
+      "games": 224056,
+      "score": 89
      },
      {
       "name": "魔法转物理",
-      "score": 83.7,
       "wr": 63.2,
-      "games": 70509
+      "games": 70509,
+      "score": 84
      },
      {
       "name": "将他们放倒倒倒",
-      "score": 80.6,
       "wr": 62.2,
-      "games": 113296
+      "games": 113296,
+      "score": 81
      },
      {
       "name": "狂热者",
-      "score": 80.4,
       "wr": 62.2,
-      "games": 74596
+      "games": 74596,
+      "score": 80
      },
      {
       "name": "男爵之手",
-      "score": 79.9,
       "wr": 62.5,
-      "games": 4754
+      "games": 4754,
+      "score": 80
      },
      {
       "name": "会心防御",
-      "score": 78.9,
       "wr": 61.8,
-      "games": 116343
+      "games": 116343,
+      "score": 79
+     },
+     {
+      "name": "屹立不倒",
+      "wr": 60.9,
+      "games": 245089,
+      "score": 75
+     },
+     {
+      "name": "泰坦的坚决",
+      "wr": 61,
+      "games": 17085,
+      "score": 75
+     },
+     {
+      "name": "逃跑计划",
+      "wr": 60.9,
+      "games": 47034,
+      "score": 75
+     },
+     {
+      "name": "暗影疾奔",
+      "wr": 60.4,
+      "games": 92250,
+      "score": 71
+     },
+     {
+      "name": "灵魂虹吸",
+      "wr": 60.3,
+      "games": 275197,
+      "score": 71
+     },
+     {
+      "name": "扇巴掌",
+      "wr": 60.5,
+      "games": 5825,
+      "score": 71
+     },
+     {
+      "name": "科学狂人",
+      "wr": 60.1,
+      "games": 34733,
+      "score": 69
+     },
+     {
+      "name": "捐赠",
+      "wr": 60,
+      "games": 42749,
+      "score": 69
      }
     ],
     "items": [
@@ -111,7 +159,11 @@
       "games": 629909
      }
     ],
-    "date": "2026-11-09"
+    "date": "2026-11-09",
+    "coverage": "visible-table",
+    "sourceCount": 16,
+    "augmentDate": "2026-11-09",
+    "augmentPatch": "16.22"
    },
    {
     "id": 887,

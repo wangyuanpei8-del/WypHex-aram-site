@@ -1,6 +1,8 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {parseHeroTables} from '../scripts/hero-tables.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {parseVisibleHeroText,parseHeroTables} from '../scripts/hero-tables.mjs';
 const row=(n,wr=60)=>`<tr><td><img src="a.png">海克斯${n}</td><td>黄金</td><td>22,201 高样本</td><td>${wr}%</td><td>+17.1%</td><td>100/100</td><td>秀</td></tr>`;
 const table=rows=>`显示 16 / 16 条 · 至少需满 300 场方会展示<table><thead><tr><th>海克斯名</th><th>稀有度</th><th>搭配场次</th><th>组合胜率</th><th>胜率收益</th><th>HexScore</th><th>层级</th></tr></thead><tbody>${rows}</tbody></table>`;
 test('reads all 16 visible rows despite score being after win rate and sample count',()=>{const d=parseHeroTables(table(Array.from({length:16},(_,i)=>row(i,i===0?86.1:60)).join('')));assert.equal(d.augs.length,16);assert.equal(d.coverage,'visible-table');assert.equal(d.augs[0].wr,86.1);assert.equal(d.augs[0].games,22201);assert.equal(d.augs[0].score,100)});
 test('rejects partial captures instead of replacing the complete table',()=>assert.throws(()=>parseHeroTables(table(row(1))),/不完整/));
 test('distinguishes 8-row summaries from the full visible table',()=>{const d=parseHeroTables('<table><tr><th>推荐海克斯</th><th>HexScore</th><th>胜率</th><th>样本</th></tr><tr><td>弹跳蜜蜂</td><td>100</td><td>76.1%</td><td>22,201</td></tr></table>');assert.equal(d.augs.length,1);assert.equal(d.coverage,'summary');assert.equal(d.augs[0].wr,76.1)});
+
+test('reads the real public Yasuo table with 16 rows and preserves win rate and games',()=>{const d=parseVisibleHeroText(readFileSync(new URL('./fixtures/yasuo-visible.txt',import.meta.url),'utf8'));assert.equal(d.augs.length,16);assert.deepEqual(d.augs.find(a=>a.name==='泰坦的坚决'),{name:'泰坦的坚决',wr:61,games:17085,score:75});assert.equal(d.augs.find(a=>a.name==='屹立不倒').games,245089);});

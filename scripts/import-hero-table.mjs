@@ -1,21 +1,21 @@
 // 从来源页面保存的渲染后 HTML 导入可见表；不访问私有接口。
 import {readFile,writeFile,rename} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import {parseHeroTables} from './hero-tables.mjs';
-export async function importHeroTable(id,html) {
+import {parseHeroTables,parseVisibleHeroText} from './hero-tables.mjs';
+export async function importHeroTable(id,html,visibleText,visibleTitle) {
 if(!/^\d+$/.test(String(id)))throw Error('Invalid hero ID');
 const root=new URL('../',import.meta.url), target=new URL('data/open/hexdata.json',root);
 const data=JSON.parse(await readFile(target,'utf8')), hero=data.heroes.rows.find(h=>String(h.id)===id);
 if(!hero)throw Error('未知英雄');
-const title=/<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1]||'';
+const title=visibleTitle || /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1]||'';
 if(!title.includes(hero.name)||!title.includes(hero.title))throw Error('页面标题与指定英雄不符');
-const plain=html.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
+const plain=(visibleText || html).replace(/<(script|style)\b[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
 const meta = name => new RegExp(`<meta[^>]+name=["']${name}["'][^>]+content=["']([^"']+)`, 'i').exec(html)?.[1];
 const patch=meta('report-patch') || /(?:Patch|版本)\s*(\d+\.\d+)/i.exec(plain)?.[1];
 const cnDate=/截至\s*(\d{4})年(\d{1,2})月(\d{1,2})日/.exec(plain);
 const date=meta('report-date') || /数据日期\D{0,6}(\d{4}-\d{2}-\d{2})/.exec(plain)?.[1] || (cnDate && `${cnDate[1]}-${cnDate[2].padStart(2,'0')}-${cnDate[3].padStart(2,'0')}`);
 if(patch!==data.heroes.patch||date!==data.heroes.date)throw Error('来源版本或数据日期与当前榜单不符，请先核对来源页面');
-const parsed=parseHeroTables(html);
+const parsed=visibleText ? parseVisibleHeroText(visibleText) : parseHeroTables(html);
 if(parsed.coverage!=='visible-table'||parsed.sourceCount===null)throw Error('未找到完整交互表或来源条目总数，拒绝用精选摘要替代');
 const norm=s=>s.replace(/[\s·・!！?？:：,，.。'"“”]/g,'').toLowerCase();
 const known=new Map(data.augments.rows.map(a=>[norm(a.name),a.name]));

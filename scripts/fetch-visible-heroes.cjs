@@ -18,8 +18,8 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    const entry=page.getByRole('link',{name:'打开交互详情',exact:true});
    if(await entry.count() && await entry.isVisible())await entry.click();
    await page.getByRole('heading',{name:'英雄海克斯表现',exact:true}).waitFor({state:'visible',timeout:20000});
-   await page.waitForFunction(()=>[...document.querySelectorAll('table')].some(t=>t.textContent.includes('组合胜率')&&t.querySelectorAll('tbody tr').length>0),null,{timeout:20000});
-   await importHeroTable(String(h.id),await page.content());success++;failures=0;
+   await page.waitForFunction(()=>/显示\s*\d+\s*\/\s*\d+\s*条/.test(document.body.innerText),null,{timeout:20000});
+   await importHeroTable(String(h.id),'',await page.locator('body').innerText(),await page.title());success++;failures=0;
   } catch(e) {console.log(`${h.name} 未同步：${e.message.split('\n')[0]}`);if(++failures>=3){console.log('连续失败三次，停止并保留现有数据');break;}}
   await sleep(2000);
  }} finally {await browser.close();}
