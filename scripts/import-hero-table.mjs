@@ -3,12 +3,13 @@ import {readFile,writeFile,rename} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {parseHeroTables,parseVisibleHeroText} from './hero-tables.mjs';
 export async function importHeroTable(id,html,visibleText,visibleTitle) {
+id=String(id);
 if(!/^\d+$/.test(String(id)))throw Error('Invalid hero ID');
 const root=new URL('../',import.meta.url), target=new URL('data/open/hexdata.json',root);
 const data=JSON.parse(await readFile(target,'utf8')), hero=data.heroes.rows.find(h=>String(h.id)===id);
 if(!hero)throw Error('未知英雄');
 const title=visibleTitle || /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1]||'';
-if(!title.includes(hero.name)||!title.includes(hero.title))throw Error('页面标题与指定英雄不符');
+if(!title.includes(hero.name)||!title.includes(hero.title))throw Error(`页面标题与指定英雄不符：期望${hero.title}（${hero.name}），实际${title}`);
 const plain=(visibleText || html).replace(/<(script|style)\b[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
 const meta = name => new RegExp(`<meta[^>]+name=["']${name}["'][^>]+content=["']([^"']+)`, 'i').exec(html)?.[1];
 const patch=meta('report-patch') || /(?:Patch|版本)\s*(\d+\.\d+)/i.exec(plain)?.[1];

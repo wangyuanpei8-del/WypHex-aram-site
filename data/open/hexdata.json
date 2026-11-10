@@ -5005,51 +5005,99 @@
     "augs": [
      {
       "name": "无限循环往复",
-      "score": 87.1,
       "wr": 57.8,
-      "games": 53463
+      "games": 53463,
+      "score": 87
      },
      {
       "name": "科学狂人",
-      "score": 78.6,
       "wr": 54.9,
-      "games": 27689
+      "games": 27689,
+      "score": 79
      },
      {
       "name": "蓝色屏障",
-      "score": 78.5,
       "wr": 54.9,
-      "games": 17132
+      "games": 17132,
+      "score": 79
      },
      {
       "name": "缩小引擎",
-      "score": 78.4,
       "wr": 54.9,
-      "games": 106745
+      "games": 106745,
+      "score": 78
      },
      {
       "name": "男爵之手",
-      "score": 77,
       "wr": 54.9,
-      "games": 4926
+      "games": 4926,
+      "score": 77
      },
      {
       "name": "过量延伸者",
-      "score": 76.8,
       "wr": 55.8,
-      "games": 489
+      "games": 489,
+      "score": 77
      },
      {
       "name": "水果化",
-      "score": 75.7,
       "wr": 54.3,
-      "games": 18759
+      "games": 18759,
+      "score": 76
      },
      {
       "name": "狙神飞星",
-      "score": 74.8,
       "wr": 54.1,
-      "games": 79627
+      "games": 79627,
+      "score": 75
+     },
+     {
+      "name": "尤里卡",
+      "wr": 53.9,
+      "games": 98618,
+      "score": 74
+     },
+     {
+      "name": "家园卫士",
+      "wr": 53.6,
+      "games": 53521,
+      "score": 72
+     },
+     {
+      "name": "全能龙魂",
+      "wr": 53.7,
+      "games": 7878,
+      "score": 72
+     },
+     {
+      "name": "风语者的祝福",
+      "wr": 53.6,
+      "games": 11220,
+      "score": 71
+     },
+     {
+      "name": "夺金",
+      "wr": 53.6,
+      "games": 8381,
+      "score": 71
+     },
+     {
+      "name": "咏叹奏鸣",
+      "wr": 53.4,
+      "games": 25041,
+      "score": 70
+     },
+     {
+      "name": "急急小子",
+      "wr": 53.3,
+      "games": 22547,
+      "score": 69
+     },
+     {
+      "name": "吞噬灵魂",
+      "wr": 53.5,
+      "games": 4347,
+      "score": 69
      }
     ],
     "items": [
@@ -5102,7 +5150,11 @@
       "games": 11782
      }
     ],
-    "date": "2026-11-09"
+    "date": "2026-11-09",
+    "coverage": "visible-table",
+    "sourceCount": 16,
+    "augmentDate": "2026-11-09",
+    "augmentPatch": "16.22"
    },
    {
     "id": 895,
@@ -9783,51 +9835,99 @@
     "augs": [
      {
       "name": "亮出你的剑",
-      "score": 82.8,
       "wr": 54.6,
-      "games": 13681
+      "games": 30894,
+      "score": 83
      },
      {
       "name": "科学狂人",
-      "score": 82.5,
-      "wr": 54.3,
-      "games": 29184
-     },
-     {
-      "name": "无限循环往复",
-      "score": 80.6,
-      "wr": 53.8,
-      "games": 43881
-     },
-     {
-      "name": "急速之追求",
-      "score": 80.1,
-      "wr": 53.6,
-      "games": 36981
+      "wr": 54,
+      "games": 66260,
+      "score": 81
      },
      {
       "name": "家园卫士",
-      "score": 79.9,
-      "wr": 53.6,
-      "games": 46677
+      "wr": 53.5,
+      "games": 106184,
+      "score": 80
+     },
+     {
+      "name": "无限循环往复",
+      "wr": 53.4,
+      "games": 99363,
+      "score": 79
+     },
+     {
+      "name": "急速之追求",
+      "wr": 53.4,
+      "games": 83525,
+      "score": 79
      },
      {
       "name": "老练狙神",
-      "score": 79,
-      "wr": 53.3,
-      "games": 128110
+      "wr": 53.2,
+      "games": 289889,
+      "score": 79
      },
      {
       "name": "小蜜蜂！！！",
-      "score": 77.3,
       "wr": 53,
-      "games": 69775
+      "games": 158418,
+      "score": 78
+     },
+     {
+      "name": "男爵之手",
+      "wr": 53.1,
+      "games": 7959,
+      "score": 77
      },
      {
       "name": "侵蚀",
-      "score": 77.3,
       "wr": 52.9,
-      "games": 21403
+      "games": 48310,
+      "score": 77
+     },
+     {
+      "name": "鼓声暴起 低音轰鸣",
+      "wr": 52.6,
+      "games": 41132,
+      "score": 76
+     },
+     {
+      "name": "海牛阿福的勇士",
+      "wr": 52.6,
+      "games": 25934,
+      "score": 76
+     },
+     {
+      "name": "唯快不破",
+      "wr": 52.5,
+      "games": 41150,
+      "score": 75
+     },
+     {
+      "name": "弹跳蜜蜂",
+      "wr": 52.5,
+      "games": 11125,
+      "score": 75
+     },
+     {
+      "name": "巨人杀手",
+      "wr": 52.4,
+      "games": 83387,
+      "score": 75
+     },
+     {
+      "name": "狙神飞星",
+      "wr": 52.4,
+      "games": 108723,
+      "score": 74
+     },
+     {
+      "name": "有始有终",
+      "wr": 52.1,
+      "games": 58324,
+      "score": 73
      }
     ],
     "items": [
@@ -9880,7 +9980,11 @@
       "games": 3196
      }
     ],
-    "date": "2026-11-08"
+    "date": "2026-11-08",
+    "coverage": "visible-table",
+    "sourceCount": 16,
+    "augmentDate": "2026-11-09",
+    "augmentPatch": "16.22"
    },
    {
     "id": 39,
