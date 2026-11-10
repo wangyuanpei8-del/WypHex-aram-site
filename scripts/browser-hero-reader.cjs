@@ -12,7 +12,7 @@ module.exports = async function readVisibleHero(page,hero,importTable,options={}
    if([401,403,429].includes(response?.status())){const e=Error('来源访问受限，停止自动读取');e.stopSource=true;throw e;}
    continue;
   }
-  try{return await importTable(String(hero.id),'',body,await page.title());}catch(e){lastError=e;}
+  try{return await importTable(String(hero.id),'',body,await page.title(),page.url?.());}catch(e){lastError=e;}
   if(entryAttempts<2){
    const entry=page.getByRole('link',{name:'打开交互详情',exact:true});
    try{if(await entry.count()&&await entry.isVisible()){entryAttempts++;await entry.click({timeout:1000});}}catch{entryAttempts++;}

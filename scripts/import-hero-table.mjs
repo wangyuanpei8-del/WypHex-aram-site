@@ -1,15 +1,18 @@
 // 从来源页面保存的渲染后 HTML 导入可见表；不访问私有接口。
 import {readFile,writeFile,rename} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
+import {verifyHeroPage} from './hero-identity.mjs';
 import {parseHeroTables,parseVisibleHeroText} from './hero-tables.mjs';
-export async function importHeroTable(id,html,visibleText,visibleTitle) {
+export async function importHeroTable(id,html,visibleText,visibleTitle,visibleUrl) {
 id=String(id);
 if(!/^\d+$/.test(String(id)))throw Error('Invalid hero ID');
 const root=new URL('../',import.meta.url), target=new URL('data/open/hexdata.json',root);
 const data=JSON.parse(await readFile(target,'utf8')), hero=data.heroes.rows.find(h=>String(h.id)===id);
 if(!hero)throw Error('未知英雄');
 const title=visibleTitle || /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1]||'';
-if(!title.includes(hero.name)||!title.includes(hero.title))throw Error(`页面标题与指定英雄不符：期望${hero.title}（${hero.name}），实际${title}`);
+let fallbackTitle='';
+if(!hero.title){const catalog=JSON.parse(await readFile(new URL('data/heroes.json',root),'utf8'));fallbackTitle=catalog.find(h=>h.name===hero.name)?.title || '';}
+if(!verifyHeroPage({hero,title,body:visibleText,url:visibleUrl,fallbackTitle}))throw Error(`页面标题与指定英雄不符：期望${hero.title||fallbackTitle}（${hero.name}），实际${title}`);
 const plain=(visibleText || html).replace(/<(script|style)\b[\s\S]*?<\/\1>/gi,' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
 const meta = name => new RegExp(`<meta[^>]+name=["']${name}["'][^>]+content=["']([^"']+)`, 'i').exec(html)?.[1];
 const patch=meta('report-patch') || /(?:Patch|版本)\s*(\d+\.\d+)/i.exec(plain)?.[1];
