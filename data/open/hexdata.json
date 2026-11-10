@@ -19492,54 +19492,55 @@
     "items": [
      {
       "name": "沃格勒特的巫师帽",
-      "score": 89.8,
-      "wr": 55.7,
-      "games": 13581
+      "wr": 55.9,
+      "games": 30609,
+      "score": 90.8
      },
      {
       "name": "霸王血铠",
-      "score": 83.4,
-      "wr": 52.6,
-      "games": 19441
+      "wr": 52.7,
+      "games": 46283,
+      "score": 84.2
      },
      {
       "name": "轻灵之靴",
-      "score": 82.6,
-      "wr": 53.2,
-      "games": 5173
+      "wr": 53.1,
+      "games": 11533,
+      "score": 83.9
      },
      {
-      "name": "灭世者的死亡之帽",
-      "score": 80.9,
-      "wr": 50.6,
-      "games": 187696
+      "name": "女妖面纱",
+      "wr": 53.5,
+      "games": 3190,
+      "score": 82
      },
      {
       "name": "金铲铲",
-      "score": 80.7,
-      "wr": 53.3,
-      "games": 2652
+      "wr": 52.7,
+      "games": 6019,
+      "score": 81.6
      },
      {
-      "name": "狂徒铠甲",
-      "score": 78.4,
-      "wr": 50.9,
-      "games": 49837
+      "name": "灭世者的死亡之帽",
+      "wr": 50.5,
+      "games": 424350,
+      "score": 80.6
      },
      {
       "name": "风暴狂涌",
-      "score": 78,
-      "wr": 50.9,
-      "games": 34737
+      "wr": 51,
+      "games": 78348,
+      "score": 78.6
      },
      {
-      "name": "虚空之杖",
-      "score": 77.5,
-      "wr": 50.7,
-      "games": 47275
+      "name": "毁坏仪式",
+      "wr": 52,
+      "games": 3982,
+      "score": 78.6
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -19653,54 +19654,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 84.6,
-      "wr": 53.6,
-      "games": 3679
+      "wr": 53.5,
+      "games": 8444,
+      "score": 86.3
      },
      {
       "name": "暴食胫甲",
-      "score": 79.2,
-      "wr": 50.4,
-      "games": 16472
+      "wr": 50.2,
+      "games": 37949,
+      "score": 78.5
      },
      {
       "name": "轻灵之靴",
-      "score": 73.9,
-      "wr": 50.4,
-      "games": 2043
+      "wr": 50.1,
+      "games": 4456,
+      "score": 75.1
      },
      {
       "name": "黯炎火炬",
-      "score": 69.6,
       "wr": 48.4,
-      "games": 179119
-     },
-     {
-      "name": "歌之权冠",
-      "score": 66.9,
-      "wr": 52.4,
-      "games": 275
-     },
-     {
-      "name": "收集者",
-      "score": 65.7,
-      "wr": 50.6,
-      "games": 433
+      "games": 404470,
+      "score": 68.2
      },
      {
       "name": "风暴狂涌",
-      "score": 64.9,
+      "wr": 48.3,
+      "games": 79021,
+      "score": 65.9
+     },
+     {
+      "name": "沃格勒特的巫师帽",
       "wr": 48.1,
-      "games": 34708
+      "games": 35860,
+      "score": 63.4
      },
      {
       "name": "毁坏仪式",
-      "score": 62,
       "wr": 48.2,
-      "games": 2650
+      "games": 6091,
+      "score": 63.1
+     },
+     {
+      "name": "女妖面纱",
+      "wr": 47.9,
+      "games": 10443,
+      "score": 60.5
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -19814,54 +19816,55 @@
     "items": [
      {
       "name": "无穷饥渴",
-      "score": 85,
-      "wr": 53.7,
-      "games": 12440
+      "wr": 53.9,
+      "games": 29177,
+      "score": 86.4
      },
      {
       "name": "金铲铲",
-      "score": 81.4,
-      "wr": 53.9,
-      "games": 2658
+      "wr": 54.2,
+      "games": 5985,
+      "score": 84.6
      },
      {
       "name": "死亡之舞",
-      "score": 80.8,
-      "wr": 51.6,
-      "games": 54012
-     },
-     {
-      "name": "无尽之刃",
-      "score": 78.6,
-      "wr": 49,
-      "games": 200319
-     },
-     {
-      "name": "玛莫提乌斯之噬",
-      "score": 77.6,
-      "wr": 51.7,
-      "games": 5839
+      "wr": 51.8,
+      "games": 123152,
+      "score": 81.7
      },
      {
       "name": "幽梦之灵",
-      "score": 77.5,
-      "wr": 60.7,
-      "games": 295
+      "wr": 57.7,
+      "games": 646,
+      "score": 80.5
      },
      {
-      "name": "暴食胫甲",
-      "score": 77,
-      "wr": 50.8,
-      "games": 53656
+      "name": "无尽之刃",
+      "wr": 49,
+      "games": 451045,
+      "score": 79.3
      },
      {
-      "name": "多米尼克领主的致意",
-      "score": 75.9,
-      "wr": 49.8,
-      "games": 143916
+      "name": "轻灵之靴",
+      "wr": 54.2,
+      "games": 1374,
+      "score": 79.3
+     },
+     {
+      "name": "玛莫提乌斯之噬",
+      "wr": 51.6,
+      "games": 13648,
+      "score": 78.6
+     },
+     {
+      "name": "电震涡流剑",
+      "wr": 54,
+      "games": 1075,
+      "score": 77.5
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -19974,55 +19977,56 @@
     ],
     "items": [
      {
-      "name": "暴食胫甲",
-      "score": 70.4,
-      "wr": 48.9,
-      "games": 6562
-     },
-     {
-      "name": "沃格勒特的巫师帽",
-      "score": 68.6,
-      "wr": 48.7,
-      "games": 6597
-     },
-     {
-      "name": "明朗之靴",
-      "score": 68.5,
-      "wr": 48.9,
-      "games": 3713
-     },
-     {
       "name": "金铲铲",
-      "score": 68.3,
-      "wr": 49.5,
-      "games": 1393
-     },
-     {
-      "name": "时光之杖",
-      "score": 67.2,
-      "wr": 50.2,
-      "games": 633
-     },
-     {
-      "name": "巫妖之祸",
-      "score": 66.6,
-      "wr": 48.3,
-      "games": 18918
-     },
-     {
-      "name": "卢登的回声",
-      "score": 64.9,
-      "wr": 48,
-      "games": 92785
+      "wr": 50.6,
+      "games": 3082,
+      "score": 75.9
      },
      {
       "name": "毁坏仪式",
-      "score": 63.4,
+      "wr": 50.6,
+      "games": 1992,
+      "score": 74.4
+     },
+     {
+      "name": "沃格勒特的巫师帽",
       "wr": 49,
-      "games": 853
+      "games": 14859,
+      "score": 71.8
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 48.9,
+      "games": 14795,
+      "score": 71.4
+     },
+     {
+      "name": "巫妖之祸",
+      "wr": 48.4,
+      "games": 43342,
+      "score": 67.7
+     },
+     {
+      "name": "卢登的回声",
+      "wr": 48,
+      "games": 210878,
+      "score": 67
+     },
+     {
+      "name": "轻灵之靴",
+      "wr": 48.8,
+      "games": 1251,
+      "score": 64.1
+     },
+     {
+      "name": "明朗之靴",
+      "wr": 48.2,
+      "games": 8598,
+      "score": 63.9
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -20136,54 +20140,55 @@
     "items": [
      {
       "name": "霸王血铠",
-      "score": 89.6,
       "wr": 56.7,
-      "games": 9617
+      "games": 22225,
+      "score": 90.8
      },
      {
       "name": "虚空献祭",
-      "score": 88.6,
-      "wr": 55.8,
-      "games": 13244
+      "wr": 55.7,
+      "games": 30514,
+      "score": 89.1
      },
      {
       "name": "骑士之誓",
-      "score": 85.5,
       "wr": 56.2,
-      "games": 2898
+      "games": 6601,
+      "score": 87.8
      },
      {
       "name": "亡者的板甲",
-      "score": 84.7,
-      "wr": 56.3,
-      "games": 2276
+      "wr": 55.6,
+      "games": 5191,
+      "score": 86
+     },
+     {
+      "name": "巨型九头蛇",
+      "wr": 56.9,
+      "games": 1663,
+      "score": 84.3
+     },
+     {
+      "name": "冰脉护手",
+      "wr": 53.5,
+      "games": 10337,
+      "score": 82.8
      },
      {
       "name": "千变者贾修",
-      "score": 82.7,
       "wr": 52.3,
-      "games": 69289
-     },
-     {
-      "name": "无终恨意",
-      "score": 81.2,
-      "wr": 51.4,
-      "games": 105656
+      "games": 160931,
+      "score": 82.7
      },
      {
       "name": "振奋盔甲",
-      "score": 81,
-      "wr": 52.4,
-      "games": 21212
-     },
-     {
-      "name": "璀璨回响",
-      "score": 80.3,
-      "wr": 52.2,
-      "games": 28256
+      "wr": 52.7,
+      "games": 48909,
+      "score": 81.8
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -20297,54 +20302,55 @@
     "items": [
      {
       "name": "虚空献祭",
-      "score": 90.4,
-      "wr": 58.1,
-      "games": 2860
+      "wr": 57.6,
+      "games": 6697,
+      "score": 91.9
      },
      {
       "name": "狂徒铠甲",
-      "score": 84.4,
-      "wr": 52.1,
-      "games": 23365
-     },
-     {
-      "name": "无终恨意",
-      "score": 81.8,
-      "wr": 51,
-      "games": 44680
-     },
-     {
-      "name": "振奋盔甲",
-      "score": 81.6,
-      "wr": 51.7,
-      "games": 9551
+      "wr": 52.3,
+      "games": 54715,
+      "score": 84.6
      },
      {
       "name": "沃格勒特的巫师帽",
-      "score": 80,
-      "wr": 51.6,
-      "games": 5534
+      "wr": 52.2,
+      "games": 12453,
+      "score": 83
+     },
+     {
+      "name": "振奋盔甲",
+      "wr": 51.9,
+      "games": 22548,
+      "score": 82.8
+     },
+     {
+      "name": "无终恨意",
+      "wr": 51,
+      "games": 103610,
+      "score": 81.5
      },
      {
       "name": "深渊面具",
-      "score": 79.8,
-      "wr": 53.3,
-      "games": 1539
+      "wr": 52.5,
+      "games": 3441,
+      "score": 80.6
      },
      {
       "name": "心之钢",
-      "score": 79.3,
-      "wr": 50,
-      "games": 71257
+      "wr": 50.2,
+      "games": 165649,
+      "score": 79.4
      },
      {
-      "name": "霸王血铠",
-      "score": 78.2,
-      "wr": 51.4,
-      "games": 3426
+      "name": "金铲铲",
+      "wr": 51.7,
+      "games": 4495,
+      "score": 79.3
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -20457,55 +20463,56 @@
     ],
     "items": [
      {
-      "name": "无穷饥渴",
-      "score": 79.1,
-      "wr": 50.7,
-      "games": 16399
+      "name": "金铲铲",
+      "wr": 51.4,
+      "games": 8496,
+      "score": 80.3
      },
      {
-      "name": "金铲铲",
-      "score": 79.1,
-      "wr": 51.7,
-      "games": 3779
+      "name": "无穷饥渴",
+      "wr": 50.8,
+      "games": 37883,
+      "score": 80
      },
      {
       "name": "死亡之舞",
-      "score": 77.5,
-      "wr": 50.1,
-      "games": 53410
-     },
-     {
-      "name": "电震涡流剑",
-      "score": 74.7,
-      "wr": 49.4,
-      "games": 86355
-     },
-     {
-      "name": "轻灵之靴",
-      "score": 74.3,
-      "wr": 49.6,
-      "games": 25822
-     },
-     {
-      "name": "暴食胫甲",
-      "score": 73.9,
-      "wr": 49.7,
-      "games": 13466
-     },
-     {
-      "name": "破舰者",
-      "score": 70.7,
-      "wr": 60.6,
-      "games": 132
+      "wr": 50.2,
+      "games": 120828,
+      "score": 78.5
      },
      {
       "name": "黯影阔剑",
-      "score": 70,
-      "wr": 49.5,
-      "games": 3807
+      "wr": 50.7,
+      "games": 8875,
+      "score": 77.9
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 49.8,
+      "games": 30899,
+      "score": 75.5
+     },
+     {
+      "name": "破舰者",
+      "wr": 56.4,
+      "games": 321,
+      "score": 74.4
+     },
+     {
+      "name": "电震涡流剑",
+      "wr": 49.3,
+      "games": 197945,
+      "score": 74.2
+     },
+     {
+      "name": "水银弯刀",
+      "wr": 51.8,
+      "games": 1027,
+      "score": 74
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -20619,54 +20626,55 @@
     "items": [
      {
       "name": "冰脉护手",
-      "score": 88.4,
-      "wr": 56.2,
-      "games": 3489
-     },
-     {
-      "name": "无终恨意",
-      "score": 85.1,
-      "wr": 52.9,
-      "games": 11959
+      "wr": 55.7,
+      "games": 7996,
+      "score": 89.9
      },
      {
       "name": "亡者的板甲",
-      "score": 84.6,
-      "wr": 54.7,
-      "games": 2413
+      "wr": 55.7,
+      "games": 5339,
+      "score": 88.9
      },
      {
-      "name": "终极九头蛇",
-      "score": 84.3,
-      "wr": 52.4,
-      "games": 14312
-     },
-     {
-      "name": "千变者贾修",
-      "score": 84,
-      "wr": 52.4,
-      "games": 12690
+      "name": "无终恨意",
+      "wr": 53.4,
+      "games": 27929,
+      "score": 87.2
      },
      {
       "name": "金铲铲",
-      "score": 83.4,
-      "wr": 53.3,
-      "games": 3763
+      "wr": 53.5,
+      "games": 8300,
+      "score": 86
      },
      {
-      "name": "霸王血铠",
-      "score": 83,
-      "wr": 51.7,
-      "games": 26137
+      "name": "终极九头蛇",
+      "wr": 52.4,
+      "games": 32583,
+      "score": 85.1
      },
      {
-      "name": "荆棘之甲",
-      "score": 81.5,
-      "wr": 51.5,
-      "games": 13249
+      "name": "千变者贾修",
+      "wr": 52.4,
+      "games": 29220,
+      "score": 84.8
+     },
+     {
+      "name": "虚空献祭",
+      "wr": 53.2,
+      "games": 5324,
+      "score": 84.3
+     },
+     {
+      "name": "冰霜之心",
+      "wr": 53.6,
+      "games": 3594,
+      "score": 84.1
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -20780,54 +20788,55 @@
     "items": [
      {
       "name": "沃格勒特的巫师帽",
-      "score": 84.9,
-      "wr": 54.3,
-      "games": 4632
+      "wr": 54.4,
+      "games": 10723,
+      "score": 87.5
      },
      {
       "name": "金铲铲",
-      "score": 82.5,
-      "wr": 55.2,
-      "games": 1584
+      "wr": 54.6,
+      "games": 3651,
+      "score": 85.2
      },
      {
       "name": "灭世者的死亡之帽",
-      "score": 81.8,
-      "wr": 51.2,
-      "games": 43390
+      "wr": 51,
+      "games": 100014,
+      "score": 82.1
      },
      {
       "name": "暴食胫甲",
-      "score": 79.8,
-      "wr": 51.3,
-      "games": 17287
+      "wr": 51.1,
+      "games": 39220,
+      "score": 80.1
      },
      {
       "name": "女妖面纱",
-      "score": 76.8,
-      "wr": 52.6,
-      "games": 1623
+      "wr": 52.1,
+      "games": 3707,
+      "score": 79.4
      },
      {
       "name": "毁坏仪式",
-      "score": 75.9,
-      "wr": 53.7,
-      "games": 844
-     },
-     {
-      "name": "风暴狂涌",
-      "score": 75.5,
-      "wr": 51.6,
-      "games": 2385
+      "wr": 53.1,
+      "games": 1884,
+      "score": 79.4
      },
      {
       "name": "虚空之杖",
-      "score": 74,
-      "wr": 50,
-      "games": 22888
+      "wr": 50.1,
+      "games": 52653,
+      "score": 76
+     },
+     {
+      "name": "风暴狂涌",
+      "wr": 50.7,
+      "games": 5521,
+      "score": 75.3
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -20940,55 +20949,56 @@
     ],
     "items": [
      {
-      "name": "金铲铲",
-      "score": 93.3,
-      "wr": 57.6,
-      "games": 10090
-     },
-     {
       "name": "死亡之舞",
-      "score": 91.6,
-      "wr": 57.5,
-      "games": 5075
+      "wr": 57.9,
+      "games": 11159,
+      "score": 93.9
      },
      {
-      "name": "暴食胫甲",
-      "score": 83.2,
-      "wr": 51.4,
-      "games": 60840
+      "name": "金铲铲",
+      "wr": 56.6,
+      "games": 22692,
+      "score": 93.1
      },
      {
       "name": "无穷饥渴",
-      "score": 82.1,
-      "wr": 51.5,
-      "games": 12157
+      "wr": 51.7,
+      "games": 27892,
+      "score": 83.6
      },
      {
-      "name": "电震涡流剑",
-      "score": 80,
-      "wr": 50.6,
-      "games": 34285
+      "name": "暴食胫甲",
+      "wr": 51.1,
+      "games": 137167,
+      "score": 82.5
      },
      {
       "name": "终极九头蛇",
-      "score": 78.8,
-      "wr": 50.8,
-      "games": 6987
+      "wr": 50.9,
+      "games": 15741,
+      "score": 80.9
+     },
+     {
+      "name": "电震涡流剑",
+      "wr": 50.6,
+      "games": 76060,
+      "score": 80.6
      },
      {
       "name": "斯塔缇克电刃",
-      "score": 77.8,
       "wr": 50,
-      "games": 46426
+      "games": 105463,
+      "score": 78.1
      },
      {
       "name": "界弓",
-      "score": 73.8,
-      "wr": 49.2,
-      "games": 46748
+      "wr": 49.5,
+      "games": 107329,
+      "score": 76
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -21101,55 +21111,56 @@
     ],
     "items": [
      {
-      "name": "沃格勒特的巫师帽",
-      "score": 82.3,
-      "wr": 50.8,
-      "games": 15079
-     },
-     {
       "name": "金铲铲",
-      "score": 79.7,
       "wr": 50.9,
-      "games": 3674
+      "games": 8281,
+      "score": 81.6
      },
      {
-      "name": "暴食胫甲",
-      "score": 72.9,
-      "wr": 48.7,
-      "games": 8989
+      "name": "沃格勒特的巫师帽",
+      "wr": 50.2,
+      "games": 34191,
+      "score": 81.1
      },
      {
       "name": "歌之权冠",
-      "score": 71.6,
       "wr": 49.5,
-      "games": 1518
+      "games": 3261,
+      "score": 74.4
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 48.3,
+      "games": 20305,
+      "score": 71.6
      },
      {
       "name": "流水法杖",
-      "score": 68.8,
-      "wr": 49.4,
-      "games": 1003
+      "wr": 49.1,
+      "games": 2186,
+      "score": 71.4
      },
      {
       "name": "黎明核心",
-      "score": 65.6,
       "wr": 48.5,
-      "games": 1158
+      "games": 2550,
+      "score": 69
      },
      {
-      "name": "卢登的回声",
-      "score": 64.1,
-      "wr": 47.5,
-      "games": 233290
+      "name": "轻灵之靴",
+      "wr": 48.2,
+      "games": 4527,
+      "score": 68.8
      },
      {
-      "name": "炽天使之拥",
-      "score": 64,
-      "wr": 47.5,
-      "games": 45900
+      "name": "魔切",
+      "wr": 47.9,
+      "games": 7327,
+      "score": 67.1
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -21263,54 +21274,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 90.5,
-      "wr": 59.9,
-      "games": 2163
+      "wr": 59.3,
+      "games": 4787,
+      "score": 92.7
      },
      {
       "name": "终极九头蛇",
-      "score": 89.8,
-      "wr": 56.2,
-      "games": 8059
-     },
-     {
-      "name": "无穷饥渴",
-      "score": 85.1,
-      "wr": 53,
-      "games": 20143
+      "wr": 55.8,
+      "games": 18189,
+      "score": 90.5
      },
      {
       "name": "霸王血铠",
-      "score": 84.5,
-      "wr": 53.4,
-      "games": 9040
+      "wr": 53.8,
+      "games": 21021,
+      "score": 86.7
      },
      {
-      "name": "暴食胫甲",
-      "score": 81.8,
-      "wr": 52.2,
-      "games": 12304
-     },
-     {
-      "name": "死亡之舞",
-      "score": 80.7,
-      "wr": 50.9,
-      "games": 66102
+      "name": "无穷饥渴",
+      "wr": 52.9,
+      "games": 47442,
+      "score": 85.1
      },
      {
       "name": "虚空献祭",
-      "score": 79.9,
-      "wr": 54.6,
-      "games": 1224
+      "wr": 54.5,
+      "games": 2804,
+      "score": 83.7
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 52.2,
+      "games": 28065,
+      "score": 82.8
      },
      {
       "name": "无终恨意",
-      "score": 79.4,
-      "wr": 52,
-      "games": 5741
+      "wr": 51.9,
+      "games": 13420,
+      "score": 80.9
+     },
+     {
+      "name": "死亡之舞",
+      "wr": 50.8,
+      "games": 149317,
+      "score": 80.6
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -21424,54 +21436,55 @@
     "items": [
      {
       "name": "虚空献祭",
-      "score": 84.9,
-      "wr": 53,
-      "games": 6117
-     },
-     {
-      "name": "霸王血铠",
-      "score": 81.9,
-      "wr": 50.6,
-      "games": 53400
-     },
-     {
-      "name": "无穷饥渴",
-      "score": 77.4,
-      "wr": 50,
-      "games": 11673
+      "wr": 52.5,
+      "games": 14201,
+      "score": 85.1
      },
      {
       "name": "金铲铲",
-      "score": 77.2,
-      "wr": 51.4,
-      "games": 1933
-     },
-     {
-      "name": "暴食胫甲",
-      "score": 76.6,
-      "wr": 50.2,
-      "games": 5523
-     },
-     {
-      "name": "终极九头蛇",
-      "score": 76.4,
-      "wr": 50.1,
-      "games": 6188
-     },
-     {
-      "name": "日炎圣盾",
-      "score": 74,
-      "wr": 49.5,
-      "games": 6577
+      "wr": 52.7,
+      "games": 4407,
+      "score": 83.3
      },
      {
       "name": "裂隙制造者",
-      "score": 73.3,
-      "wr": 52.5,
-      "games": 602
+      "wr": 54.3,
+      "games": 1507,
+      "score": 82.4
+     },
+     {
+      "name": "霸王血铠",
+      "wr": 50.7,
+      "games": 126411,
+      "score": 82.2
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 50.8,
+      "games": 12678,
+      "score": 80.1
+     },
+     {
+      "name": "破舰者",
+      "wr": 59.4,
+      "games": 325,
+      "score": 78.4
+     },
+     {
+      "name": "无穷饥渴",
+      "wr": 50.1,
+      "games": 28194,
+      "score": 78.3
+     },
+     {
+      "name": "终极九头蛇",
+      "wr": 49.9,
+      "games": 14519,
+      "score": 76.6
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -21585,54 +21598,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 88.1,
-      "wr": 58.1,
-      "games": 1762
+      "wr": 57.5,
+      "games": 3889,
+      "score": 90.5
      },
      {
       "name": "暴食胫甲",
-      "score": 83.2,
-      "wr": 51.7,
-      "games": 21151
-     },
-     {
-      "name": "海克斯镜片 C44",
-      "score": 76.3,
-      "wr": 52.8,
-      "games": 1048
+      "wr": 52.1,
+      "games": 46922,
+      "score": 84.7
      },
      {
       "name": "无穷饥渴",
-      "score": 75.6,
-      "wr": 53.3,
-      "games": 779
-     },
-     {
-      "name": "无尽之刃",
-      "score": 75.5,
-      "wr": 48.8,
-      "games": 73843
+      "wr": 55.4,
+      "games": 1831,
+      "score": 84.5
      },
      {
       "name": "死亡之舞",
-      "score": 75.5,
+      "wr": 52.9,
+      "games": 2341,
+      "score": 80.7
+     },
+     {
+      "name": "海克斯镜片 C44",
       "wr": 52.5,
-      "games": 1007
+      "games": 2409,
+      "score": 79.7
      },
      {
-      "name": "玛莫提乌斯之噬",
-      "score": 74,
-      "wr": 53.1,
-      "games": 642
+      "name": "无尽之刃",
+      "wr": 48.8,
+      "games": 168197,
+      "score": 75.3
      },
      {
-      "name": "幻影之舞",
-      "score": 71.7,
-      "wr": 50.7,
-      "games": 1435
+      "name": "水银弯刀",
+      "wr": 50.2,
+      "games": 4711,
+      "score": 74.2
+     },
+     {
+      "name": "振奋盔甲",
+      "wr": 52.8,
+      "games": 680,
+      "score": 73.7
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -21746,54 +21760,55 @@
     "items": [
      {
       "name": "虚空献祭",
-      "score": 93.7,
-      "wr": 57.2,
-      "games": 13576
+      "wr": 56.7,
+      "games": 30783,
+      "score": 93.9
      },
      {
       "name": "金铲铲",
-      "score": 83.2,
       "wr": 52.7,
-      "games": 3451
+      "games": 7854,
+      "score": 85.5
      },
      {
       "name": "日炎圣盾",
-      "score": 79.1,
-      "wr": 50.2,
-      "games": 14427
-     },
-     {
-      "name": "暴食胫甲",
-      "score": 76.6,
-      "wr": 50.1,
-      "games": 4612
+      "wr": 50.3,
+      "games": 32818,
+      "score": 80.5
      },
      {
       "name": "骑士之誓",
-      "score": 76,
-      "wr": 51.5,
-      "games": 1266
+      "wr": 50.9,
+      "games": 2854,
+      "score": 78.2
      },
      {
       "name": "狂战士胫甲",
-      "score": 75,
-      "wr": 50.9,
-      "games": 1447
+      "wr": 50.7,
+      "games": 3374,
+      "score": 78
+     },
+     {
+      "name": "亡者的板甲",
+      "wr": 49.4,
+      "games": 11694,
+      "score": 75.9
      },
      {
       "name": "轻灵之靴",
-      "score": 74.8,
-      "wr": 49.6,
-      "games": 5032
+      "wr": 49.4,
+      "games": 11442,
+      "score": 75.8
      },
      {
-      "name": "璀璨回响",
-      "score": 74.2,
-      "wr": 49,
-      "games": 24942
+      "name": "班德尔音管",
+      "wr": 52.4,
+      "games": 763,
+      "score": 75.5
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -21907,54 +21922,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 88.7,
-      "wr": 54.1,
-      "games": 11008
+      "wr": 53.5,
+      "games": 25022,
+      "score": 88.7
      },
      {
       "name": "暴食胫甲",
-      "score": 82.5,
-      "wr": 50.9,
-      "games": 58530
+      "wr": 50.6,
+      "games": 132624,
+      "score": 82
      },
      {
       "name": "无穷饥渴",
-      "score": 81.6,
-      "wr": 50.7,
-      "games": 44475
+      "wr": 50.6,
+      "games": 105045,
+      "score": 82
      },
      {
       "name": "终极九头蛇",
-      "score": 80.1,
       "wr": 50.4,
-      "games": 19140
-     },
-     {
-      "name": "幽梦之灵",
-      "score": 75.3,
-      "wr": 49.3,
-      "games": 17891
-     },
-     {
-      "name": "电震涡流剑",
-      "score": 74.4,
-      "wr": 48.8,
-      "games": 147457
+      "games": 44104,
+      "score": 80.8
      },
      {
       "name": "黯影阔剑",
-      "score": 71.9,
-      "wr": 49.9,
-      "games": 1616
+      "wr": 50,
+      "games": 3705,
+      "score": 75.7
      },
      {
-      "name": "死亡之舞",
-      "score": 71.4,
-      "wr": 48.6,
-      "games": 27998
+      "name": "幽梦之灵",
+      "wr": 49.1,
+      "games": 41789,
+      "score": 75.3
+     },
+     {
+      "name": "海克斯科技枪刃",
+      "wr": 50.6,
+      "games": 1744,
+      "score": 75
+     },
+     {
+      "name": "电震涡流剑",
+      "wr": 48.7,
+      "games": 336656,
+      "score": 74.3
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -22068,54 +22084,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 94.2,
-      "wr": 59.4,
-      "games": 6920
+      "wr": 59.6,
+      "games": 15820,
+      "score": 95.9
      },
      {
       "name": "公理圆弧",
-      "score": 92.6,
-      "wr": 59.1,
-      "games": 4393
+      "wr": 58.4,
+      "games": 10081,
+      "score": 93.7
      },
      {
       "name": "死亡之舞",
-      "score": 89.2,
-      "wr": 57.6,
-      "games": 2663
+      "wr": 57,
+      "games": 6054,
+      "score": 90.8
      },
      {
       "name": "夜之锋刃",
-      "score": 87.2,
       "wr": 56.2,
-      "games": 2660
-     },
-     {
-      "name": "饮血剑",
-      "score": 85.8,
-      "wr": 52.9,
-      "games": 29138
-     },
-     {
-      "name": "海克斯注力刚壁",
-      "score": 85.7,
-      "wr": 54.2,
-      "games": 4906
+      "games": 6260,
+      "score": 89.7
      },
      {
       "name": "无穷饥渴",
-      "score": 85.7,
-      "wr": 56.1,
-      "games": 1929
+      "wr": 56.6,
+      "games": 4517,
+      "score": 89.5
+     },
+     {
+      "name": "海克斯镜片 C44",
+      "wr": 53.8,
+      "games": 14824,
+      "score": 86.9
+     },
+     {
+      "name": "饮血剑",
+      "wr": 53.2,
+      "games": 67356,
+      "score": 86.6
      },
      {
       "name": "狂妄",
-      "score": 85.5,
-      "wr": 54.8,
-      "games": 3213
+      "wr": 53.8,
+      "games": 7349,
+      "score": 85.8
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -22229,54 +22246,55 @@
     "items": [
      {
       "name": "虚空献祭",
-      "score": 84.9,
-      "wr": 52.5,
-      "games": 8305
+      "wr": 52.3,
+      "games": 18936,
+      "score": 85.8
      },
      {
       "name": "冰脉护手",
-      "score": 80,
       "wr": 51.2,
-      "games": 4625
-     },
-     {
-      "name": "黄昏与黎明",
-      "score": 77.9,
-      "wr": 49.7,
-      "games": 34363
+      "games": 10304,
+      "score": 81.8
      },
      {
       "name": "金铲铲",
-      "score": 76.9,
-      "wr": 50.3,
-      "games": 3884
+      "wr": 51.1,
+      "games": 8971,
+      "score": 81.3
      },
      {
       "name": "亡者的板甲",
-      "score": 74.3,
-      "wr": 50,
-      "games": 2660
+      "wr": 50.9,
+      "games": 5953,
+      "score": 79.9
      },
      {
-      "name": "暴食胫甲",
-      "score": 73.9,
-      "wr": 48.9,
-      "games": 27982
+      "name": "黄昏与黎明",
+      "wr": 49.6,
+      "games": 79235,
+      "score": 77.4
      },
      {
       "name": "深渊面具",
-      "score": 73.4,
       "wr": 49.9,
-      "games": 2336
+      "games": 5468,
+      "score": 76.1
      },
      {
-      "name": "日炎圣盾",
-      "score": 72.9,
-      "wr": 49.1,
-      "games": 7494
+      "name": "暴食胫甲",
+      "wr": 49,
+      "games": 63880,
+      "score": 74.6
+     },
+     {
+      "name": "沃格勒特的巫师帽",
+      "wr": 48.7,
+      "games": 12997,
+      "score": 71.4
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -22390,54 +22408,55 @@
     "items": [
      {
       "name": "骑士之誓",
-      "score": 86.1,
-      "wr": 53.2,
-      "games": 8282
+      "wr": 54.2,
+      "games": 8667,
+      "score": 88.4
      },
      {
       "name": "流水法杖",
-      "score": 83.3,
-      "wr": 51.2,
-      "games": 34551
+      "wr": 51.8,
+      "games": 42329,
+      "score": 85.6
      },
      {
       "name": "歌之权冠",
-      "score": 82,
-      "wr": 49.7,
-      "games": 114479
-     },
-     {
-      "name": "月石再生器",
-      "score": 78.7,
-      "wr": 48.8,
-      "games": 131887
+      "wr": 49.8,
+      "games": 136780,
+      "score": 83.4
      },
      {
       "name": "黎明核心",
-      "score": 78.4,
-      "wr": 49.8,
-      "games": 44683
-     },
-     {
-      "name": "炽热香炉",
-      "score": 75.9,
-      "wr": 48.8,
-      "games": 104337
+      "wr": 50.8,
+      "games": 56341,
+      "score": 82.9
      },
      {
       "name": "轻灵之靴",
-      "score": 75.2,
-      "wr": 50.2,
-      "games": 3392
+      "wr": 51.5,
+      "games": 3975,
+      "score": 80.4
+     },
+     {
+      "name": "月石再生器",
+      "wr": 48.7,
+      "games": 156305,
+      "score": 78.9
+     },
+     {
+      "name": "花晓之剑",
+      "wr": 49.8,
+      "games": 22344,
+      "score": 78
      },
      {
       "name": "金铲铲",
-      "score": 74.3,
-      "wr": 50.8,
-      "games": 1571
+      "wr": 51.7,
+      "games": 1771,
+      "score": 77.8
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -22551,54 +22570,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 82.9,
       "wr": 51.3,
-      "games": 4463
+      "games": 10253,
+      "score": 84.6
      },
      {
       "name": "沃格勒特的巫师帽",
-      "score": 74.1,
-      "wr": 48.2,
-      "games": 15031
+      "wr": 48.5,
+      "games": 34390,
+      "score": 76.3
      },
      {
       "name": "毁坏仪式",
-      "score": 69.9,
-      "wr": 48.1,
-      "games": 2606
+      "wr": 47.9,
+      "games": 5911,
+      "score": 70.8
+     },
+     {
+      "name": "轻灵之靴",
+      "wr": 47.9,
+      "games": 2789,
+      "score": 69.1
      },
      {
       "name": "卢登的回声",
-      "score": 66,
       "wr": 47,
-      "games": 284316
-     },
-     {
-      "name": "骑士之誓",
-      "score": 64.6,
-      "wr": 57.5,
-      "games": 80
+      "games": 650410,
+      "score": 66.3
      },
      {
       "name": "暴食胫甲",
-      "score": 61,
-      "wr": 46.7,
-      "games": 6965
+      "wr": 46.8,
+      "games": 15733,
+      "score": 63.1
      },
      {
-      "name": "荆棘之甲",
-      "score": 60.2,
-      "wr": 50.3,
-      "games": 145
+      "name": "魔切",
+      "wr": 46.7,
+      "games": 11046,
+      "score": 60.9
      },
      {
       "name": "灭世者的死亡之帽",
-      "score": 60,
       "wr": 46.6,
-      "games": 221548
+      "games": 509321,
+      "score": 60
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -22712,54 +22732,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 93.6,
-      "wr": 59.2,
-      "games": 5114
+      "wr": 59,
+      "games": 11708,
+      "score": 95.1
      },
      {
       "name": "死亡之舞",
-      "score": 91.1,
       "wr": 56.7,
-      "games": 6716
+      "games": 15121,
+      "score": 92.6
      },
      {
       "name": "狂妄",
-      "score": 86.1,
-      "wr": 54.2,
-      "games": 4600
-     },
-     {
-      "name": "终极九头蛇",
-      "score": 84.3,
-      "wr": 52.9,
-      "games": 6679
-     },
-     {
-      "name": "海克斯镜片 C44",
-      "score": 82.7,
-      "wr": 52.2,
-      "games": 7630
+      "wr": 53.7,
+      "games": 10486,
+      "score": 86.9
      },
      {
       "name": "无穷饥渴",
-      "score": 82.7,
-      "wr": 53.6,
-      "games": 2481
+      "wr": 53.3,
+      "games": 5831,
+      "score": 84.8
      },
      {
-      "name": "败魔",
-      "score": 79.2,
-      "wr": 51.5,
-      "games": 3946
+      "name": "终极九头蛇",
+      "wr": 52,
+      "games": 15370,
+      "score": 83.4
+     },
+     {
+      "name": "海克斯镜片 C44",
+      "wr": 51.4,
+      "games": 17371,
+      "score": 81.7
+     },
+     {
+      "name": "水银弯刀",
+      "wr": 51.3,
+      "games": 8549,
+      "score": 80.3
      },
      {
       "name": "饮血剑",
-      "score": 78.7,
-      "wr": 50.2,
-      "games": 64767
+      "wr": 50.3,
+      "games": 148719,
+      "score": 79.4
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -22872,55 +22893,56 @@
     ],
     "items": [
      {
-      "name": "轻灵之靴",
-      "score": 84.5,
-      "wr": 52,
-      "games": 6414
-     },
-     {
       "name": "班德尔音管",
-      "score": 84.2,
-      "wr": 53.4,
-      "games": 2319
+      "wr": 53.3,
+      "games": 5028,
+      "score": 86.4
      },
      {
       "name": "骑士之誓",
-      "score": 84,
-      "wr": 51.9,
-      "games": 5861
+      "wr": 52.2,
+      "games": 12813,
+      "score": 86.1
      },
      {
-      "name": "虚空献祭",
-      "score": 83.3,
-      "wr": 51.4,
-      "games": 7132
-     },
-     {
-      "name": "钢铁烈阳之匣",
-      "score": 79.6,
-      "wr": 51.2,
-      "games": 2370
+      "name": "轻灵之靴",
+      "wr": 51.5,
+      "games": 14463,
+      "score": 84.7
      },
      {
       "name": "金铲铲",
-      "score": 78.8,
-      "wr": 50.8,
-      "games": 2607
+      "wr": 52.2,
+      "games": 5956,
+      "score": 84.7
+     },
+     {
+      "name": "钢铁烈阳之匣",
+      "wr": 52,
+      "games": 5349,
+      "score": 83.8
+     },
+     {
+      "name": "虚空献祭",
+      "wr": 51,
+      "games": 16279,
+      "score": 83.6
      },
      {
       "name": "舒瑞娅的战歌",
-      "score": 78.7,
-      "wr": 54.6,
-      "games": 625
+      "wr": 54,
+      "games": 1486,
+      "score": 83.2
      },
      {
-      "name": "冰脉护手",
-      "score": 78.2,
-      "wr": 49.4,
-      "games": 12581
+      "name": "原生质护带",
+      "wr": 51.1,
+      "games": 4066,
+      "score": 80.9
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -23033,55 +23055,56 @@
     ],
     "items": [
      {
-      "name": "冰霜之心",
-      "score": 82.4,
-      "wr": 51.5,
-      "games": 5919
+      "name": "虚空献祭",
+      "wr": 54.2,
+      "games": 5101,
+      "score": 87.7
      },
      {
       "name": "骑士之誓",
-      "score": 82.3,
-      "wr": 51.1,
-      "games": 9088
+      "wr": 52.9,
+      "games": 11538,
+      "score": 87.1
      },
      {
-      "name": "冰脉护手",
-      "score": 82.2,
-      "wr": 52.5,
-      "games": 2592
-     },
-     {
-      "name": "流水法杖",
-      "score": 81.7,
-      "wr": 56.6,
-      "games": 673
-     },
-     {
-      "name": "帝国指令",
-      "score": 81.5,
-      "wr": 51.6,
-      "games": 3833
-     },
-     {
-      "name": "亡者的板甲",
-      "score": 80.9,
-      "wr": 52.5,
-      "games": 1875
-     },
-     {
-      "name": "轻灵之靴",
-      "score": 80.9,
-      "wr": 54.5,
-      "games": 949
+      "name": "班德尔音管",
+      "wr": 54.1,
+      "games": 2193,
+      "score": 84.5
      },
      {
       "name": "明朗之靴",
-      "score": 80.5,
-      "wr": 50.9,
-      "games": 5094
+      "wr": 52.3,
+      "games": 6271,
+      "score": 84.4
+     },
+     {
+      "name": "冰脉护手",
+      "wr": 53.5,
+      "games": 2700,
+      "score": 84.3
+     },
+     {
+      "name": "帝国指令",
+      "wr": 52.1,
+      "games": 4826,
+      "score": 83.2
+     },
+     {
+      "name": "黎明核心",
+      "wr": 53.9,
+      "games": 1522,
+      "score": 82.6
+     },
+     {
+      "name": "流水法杖",
+      "wr": 55,
+      "games": 1049,
+      "score": 82.3
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -23195,54 +23218,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 96.3,
-      "wr": 59.4,
-      "games": 10177
-     },
-     {
-      "name": "无穷饥渴",
-      "score": 83.3,
-      "wr": 52.1,
-      "games": 3786
-     },
-     {
-      "name": "终极九头蛇",
-      "score": 82.2,
-      "wr": 50.7,
-      "games": 11428
+      "wr": 58.4,
+      "games": 9322,
+      "score": 94.7
      },
      {
       "name": "死亡之舞",
-      "score": 82.2,
-      "wr": 51.3,
-      "games": 5504
+      "wr": 51.1,
+      "games": 4929,
+      "score": 80.5
      },
      {
-      "name": "暴食胫甲",
-      "score": 78.1,
-      "wr": 49.1,
-      "games": 69787
+      "name": "终极九头蛇",
+      "wr": 50.2,
+      "games": 10035,
+      "score": 79.2
      },
      {
       "name": "海克斯镜片 C44",
-      "score": 77.7,
-      "wr": 49.9,
-      "games": 4817
+      "wr": 50.7,
+      "games": 4664,
+      "score": 79.1
+     },
+     {
+      "name": "无穷饥渴",
+      "wr": 50.6,
+      "games": 4756,
+      "score": 78.9
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 49.4,
+      "games": 64376,
+      "score": 77.6
      },
      {
       "name": "无尽之刃",
-      "score": 76.5,
-      "wr": 47.7,
-      "games": 412092
+      "wr": 48.1,
+      "games": 385362,
+      "score": 77
      },
      {
-      "name": "玛莫提乌斯之噬",
-      "score": 74.2,
-      "wr": 49.3,
-      "games": 3135
+      "name": "饮血剑",
+      "wr": 48.5,
+      "games": 82947,
+      "score": 72.8
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -23356,54 +23380,55 @@
     "items": [
      {
       "name": "金铲铲",
-      "score": 92.9,
-      "wr": 57.9,
-      "games": 5950
-     },
-     {
-      "name": "饮血剑",
-      "score": 84.6,
-      "wr": 51.6,
-      "games": 45884
+      "wr": 57.1,
+      "games": 5346,
+      "score": 91.1
      },
      {
       "name": "海克斯镜片 C44",
-      "score": 84,
-      "wr": 51.8,
-      "games": 14146
+      "wr": 52.4,
+      "games": 13129,
+      "score": 84.4
      },
      {
-      "name": "终极九头蛇",
-      "score": 83.7,
-      "wr": 52.1,
-      "games": 8533
+      "name": "饮血剑",
+      "wr": 51.4,
+      "games": 42469,
+      "score": 82.9
      },
      {
       "name": "无穷饥渴",
-      "score": 83.5,
-      "wr": 54,
-      "games": 2041
+      "wr": 52.8,
+      "games": 2959,
+      "score": 81.7
+     },
+     {
+      "name": "终极九头蛇",
+      "wr": 51.5,
+      "games": 7398,
+      "score": 80.8
      },
      {
       "name": "多米尼克领主的致意",
-      "score": 80.4,
-      "wr": 49.6,
-      "games": 157961
+      "wr": 50,
+      "games": 145771,
+      "score": 80.3
      },
      {
-      "name": "无尽之刃",
-      "score": 79.6,
-      "wr": 48.4,
-      "games": 259193
+      "name": "玛莫提乌斯之噬",
+      "wr": 53,
+      "games": 1792,
+      "score": 80
      },
      {
-      "name": "死亡之舞",
-      "score": 79.1,
-      "wr": 50.9,
-      "games": 4731
+      "name": "暴食胫甲",
+      "wr": 50.5,
+      "games": 41601,
+      "score": 79.8
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -23516,55 +23541,56 @@
     ],
     "items": [
      {
+      "name": "无尽之刃",
+      "wr": 50.5,
+      "games": 8139,
+      "score": 81.4
+     },
+     {
       "name": "轻灵之靴",
-      "score": 76.9,
-      "wr": 56.3,
-      "games": 444
+      "wr": 54.9,
+      "games": 410,
+      "score": 76.1
      },
      {
       "name": "兰德里的折磨",
-      "score": 75,
-      "wr": 49.2,
-      "games": 788410
-     },
-     {
-      "name": "毁坏仪式",
-      "score": 74.6,
-      "wr": 50,
-      "games": 9979
+      "wr": 48,
+      "games": 769238,
+      "score": 75.5
      },
      {
       "name": "风暴狂涌",
-      "score": 73.3,
-      "wr": 49.4,
-      "games": 302573
+      "wr": 48.2,
+      "games": 313736,
+      "score": 74.4
      },
      {
-      "name": "无尽之刃",
-      "score": 73.2,
-      "wr": 49.8,
-      "games": 8190
-     },
-     {
-      "name": "黯炎火炬",
-      "score": 71.7,
-      "wr": 48.8,
-      "games": 844968
+      "name": "毁坏仪式",
+      "wr": 48.6,
+      "games": 9402,
+      "score": 74.3
      },
      {
       "name": "魔宗",
-      "score": 71.1,
-      "wr": 49.6,
-      "games": 5344
+      "wr": 48.8,
+      "games": 4991,
+      "score": 74
      },
      {
-      "name": "实现器",
-      "score": 69.1,
-      "wr": 49.4,
-      "games": 3810
+      "name": "大天使之杖",
+      "wr": 48.2,
+      "games": 17792,
+      "score": 73.2
+     },
+     {
+      "name": "黯炎火炬",
+      "wr": 47.6,
+      "games": 838282,
+      "score": 72.9
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -23677,55 +23703,56 @@
     ],
     "items": [
      {
+      "name": "虚空献祭",
+      "wr": 53,
+      "games": 15893,
+      "score": 87.2
+     },
+     {
       "name": "亡者的板甲",
-      "score": 90.7,
-      "wr": 54.6,
-      "games": 19260
+      "wr": 53.2,
+      "games": 8784,
+      "score": 86.5
+     },
+     {
+      "name": "骑士之誓",
+      "wr": 53.2,
+      "games": 1734,
+      "score": 81.5
      },
      {
       "name": "冰脉护手",
-      "score": 86.3,
-      "wr": 52.3,
-      "games": 19702
+      "wr": 50.8,
+      "games": 8000,
+      "score": 80.5
      },
      {
       "name": "冰霜之心",
-      "score": 85,
-      "wr": 51.5,
-      "games": 47377
-     },
-     {
-      "name": "死亡之舞",
-      "score": 79.9,
-      "wr": 54,
-      "games": 937
-     },
-     {
-      "name": "千变者贾修",
-      "score": 79.5,
-      "wr": 49.1,
-      "games": 221440
+      "wr": 50.2,
+      "games": 20425,
+      "score": 80
      },
      {
       "name": "金铲铲",
-      "score": 78.8,
-      "wr": 50.7,
-      "games": 4042
+      "wr": 51.3,
+      "games": 2244,
+      "score": 78.2
+     },
+     {
+      "name": "千变者贾修",
+      "wr": 48.9,
+      "games": 119759,
+      "score": 77.1
      },
      {
       "name": "兰顿之兆",
-      "score": 78.7,
-      "wr": 49.4,
-      "games": 110297
-     },
-     {
-      "name": "荆棘之甲",
-      "score": 76.6,
-      "wr": 47.5,
-      "games": 371553
+      "wr": 49,
+      "games": 53908,
+      "score": 75.2
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -23839,54 +23866,55 @@
     "items": [
      {
       "name": "终极九头蛇",
-      "score": 85.9,
-      "wr": 51.9,
-      "games": 14499
+      "wr": 52.3,
+      "games": 16629,
+      "score": 85.8
      },
      {
       "name": "金铲铲",
-      "score": 84.9,
-      "wr": 53.1,
-      "games": 3396
-     },
-     {
-      "name": "无穷饥渴",
-      "score": 83.2,
-      "wr": 50.4,
-      "games": 49479
-     },
-     {
-      "name": "公理圆弧",
-      "score": 82.7,
-      "wr": 51.4,
-      "games": 5369
-     },
-     {
-      "name": "冰霜之心",
-      "score": 82.7,
-      "wr": 51.7,
-      "games": 4145
-     },
-     {
-      "name": "亡者的板甲",
-      "score": 82.3,
-      "wr": 51.4,
-      "games": 4913
+      "wr": 52.7,
+      "games": 3616,
+      "score": 83.3
      },
      {
       "name": "暴食胫甲",
-      "score": 81.5,
-      "wr": 50.2,
-      "games": 16686
+      "wr": 51.2,
+      "games": 20755,
+      "score": 83.2
      },
      {
-      "name": "冰脉护手",
-      "score": 81.5,
-      "wr": 50.7,
-      "games": 7261
+      "name": "赛瑞尔达的怨恨",
+      "wr": 53.2,
+      "games": 2612,
+      "score": 83.2
+     },
+     {
+      "name": "无穷饥渴",
+      "wr": 50.6,
+      "games": 81994,
+      "score": 82.6
+     },
+     {
+      "name": "公理圆弧",
+      "wr": 51.3,
+      "games": 6490,
+      "score": 81.6
+     },
+     {
+      "name": "死亡之舞",
+      "wr": 48.8,
+      "games": 211391,
+      "score": 79.2
+     },
+     {
+      "name": "轻灵之靴",
+      "wr": 51.8,
+      "games": 1719,
+      "score": 78.3
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -24000,54 +24028,55 @@
     "items": [
      {
       "name": "时光之杖",
-      "score": 88.8,
-      "wr": 58.3,
-      "games": 1485
+      "wr": 58.4,
+      "games": 3153,
+      "score": 92.4
      },
      {
       "name": "死亡之舞",
-      "score": 88.4,
-      "wr": 52.7,
-      "games": 28285
+      "wr": 52.3,
+      "games": 57772,
+      "score": 88.3
      },
      {
       "name": "暴食胫甲",
-      "score": 87.2,
-      "wr": 52.2,
-      "games": 26643
+      "wr": 51.6,
+      "games": 56895,
+      "score": 86.6
      },
      {
       "name": "无穷饥渴",
-      "score": 87.1,
-      "wr": 52.2,
-      "games": 26348
-     },
-     {
-      "name": "终极九头蛇",
-      "score": 80.5,
-      "wr": 50.6,
-      "games": 6190
+      "wr": 51.6,
+      "games": 56762,
+      "score": 86.6
      },
      {
       "name": "金铲铲",
-      "score": 80.5,
-      "wr": 52,
-      "games": 2084
+      "wr": 53.2,
+      "games": 4422,
+      "score": 86.3
      },
      {
-      "name": "魔切",
-      "score": 77.6,
-      "wr": 49.1,
-      "games": 32975
+      "name": "毁坏仪式",
+      "wr": 59.6,
+      "games": 639,
+      "score": 85.1
      },
      {
-      "name": "魔宗",
-      "score": 77.3,
-      "wr": 49.8,
-      "games": 5581
+      "name": "终极九头蛇",
+      "wr": 50.1,
+      "games": 13566,
+      "score": 80.9
+     },
+     {
+      "name": "凛冬之临",
+      "wr": 55.5,
+      "games": 577,
+      "score": 79.6
      }
     ],
-    "date": "2026-11-08",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
@@ -24161,54 +24190,55 @@
     "items": [
      {
       "name": "终极九头蛇",
-      "score": 90.2,
-      "wr": 54.6,
-      "games": 63902
+      "wr": 54.4,
+      "games": 57033,
+      "score": 90.9
      },
      {
       "name": "金铲铲",
-      "score": 88.7,
-      "wr": 54.1,
-      "games": 20970
+      "wr": 52.9,
+      "games": 18421,
+      "score": 87.6
      },
      {
-      "name": "冰霜之心",
-      "score": 87.7,
-      "wr": 53.5,
-      "games": 30067
-     },
-     {
-      "name": "冰脉护手",
-      "score": 87.3,
-      "wr": 53.3,
-      "games": 32496
-     },
-     {
-      "name": "亡者的板甲",
-      "score": 86.4,
+      "name": "虚空献祭",
       "wr": 53,
-      "games": 19530
-     },
-     {
-      "name": "轻灵之靴",
-      "score": 85.7,
-      "wr": 54,
-      "games": 4448
+      "games": 17494,
+      "score": 87.6
      },
      {
       "name": "无穷饥渴",
-      "score": 84.9,
-      "wr": 52.1,
-      "games": 82958
+      "wr": 51,
+      "games": 103767,
+      "score": 83.7
      },
      {
-      "name": "千变者贾修",
-      "score": 81.6,
-      "wr": 51,
-      "games": 97572
+      "name": "幽梦之灵",
+      "wr": 51.2,
+      "games": 10800,
+      "score": 82.8
+     },
+     {
+      "name": "轻灵之靴",
+      "wr": 51.7,
+      "games": 3978,
+      "score": 81.8
+     },
+     {
+      "name": "霸王血铠",
+      "wr": 50,
+      "games": 110832,
+      "score": 80.4
+     },
+     {
+      "name": "骑士之誓",
+      "wr": 54.4,
+      "games": 836,
+      "score": 80
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-09",
+    "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
     "augmentDate": "2026-11-09",
