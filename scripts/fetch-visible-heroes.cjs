@@ -24,5 +24,5 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   await sleep(2000);
  }} finally {await browser.close();}
  console.log(`可见表本批同步 ${success}/${targets.length}`);
- if(targets.length && !success)process.exitCode=1;
+ if(success!==targets.length)process.exitCode=1; // 部分成功仍需报告未完成，已验证数据由工作流保存
 })().catch(e=>{console.error(e);process.exit(1)});

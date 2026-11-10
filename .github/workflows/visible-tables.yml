@@ -29,10 +29,12 @@ jobs:
       - name: 检查表格解析
         run: node --test
       - name: 读取来源公开可见表
+        id: capture
         env:
           MAX_HEROES: ${{ github.event_name == 'push' && '173' || inputs.maximum || '20' }}
         run: node scripts/fetch-visible-heroes.cjs
       - name: 生成并保存数据
+        if: ${{ !cancelled() && (steps.capture.outcome == 'success' || steps.capture.outcome == 'failure') }}
         run: |
           if git diff --quiet data/open/hexdata.json; then exit 0; fi
           node scripts/build-data.mjs
