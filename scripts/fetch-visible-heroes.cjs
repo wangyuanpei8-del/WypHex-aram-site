@@ -1,6 +1,7 @@
 // 读取普通浏览器页面已经展示的表格；不调用私有接口，不处理登录或访问挑战。
 const {chromium}=require('../work/browser/node_modules/playwright');
 const fs=require('node:fs/promises');
+const readVisibleHero=require('./browser-hero-reader.cjs');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 (async()=>{
  const {importHeroTable}=await import('./import-hero-table.mjs');
@@ -16,19 +17,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
    page=await context.newPage();
    const response=await page.goto(`https://hexdata.com.cn/hero/${h.id}-${h.slug}`,{waitUntil:'domcontentloaded',timeout:30000});
    if([401,403,429].includes(response?.status())){console.log(`访问受限 ${response.status()}，停止本批读取`);break;}
-   let imported=false,lastError;
-   for(let attempt=0;attempt<40;attempt++){
-    const entry=page.getByRole('link',{name:'打开交互详情',exact:true});
-    if(await entry.count() && await entry.isVisible())await entry.click();
-    const body=await page.locator('body').innerText();
-    if(/数据访问暂时受限|请完成验证|访问验证/.test(body))throw Error('来源要求访问验证，停止自动读取');
-    try {
-     await importHeroTable(String(h.id),'',body,await page.title());
-     imported=true;break;
-    } catch(e){lastError=e;}
-    await sleep(500);
-   }
-   if(!imported)throw lastError || Error('来源页面尚未就绪');
+   await readVisibleHero(page,h,importHeroTable);
    success++;failures=0;
   } catch(e) {console.log(`${h.name} 未同步：${e.message.split('\n')[0]}`);if(/访问验证/.test(e.message)){console.log('尊重来源访问限制，停止本批');break;}if(++failures>=3){console.log('连续失败三次，停止并保留现有数据');break;}}
   if(page)await page.close();
