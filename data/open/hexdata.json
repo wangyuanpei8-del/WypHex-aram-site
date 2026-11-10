@@ -9996,51 +9996,99 @@
     "augs": [
      {
       "name": "弹跳蜜蜂",
-      "score": 95.6,
       "wr": 63.3,
-      "games": 3428
+      "games": 8330,
+      "score": 97
      },
      {
       "name": "终极九头蛇",
-      "score": 92.2,
-      "wr": 59,
-      "games": 16272
+      "wr": 58.9,
+      "games": 34690,
+      "score": 92
      },
      {
       "name": "鼓声暴起 低音轰鸣",
-      "score": 90.3,
-      "wr": 57.7,
-      "games": 42777
+      "wr": 57.8,
+      "games": 91463,
+      "score": 90
      },
      {
       "name": "将他们放倒倒倒",
-      "score": 86.5,
-      "wr": 55.8,
-      "games": 26712
+      "wr": 55.9,
+      "games": 56583,
+      "score": 87
      },
      {
       "name": "秘术冲拳",
-      "score": 85.7,
-      "wr": 55.5,
-      "games": 34868
+      "wr": 55.1,
+      "games": 74357,
+      "score": 85
      },
      {
       "name": "命运之武器",
-      "score": 83.5,
       "wr": 54.7,
-      "games": 21161
+      "games": 45685,
+      "score": 84
+     },
+     {
+      "name": "科学狂人",
+      "wr": 53.5,
+      "games": 13234,
+      "score": 79
      },
      {
       "name": "逃跑计划",
-      "score": 83.1,
-      "wr": 54.6,
-      "games": 13241
+      "wr": 53.3,
+      "games": 28066,
+      "score": 79
+     },
+     {
+      "name": "重量级打击手",
+      "wr": 53.3,
+      "games": 18563,
+      "score": 79
      },
      {
       "name": "小丑学院",
-      "score": 80.2,
-      "wr": 53.9,
-      "games": 8356
+      "wr": 53.3,
+      "games": 17680,
+      "score": 79
+     },
+     {
+      "name": "升级：贪欲九头蛇",
+      "wr": 53.1,
+      "games": 30099,
+      "score": 78
+     },
+     {
+      "name": "泰坦的坚决",
+      "wr": 53,
+      "games": 14708,
+      "score": 78
+     },
+     {
+      "name": "男爵之手",
+      "wr": 53.8,
+      "games": 1507,
+      "score": 78
+     },
+     {
+      "name": "吸元秘术",
+      "wr": 52.8,
+      "games": 43646,
+      "score": 77
+     },
+     {
+      "name": "巨人杀手",
+      "wr": 52.7,
+      "games": 7487,
+      "score": 75
+     },
+     {
+      "name": "屹立不倒",
+      "wr": 52.5,
+      "games": 103304,
+      "score": 75
      }
     ],
     "items": [
@@ -10093,7 +10141,11 @@
       "games": 10321
      }
     ],
-    "date": "2026-11-08"
+    "date": "2026-11-08",
+    "coverage": "visible-table",
+    "sourceCount": 16,
+    "augmentDate": "2026-11-09",
+    "augmentPatch": "16.22"
    },
    {
     "id": 122,
