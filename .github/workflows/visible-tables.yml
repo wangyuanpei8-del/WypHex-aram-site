@@ -1,7 +1,5 @@
 name: 同步英雄可见搭配表
 on:
-  push:
-    paths: ['scripts/fetch-visible-heroes.cjs']
   schedule:
     - cron: '45 * * * *'
   workflow_dispatch:
@@ -31,7 +29,7 @@ jobs:
       - name: 读取来源公开可见表
         id: capture
         env:
-          MAX_HEROES: ${{ github.event_name == 'push' && '173' || inputs.maximum || '20' }}
+          MAX_HEROES: ${{ inputs.maximum || '20' }}
         run: node scripts/fetch-visible-heroes.cjs
       - name: 生成并保存数据
         if: ${{ !cancelled() && (steps.capture.outcome == 'success' || steps.capture.outcome == 'failure') }}
