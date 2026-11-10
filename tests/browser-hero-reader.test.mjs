@@ -14,3 +14,12 @@ test('stops on an access challenge without attempting clicks or import',async()=
  const page={locator:()=>({innerText:async()=>'数据访问暂时受限，请完成验证'})};
  await assert.rejects(readVisibleHero(page,{id:157},async()=>{throw Error('不应导入')}),/来源要求访问验证/);
 });
+test('waits and refreshes the syncing placeholder once before reading',async()=>{
+ let reloaded=0;const waits=[];
+ const page={locator:()=>({innerText:async()=>reloaded?'完整可见表':'榜单正在同步，请稍后刷新'}),reload:async()=>{reloaded++;return {status:()=>200}},title:async()=>'亚索',getByRole:()=>{throw Error('不应点击旧入口')}};
+ assert.equal(await readVisibleHero(page,{id:157},async()=>16,{pause:async ms=>waits.push(ms)}),16);assert.equal(reloaded,1);assert.deepEqual(waits,[5000]);
+});
+test('does not retry an access denial after a normal page refresh',async()=>{
+ const page={locator:()=>({innerText:async()=>'榜单正在同步，请稍后刷新'}),reload:async()=>({status:()=>429})};
+ await assert.rejects(readVisibleHero(page,{id:157},async()=>{throw Error('不应导入')},{pause:async()=>{}}),e=>e.stopSource===true);
+});
