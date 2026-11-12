@@ -151,5 +151,26 @@ a { color: inherit; }
 
 .coverage-note { margin: 8px 0 12px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 
-.nav-meta { text-align: right; }
-@media(max-width:860px){.nav-meta { grid-column:1 / -1; text-align:left; }}
+
+
+/* 顶栏所有入口统一高度与基线。 */
+.topbar-inner { display:flex; gap:16px; }
+.topbar-inner .brand,.topbar-inner .catalog-link { flex:none; }
+.topbar-inner .search { flex:1; min-width:120px; }
+.meta { flex:none; gap:12px; font-size:11.5px; white-space:nowrap; }
+.catalog-link { display:inline-flex; align-items:center; justify-content:center; gap:8px; height:40px; padding:0 14px; border-radius:10px; border:1px solid var(--line); background:var(--panel); text-decoration:none; font-size:13px; font-weight:600; transition:background .15s,border-color .15s; }
+.catalog-link svg { fill:var(--gold); }
+.catalog-link:hover { border-color:var(--gold); background:var(--gold-soft); }
+.catalog-link:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.detail-from-catalog { align-self:flex-start; color:var(--text-2); font-size:13px; text-decoration:none; padding:6px 0; }
+.detail-from-catalog:hover { color:var(--gold); }
+@media(max-width:860px){
+ .topbar-inner { display:grid; grid-template-columns:1fr auto; gap:10px 12px; }
+ .topbar-inner .brand { grid-column:1;grid-row:1; }
+ .topbar-inner .catalog-link { grid-column:2;grid-row:1;height:36px; }
+ .topbar-inner .search { grid-column:1 / -1;grid-row:2; }
+ .topbar-inner .meta { grid-column:1 / -1;grid-row:3;justify-content:space-between;gap:8px; }
+ body.from-catalog .back { display:none; }
+}
+
+.detail { scroll-margin-top:80px; }

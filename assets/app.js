@@ -12,6 +12,9 @@
   const norm = s => String(s || '').toLowerCase().replace(/[\s·・.]/g, '');
   const LOW = 1000; // 搭配场次少于这个数的标橙色，提醒样本少
 
+  const fromCatalog = new URLSearchParams(location.hash.slice(1)).get('from') === 'catalog';
+  const catalogRole = new URLSearchParams(location.hash.slice(1)).get('role') || 'all';
+  const catalogReturn = 'heroes.html?return=1#role=' + encodeURIComponent(catalogRole);
   const state = { q: '', hero: HEROES[0].name, rar: '全部' };
 
   /* ---------- 图标：本地图片 → 腾讯 CDN → 文字 ---------- */
@@ -116,6 +119,7 @@
     const rars = ['全部', '棱彩', '黄金', '白银'];
     const augs = h.augs.filter(a => state.rar === '全部' || a.r === state.rar).slice(0, 20);
     $('#detail').innerHTML = `
+      ${fromCatalog ? `<a class="detail-from-catalog" href="${esc(catalogReturn)}">← 返回英雄分类</a>` : ''}
       <button class="btn back" data-back>← 返回</button>
       <div class="hero-head">
         ${ava(h, 'lg')}
@@ -157,7 +161,7 @@
 
   function select(name) {
     state.hero = name;
-    history.replaceState(null, '', '#hero=' + encodeURIComponent(name));
+    history.replaceState(null, '', '#hero=' + encodeURIComponent(name) + (fromCatalog ? '&from=catalog&role=' + encodeURIComponent(catalogRole) : ''));
     renderDetail(); renderList();
     if (matchMedia('(max-width: 860px)').matches) { document.body.classList.add('sheet'); $('#detail').scrollTop = 0; }
   }
@@ -179,7 +183,14 @@
   });
   $('#search').addEventListener('input', e => { state.q = e.target.value; renderList(); });
 
-  const m = /hero=([^&]+)/.exec(location.hash);
-  if (m && HEROES.some(h => h.name === decodeURIComponent(m[1]))) state.hero = decodeURIComponent(m[1]);
+  const initialHero = new URLSearchParams(location.hash.slice(1)).get('hero');
+  const validHero = HEROES.some(h => h.name === initialHero);
+  if (validHero) state.hero = initialHero;
   renderMeta(); renderList(); renderDetail();
+  if (fromCatalog) document.body.classList.add('from-catalog');
+  if (validHero && matchMedia('(max-width: 860px)').matches) document.body.classList.add('sheet');
+  if (validHero) requestAnimationFrame(() => {
+    if (matchMedia('(max-width: 860px)').matches) $('#detail').scrollTop = 0;
+    else $('#detail').scrollIntoView({block:'start'});
+  });
 })();
