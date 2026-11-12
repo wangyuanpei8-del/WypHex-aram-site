@@ -13,7 +13,7 @@
   const LOW = 1000; // 搭配场次少于这个数的标橙色，提醒样本少
 
   const fromCatalog = new URLSearchParams(location.hash.slice(1)).get('from') === 'catalog';
-  const catalogRole = new URLSearchParams(location.hash.slice(1)).get('role') || 'all';
+  const catalogRole = new URLSearchParams(location.hash.slice(1)).get('role') || 'fighter';
   const catalogReturn = 'heroes.html?return=1#role=' + encodeURIComponent(catalogRole);
   const state = { q: '', hero: HEROES[0].name, rar: '全部' };
 
