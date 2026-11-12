@@ -35,6 +35,7 @@ const augIcons = await inlineMap('HEX_AUG_ICONS');
 const iconJs = `window.HEX_ICONS = ${JSON.stringify(icons)};\nwindow.HEX_ITEM_ICONS = ${JSON.stringify(itemIcons)};\nwindow.HEX_AUG_ICONS = ${JSON.stringify(augIcons)};`;
 const safe = s => s.replace(/<\/script/gi, '<\\/script');
 html = html
+  .replace('href="heroes.html"', 'href="https://wangyuanpei8-del.github.io/WypHex-aram-site/heroes.html"')
   .replace(/<link rel="stylesheet" href="assets\/app\.css(?:\?[^"]*)?" \/>/, () => `<style>\n${css}\n</style>`)
   .replace(/<script src="data\/data\.js(?:\?[^"]*)?"><\/script>/, () => `<script>\n${safe(data)}\n${iconJs}\n</script>`)
   .replace(/<script src="data\/icons\.js(?:\?[^"]*)?"><\/script>/, () => '')
