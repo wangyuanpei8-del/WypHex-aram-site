@@ -9832,54 +9832,54 @@
     "items": [
      {
       "name": "金铲铲",
-      "wr": 59.5,
-      "games": 9423,
-      "score": 91.5
+      "wr": 59.2,
+      "games": 17428,
+      "score": 92.1
      },
      {
       "name": "终极九头蛇",
       "wr": 58,
-      "games": 40867,
+      "games": 76132,
       "score": 90.7
      },
      {
       "name": "虚空献祭",
-      "wr": 55,
-      "games": 8749,
+      "wr": 54.7,
+      "games": 16161,
       "score": 82.8
      },
      {
       "name": "暴食胫甲",
       "wr": 54.3,
-      "games": 63858,
-      "score": 82.3
+      "games": 119063,
+      "score": 82.5
      },
      {
       "name": "无穷饥渴",
-      "wr": 53.7,
-      "games": 137625,
-      "score": 81.1
+      "wr": 53.8,
+      "games": 267756,
+      "score": 81.5
      },
      {
       "name": "幽梦之灵",
-      "wr": 53.6,
-      "games": 4587,
-      "score": 76.9
+      "wr": 52.9,
+      "games": 8538,
+      "score": 75.4
      },
      {
       "name": "公理圆弧",
-      "wr": 52.5,
-      "games": 44340,
-      "score": 74.5
+      "wr": 52.3,
+      "games": 84104,
+      "score": 73.7
      },
      {
       "name": "赛瑞尔达的怨恨",
       "wr": 52.4,
-      "games": 8402,
-      "score": 72.6
+      "games": 15585,
+      "score": 73.4
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -9994,54 +9994,54 @@
     "items": [
      {
       "name": "终极九头蛇",
-      "wr": 61,
-      "games": 33086,
-      "score": 95
+      "wr": 60.9,
+      "games": 59193,
+      "score": 95.1
      },
      {
       "name": "金铲铲",
-      "wr": 57.2,
-      "games": 8305,
-      "score": 87.7
+      "wr": 56.9,
+      "games": 14981,
+      "score": 88.1
      },
      {
       "name": "暴食胫甲",
       "wr": 55.4,
-      "games": 49512,
-      "score": 85.8
+      "games": 89565,
+      "score": 85.7
      },
      {
       "name": "无穷饥渴",
-      "wr": 54.7,
-      "games": 112253,
-      "score": 84.4
-     },
-     {
-      "name": "贪欲九头蛇",
-      "wr": 53.2,
-      "games": 90721,
-      "score": 79.1
+      "wr": 54.5,
+      "games": 209751,
+      "score": 84.1
      },
      {
       "name": "死亡之舞",
-      "wr": 52.1,
-      "games": 386610,
+      "wr": 52,
+      "games": 698657,
       "score": 78.9
      },
      {
-      "name": "玛莫提乌斯之噬",
-      "wr": 53.3,
-      "games": 6732,
-      "score": 76.6
+      "name": "贪欲九头蛇",
+      "wr": 53,
+      "games": 163434,
+      "score": 78.5
      },
      {
-      "name": "界弓",
-      "wr": 52.6,
-      "games": 26362,
-      "score": 75.3
+      "name": "玛莫提乌斯之噬",
+      "wr": 53.2,
+      "games": 12327,
+      "score": 77.5
+     },
+     {
+      "name": "轻灵之靴",
+      "wr": 54.2,
+      "games": 2085,
+      "score": 76.6
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -10157,53 +10157,53 @@
      {
       "name": "金铲铲",
       "wr": 56.4,
-      "games": 22080,
-      "score": 88.9
+      "games": 41618,
+      "score": 89.2
      },
      {
       "name": "死亡之舞",
-      "wr": 55.8,
-      "games": 5636,
+      "wr": 55.1,
+      "games": 11096,
       "score": 85.6
      },
      {
       "name": "终极九头蛇",
-      "wr": 53.3,
-      "games": 11199,
-      "score": 80.6
+      "wr": 53.1,
+      "games": 20884,
+      "score": 80.8
      },
      {
       "name": "黯炎火炬",
-      "wr": 51.5,
-      "games": 1112458,
-      "score": 77.7
+      "wr": 51.4,
+      "games": 2110643,
+      "score": 77.9
+     },
+     {
+      "name": "无穷饥渴",
+      "wr": 52.1,
+      "games": 15288,
+      "score": 76.6
      },
      {
       "name": "轻灵之靴",
-      "wr": 52,
-      "games": 33934,
-      "score": 76.5
+      "wr": 51.8,
+      "games": 65237,
+      "score": 75.6
      },
      {
       "name": "暴食胫甲",
-      "wr": 51.7,
-      "games": 157909,
+      "wr": 51.6,
+      "games": 300393,
       "score": 74.9
      },
      {
       "name": "兰德里的折磨",
-      "wr": 51.1,
-      "games": 1048951,
-      "score": 73.4
-     },
-     {
-      "name": "无穷饥渴",
-      "wr": 51.6,
-      "games": 7643,
-      "score": 72.8
+      "wr": 51,
+      "games": 1988180,
+      "score": 73.3
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -10318,54 +10318,54 @@
     "items": [
      {
       "name": "冰脉护手",
-      "wr": 55.3,
-      "games": 20511,
-      "score": 85.9
+      "wr": 55.6,
+      "games": 37832,
+      "score": 86.7
      },
      {
       "name": "虚空献祭",
-      "wr": 55.4,
-      "games": 17324,
-      "score": 85.8
+      "wr": 55.5,
+      "games": 32373,
+      "score": 86.6
      },
      {
       "name": "金铲铲",
-      "wr": 54,
-      "games": 12685,
-      "score": 81.8
-     },
-     {
-      "name": "冰霜之心",
-      "wr": 53.2,
-      "games": 15531,
-      "score": 79.2
+      "wr": 53.7,
+      "games": 23979,
+      "score": 81.6
      },
      {
       "name": "骑士之誓",
-      "wr": 55.5,
-      "games": 1276,
-      "score": 78.4
+      "wr": 54.7,
+      "games": 2438,
+      "score": 79.5
      },
      {
-      "name": "原生质护带",
-      "wr": 54.8,
-      "games": 1399,
-      "score": 77.4
+      "name": "冰霜之心",
+      "wr": 53,
+      "games": 29092,
+      "score": 78.9
      },
      {
       "name": "日炎圣盾",
       "wr": 52.6,
-      "games": 16569,
-      "score": 77
+      "games": 30968,
+      "score": 77.5
      },
      {
-      "name": "暴食胫甲",
-      "wr": 52.4,
-      "games": 28771,
-      "score": 76.1
+      "name": "终极九头蛇",
+      "wr": 52.3,
+      "games": 61348,
+      "score": 76
+     },
+     {
+      "name": "霸王血铠",
+      "wr": 52.1,
+      "games": 226749,
+      "score": 75.6
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -10480,54 +10480,54 @@
     "items": [
      {
       "name": "金铲铲",
-      "wr": 53.4,
-      "games": 5522,
-      "score": 79.2
+      "wr": 53.5,
+      "games": 10452,
+      "score": 81.2
      },
      {
       "name": "暴食胫甲",
-      "wr": 52,
-      "games": 43808,
-      "score": 76.3
+      "wr": 52.1,
+      "games": 83533,
+      "score": 77.2
+     },
+     {
+      "name": "轻灵之靴",
+      "wr": 51.6,
+      "games": 7591,
+      "score": 72.8
      },
      {
       "name": "黯炎火炬",
       "wr": 50.6,
-      "games": 396370,
-      "score": 70.1
-     },
-     {
-      "name": "毁坏仪式",
-      "wr": 51.3,
-      "games": 2490,
-      "score": 67.8
-     },
-     {
-      "name": "轻灵之靴",
-      "wr": 50.9,
-      "games": 3988,
-      "score": 65.9
-     },
-     {
-      "name": "风暴狂涌",
-      "wr": 50.4,
-      "games": 15937,
-      "score": 63.5
-     },
-     {
-      "name": "沃格勒特的巫师帽",
-      "wr": 50.3,
-      "games": 17841,
-      "score": 62.1
+      "games": 749538,
+      "score": 70.5
      },
      {
       "name": "星界驱驰",
+      "wr": 51.5,
+      "games": 2569,
+      "score": 69.5
+     },
+     {
+      "name": "毁坏仪式",
       "wr": 50.7,
-      "games": 1358,
-      "score": 60.8
+      "games": 4579,
+      "score": 65.5
+     },
+     {
+      "name": "末日寒冬",
+      "wr": 50.8,
+      "games": 1853,
+      "score": 63.4
+     },
+     {
+      "name": "帝国指令",
+      "wr": 50.4,
+      "games": 4823,
+      "score": 62.8
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -10641,55 +10641,55 @@
     ],
     "items": [
      {
-      "name": "终极九头蛇",
-      "wr": 58,
-      "games": 40447,
-      "score": 90.5
-     },
-     {
       "name": "金铲铲",
-      "wr": 58.7,
-      "games": 11039,
-      "score": 90.5
+      "wr": 58.8,
+      "games": 21060,
+      "score": 91.4
      },
      {
-      "name": "虚空献祭",
-      "wr": 55.9,
-      "games": 7392,
-      "score": 84.2
-     },
-     {
-      "name": "无穷饥渴",
-      "wr": 54.8,
-      "games": 131552,
-      "score": 84
+      "name": "终极九头蛇",
+      "wr": 58.1,
+      "games": 76964,
+      "score": 90.8
      },
      {
       "name": "暴食胫甲",
-      "wr": 54.8,
-      "games": 67876,
+      "wr": 54.9,
+      "games": 130122,
+      "score": 84
+     },
+     {
+      "name": "无穷饥渴",
+      "wr": 54.5,
+      "games": 262140,
       "score": 83.5
      },
      {
       "name": "轻灵之靴",
       "wr": 55.2,
-      "games": 4999,
-      "score": 81.5
+      "games": 9532,
+      "score": 83
      },
      {
-      "name": "霸王血铠",
-      "wr": 53.8,
-      "games": 71696,
-      "score": 80.3
+      "name": "虚空献祭",
+      "wr": 54.9,
+      "games": 13961,
+      "score": 82.9
      },
      {
       "name": "幽梦之灵",
       "wr": 54.3,
-      "games": 9175,
+      "games": 17595,
+      "score": 81.5
+     },
+     {
+      "name": "霸王血铠",
+      "wr": 53.7,
+      "games": 137489,
       "score": 80.1
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -10804,54 +10804,54 @@
     "items": [
      {
       "name": "沃格勒特的巫师帽",
-      "wr": 56.4,
-      "games": 35968,
-      "score": 87.8
+      "wr": 56.5,
+      "games": 67020,
+      "score": 88.1
      },
      {
       "name": "金铲铲",
-      "wr": 56.4,
-      "games": 8929,
-      "score": 86.3
-     },
-     {
-      "name": "斯塔缇克电刃",
-      "wr": 53.7,
-      "games": 17688,
-      "score": 80
-     },
-     {
-      "name": "灭世者的死亡之帽",
-      "wr": 52.6,
-      "games": 525629,
-      "score": 79.8
-     },
-     {
-      "name": "暴食胫甲",
-      "wr": 53.4,
-      "games": 73188,
-      "score": 79.5
+      "wr": 55.9,
+      "games": 16783,
+      "score": 86.2
      },
      {
       "name": "女妖面纱",
       "wr": 53.7,
-      "games": 9626,
-      "score": 79.1
+      "games": 18597,
+      "score": 80
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 53.5,
+      "games": 138842,
+      "score": 79.9
+     },
+     {
+      "name": "灭世者的死亡之帽",
+      "wr": 52.5,
+      "games": 995631,
+      "score": 79.7
      },
      {
       "name": "轻灵之靴",
-      "wr": 55.4,
-      "games": 1362,
-      "score": 77.6
+      "wr": 54.8,
+      "games": 2451,
+      "score": 79
+     },
+     {
+      "name": "斯塔缇克电刃",
+      "wr": 53.3,
+      "games": 33332,
+      "score": 78.9
      },
      {
       "name": "毁坏仪式",
-      "wr": 53,
-      "games": 6976,
-      "score": 75.5
+      "wr": 52.9,
+      "games": 13249,
+      "score": 76.4
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -10966,54 +10966,54 @@
     "items": [
      {
       "name": "虚空献祭",
-      "wr": 56.3,
-      "games": 38519,
-      "score": 88.9
+      "wr": 56.1,
+      "games": 71947,
+      "score": 88.6
      },
      {
       "name": "骑士之誓",
-      "wr": 54.7,
-      "games": 8167,
-      "score": 83.9
+      "wr": 54.6,
+      "games": 15987,
+      "score": 84.4
      },
      {
       "name": "班德尔音管",
-      "wr": 55.2,
-      "games": 1475,
-      "score": 79.3
+      "wr": 55.5,
+      "games": 2847,
+      "score": 82.8
      },
      {
       "name": "冰脉护手",
-      "wr": 52.6,
-      "games": 17782,
-      "score": 78.6
+      "wr": 53.2,
+      "games": 32869,
+      "score": 80.8
      },
      {
       "name": "轻灵之靴",
-      "wr": 54.3,
-      "games": 1912,
-      "score": 78.4
+      "wr": 54,
+      "games": 3545,
+      "score": 79.7
      },
      {
       "name": "亡者的板甲",
-      "wr": 52.3,
-      "games": 10319,
-      "score": 76.5
-     },
-     {
-      "name": "深渊面具",
-      "wr": 52,
-      "games": 6379,
-      "score": 74.4
+      "wr": 52.6,
+      "games": 19047,
+      "score": 78.5
      },
      {
       "name": "暴食胫甲",
-      "wr": 52.4,
-      "games": 3394,
-      "score": 74.3
+      "wr": 53,
+      "games": 6259,
+      "score": 78.1
+     },
+     {
+      "name": "金铲铲",
+      "wr": 52.5,
+      "games": 10112,
+      "score": 76.9
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -11128,54 +11128,54 @@
     "items": [
      {
       "name": "虚空献祭",
-      "wr": 55.9,
-      "games": 24656,
-      "score": 88.1
-     },
-     {
-      "name": "暴食胫甲",
-      "wr": 52.3,
-      "games": 12563,
-      "score": 76.9
-     },
-     {
-      "name": "亡者的板甲",
-      "wr": 52.4,
-      "games": 6776,
-      "score": 76.4
+      "wr": 55.7,
+      "games": 46472,
+      "score": 87.9
      },
      {
       "name": "轻灵之靴",
-      "wr": 53.2,
-      "games": 2275,
-      "score": 76.2
+      "wr": 53.6,
+      "games": 4328,
+      "score": 79.6
      },
      {
-      "name": "深渊面具",
+      "name": "暴食胫甲",
       "wr": 52.2,
-      "games": 5563,
-      "score": 74.9
+      "games": 24073,
+      "score": 77.3
+     },
+     {
+      "name": "亡者的板甲",
+      "wr": 52.2,
+      "games": 12679,
+      "score": 76.5
      },
      {
       "name": "金铲铲",
-      "wr": 52,
-      "games": 5688,
-      "score": 74.2
+      "wr": 52.1,
+      "games": 10723,
+      "score": 75.9
      },
      {
-      "name": "冰脉护手",
-      "wr": 51.3,
-      "games": 14433,
-      "score": 72
+      "name": "骑士之誓",
+      "wr": 52.1,
+      "games": 7856,
+      "score": 75.2
      },
      {
-      "name": "璀璨回响",
-      "wr": 51.1,
-      "games": 47431,
-      "score": 71.1
+      "name": "基克的聚合",
+      "wr": 53,
+      "games": 1748,
+      "score": 74.5
+     },
+     {
+      "name": "深渊面具",
+      "wr": 51.8,
+      "games": 10479,
+      "score": 74.4
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -11290,54 +11290,54 @@
     "items": [
      {
       "name": "虚空献祭",
-      "wr": 59.1,
-      "games": 2302,
-      "score": 87.8
-     },
-     {
-      "name": "日炎圣盾",
-      "wr": 56.1,
-      "games": 1825,
-      "score": 81.8
+      "wr": 59.3,
+      "games": 4289,
+      "score": 90.4
      },
      {
       "name": "狂徒铠甲",
-      "wr": 53.5,
-      "games": 14084,
-      "score": 81.3
+      "wr": 53.9,
+      "games": 26675,
+      "score": 83.4
      },
      {
-      "name": "终极九头蛇",
-      "wr": 53.7,
-      "games": 3651,
-      "score": 78.4
-     },
-     {
-      "name": "无终恨意",
-      "wr": 52.3,
-      "games": 25295,
-      "score": 78
+      "name": "日炎圣盾",
+      "wr": 54.8,
+      "games": 3420,
+      "score": 81.4
      },
      {
       "name": "霸王血铠",
-      "wr": 52.6,
-      "games": 10142,
-      "score": 77.1
+      "wr": 52.9,
+      "games": 19614,
+      "score": 79.7
      },
      {
-      "name": "璀璨回响",
-      "wr": 53.2,
-      "games": 2638,
-      "score": 75.8
+      "name": "金铲铲",
+      "wr": 55,
+      "games": 1748,
+      "score": 79.4
      },
      {
       "name": "骑士之誓",
-      "wr": 62.6,
-      "games": 206,
-      "score": 74.8
+      "wr": 61,
+      "games": 410,
+      "score": 79.4
+     },
+     {
+      "name": "无终恨意",
+      "wr": 52.4,
+      "games": 47635,
+      "score": 79.2
+     },
+     {
+      "name": "终极九头蛇",
+      "wr": 53.2,
+      "games": 6958,
+      "score": 78.9
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -11452,54 +11452,54 @@
     "items": [
      {
       "name": "金铲铲",
-      "wr": 60.1,
-      "games": 3606,
+      "wr": 58.9,
+      "games": 6679,
       "score": 89.7
      },
      {
       "name": "终极九头蛇",
-      "wr": 57.8,
-      "games": 15315,
-      "score": 89.3
+      "wr": 57.6,
+      "games": 28546,
+      "score": 89.6
      },
      {
       "name": "霸王血铠",
-      "wr": 56.1,
-      "games": 11338,
-      "score": 85.4
-     },
-     {
-      "name": "无终恨意",
-      "wr": 55.4,
-      "games": 4772,
-      "score": 81.7
-     },
-     {
-      "name": "无穷饥渴",
-      "wr": 53.6,
-      "games": 120836,
-      "score": 81.6
-     },
-     {
-      "name": "玛莫提乌斯之噬",
-      "wr": 55.5,
-      "games": 3786,
-      "score": 81.3
+      "wr": 56,
+      "games": 21419,
+      "score": 86.2
      },
      {
       "name": "轻灵之靴",
-      "wr": 56.7,
-      "games": 1304,
-      "score": 79.7
+      "wr": 57,
+      "games": 2492,
+      "score": 83.3
      },
      {
-      "name": "死亡之舞",
-      "wr": 52.4,
-      "games": 188877,
-      "score": 79.4
+      "name": "无终恨意",
+      "wr": 55.2,
+      "games": 9030,
+      "score": 82.9
+     },
+     {
+      "name": "玛莫提乌斯之噬",
+      "wr": 55.3,
+      "games": 7075,
+      "score": 82.6
+     },
+     {
+      "name": "无穷饥渴",
+      "wr": 53.4,
+      "games": 230092,
+      "score": 81.3
+     },
+     {
+      "name": "狂徒铠甲",
+      "wr": 54,
+      "games": 12294,
+      "score": 79.7
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -11614,54 +11614,54 @@
     "items": [
      {
       "name": "虚空献祭",
-      "wr": 55.9,
-      "games": 26372,
-      "score": 89.7
+      "wr": 55.3,
+      "games": 49625,
+      "score": 88.9
      },
      {
       "name": "明朗之靴",
-      "wr": 52.9,
-      "games": 4310,
-      "score": 80
-     },
-     {
-      "name": "黯炎火炬",
-      "wr": 51.9,
-      "games": 15423,
-      "score": 79
-     },
-     {
-      "name": "法师之靴",
-      "wr": 51.5,
-      "games": 38611,
-      "score": 78.1
+      "wr": 53.2,
+      "games": 7902,
+      "score": 82.6
      },
      {
       "name": "轻灵之靴",
-      "wr": 52.2,
-      "games": 4857,
-      "score": 77.9
+      "wr": 52.6,
+      "games": 9185,
+      "score": 80.8
      },
      {
-      "name": "暴食胫甲",
-      "wr": 50.8,
-      "games": 63802,
-      "score": 74.7
+      "name": "黯炎火炬",
+      "wr": 51.7,
+      "games": 29798,
+      "score": 79.2
+     },
+     {
+      "name": "法师之靴",
+      "wr": 51.3,
+      "games": 70280,
+      "score": 77.8
      },
      {
       "name": "帝国指令",
-      "wr": 51.9,
-      "games": 1078,
-      "score": 71.3
+      "wr": 51.7,
+      "games": 2021,
+      "score": 73.7
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 50.5,
+      "games": 119262,
+      "score": 73.4
      },
      {
       "name": "日炎圣盾",
       "wr": 50.1,
-      "games": 17909,
-      "score": 69.8
+      "games": 33946,
+      "score": 70.4
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -11776,54 +11776,54 @@
     "items": [
      {
       "name": "流水法杖",
-      "wr": 54.5,
-      "games": 35650,
+      "wr": 54.7,
+      "games": 68060,
       "score": 86.4
      },
      {
       "name": "骑士之誓",
-      "wr": 56.2,
-      "games": 4007,
-      "score": 86.1
+      "wr": 55.1,
+      "games": 7838,
+      "score": 85
      },
      {
       "name": "黎明核心",
-      "wr": 53.2,
-      "games": 53639,
-      "score": 83.3
+      "wr": 53,
+      "games": 103355,
+      "score": 82
      },
      {
       "name": "歌之权冠",
-      "wr": 52.3,
-      "games": 93321,
-      "score": 81.6
+      "wr": 52.5,
+      "games": 177093,
+      "score": 81.2
      },
      {
       "name": "炽热香炉",
-      "wr": 52.4,
-      "games": 73086,
-      "score": 81.4
+      "wr": 52.6,
+      "games": 138337,
+      "score": 81.1
      },
      {
       "name": "月石再生器",
-      "wr": 51.3,
-      "games": 105195,
-      "score": 77.2
+      "wr": 51.6,
+      "games": 198758,
+      "score": 77.3
      },
      {
       "name": "花晓之剑",
       "wr": 51.7,
-      "games": 14973,
-      "score": 76.2
+      "games": 28533,
+      "score": 75.1
      },
      {
-      "name": "米凯尔的祝福",
-      "wr": 51.8,
-      "games": 7253,
-      "score": 75.4
+      "name": "金铲铲",
+      "wr": 52.2,
+      "games": 4433,
+      "score": 75
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -11937,55 +11937,55 @@
     ],
     "items": [
      {
-      "name": "沃格勒特的巫师帽",
-      "wr": 56,
-      "games": 29830,
-      "score": 88.4
+      "name": "虚空献祭",
+      "wr": 56.6,
+      "games": 12024,
+      "score": 88.6
      },
      {
-      "name": "虚空献祭",
-      "wr": 56.1,
-      "games": 6502,
-      "score": 86.5
+      "name": "沃格勒特的巫师帽",
+      "wr": 55.9,
+      "games": 56199,
+      "score": 88.3
      },
      {
       "name": "金铲铲",
       "wr": 55.2,
-      "games": 10097,
-      "score": 85.5
+      "games": 18934,
+      "score": 86.3
      },
      {
       "name": "死亡之舞",
-      "wr": 53,
-      "games": 17664,
-      "score": 80
+      "wr": 52.8,
+      "games": 34234,
+      "score": 79.6
      },
      {
       "name": "暴食胫甲",
-      "wr": 52.2,
-      "games": 115991,
-      "score": 77.7
+      "wr": 52.1,
+      "games": 219744,
+      "score": 77
      },
      {
       "name": "毁坏仪式",
-      "wr": 52.1,
-      "games": 40937,
-      "score": 76.9
+      "wr": 52,
+      "games": 78271,
+      "score": 76.3
      },
      {
-      "name": "深渊面具",
-      "wr": 52.5,
-      "games": 3463,
-      "score": 75
+      "name": "轻灵之靴",
+      "wr": 53.2,
+      "games": 2275,
+      "score": 75.8
      },
      {
       "name": "狂徒铠甲",
-      "wr": 51.7,
-      "games": 54140,
-      "score": 74.8
+      "wr": 51.9,
+      "games": 101597,
+      "score": 75.7
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -12099,55 +12099,55 @@
     ],
     "items": [
      {
-      "name": "终极九头蛇",
-      "wr": 59.6,
-      "games": 40497,
-      "score": 93.1
+      "name": "金铲铲",
+      "wr": 60.8,
+      "games": 18896,
+      "score": 94.1
      },
      {
-      "name": "金铲铲",
-      "wr": 60.3,
-      "games": 9789,
-      "score": 92.6
+      "name": "终极九头蛇",
+      "wr": 59.8,
+      "games": 76914,
+      "score": 93.3
      },
      {
       "name": "无穷饥渴",
-      "wr": 57.1,
-      "games": 55961,
-      "score": 89.1
+      "wr": 56.9,
+      "games": 115393,
+      "score": 88.7
      },
      {
       "name": "幽梦之灵",
-      "wr": 56.6,
-      "games": 9253,
-      "score": 86.2
-     },
-     {
-      "name": "死亡之舞",
-      "wr": 54.9,
-      "games": 82535,
-      "score": 84.1
+      "wr": 56.4,
+      "games": 17612,
+      "score": 86.8
      },
      {
       "name": "岚切",
       "wr": 55.5,
-      "games": 5564,
-      "score": 82.8
+      "games": 10679,
+      "score": 84.1
      },
      {
-      "name": "不朽盾弓",
-      "wr": 55.2,
-      "games": 6302,
-      "score": 82.3
+      "name": "死亡之舞",
+      "wr": 54.8,
+      "games": 160902,
+      "score": 84
      },
      {
       "name": "玛莫提乌斯之噬",
-      "wr": 55,
-      "games": 4349,
-      "score": 80.9
+      "wr": 55.4,
+      "games": 8218,
+      "score": 83.2
+     },
+     {
+      "name": "暴食胫甲",
+      "wr": 53.9,
+      "games": 144803,
+      "score": 80.8
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -12262,54 +12262,54 @@
     "items": [
      {
       "name": "沃格勒特的巫师帽",
-      "wr": 53.8,
-      "games": 43501,
+      "wr": 53.7,
+      "games": 82770,
       "score": 82.7
      },
      {
       "name": "毁坏仪式",
       "wr": 53.3,
-      "games": 9946,
-      "score": 79.5
-     },
-     {
-      "name": "风暴狂涌",
-      "wr": 52,
-      "games": 109608,
-      "score": 76
+      "games": 18708,
+      "score": 80.8
      },
      {
       "name": "暴食胫甲",
-      "wr": 51.9,
-      "games": 99759,
-      "score": 75.4
+      "wr": 52.1,
+      "games": 190712,
+      "score": 76.5
      },
      {
-      "name": "视界专注",
-      "wr": 52.3,
-      "games": 7086,
-      "score": 75
+      "name": "风暴狂涌",
+      "wr": 51.8,
+      "games": 218789,
+      "score": 75.5
      },
      {
       "name": "金铲铲",
-      "wr": 52.2,
-      "games": 8907,
-      "score": 74.9
+      "wr": 52,
+      "games": 17121,
+      "score": 75.5
      },
      {
-      "name": "女妖面纱",
-      "wr": 52.1,
-      "games": 4968,
-      "score": 73
+      "name": "视界专注",
+      "wr": 51.9,
+      "games": 13581,
+      "score": 74.4
      },
      {
       "name": "兰德里的折磨",
-      "wr": 50.3,
-      "games": 724936,
-      "score": 72.4
+      "wr": 50.2,
+      "games": 1371934,
+      "score": 72.1
+     },
+     {
+      "name": "灭世者的死亡之帽",
+      "wr": 50.9,
+      "games": 751955,
+      "score": 71.1
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -12424,54 +12424,54 @@
     "items": [
      {
       "name": "终极九头蛇",
-      "wr": 57.7,
-      "games": 12168,
-      "score": 90.8
+      "wr": 58,
+      "games": 23036,
+      "score": 91.9
      },
      {
       "name": "冰脉护手",
       "wr": 58.3,
-      "games": 6708,
-      "score": 90.4
+      "games": 12430,
+      "score": 91.5
      },
      {
       "name": "亡者的板甲",
-      "wr": 59.2,
-      "games": 3224,
-      "score": 89.6
+      "wr": 59,
+      "games": 5906,
+      "score": 91
      },
      {
       "name": "冰霜之心",
-      "wr": 57.2,
-      "games": 5655,
-      "score": 88.3
+      "wr": 56.9,
+      "games": 10519,
+      "score": 89
      },
      {
       "name": "金铲铲",
-      "wr": 57.5,
-      "games": 3773,
-      "score": 87.6
-     },
-     {
-      "name": "虚空献祭",
-      "wr": 54.3,
-      "games": 3274,
-      "score": 80.7
-     },
-     {
-      "name": "千变者贾修",
-      "wr": 52.9,
-      "games": 20998,
-      "score": 80.3
+      "wr": 57,
+      "games": 7184,
+      "score": 88.5
      },
      {
       "name": "日炎圣盾",
-      "wr": 53.5,
-      "games": 3882,
-      "score": 79.1
+      "wr": 54.1,
+      "games": 7182,
+      "score": 82.2
+     },
+     {
+      "name": "千变者贾修",
+      "wr": 53.4,
+      "games": 39816,
+      "score": 82.1
+     },
+     {
+      "name": "虚空献祭",
+      "wr": 54.1,
+      "games": 6084,
+      "score": 81.8
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -12586,54 +12586,54 @@
     "items": [
      {
       "name": "沃格勒特的巫师帽",
-      "wr": 53.9,
-      "games": 15230,
-      "score": 83.9
+      "wr": 53.7,
+      "games": 29389,
+      "score": 84
      },
      {
       "name": "暴食胫甲",
-      "wr": 52.7,
-      "games": 19048,
-      "score": 80.3
+      "wr": 52.6,
+      "games": 36792,
+      "score": 80.7
      },
      {
       "name": "金铲铲",
-      "wr": 51.9,
-      "games": 3523,
-      "score": 73.8
-     },
-     {
-      "name": "魔切",
-      "wr": 51.5,
-      "games": 2402,
-      "score": 70.6
-     },
-     {
-      "name": "黯炎火炬",
-      "wr": 50.6,
-      "games": 67849,
-      "score": 70
+      "wr": 52.3,
+      "games": 6728,
+      "score": 77.4
      },
      {
       "name": "毁坏仪式",
-      "wr": 51.1,
-      "games": 2679,
-      "score": 69
+      "wr": 50.8,
+      "games": 5102,
+      "score": 69.5
      },
      {
-      "name": "海克斯科技枪刃",
-      "wr": 51.8,
-      "games": 824,
-      "score": 67.1
+      "name": "黯炎火炬",
+      "wr": 50.4,
+      "games": 131624,
+      "score": 69.1
      },
      {
-      "name": "朔极之矛",
-      "wr": 52,
-      "games": 446,
-      "score": 64.1
+      "name": "炽天使之拥",
+      "wr": 49.9,
+      "games": 42699,
+      "score": 63.8
+     },
+     {
+      "name": "灭世者的死亡之帽",
+      "wr": 49.8,
+      "games": 313159,
+      "score": 63
+     },
+     {
+      "name": "魔切",
+      "wr": 50,
+      "games": 4604,
+      "score": 62
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -12747,55 +12747,55 @@
     ],
     "items": [
      {
-      "name": "流水法杖",
-      "wr": 51.6,
-      "games": 44571,
-      "score": 77.1
-     },
-     {
       "name": "沃格勒特的巫师帽",
-      "wr": 52.9,
-      "games": 2701,
-      "score": 76.9
-     },
-     {
-      "name": "灭世者的死亡之帽",
-      "wr": 51.6,
-      "games": 17820,
-      "score": 76
+      "wr": 53.8,
+      "games": 5159,
+      "score": 81.1
      },
      {
       "name": "海力亚的回响",
-      "wr": 52,
-      "games": 6150,
-      "score": 75.9
+      "wr": 52.2,
+      "games": 12302,
+      "score": 77.8
      },
      {
-      "name": "轻灵之靴",
-      "wr": 52.3,
-      "games": 3132,
-      "score": 75
+      "name": "流水法杖",
+      "wr": 51.7,
+      "games": 86910,
+      "score": 77.1
      },
      {
-      "name": "黎明核心",
-      "wr": 51.1,
-      "games": 49933,
-      "score": 74.2
-     },
-     {
-      "name": "歌之权冠",
-      "wr": 50.7,
-      "games": 106982,
-      "score": 74.1
+      "name": "毁坏仪式",
+      "wr": 52.8,
+      "games": 3317,
+      "score": 76.7
      },
      {
       "name": "金铲铲",
-      "wr": 52.3,
-      "games": 1551,
-      "score": 72.3
+      "wr": 52.5,
+      "games": 2855,
+      "score": 75.3
+     },
+     {
+      "name": "歌之权冠",
+      "wr": 50.8,
+      "games": 207812,
+      "score": 74.3
+     },
+     {
+      "name": "黎明核心",
+      "wr": 51.2,
+      "games": 98264,
+      "score": 74.3
+     },
+     {
+      "name": "灭世者的死亡之帽",
+      "wr": 51.3,
+      "games": 33973,
+      "score": 74.3
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -12910,54 +12910,54 @@
     "items": [
      {
       "name": "死亡之舞",
-      "wr": 60.2,
-      "games": 34888,
-      "score": 95.1
+      "wr": 60.4,
+      "games": 68747,
+      "score": 95.4
      },
      {
       "name": "金铲铲",
-      "wr": 59.1,
-      "games": 18094,
+      "wr": 58.9,
+      "games": 33596,
       "score": 93.4
      },
      {
       "name": "狂妄",
       "wr": 52.8,
-      "games": 156292,
-      "score": 80.9
+      "games": 302004,
+      "score": 80.7
      },
      {
       "name": "无穷饥渴",
-      "wr": 52.5,
-      "games": 33765,
-      "score": 79
+      "wr": 52.6,
+      "games": 68704,
+      "score": 79.8
      },
      {
       "name": "暴食胫甲",
-      "wr": 52.1,
-      "games": 149642,
-      "score": 78.1
+      "wr": 51.9,
+      "games": 286429,
+      "score": 77.1
      },
      {
       "name": "幽梦之灵",
-      "wr": 51.6,
-      "games": 7094,
-      "score": 73.4
+      "wr": 51.7,
+      "games": 13775,
+      "score": 74.7
      },
      {
       "name": "终极九头蛇",
-      "wr": 51.1,
-      "games": 25173,
-      "score": 72.2
+      "wr": 51,
+      "games": 47581,
+      "score": 71.4
      },
      {
       "name": "海克斯科技枪刃",
-      "wr": 53,
-      "games": 897,
-      "score": 71.1
+      "wr": 51.9,
+      "games": 1691,
+      "score": 70.5
      }
     ],
-    "date": "2026-11-09",
+    "date": "2026-11-11",
     "detailPatch": "16.22",
     "coverage": "visible-table",
     "sourceCount": 16,
@@ -37065,82 +37065,84 @@
     "heroes": [
      {
       "id": 16,
-      "score": 74.1,
-      "wr": 51.2,
-      "games": 70103
+      "score": 72.3,
+      "wr": 51.1,
+      "games": 121356
      },
      {
       "id": 64,
-      "score": 66.2,
-      "wr": 47.2,
-      "games": 44503
+      "score": 70.7,
+      "wr": 46.9,
+      "games": 82678
      },
      {
       "id": 82,
       "score": 60,
-      "wr": 46.5,
-      "games": 48025
+      "wr": 47,
+      "games": 68497
      },
      {
       "id": 68,
-      "score": 60,
-      "wr": 49.4,
-      "games": 36090
-     },
-     {
-      "id": 143,
       "score": 58.4,
-      "wr": 49.6,
-      "games": 25750
-     },
-     {
-      "id": 432,
-      "score": 58.1,
-      "wr": 45.7,
-      "games": 5567
+      "wr": 49.3,
+      "games": 63836
      },
      {
       "id": 44,
-      "score": 57.9,
-      "wr": 51.3,
-      "games": 19894
+      "score": 57.6,
+      "wr": 52.4,
+      "games": 23304
      },
      {
       "id": 902,
-      "score": 49.8,
-      "wr": 47.7,
-      "games": 14001
+      "score": 54.2,
+      "wr": 49.1,
+      "games": 20117
      },
      {
-      "id": 497,
-      "score": 49.6,
-      "wr": 45.6,
-      "games": 7175
-     },
-     {
-      "id": 33,
-      "score": 45.4,
-      "wr": 44.5,
-      "games": 39664
+      "id": 143,
+      "score": 53.1,
+      "wr": 49.4,
+      "games": 44330
      },
      {
       "id": 77,
-      "score": 44,
-      "wr": 46.5,
-      "games": 11598
+      "score": 51.2,
+      "wr": 47.7,
+      "games": 16765
+     },
+     {
+      "id": 432,
+      "score": 50.2,
+      "wr": 45.1,
+      "games": 9921
+     },
+     {
+      "id": 497,
+      "score": 49,
+      "wr": 45.5,
+      "games": 18387
+     },
+     {
+      "id": 33,
+      "score": 48.2,
+      "wr": 45,
+      "games": 45713
      },
      {
       "id": 19,
-      "score": 41.1,
-      "wr": 47.5,
-      "games": 9025
+      "score": 39.5,
+      "wr": 46.5,
+      "games": 15376
      }
     ],
-    "date": "2026-10-30",
-    "description": "使用〖指定技能〗时回复生命值。",
+    "date": "2026-11-11",
+    "description": "使用【指定技能】时回复生命值。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486033+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:20.029Z"
    },
    {
     "name": "踢踏舞",
@@ -37153,82 +37155,84 @@
     "heroes": [
      {
       "id": 22,
-      "score": 80.9,
-      "wr": 47.4,
-      "games": 59987
+      "score": 82.2,
+      "wr": 46.9,
+      "games": 96212
      },
      {
       "id": 804,
-      "score": 76.2,
-      "wr": 51.6,
-      "games": 58161
-     },
-     {
-      "id": 429,
-      "score": 73.9,
-      "wr": 49.8,
-      "games": 40056
-     },
-     {
-      "id": 235,
-      "score": 73.1,
-      "wr": 47.4,
-      "games": 75493
-     },
-     {
-      "id": 222,
-      "score": 72,
-      "wr": 50,
-      "games": 112560
-     },
-     {
-      "id": 18,
-      "score": 71.6,
-      "wr": 48.2,
-      "games": 55218
+      "score": 76,
+      "wr": 51.7,
+      "games": 116188
      },
      {
       "id": 6,
-      "score": 71.4,
+      "score": 74.2,
+      "wr": 48,
+      "games": 78137
+     },
+     {
+      "id": 222,
+      "score": 73.6,
+      "wr": 49.8,
+      "games": 195668
+     },
+     {
+      "id": 429,
+      "score": 73.1,
+      "wr": 50.9,
+      "games": 68731
+     },
+     {
+      "id": 18,
+      "score": 70.5,
+      "wr": 48.2,
+      "games": 90595
+     },
+     {
+      "id": 235,
+      "score": 70.4,
       "wr": 47.2,
-      "games": 41814
+      "games": 123639
+     },
+     {
+      "id": 110,
+      "score": 70.4,
+      "wr": 48.9,
+      "games": 61948
      },
      {
       "id": 203,
-      "score": 70.3,
-      "wr": 47.5,
-      "games": 20483
-     },
-     {
-      "id": 221,
-      "score": 69.4,
-      "wr": 48.3,
-      "games": 22853
+      "score": 69,
+      "wr": 47.7,
+      "games": 33865
      },
      {
       "id": 67,
-      "score": 68.6,
-      "wr": 51.1,
-      "games": 68515
-     },
-     {
-      "id": 254,
-      "score": 67.5,
-      "wr": 49.9,
-      "games": 907
+      "score": 66.5,
+      "wr": 51.5,
+      "games": 104931
      },
      {
       "id": 29,
-      "score": 66.2,
-      "wr": 47.9,
-      "games": 47559
+      "score": 65.5,
+      "wr": 47.8,
+      "games": 77073
+     },
+     {
+      "id": 10,
+      "score": 65.4,
+      "wr": 56.3,
+      "games": 85380
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "你的攻击会为你提供移动速度。基于你的移动速度获得攻击速度。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486023+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:06.772Z"
    },
    {
     "name": "易损",
@@ -37241,82 +37245,84 @@
     "heroes": [
      {
       "id": 236,
-      "score": 86.7,
-      "wr": 56.6,
-      "games": 375842
+      "score": 87.4,
+      "wr": 57.7,
+      "games": 679337
      },
      {
       "id": 41,
-      "score": 77,
-      "wr": 52.1,
-      "games": 157254
+      "score": 75.6,
+      "wr": 51.2,
+      "games": 310472
      },
      {
       "id": 77,
-      "score": 72.2,
-      "wr": 50.1,
-      "games": 50671
+      "score": 68,
+      "wr": 49.8,
+      "games": 74145
      },
      {
       "id": 42,
-      "score": 67.8,
-      "wr": 51.9,
-      "games": 119602
+      "score": 61.8,
+      "wr": 52.3,
+      "games": 209915
      },
      {
       "id": 901,
-      "score": 63.8,
-      "wr": 49.3,
-      "games": 256850
+      "score": 61.2,
+      "wr": 49.8,
+      "games": 378156
      },
      {
-      "id": 203,
-      "score": 60.7,
-      "wr": 46.6,
-      "games": 42534
+      "id": 233,
+      "score": 60.8,
+      "wr": 50.3,
+      "games": 24724
+     },
+     {
+      "id": 133,
+      "score": 60.5,
+      "wr": 47,
+      "games": 58416
      },
      {
       "id": 29,
       "score": 60,
-      "wr": 47.1,
-      "games": 159840
+      "wr": 47.2,
+      "games": 255879
      },
      {
       "id": 22,
       "score": 60,
-      "wr": 44,
-      "games": 136678
+      "wr": 43.3,
+      "games": 195939
      },
      {
       "id": 11,
       "score": 60,
-      "wr": 55.4,
-      "games": 81666
+      "wr": 55.1,
+      "games": 141279
      },
      {
       "id": 23,
       "score": 60,
-      "wr": 51.1,
-      "games": 52197
+      "wr": 51.8,
+      "games": 82897
      },
      {
       "id": 200,
       "score": 60,
-      "wr": 55.2,
-      "games": 43383
-     },
-     {
-      "id": 133,
-      "score": 60,
-      "wr": 45.6,
-      "games": 35450
+      "wr": 55.5,
+      "games": 75708
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "你的装备效果和持续伤害效果可以暴击。获得 25%暴击几率。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486025+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:11.215Z"
    },
    {
     "name": "升级：中娅",
@@ -37329,82 +37335,84 @@
     "heroes": [
      {
       "id": 27,
-      "score": 84.8,
-      "wr": 54.6,
-      "games": 19443
+      "score": 83.7,
+      "wr": 55.4,
+      "games": 32871
      },
      {
       "id": 35,
-      "score": 79.5,
-      "wr": 51.3,
-      "games": 15730
+      "score": 78.5,
+      "wr": 50.9,
+      "games": 28494
      },
      {
       "id": 9,
-      "score": 76.7,
-      "wr": 50.3,
-      "games": 44409
+      "score": 76.5,
+      "wr": 50.5,
+      "games": 79500
      },
      {
-      "id": 68,
-      "score": 72.2,
-      "wr": 51.1,
-      "games": 76369
-     },
-     {
-      "id": 127,
-      "score": 71.3,
-      "wr": 49.1,
-      "games": 36472
-     },
-     {
-      "id": 163,
-      "score": 69.2,
-      "wr": 50,
-      "games": 18553
-     },
-     {
-      "id": 888,
-      "score": 69.1,
-      "wr": 51.7,
-      "games": 4801
+      "id": 44,
+      "score": 74.8,
+      "wr": 56.2,
+      "games": 224
      },
      {
       "id": 432,
-      "score": 67.5,
-      "wr": 47.3,
-      "games": 2370
-     },
-     {
-      "id": 497,
-      "score": 67.3,
+      "score": 73.3,
       "wr": 48.3,
-      "games": 509
+      "games": 4348
      },
      {
-      "id": 518,
-      "score": 65.6,
-      "wr": 46.9,
-      "games": 27282
+      "id": 68,
+      "score": 70.2,
+      "wr": 51,
+      "games": 144519
+     },
+     {
+      "id": 163,
+      "score": 68.3,
+      "wr": 50.6,
+      "games": 36827
      },
      {
       "id": 105,
-      "score": 64.9,
-      "wr": 51.4,
-      "games": 74642
+      "score": 65.5,
+      "wr": 50.9,
+      "games": 122892
      },
      {
       "id": 85,
-      "score": 64.8,
+      "score": 64.9,
       "wr": 45.4,
-      "games": 33998
+      "games": 57482
+     },
+     {
+      "id": 30,
+      "score": 64.6,
+      "wr": 47.2,
+      "games": 65708
+     },
+     {
+      "id": 711,
+      "score": 64.4,
+      "wr": 50.4,
+      "games": 36671
+     },
+     {
+      "id": 77,
+      "score": 63.6,
+      "wr": 49.4,
+      "games": 36611
      }
     ],
-    "date": "2026-10-30",
-    "description": "〖中娅沙漏〗的冷却时间降低至45秒。你现在可以在〖中娅沙漏〗、〖探索者的护臂〗或〖沃格勒特的巫师帽〗凝滞状态持续期间移动并获得移动速度。获得250金币。",
+    "date": "2026-11-11",
+    "description": "【中娅沙漏】的冷却时间降低至45秒。你现在可以在【中娅沙漏】、【探索者的护臂】或【沃格勒特的巫师帽】凝滞状态持续期间移动并获得移动速度。获得250金币。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486026+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:13.408Z"
    },
    {
     "name": "前进时间到",
@@ -37507,82 +37515,84 @@
     "heroes": [
      {
       "id": 432,
-      "score": 81.6,
-      "wr": 49.9,
-      "games": 8747
+      "score": 80.9,
+      "wr": 49.7,
+      "games": 15481
      },
      {
       "id": 35,
-      "score": 79.8,
-      "wr": 51.3,
-      "games": 50035
-     },
-     {
-      "id": 10,
-      "score": 75.6,
-      "wr": 57.4,
-      "games": 51254
+      "score": 80.4,
+      "wr": 51.4,
+      "games": 86867
      },
      {
       "id": 38,
-      "score": 74.9,
-      "wr": 53.3,
-      "games": 47288
+      "score": 77.1,
+      "wr": 53.4,
+      "games": 77663
      },
      {
-      "id": 106,
-      "score": 74,
-      "wr": 53.6,
-      "games": 21783
-     },
-     {
-      "id": 8,
-      "score": 73.4,
-      "wr": 49.5,
-      "games": 98389
-     },
-     {
-      "id": 5,
-      "score": 73,
-      "wr": 57.6,
-      "games": 40954
+      "id": 10,
+      "score": 76.3,
+      "wr": 57.8,
+      "games": 87492
      },
      {
       "id": 28,
-      "score": 70,
-      "wr": 49.9,
-      "games": 10668
+      "score": 74.4,
+      "wr": 48.3,
+      "games": 22604
      },
      {
-      "id": 1,
-      "score": 68.2,
-      "wr": 50.1,
-      "games": 23796
+      "id": 8,
+      "score": 73.8,
+      "wr": 49.9,
+      "games": 180621
      },
      {
       "id": 268,
-      "score": 65.9,
-      "wr": 48.8,
-      "games": 15557
+      "score": 73.7,
+      "wr": 49.5,
+      "games": 28092
      },
      {
-      "id": 61,
-      "score": 64.2,
-      "wr": 49.1,
-      "games": 38013
+      "id": 106,
+      "score": 73.2,
+      "wr": 53.9,
+      "games": 70107
      },
      {
-      "id": 805,
-      "score": 64,
-      "wr": 47.2,
-      "games": 39823
+      "id": 5,
+      "score": 71.7,
+      "wr": 57.3,
+      "games": 74313
+     },
+     {
+      "id": 84,
+      "score": 68,
+      "wr": 45.5,
+      "games": 73434
+     },
+     {
+      "id": 887,
+      "score": 62.7,
+      "wr": 57.5,
+      "games": 55412
+     },
+     {
+      "id": 1,
+      "score": 62,
+      "wr": 49.7,
+      "games": 40438
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "将额外攻击力转化为法术强度。获得15%法术强度。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486030+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:17.785Z"
    },
    {
     "name": "杀意翻涌",
@@ -37594,83 +37604,85 @@
     "rarity": "白银",
     "heroes": [
      {
-      "id": 799,
-      "score": 77.2,
-      "wr": 55.7,
-      "games": 3879
-     },
-     {
-      "id": 44,
-      "score": 77,
-      "wr": 55.1,
-      "games": 1520
-     },
-     {
       "id": 54,
-      "score": 75,
-      "wr": 51.2,
-      "games": 12559
+      "score": 71.9,
+      "wr": 50.4,
+      "games": 19148
      },
      {
-      "id": 221,
-      "score": 74.2,
-      "wr": 49.5,
-      "games": 2345
+      "id": 523,
+      "score": 70.8,
+      "wr": 50.6,
+      "games": 5209
      },
      {
-      "id": 897,
-      "score": 74,
-      "wr": 46.4,
-      "games": 3130
-     },
-     {
-      "id": 33,
-      "score": 72.5,
-      "wr": 48.2,
-      "games": 6815
-     },
-     {
-      "id": 18,
-      "score": 69.8,
-      "wr": 48.2,
-      "games": 3540
-     },
-     {
-      "id": 89,
-      "score": 69.7,
-      "wr": 52.1,
-      "games": 5666
-     },
-     {
-      "id": 904,
-      "score": 68.9,
-      "wr": 56.6,
-      "games": 4632
-     },
-     {
-      "id": 75,
-      "score": 68.6,
-      "wr": 51.8,
-      "games": 11314
-     },
-     {
-      "id": 36,
-      "score": 68.1,
-      "wr": 51.9,
-      "games": 11659
+      "id": 51,
+      "score": 68.8,
+      "wr": 50.8,
+      "games": 16105
      },
      {
       "id": 86,
+      "score": 68.5,
+      "wr": 46.8,
+      "games": 24537
+     },
+     {
+      "id": 27,
+      "score": 68,
+      "wr": 52.2,
+      "games": 31604
+     },
+     {
+      "id": 36,
       "score": 67.7,
-      "wr": 47.1,
-      "games": 14494
+      "wr": 52.5,
+      "games": 21355
+     },
+     {
+      "id": 221,
+      "score": 67.4,
+      "wr": 48.5,
+      "games": 4526
+     },
+     {
+      "id": 75,
+      "score": 66.9,
+      "wr": 51.6,
+      "games": 21656
+     },
+     {
+      "id": 6,
+      "score": 66.6,
+      "wr": 47,
+      "games": 14728
+     },
+     {
+      "id": 203,
+      "score": 66.3,
+      "wr": 47.6,
+      "games": 4927
+     },
+     {
+      "id": 19,
+      "score": 65.7,
+      "wr": 50.6,
+      "games": 12579
+     },
+     {
+      "id": 44,
+      "score": 65.6,
+      "wr": 54,
+      "games": 1686
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "在朝着低生命值的敌人时，获得额外移动速度。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486028+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:15.595Z"
    },
    {
     "name": "火狐",
@@ -37771,82 +37783,84 @@
     "heroes": [
      {
       "id": 950,
-      "score": 76.8,
-      "wr": 48.3,
-      "games": 16111
+      "score": 80.7,
+      "wr": 49.1,
+      "games": 28369
+     },
+     {
+      "id": 39,
+      "score": 77.5,
+      "wr": 53,
+      "games": 54059
      },
      {
       "id": 56,
-      "score": 76.1,
-      "wr": 51.9,
-      "games": 22756
+      "score": 76.7,
+      "wr": 51.1,
+      "games": 36022
      },
      {
       "id": 58,
-      "score": 75.5,
-      "wr": 48.2,
-      "games": 14823
+      "score": 76.4,
+      "wr": 48.9,
+      "games": 32818
+     },
+     {
+      "id": 904,
+      "score": 72.8,
+      "wr": 56.8,
+      "games": 35957
+     },
+     {
+      "id": 238,
+      "score": 71.2,
+      "wr": 50.4,
+      "games": 76231
+     },
+     {
+      "id": 62,
+      "score": 71.2,
+      "wr": 51.9,
+      "games": 53760
      },
      {
       "id": 107,
       "score": 70.6,
-      "wr": 51,
-      "games": 30969
-     },
-     {
-      "id": 238,
-      "score": 68.7,
-      "wr": 50.3,
-      "games": 51368
-     },
-     {
-      "id": 799,
-      "score": 65.2,
-      "wr": 53.6,
-      "games": 38015
+      "wr": 51.1,
+      "games": 41420
      },
      {
       "id": 23,
-      "score": 63.4,
-      "wr": 52,
-      "games": 20226
+      "score": 70.2,
+      "wr": 53.2,
+      "games": 33742
      },
      {
-      "id": 39,
-      "score": 63.1,
-      "wr": 52,
-      "games": 24415
+      "id": 799,
+      "score": 68.6,
+      "wr": 54,
+      "games": 60191
      },
      {
-      "id": 48,
-      "score": 60,
-      "wr": 51.8,
-      "games": 23480
+      "id": 120,
+      "score": 64.7,
+      "wr": 50.1,
+      "games": 96464
      },
      {
-      "id": 91,
-      "score": 59.7,
-      "wr": 49.4,
-      "games": 24532
-     },
-     {
-      "id": 75,
-      "score": 59.3,
-      "wr": 50.4,
-      "games": 9852
-     },
-     {
-      "id": 904,
-      "score": 58.8,
-      "wr": 54.9,
-      "games": 17353
+      "id": 2,
+      "score": 64.4,
+      "wr": 49.2,
+      "games": 23904
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "升级：贪欲九头蛇会改变英雄的技能或战斗属性；具体触发技能和数值以游戏内当前 Patch 文本为准。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486024+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:08.964Z"
    },
    {
     "name": "虚幻武器",
@@ -37859,82 +37873,84 @@
     "heroes": [
      {
       "id": 17,
-      "score": 88.7,
-      "wr": 61.1,
-      "games": 294865
+      "score": 89.8,
+      "wr": 60.6,
+      "games": 504935
      },
      {
       "id": 234,
-      "score": 88.3,
-      "wr": 58.7,
-      "games": 36108
+      "score": 89.8,
+      "wr": 59.7,
+      "games": 67889
      },
      {
       "id": 10,
-      "score": 88.1,
-      "wr": 61.3,
-      "games": 48469
+      "score": 88.2,
+      "wr": 61.7,
+      "games": 87657
      },
      {
       "id": 55,
-      "score": 86.6,
-      "wr": 54.8,
-      "games": 206629
-     },
-     {
-      "id": 887,
-      "score": 86.6,
-      "wr": 62.4,
-      "games": 81056
+      "score": 87.8,
+      "wr": 55.1,
+      "games": 373152
      },
      {
       "id": 805,
-      "score": 86.3,
-      "wr": 51.9,
-      "games": 27036
+      "score": 86.7,
+      "wr": 51.7,
+      "games": 54325
+     },
+     {
+      "id": 887,
+      "score": 86.5,
+      "wr": 62.3,
+      "games": 139745
+     },
+     {
+      "id": 131,
+      "score": 86.4,
+      "wr": 53,
+      "games": 64448
      },
      {
       "id": 145,
       "score": 85.7,
-      "wr": 54.6,
-      "games": 358695
-     },
-     {
-      "id": 131,
-      "score": 85.2,
-      "wr": 52.3,
-      "games": 39238
+      "wr": 53.4,
+      "games": 610797
      },
      {
       "id": 245,
-      "score": 84,
-      "wr": 59.9,
-      "games": 271490
+      "score": 84.1,
+      "wr": 59.7,
+      "games": 450285
      },
      {
       "id": 223,
-      "score": 83.4,
-      "wr": 58.5,
-      "games": 268159
+      "score": 83.1,
+      "wr": 58.2,
+      "games": 500146
      },
      {
-      "id": 105,
-      "score": 83.3,
-      "wr": 54.8,
-      "games": 135092
+      "id": 5,
+      "score": 81.9,
+      "wr": 59.5,
+      "games": 271792
      },
      {
       "id": 893,
-      "score": 81.8,
-      "wr": 54.3,
-      "games": 150015
+      "score": 79.5,
+      "wr": 53.6,
+      "games": 211047
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "你的技能可施加攻击特效。每个目标有1秒冷却时间。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486034+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:22.223Z"
    },
    {
     "name": "质变：黄金阶",
@@ -38037,82 +38053,84 @@
     "heroes": [
      {
       "id": 23,
-      "score": 88.1,
-      "wr": 57.5,
-      "games": 66356
+      "score": 88,
+      "wr": 57.9,
+      "games": 119386
      },
      {
       "id": 48,
-      "score": 83.8,
-      "wr": 56.2,
-      "games": 51500
+      "score": 82.4,
+      "wr": 55,
+      "games": 88017
      },
      {
       "id": 22,
-      "score": 78.3,
-      "wr": 46.7,
-      "games": 52539
+      "score": 79.8,
+      "wr": 46.2,
+      "games": 84344
      },
      {
       "id": 75,
       "score": 78.3,
-      "wr": 53.3,
-      "games": 37264
-     },
-     {
-      "id": 429,
-      "score": 75.2,
-      "wr": 50,
-      "games": 25719
-     },
-     {
-      "id": 201,
-      "score": 75.2,
-      "wr": 50.2,
-      "games": 3038
-     },
-     {
-      "id": 904,
-      "score": 73.4,
-      "wr": 57.1,
-      "games": 17437
+      "wr": 53.4,
+      "games": 69649
      },
      {
       "id": 164,
-      "score": 73.3,
-      "wr": 51.4,
-      "games": 15903
+      "score": 75.1,
+      "wr": 50.8,
+      "games": 23521
+     },
+     {
+      "id": 904,
+      "score": 74,
+      "wr": 57,
+      "games": 33470
      },
      {
       "id": 107,
-      "score": 72.5,
-      "wr": 51.2,
-      "games": 40954
+      "score": 72,
+      "wr": 51.3,
+      "games": 61693
      },
      {
-      "id": 897,
-      "score": 71.2,
-      "wr": 45.9,
-      "games": 3472
-     },
-     {
-      "id": 804,
-      "score": 68.9,
+      "id": 429,
+      "score": 70.6,
       "wr": 50.5,
-      "games": 56908
+      "games": 44786
+     },
+     {
+      "id": 222,
+      "score": 69,
+      "wr": 49.1,
+      "games": 198727
      },
      {
       "id": 44,
-      "score": 68.9,
-      "wr": 53.3,
-      "games": 2282
+      "score": 68.7,
+      "wr": 54.3,
+      "games": 2243
+     },
+     {
+      "id": 240,
+      "score": 67.5,
+      "wr": 50.7,
+      "games": 9524
+     },
+     {
+      "id": 804,
+      "score": 67.2,
+      "wr": 50.4,
+      "games": 119066
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "获得额外攻击距离。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486035+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:24.413Z"
    },
    {
     "name": "小小的额外帮助",
@@ -38214,83 +38232,85 @@
     "rarity": "黄金",
     "heroes": [
      {
-      "id": 48,
-      "score": 78.6,
-      "wr": 54.7,
-      "games": 56133
-     },
-     {
       "id": 23,
-      "score": 78.3,
-      "wr": 54.1,
-      "games": 101976
+      "score": 79.6,
+      "wr": 54.9,
+      "games": 179296
      },
      {
       "id": 22,
-      "score": 77.3,
-      "wr": 46.5,
-      "games": 94191
+      "score": 79.3,
+      "wr": 46.1,
+      "games": 149333
      },
      {
-      "id": 201,
-      "score": 77.3,
-      "wr": 50.6,
-      "games": 4089
-     },
-     {
-      "id": 429,
-      "score": 73.4,
-      "wr": 49.7,
-      "games": 53638
-     },
-     {
-      "id": 164,
-      "score": 71.4,
-      "wr": 51.1,
-      "games": 28467
+      "id": 48,
+      "score": 76.4,
+      "wr": 53.4,
+      "games": 104156
      },
      {
       "id": 75,
-      "score": 69.2,
-      "wr": 51.8,
-      "games": 46302
+      "score": 71,
+      "wr": 52,
+      "games": 86862
      },
      {
-      "id": 29,
-      "score": 65.6,
-      "wr": 47.8,
-      "games": 114163
+      "id": 164,
+      "score": 70.6,
+      "wr": 50.1,
+      "games": 44315
      },
      {
-      "id": 107,
-      "score": 65.5,
+      "id": 429,
+      "score": 69.5,
       "wr": 50.4,
-      "games": 68287
+      "games": 90924
      },
      {
-      "id": 498,
-      "score": 65,
-      "wr": 48.6,
-      "games": 62788
+      "id": 203,
+      "score": 66.5,
+      "wr": 47.4,
+      "games": 104912
+     },
+     {
+      "id": 222,
+      "score": 65.7,
+      "wr": 48.8,
+      "games": 322542
      },
      {
       "id": 804,
-      "score": 64.7,
-      "wr": 50.1,
-      "games": 101027
+      "score": 65.7,
+      "wr": 50.3,
+      "games": 216817
      },
      {
-      "id": 78,
-      "score": 64.5,
-      "wr": 52.4,
-      "games": 7165
+      "id": 104,
+      "score": 64.7,
+      "wr": 51.8,
+      "games": 156732
+     },
+     {
+      "id": 29,
+      "score": 64.6,
+      "wr": 47.7,
+      "games": 196727
+     },
+     {
+      "id": 107,
+      "score": 64.2,
+      "wr": 50.5,
+      "games": 106616
      }
     ],
-    "date": "2026-10-30",
+    "date": "2026-11-11",
     "description": "获得额外攻击距离。",
+    "descriptionChecked": "2026-11-11",
+    "detailPatch": "16.22",
     "descriptionPatch": "16.22",
-    "descriptionDate": "2026-11-09",
-    "descriptionCheckedAt": "2026-11-09T22:05:53.486037+00:00"
+    "descriptionDate": "2026-11-11",
+    "descriptionCheckedAt": "2026-11-12T20:58:26.614Z"
    },
    {
     "name": "咒语裂变",
