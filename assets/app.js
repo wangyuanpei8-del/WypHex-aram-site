@@ -117,7 +117,7 @@
     hideAugTooltip();
     const h = HEROES.find(x => x.name === state.hero) || HEROES[0];
     const rars = ['全部', '棱彩', '黄金', '白银'];
-    const augs = h.augs.filter(a => state.rar === '全部' || a.r === state.rar).slice(0, 20);
+    const augs = h.augs.filter(a => state.rar === '全部' || a.r === state.rar).slice(0, 50);
     $('#detail').innerHTML = `
       ${fromCatalog ? `<a class="detail-from-catalog" href="${esc(catalogReturn)}">← 返回英雄分类</a>` : ''}
       <button class="btn back" data-back>← 返回</button>
@@ -156,7 +156,7 @@
 
   function renderMeta() {
     $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>数据截至 <b>${esc(D.meta.date)}</b></span><button class="theme" data-theme-toggle>${isLight() ? '☾ 深色' : '☀ 浅色'}</button>`;
-    $('#foot').innerHTML = `<span>数据来源：<a href="https://github.com/czgreat/aramhex-data" target="_blank" rel="noopener">海克斯大乱斗统计数据（AramHex）</a>，国服对局统计，CC BY-NC 4.0，自动检查更新。海克斯效果描述来自 <a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata</a>。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
+    $('#foot').innerHTML = `<span>数据来源：<a href="https://github.com/czgreat/aramhex-data" target="_blank" rel="noopener">海克斯大乱斗统计数据（AramHex）</a>，国服对局统计，CC BY-NC 4.0，自动检查更新。海克斯效果说明来自游戏文件，部分来自 <a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata</a>。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
   function select(name) {

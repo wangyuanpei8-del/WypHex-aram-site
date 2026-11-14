@@ -18,8 +18,8 @@ const out = heroes.map(h => {
   if (!r) { miss.push(h.name); return { ...h, wr: null, games: null, augs: [], items: [] }; }
   return {
     ...h, wr: r.wr, games: r.games,
-    // 网页每个稀有度最多显示 20 个，只保留各稀有度前 20，文件小一些
-    augs: r.augs.filter((a, i, all) => all.slice(0, i).filter(b => b.rarity === a.rarity).length < 20)
+    // 网页每个稀有度最多显示 50 个，只保留各稀有度前 50，文件小一些
+    augs: r.augs.filter((a, i, all) => all.slice(0, i).filter(b => b.rarity === a.rarity).length < 50)
       .map(a => ({ n: a.name, r: a.rarity, w: a.wr, g: a.games })),
     items: r.items.map(i => ({ n: i.name, w: i.wr, g: i.games })),
   };

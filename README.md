@@ -18,7 +18,7 @@
 ## 使用
 
 - 搜索英雄中文名、称号、外号或英文名，选择英雄查看详情。
-- 海克斯按该英雄搭配胜率降序，每个稀有度筛选最多显示前 20 个。可筛选棱彩、黄金和白银。
+- 海克斯按该英雄搭配胜率降序，每个稀有度筛选最多显示前 50 个。可筛选棱彩、黄金和白银。
 - **鼠标停在海克斯图标或名称文字上**时立即显示效果浮层，移出该图标或名称立即隐藏，无等待或淡入动画；排名、胜率、场次和名称旁空白不触发。浮层显示名称、稀有度、效果说明和版本核对信息，自动避让窗口边缘，并跟随浅色或深色主题。
 - 键盘 Tab 聚焦名称可查看说明，Esc 关闭。手机点击名称展开，再次点击或点外部关闭；滚动、筛选或切换英雄时也会关闭。
 - 推荐出装展示胜率与场次。少于 1000 场的样本标橙色，仅供参考。
@@ -28,11 +28,11 @@
 
 **胜率和出装来自 [海克斯大乱斗统计数据（AramHex，github.com/czgreat/aramhex-data）](https://github.com/czgreat/aramhex-data)**，按 CC BY-NC 4.0 使用（注明出处、非商业）。数据是国服各大区海斗对局统计（不是全服全部对局），每期几千万局，作者每隔几天更新一次。
 
-- 海克斯排名：该英雄带该海克斯（对局结束时持有）的胜率，按胜率降序；来源标记为小样本的搭配不显示。每个稀有度最多显示前 20 个。
+- 海克斯排名：该英雄带该海克斯（对局结束时持有）的胜率，按胜率降序；来源标记为小样本的搭配不显示。每个稀有度最多显示前 50 个。
 - 推荐出装：至少 3% 该英雄对局会出的成装中，按胜率排前 6。
 - 网页将来源客户端版本号（例如 16.22）换算为游戏显示版本号（26.22）。
 
-海克斯效果描述是之前从 [Hexdata](https://hexdata.com.cn/) 收录的静态文件 `data/augment-descriptions.js`，不再自动更新；新海克斯显示“效果描述暂未收录”。
+海克斯效果说明由 `fetch-descriptions.mjs` 从游戏文件（CommunityDragon 解包的中文资料）自动更新；数值变量换不出来的保留之前从 [Hexdata](https://hexdata.com.cn/) 收录的说明，都没有时显示“效果描述暂未收录”。
 
 名称、图标使用游戏资源，图标通过 CommunityDragon 等资源接口下载。本站为非官方工具，与 Riot Games 无关联。
 
@@ -41,7 +41,7 @@
 `.github/workflows/update.yml` 每 6 小时运行一次，也可在 GitHub Actions 中手动执行“自动更新”：
 
 1. `fetch-aramhex.mjs` 下载 AramHex 最新一期的几个公开 JSON 文件，整理成 `data/open/aramhex.json`；同一期已下载过就跳过。
-2. `build-data.mjs` 生成 `data/data.js`；有数据的英雄少于 150 位时报错，不提交可能有问题的数据。
+2. `build-data.mjs` 生成 `data/data.js`；有数据的英雄少于 150 位时报错，不提交可能有问题的数据。`fetch-descriptions.mjs` 更新海克斯效果说明。
 3. 数据有变化时补齐图标并提交，随后生成单文件版，上传到该次运行的 Artifacts（保留 90 天）。
 
 GitHub Pages 发布 `main` 分支。更改交互或样式时，同时更新 `index.html` 的静态资源版本参数，避免浏览器使用旧缓存。
@@ -69,7 +69,8 @@ node scripts/build-standalone.mjs
 | `data/heroes.json` | 英雄中文名、称号、英文标识和别名 |
 | `data/open/aramhex.json` | 整理后的 AramHex 统计 |
 | `data/data.js` | 生成的英雄海克斯排名与出装数据 |
-| `data/augment-descriptions.js` | 海克斯效果描述（静态，来自 Hexdata） |
+| `data/augment-descriptions.js` | 海克斯效果说明（游戏文件，缺的用 Hexdata 旧文字） |
+| `scripts/fetch-descriptions.mjs` | 更新海克斯效果说明 |
 | `data/icons.js` / `assets/icons/` | 图标映射与本地图标 |
 | `scripts/fetch-aramhex.mjs` | 下载 AramHex 数据 |
 | `scripts/build-data.mjs` | 生成网页数据 |

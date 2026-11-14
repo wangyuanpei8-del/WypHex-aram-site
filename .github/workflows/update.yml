@@ -8,6 +8,7 @@ on:
       - '.github/workflows/update.yml'
       - 'scripts/fetch-aramhex.mjs'
       - 'scripts/build-data.mjs'
+      - 'scripts/fetch-descriptions.mjs'
   schedule:
     - cron: '25 */6 * * *'
   workflow_dispatch:
@@ -39,6 +40,8 @@ jobs:
         run: node scripts/fetch-aramhex.mjs
       - name: 生成网页数据
         run: node scripts/build-data.mjs
+      - name: 更新海克斯效果说明（游戏文件）
+        run: node scripts/fetch-descriptions.mjs
       - name: 有变化时补齐图标并提交
         id: commit
         run: |
