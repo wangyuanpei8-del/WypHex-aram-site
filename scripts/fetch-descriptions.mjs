@@ -9,7 +9,7 @@ const FILE = new URL('data/augment-descriptions.js', root);
 const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”（）()]/g, '').toLowerCase();
 
 async function get(url, type = 'json') {
-  try { const r = await fetch(url); if (!r.ok) return null; return type === 'json' ? await r.json() : await r.text(); }
+  try { const r = await fetch(url, { signal: AbortSignal.timeout(90000) }); if (!r.ok) return null; return type === 'json' ? await r.json() : await r.text(); }
   catch { return null; }
 }
 
