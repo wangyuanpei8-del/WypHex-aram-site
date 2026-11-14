@@ -31,7 +31,7 @@
 - 推荐出装：至少 3% 该英雄对局会出的成装中，按胜率排前 6。
 - 网页将来源客户端版本号（例如 16.22）换算为游戏显示版本号（26.22）。
 
-海克斯效果说明由 `fetch-descriptions.mjs` 从游戏文件（CommunityDragon 解包的中文资料）自动更新；数值变量换不出来的保留之前从 [Hexdata](https://hexdata.com.cn/) 收录的说明，都没有时显示“效果描述暂未收录”。
+海克斯效果说明由 `fetch-descriptions.mjs` 从 [Hexdata](https://hexdata.com.cn/) 公开的海克斯详情页自动更新（海斗版文字）：每次最多读 25 页、间隔 3 秒，遇到限流就停，先补缺的再轮流刷新；页面结构不对时保留原文。
 
 名称、图标使用游戏资源，图标通过 CommunityDragon 等资源接口下载。本站为非官方工具，与 Riot Games 无关联。
 
@@ -68,7 +68,7 @@ node scripts/build-standalone.mjs
 | `data/heroes.json` | 英雄中文名、称号、英文标识和别名 |
 | `data/open/aramhex.json` | 整理后的 AramHex 统计 |
 | `data/data.js` | 生成的英雄海克斯排名与出装数据 |
-| `data/augment-descriptions.js` | 海克斯效果说明（游戏文件，缺的用 Hexdata 旧文字） |
+| `data/augment-descriptions.js` | 海克斯效果说明（来自 Hexdata） |
 | `scripts/fetch-descriptions.mjs` | 更新海克斯效果说明 |
 | `data/icons.js` / `assets/icons/` | 图标映射与本地图标 |
 | `scripts/fetch-aramhex.mjs` | 下载 AramHex 数据 |
