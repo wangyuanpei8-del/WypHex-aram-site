@@ -16,9 +16,8 @@ const pattern = /<!-- update-status:start -->[\s\S]*?<!-- update-status:end -->/
 const previous = readme.match(pattern)?.[0] || '';
 const project = formatted;
 const sync = kind === 'data' ? formatted : previous.match(/数据最近写入：(.+)/)?.[1] || '尚无记录';
-const data = JSON.parse(await readFile(new URL('data/open/hexdata.json', root), 'utf8'));
-const synced = data.heroes.rows.filter(h => h.coverage === 'visible-table' && h.augs?.length > 0 && h.sourceCount === h.augs.length && h.augmentDate === data.heroes.date && h.augmentPatch === data.heroes.patch).length;
-const block = `${start}\n## 更新记录\n\n- 项目最近更新：${project}\n- 数据最近写入：${sync}\n- 来源数据日期：${data.heroes.date || '未知'}（Hexdata）\n- 当前版本可见表同步：${synced}/${data.heroes.rows.length} 位英雄\n\n以上时间由自动流程维护。数据无变化时不刷新“数据最近写入”；项目更新时间表示提交记录，不代表已经部署成功。\n${end}`;
+const src = JSON.parse(await readFile(new URL('data/open/aramhex.json', root), 'utf8')).source;
+const block = `${start}\n## 更新记录\n\n- 项目最近更新：${project}\n- 数据最近写入：${sync}\n- 来源数据截至：${src.date || '未知'}（AramHex 第 ${src.seq} 期，版本 ${src.patch}，${src.matches} 局）\n\n以上时间由自动流程维护。数据无变化时不刷新“数据最近写入”；项目更新时间表示提交记录，不代表已经部署成功。\n${end}`;
 readme = previous ? readme.replace(pattern, () => block) : readme.replace(/^(# .+\n)/, `$1\n${block}\n`);
 await writeFile(file, readme);
 console.log(`${kind}: ${formatted}`);

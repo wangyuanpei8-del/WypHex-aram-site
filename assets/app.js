@@ -29,7 +29,7 @@
   const AUG_IC = icMap(window.HEX_AUG_ICONS), ITEM_IC = icMap(window.HEX_ITEM_ICONS);
   const AUG_DESC = icMap(window.HEX_AUG_DESCRIPTIONS);
   const AUG_META = icMap(window.HEX_AUG_DESCRIPTION_META);
-  const augDescription = n => AUG_DESC.get(ik(n)) || 'Hexdata 的效果描述暂未收录，可查看原页面。';
+  const augDescription = n => AUG_DESC.get(ik(n)) || '这个海克斯的效果描述暂未收录，请以游戏内为准。';
   const augIc = (n, r) => {
     const u = AUG_IC.get(ik(n));
     return u ? `<span class="ic-wrap aug-icon r-${esc(r)}"><img class="ic" src="${esc(u)}" alt="" loading="lazy"></span>` : `<span class="rar aug-icon ${esc(r || '未知')}"></span>`;
@@ -124,20 +124,20 @@
       <div class="hero-head">
         ${ava(h, 'lg')}
         <div><h1>${esc(h.name)}<small>${esc(h.title)}</small></h1>
-          <p class="sub">胜率 <b class="num">${pct(h.wr)}</b> · ${wan(h.games)}场${h.url ? ` · <a href="${esc(h.url)}" target="_blank" rel="noopener">Hexdata 原页面 ↗</a>` : ''}</p></div>
+          <p class="sub">胜率 <b class="num">${pct(h.wr)}</b> · ${wan(h.games)}场</p></div>
       </div>
-      <div class="data-freshness"><span>英雄榜单：${esc(D.meta.date || '未知')}</span><span>该英雄详情：${esc(h.detailDate || '日期未知')}${h.detailDate !== D.meta.date ? ' · 待更新' : ''}</span><span>海克斯搭配数据：${esc(h.freshness?.oldest || '未知')} ～ ${esc(h.freshness?.newest || '未知')}${h.freshness?.old ? ` · ${h.freshness.old} 项为较早数据` : ''}${h.freshness?.unknown ? ` · ${h.freshness.unknown} 项日期未知` : ''}</span></div>
-      ${!h.augs.length ? '<div class="card"><p class="empty">这位英雄的数据还在自动补充中（Hexdata 有访问频率限制，每小时补一批），稍后再看。</p></div>' : `
+      <div class="data-freshness"><span>数据截至 ${esc(D.meta.date || '未知')}（版本 ${esc(D.meta.patch)}）</span></div>
+      ${!h.augs.length ? '<div class="card"><p class="empty">暂时没有这位英雄的数据（可能是新英雄），等数据来源更新后会自动补上。</p></div>' : `
       <div class="card">
         <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率 · 悬停图标或名称查看效果</em></h3>
         <div class="tabs">${rars.map(r => `<button data-rar="${r}" aria-selected="${state.rar === r}">${r === '全部' ? '' : `<span class="rar ${r}"></span>`}${r}</button>`).join('')}</div>
-        <p class="coverage-note">${h.coverage === 'visible-table' ? `来源可见表共 ${h.sourceCount} 个搭配，按胜率排序，当前显示 ${augs.length} 个（最多 20 个）。` : `当前只同步了精选摘要及部分搭配，显示 ${augs.length} 个；尚未同步完整可见表。`}</p>
+        <p class="coverage-note">按胜率从高到低，显示前 ${augs.length} 个；场次太少的搭配已去掉。</p>
         <ol class="rank">${augs.map((a, i) => `<li class="aug-row">
           <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t"><button class="aug-info" type="button" data-aug="${esc(a.n)}" data-rarity="${esc(a.r)}" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button></span>
           <span class="w num">${pct(a.w)}</span><span class="g num${a.g < LOW ? ' low' : ''}">${wan(a.g)}场</span></li>`).join('') || '<li class="empty">这个稀有度暂无数据</li>'}</ol>
       </div>
       <div class="card">
-        <h3>推荐出装 <em>Hexdata 综合推荐 · 数据日期 ${esc(h.detailDate || '未知')}</em></h3>
+        <h3>推荐出装 <em>至少 3% 对局会出的成装里，按胜率排前 6</em></h3>
         <ol class="rank items">${h.items.map((it, i) => `<li>
           <span class="n num">${i + 1}</span>${itemIc(it.n)}<span class="t">${esc(it.n)}</span>
           <span class="w num">${pct(it.w)}</span><span class="g num${it.g < LOW ? ' low' : ''}">${wan(it.g)}场</span></li>`).join('')}</ol>
@@ -155,8 +155,8 @@
   }
 
   function renderMeta() {
-    $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>英雄榜单日期 <b>${esc(D.meta.date)}</b></span><button class="theme" data-theme-toggle>${isLight() ? '☾ 深色' : '☀ 浅色'}</button>`;
-    $('#foot').innerHTML = `<span>数据来源：<a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）</a>，统计的是公开对局样本，自动更新。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
+    $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>数据截至 <b>${esc(D.meta.date)}</b></span><button class="theme" data-theme-toggle>${isLight() ? '☾ 深色' : '☀ 浅色'}</button>`;
+    $('#foot').innerHTML = `<span>数据来源：<a href="https://github.com/czgreat/aramhex-data" target="_blank" rel="noopener">海克斯大乱斗统计数据（AramHex）</a>，国服对局统计，CC BY-NC 4.0，自动检查更新。海克斯效果描述来自 <a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata</a>。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
   function select(name) {

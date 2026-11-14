@@ -1,20 +1,17 @@
 name: 自动更新
 
-# 每小时从 Hexdata 读一批页面（被限流就停，下次接着读），有新数据才提交并重新打包单文件版。
+# 每 6 小时检查一次 AramHex 公开数据（github.com/czgreat/aramhex-data），有新的一期才生成网页数据并提交。
 on:
   push:
+    branches: [main]
     paths:
       - '.github/workflows/update.yml'
-      - 'scripts/data-quality.mjs'
-      - 'scripts/hexdata-descriptions.mjs'
+      - 'scripts/fetch-aramhex.mjs'
+      - 'scripts/build-data.mjs'
   schedule:
-    - cron: '25 * * * *'
+    - cron: '25 */6 * * *'
   workflow_dispatch:
     inputs:
-      descriptions:
-        description: '仅补齐并核对海克斯效果描述'
-        type: boolean
-        default: false
       icons:
         description: '强制重新下载图标'
         type: boolean
@@ -38,16 +35,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: 检查数据解析与版本判断
-        run: node --test
-      - name: 读取 Hexdata
-        env:
-          HEXDATA_MODE: ${{ (github.event_name == 'push' || inputs.descriptions) && 'descriptions' || '' }}
-        run: node scripts/fetch-hexdata.mjs
+      - name: 下载 AramHex 数据
+        run: node scripts/fetch-aramhex.mjs
       - name: 生成网页数据
         run: node scripts/build-data.mjs
-      - name: 生成 Hexdata 效果描述
-        run: node scripts/build-augment-descriptions.mjs
       - name: 有变化时补齐图标并提交
         id: commit
         run: |
@@ -63,7 +54,7 @@ jobs:
           for i in 1 2 3 4; do
             if ! git pull --rebase origin ${{ github.ref_name }}; then
               git rebase --abort || true
-              exit 1 # 数据冲突不能靠重试解决，避免在冲突状态继续执行
+              exit 1
             fi
             git push origin HEAD:${{ github.ref_name }} && exit 0
             sleep $((i * 15))
