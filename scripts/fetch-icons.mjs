@@ -25,7 +25,7 @@ const nk = s => String(s || '').replace(/[\s·・：:！!，,。.（）()]/g, ''
 const exists = p => access(p).then(() => true, () => false);
 async function get(url, type = 'json') {
   try {
-    const r = await fetch(url);
+    const r = await fetch(url, { signal: AbortSignal.timeout(90000) }); // 90 秒没下完就放弃，避免整个任务卡住
     if (!r.ok) return null;
     return type === 'json' ? await r.json() : type === 'text' ? await r.text() : Buffer.from(await r.arrayBuffer());
   } catch { return null; }
