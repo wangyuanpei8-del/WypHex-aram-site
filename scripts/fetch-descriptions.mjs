@@ -9,8 +9,16 @@ const FILE = new URL('data/augment-descriptions.js', root);
 const nk = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”（）()]/g, '').toLowerCase();
 
 async function get(url, type = 'json') {
-  try { const r = await fetch(url, { signal: AbortSignal.timeout(90000) }); if (!r.ok) return null; return type === 'json' ? await r.json() : await r.text(); }
-  catch { return null; }
+  // 游戏资料文件很大、服务器有时很慢：每次最多等 5 分钟，失败再试 2 次
+  for (let i = 1; i <= 3; i++) {
+    try {
+      const r = await fetch(url, { signal: AbortSignal.timeout(300000) });
+      if (r.status === 404) return null;
+      if (r.ok) return type === 'json' ? await r.json() : await r.text();
+    } catch { /* 下面重试 */ }
+    if (i < 3) await new Promise(res => setTimeout(res, 10000));
+  }
+  return null;
 }
 
 // 旧文件：保留已有说明
