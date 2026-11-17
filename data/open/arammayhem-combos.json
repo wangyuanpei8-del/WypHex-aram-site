@@ -1,0 +1,7575 @@
+{
+ "source": {
+  "name": "arammayhem",
+  "url": "https://arammayhem.com/data/",
+  "attribution": "Data: arammayhem.com",
+  "license": "CC BY 4.0"
+ },
+ "rows": [
+  {
+   "champ": "Aatrox",
+   "champZh": "暗裔剑魔",
+   "augs": [
+    "扇巴掌"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/aatrox-slap-around/"
+  },
+  {
+   "champ": "Aatrox",
+   "champZh": "暗裔剑魔",
+   "augs": [
+    "珠光护手",
+    "会心治疗",
+    "灵魂虹吸"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aatrox-jeweled-gauntlet-1028/"
+  },
+  {
+   "champ": "Aatrox",
+   "champZh": "暗裔剑魔",
+   "augs": [
+    "蛋白粉奶昔",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aatrox-protein-shake-742/"
+  },
+  {
+   "champ": "Akali",
+   "champZh": "离群之刺",
+   "augs": [
+    "最万用的瞄准镜"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/akali-scopiest-weapons/"
+  },
+  {
+   "champ": "Akali",
+   "champZh": "离群之刺",
+   "augs": [
+    "狂热者",
+    "一板一眼",
+    "物理转魔法",
+    "灵巧",
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/akali-zealot-864/"
+  },
+  {
+   "champ": "Akali",
+   "champZh": "离群之刺",
+   "augs": [
+    "虚空裂隙"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/akali-void-rift-863/"
+  },
+  {
+   "champ": "Akshan",
+   "champZh": "影哨",
+   "augs": [
+    "双刀流"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/akshan-dual-wield/"
+  },
+  {
+   "champ": "Alistar",
+   "champZh": "牛头酋长",
+   "augs": [
+    "任务：钢化你心",
+    "坦克引擎",
+    "吞噬灵魂",
+    "慢炖"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/alistar-quest-steel-your-heart-1088/"
+  },
+  {
+   "champ": "Alistar",
+   "champZh": "牛头酋长",
+   "augs": [
+    "巨像的勇气",
+    "蛋白粉奶昔",
+    "坦克引擎",
+    "任务：钢化你心",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/alistar-courage-of-the-colossus-821/"
+  },
+  {
+   "champ": "Alistar",
+   "champZh": "牛头酋长",
+   "augs": [
+    "无限循环往复",
+    "由心及物",
+    "海洋龙魂",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/alistar-infinite-recursion-819/"
+  },
+  {
+   "champ": "Alistar",
+   "champZh": "牛头酋长",
+   "augs": [
+    "裁决使"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/alistar-executioner/"
+  },
+  {
+   "champ": "Alistar",
+   "champZh": "牛头酋长",
+   "augs": [
+    "裁决使",
+    "无限循环往复",
+    "缩小引擎",
+    "超凡邪恶",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/alistar-executioner-820/"
+  },
+  {
+   "champ": "Ambessa",
+   "champZh": "铁血狼母",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ambessa-dashing/"
+  },
+  {
+   "champ": "Ambessa",
+   "champZh": "铁血狼母",
+   "augs": [
+    "古式佳酿"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ambessa-rabble-rousing/"
+  },
+  {
+   "champ": "Ambessa",
+   "champZh": "铁血狼母",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ambessa-back-to-basics/"
+  },
+  {
+   "champ": "Ambessa",
+   "champZh": "铁血狼母",
+   "augs": [
+    "小丑学院",
+    "俯冲轰炸",
+    "最终都市列车",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ambessa-clown-college-941/"
+  },
+  {
+   "champ": "Ambessa",
+   "champZh": "铁血狼母",
+   "augs": [
+    "珠光护手",
+    "古式佳酿",
+    "升级：狂妄",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ambessa-jeweled-gauntlet-942/"
+  },
+  {
+   "champ": "Ambessa",
+   "champZh": "铁血狼母",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ambessa-ethereal-weapon/"
+  },
+  {
+   "champ": "Amumu",
+   "champZh": "殇之木乃伊",
+   "augs": [
+    "歌利亚巨人",
+    "质变：棱彩阶",
+    "属性！"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/amumu-goliath-1112/"
+  },
+  {
+   "champ": "Amumu",
+   "champZh": "殇之木乃伊",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/amumu-ethereal-weapon/"
+  },
+  {
+   "champ": "Amumu",
+   "champZh": "殇之木乃伊",
+   "augs": [
+    "超凡邪恶",
+    "坦克引擎",
+    "任务：钢化你心",
+    "物法皆修"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/amumu-phenomenal-evil-1107/"
+  },
+  {
+   "champ": "Anivia",
+   "champZh": "冰晶凤凰",
+   "augs": [
+    "精怪魔法",
+    "魔法飞弹",
+    "杀戮时间到了"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/anivia-fey-magic-1040/"
+  },
+  {
+   "champ": "Anivia",
+   "champZh": "冰晶凤凰",
+   "augs": [
+    "老练狙神",
+    "无限循环往复",
+    "尤里卡",
+    "循环往复",
+    "超凡邪恶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/anivia-skilled-sniper-630/"
+  },
+  {
+   "champ": "Annie",
+   "champZh": "黑暗之女",
+   "augs": [
+    "杀戮时间到了"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/annie-its-killing-time/"
+  },
+  {
+   "champ": "Annie",
+   "champZh": "黑暗之女",
+   "augs": [
+    "杀戮时间到了",
+    "尤里卡",
+    "无限循环往复",
+    "超凡邪恶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/annie-its-killing-time-962/"
+  },
+  {
+   "champ": "Aphelios",
+   "champZh": "残月之肃",
+   "augs": [
+    "亮出你的剑"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aphelios-draw-your-sword-1116/"
+  },
+  {
+   "champ": "Aphelios",
+   "champZh": "残月之肃",
+   "augs": [
+    "亮出你的剑",
+    "升级：狂妄",
+    "升级：收集者",
+    "升级：弯刀"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aphelios-draw-your-sword-1045/"
+  },
+  {
+   "champ": "Aphelios",
+   "champZh": "残月之肃",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/aphelios-back-to-basics/"
+  },
+  {
+   "champ": "Ashe",
+   "champZh": "寒冰射手",
+   "augs": [
+    "无限循环往复",
+    "缩小引擎",
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ashe-infinite-recursion-667/"
+  },
+  {
+   "champ": "Ashe",
+   "champZh": "寒冰射手",
+   "augs": [
+    "珠光护手",
+    "有始有终",
+    "缩小引擎",
+    "无限循环往复",
+    "循环往复",
+    "终极刷新",
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ashe-jeweled-gauntlet-666/"
+  },
+  {
+   "champ": "AurelionSol",
+   "champZh": "铸星龙王",
+   "augs": [
+    "冰寒"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/aurelionsol-ice-cold/"
+  },
+  {
+   "champ": "AurelionSol",
+   "champZh": "铸星龙王",
+   "augs": [
+    "叠角龙"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/aurelionsol-stackosaurusrex/"
+  },
+  {
+   "champ": "AurelionSol",
+   "champZh": "铸星龙王",
+   "augs": [
+    "炼狱导管",
+    "祖母的辣椒油",
+    "面包和奶酪"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aurelionsol-infernal-conduit-976/"
+  },
+  {
+   "champ": "AurelionSol",
+   "champZh": "铸星龙王",
+   "augs": [
+    "由心及物",
+    "海洋龙魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aurelionsol-mind-to-matter-947/"
+  },
+  {
+   "champ": "AurelionSol",
+   "champZh": "铸星龙王",
+   "augs": [
+    "缩小引擎",
+    "超凡邪恶",
+    "无限循环往复",
+    "循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aurelionsol-shrink-engine-946/"
+  },
+  {
+   "champ": "AurelionSol",
+   "champZh": "铸星龙王",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破",
+    "冰寒"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aurelionsol-void-rift-945/"
+  },
+  {
+   "champ": "Aurora",
+   "champZh": "双界灵兔",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/aurora-dashing/"
+  },
+  {
+   "champ": "Aurora",
+   "champZh": "双界灵兔",
+   "augs": [
+    "升级：雪球"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aurora-snowball-upgrade/"
+  },
+  {
+   "champ": "Aurora",
+   "champZh": "双界灵兔",
+   "augs": [
+    "升级：雪球",
+    "虚幻武器",
+    "史上最大雪球"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aurora-snowball-upgrade-638/"
+  },
+  {
+   "champ": "Aurora",
+   "champZh": "双界灵兔",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/aurora-ethereal-weapon/"
+  },
+  {
+   "champ": "Aurora",
+   "champZh": "双界灵兔",
+   "augs": [
+    "虚幻武器",
+    "尤里卡",
+    "回归基本功",
+    "家园卫士",
+    "暗影疾奔",
+    "全凭身法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/aurora-ethereal-weapon-639/"
+  },
+  {
+   "champ": "Aurora",
+   "champZh": "双界灵兔",
+   "augs": [
+    "轨道镭射"
+   ],
+   "types": [
+    "blackTech",
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/aurora-orbitallaser/"
+  },
+  {
+   "champ": "Azir",
+   "champZh": "沙漠皇帝",
+   "augs": [
+    "仆从大师"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/azir-minionmancer/"
+  },
+  {
+   "champ": "Azir",
+   "champZh": "沙漠皇帝",
+   "augs": [
+    "最万用的瞄准镜"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/azir-scopiest-weapons/"
+  },
+  {
+   "champ": "Azir",
+   "champZh": "沙漠皇帝",
+   "augs": [
+    "物理转魔法",
+    "超凡邪恶",
+    "物法皆修",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/azir-adapt-1117/"
+  },
+  {
+   "champ": "Azir",
+   "champZh": "沙漠皇帝",
+   "augs": [
+    "神射法师"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/azir-marksmage/"
+  },
+  {
+   "champ": "Azir",
+   "champZh": "沙漠皇帝",
+   "augs": [
+    "魔法飞弹"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/azir-magic-missile/"
+  },
+  {
+   "champ": "Bard",
+   "champZh": "星界游神",
+   "augs": [
+    "卡皮巴拉空投",
+    "玻璃大炮",
+    "巨人杀手",
+    "你肩上的恶魔",
+    "杀戮时间到了"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/bard-droppybara-733/"
+  },
+  {
+   "champ": "Bard",
+   "champZh": "星界游神",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/bard-ethereal-weapon/"
+  },
+  {
+   "champ": "Bard",
+   "champZh": "星界游神",
+   "augs": [
+    "虚空裂隙"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/bard-void-rift-734/"
+  },
+  {
+   "champ": "Bard",
+   "champZh": "星界游神",
+   "augs": [
+    "轨道镭射"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/bard-orbitallaser/"
+  },
+  {
+   "champ": "Belveth",
+   "champZh": "虚空女皇",
+   "augs": [
+    "一板一眼",
+    "踢踏舞",
+    "缩小引擎",
+    "灵巧",
+    "大力"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/belveth-slow-and-steady-895/"
+  },
+  {
+   "champ": "Belveth",
+   "champZh": "虚空女皇",
+   "augs": [
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/belveth-mystic-punch/"
+  },
+  {
+   "champ": "Belveth",
+   "champZh": "虚空女皇",
+   "augs": [
+    "秘术冲拳",
+    "吸血习性",
+    "虚幻武器"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/belveth-mystic-punch-897/"
+  },
+  {
+   "champ": "Belveth",
+   "champZh": "虚空女皇",
+   "augs": [
+    "踢踏舞",
+    "缩小引擎",
+    "任务：钢化你心",
+    "物法皆修"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/belveth-tap-dancer-896/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "最终都市列车",
+    "自我毁灭",
+    "小丑学院",
+    "杀戮时间到了"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-final-city-transit-1059/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "升级：无尽之刃",
+    "升级：收集者",
+    "一板一眼",
+    "大力"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-upgrade-infinity-edge-885/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "小丑学院",
+    "杀戮时间到了",
+    "珠光护手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-clown-college-887/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "由心及物",
+    "海洋龙魂",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-mind-to-matter-970/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "秘术冲拳",
+    "尤里卡",
+    "吞噬灵魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-mystic-punch-1012/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-ethereal-weapon/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "虚幻武器",
+    "双生火焰",
+    "火上浇油"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-ethereal-weapon-886/"
+  },
+  {
+   "champ": "Blitzcrank",
+   "champZh": "蒸汽机器人",
+   "augs": [
+    "裁决使",
+    "循环往复",
+    "面包和黄油"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/blitzcrank-executioner-888/"
+  },
+  {
+   "champ": "Brand",
+   "champZh": "复仇焰魂",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/brand-infernal-conduit/"
+  },
+  {
+   "champ": "Brand",
+   "champZh": "复仇焰魂",
+   "augs": [
+    "炼狱导管",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/brand-infernal-conduit-657/"
+  },
+  {
+   "champ": "Brand",
+   "champZh": "复仇焰魂",
+   "augs": [
+    "珠光护手",
+    "易损",
+    "魔法飞弹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/brand-jeweled-gauntlet-658/"
+  },
+  {
+   "champ": "Brand",
+   "champZh": "复仇焰魂",
+   "augs": [
+    "虚空裂隙",
+    "质变：混沌",
+    "质变：棱彩阶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/brand-void-rift-1086/"
+  },
+  {
+   "champ": "Brand",
+   "champZh": "复仇焰魂",
+   "augs": [
+    "魔法飞弹"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/brand-magic-missile/"
+  },
+  {
+   "champ": "Braum",
+   "champZh": "弗雷尔卓德之心",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "blackTech",
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/braum-blade-waltz/"
+  },
+  {
+   "champ": "Braum",
+   "champZh": "弗雷尔卓德之心",
+   "augs": [
+    "台风"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/braum-typhoon/"
+  },
+  {
+   "champ": "Braum",
+   "champZh": "弗雷尔卓德之心",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/braum-fan-the-hammer/"
+  },
+  {
+   "champ": "Briar",
+   "champZh": "狂厄蔷薇",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/briar-dashing/"
+  },
+  {
+   "champ": "Briar",
+   "champZh": "狂厄蔷薇",
+   "augs": [
+    "升级：收集者",
+    "罪恶快感",
+    "升级：无尽之刃",
+    "升级：狂妄"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/briar-upgrade-collector-1085/"
+  },
+  {
+   "champ": "Briar",
+   "champZh": "狂厄蔷薇",
+   "augs": [
+    "升级：无尽之刃",
+    "吸血习性",
+    "会心治疗",
+    "升级：收集者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/briar-upgrade-infinity-edge-824/"
+  },
+  {
+   "champ": "Briar",
+   "champZh": "狂厄蔷薇",
+   "augs": [
+    "秘术冲拳",
+    "吸血习性",
+    "升级：狂妄",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/briar-mystic-punch-1025/"
+  },
+  {
+   "champ": "Briar",
+   "champZh": "狂厄蔷薇",
+   "augs": [
+    "裁决使"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/briar-executioner/"
+  },
+  {
+   "champ": "Caitlyn",
+   "champZh": "皮城女警",
+   "augs": [
+    "接二连三"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/caitlyn-twice-thrice/"
+  },
+  {
+   "champ": "Caitlyn",
+   "champZh": "皮城女警",
+   "augs": [
+    "更万用的瞄准镜",
+    "最万用的瞄准镜",
+    "万用瞄准镜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/caitlyn-scopier-weapons-848/"
+  },
+  {
+   "champ": "Caitlyn",
+   "champZh": "皮城女警",
+   "augs": [
+    "珠光护手",
+    "升级：无尽之刃",
+    "一板一眼",
+    "巨人杀手",
+    "大力",
+    "魔法转物理",
+    "有始有终"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/caitlyn-jeweled-gauntlet-849/"
+  },
+  {
+   "champ": "Caitlyn",
+   "champZh": "皮城女警",
+   "augs": [
+    "珠光护手",
+    "玻璃大炮",
+    "升级：无尽之刃",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/caitlyn-jeweled-gauntlet-1115/"
+  },
+  {
+   "champ": "Caitlyn",
+   "champZh": "皮城女警",
+   "augs": [
+    "连拨击锤",
+    "双刀流",
+    "点亮他们！"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/caitlyn-fan-the-hammer-1105/"
+  },
+  {
+   "champ": "Cassiopeia",
+   "champZh": "魔蛇之拥",
+   "augs": [
+    "残忍"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/cassiopeia-cruelty-960/"
+  },
+  {
+   "champ": "Chogath",
+   "champZh": "虚空恐惧",
+   "augs": [
+    "任务：钢化你心",
+    "物理转魔法",
+    "坦克引擎",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/chogath-quest-steel-your-heart-899/"
+  },
+  {
+   "champ": "Chogath",
+   "champZh": "虚空恐惧",
+   "augs": [
+    "坦克引擎",
+    "任务：钢化你心",
+    "歌利亚巨人",
+    "飞身踢"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/chogath-tank-engine-900/"
+  },
+  {
+   "champ": "Chogath",
+   "champZh": "虚空恐惧",
+   "augs": [
+    "缩小引擎",
+    "吞噬灵魂",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/chogath-shrink-engine-901/"
+  },
+  {
+   "champ": "Corki",
+   "champZh": "英勇投弹手",
+   "augs": [
+    "扳机炼狱"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/corki-triggered-inferno-875/"
+  },
+  {
+   "champ": "Corki",
+   "champZh": "英勇投弹手",
+   "augs": [
+    "易损"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/corki-vulnerability/"
+  },
+  {
+   "champ": "Corki",
+   "champZh": "英勇投弹手",
+   "augs": [
+    "暴击飞弹",
+    "易损",
+    "双生火焰",
+    "连拨击锤"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/corki-critical-missile-1130/"
+  },
+  {
+   "champ": "Corki",
+   "champZh": "英勇投弹手",
+   "augs": [
+    "珠光护手"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/corki-jeweled-gauntlet/"
+  },
+  {
+   "champ": "Corki",
+   "champZh": "英勇投弹手",
+   "augs": [
+    "珠光护手",
+    "易损"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/corki-jeweled-gauntlet-874/"
+  },
+  {
+   "champ": "Darius",
+   "champZh": "诺克萨斯之手",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/darius-blade-waltz/"
+  },
+  {
+   "champ": "Darius",
+   "champZh": "诺克萨斯之手",
+   "augs": [
+    "台风"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/darius-typhoon/"
+  },
+  {
+   "champ": "Darius",
+   "champZh": "诺克萨斯之手",
+   "augs": [
+    "回归基本功",
+    "罪恶快感",
+    "更万用的瞄准镜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/darius-back-to-basics-920/"
+  },
+  {
+   "champ": "Darius",
+   "champZh": "诺克萨斯之手",
+   "augs": [
+    "珠光护手",
+    "升级：无尽之刃",
+    "魔法转物理",
+    "罪恶快感"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/darius-jeweled-gauntlet-919/"
+  },
+  {
+   "champ": "Darius",
+   "champZh": "诺克萨斯之手",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/darius-fan-the-hammer/"
+  },
+  {
+   "champ": "Diana",
+   "champZh": "皎月女神",
+   "augs": [
+    "会心治疗"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/diana-critical-healing/"
+  },
+  {
+   "champ": "Diana",
+   "champZh": "皎月女神",
+   "augs": [
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/diana-purist-caster-845/"
+  },
+  {
+   "champ": "Diana",
+   "champZh": "皎月女神",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/diana-ethereal-weapon/"
+  },
+  {
+   "champ": "Draven",
+   "champZh": "荣耀行刑官",
+   "augs": [
+    "旋转至胜"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/draven-spin-to-win/"
+  },
+  {
+   "champ": "Draven",
+   "champZh": "荣耀行刑官",
+   "augs": [
+    "珠光护手",
+    "小丑学院",
+    "亮出你的剑",
+    "你肩上的恶魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/draven-jeweled-gauntlet-1108/"
+  },
+  {
+   "champ": "Draven",
+   "champZh": "荣耀行刑官",
+   "augs": [
+    "珠光护手",
+    "巨人杀手",
+    "亮出你的剑",
+    "大力",
+    "旋转至胜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/draven-jeweled-gauntlet-882/"
+  },
+  {
+   "champ": "DrMundo",
+   "champZh": "祖安狂人",
+   "augs": [
+    "吸血习性"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/drmundo-vampirism/"
+  },
+  {
+   "champ": "DrMundo",
+   "champZh": "祖安狂人",
+   "augs": [
+    "坦克引擎",
+    "任务：钢化你心",
+    "重量级打击手",
+    "歌利亚巨人",
+    "飞身踢"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/drmundo-tank-engine-858/"
+  },
+  {
+   "champ": "DrMundo",
+   "champZh": "祖安狂人",
+   "augs": [
+    "易损",
+    "慢炖",
+    "飞身踢"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/drmundo-vulnerability-857/"
+  },
+  {
+   "champ": "DrMundo",
+   "champZh": "祖安狂人",
+   "augs": [
+    "蛋白粉奶昔"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/drmundo-protein-shake/"
+  },
+  {
+   "champ": "DrMundo",
+   "champZh": "祖安狂人",
+   "augs": [
+    "重量级打击手"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/drmundo-heavy-hitter/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-blade-waltz-1071/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "尤里卡",
+    "无限循环往复",
+    "超凡邪恶",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-eureka-730/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "珠光护手",
+    "双发快射",
+    "神射法师",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-jeweled-gauntlet-986/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-ethereal-weapon/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "虚幻武器",
+    "神射法师",
+    "巨人杀手",
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-ethereal-weapon-727/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-void-rift-728/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "裁决使",
+    "尤里卡",
+    "全凭身法",
+    "终极刷新"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-executioner-1043/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-fan-the-hammer/"
+  },
+  {
+   "champ": "Ekko",
+   "champZh": "时间刺客",
+   "augs": [
+    "连拨击锤",
+    "虚幻武器"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ekko-fan-the-hammer-731/"
+  },
+  {
+   "champ": "Elise",
+   "champZh": "蜘蛛女皇",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "god",
+    "bug"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/elise-dashing/"
+  },
+  {
+   "champ": "Elise",
+   "champZh": "蜘蛛女皇",
+   "augs": [
+    "珠光护手",
+    "超凡邪恶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/elise-jeweled-gauntlet-913/"
+  },
+  {
+   "champ": "Evelynn",
+   "champZh": "痛苦之拥",
+   "augs": [
+    "虚空裂隙",
+    "循环往复",
+    "暗影疾奔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/evelynn-void-rift-840/"
+  },
+  {
+   "champ": "Evelynn",
+   "champZh": "痛苦之拥",
+   "augs": [
+    "面包和黄油"
+   ],
+   "types": [
+    "god",
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/evelynn-bread-and-butter/"
+  },
+  {
+   "champ": "Ezreal",
+   "champZh": "探险家",
+   "augs": [
+    "亮出你的剑",
+    "双刀流",
+    "踢踏舞",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ezreal-draw-your-sword-1100/"
+  },
+  {
+   "champ": "Ezreal",
+   "champZh": "探险家",
+   "augs": [
+    "有始有终",
+    "亮出你的剑",
+    "回归基本功",
+    "升级：耀光"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ezreal-from-beginning-to-end-1089/"
+  },
+  {
+   "champ": "Ezreal",
+   "champZh": "探险家",
+   "augs": [
+    "注魔",
+    "珠光护手",
+    "升级：无尽之刃"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ezreal-juiced-713/"
+  },
+  {
+   "champ": "Ezreal",
+   "champZh": "探险家",
+   "augs": [
+    "纯粹主义者 - 术师",
+    "秘术冲拳",
+    "循环往复",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ezreal-purist-caster-714/"
+  },
+  {
+   "champ": "Ezreal",
+   "champZh": "探险家",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ezreal-ethereal-weapon/"
+  },
+  {
+   "champ": "Fiddlesticks",
+   "champZh": "远古恐惧",
+   "augs": [
+    "任务：沃格勒特的巫师帽",
+    "巨人杀手",
+    "溢流",
+    "超凡邪恶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fiddlesticks-quest-wooglets-witchcap-1104/"
+  },
+  {
+   "champ": "Fiddlesticks",
+   "champZh": "远古恐惧",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fiddlesticks-blade-waltz/"
+  },
+  {
+   "champ": "Fiddlesticks",
+   "champZh": "远古恐惧",
+   "augs": [
+    "升级：中娅"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fiddlesticks-upgrade-zhonyas/"
+  },
+  {
+   "champ": "Fiddlesticks",
+   "champZh": "远古恐惧",
+   "augs": [
+    "小丑学院"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fiddlesticks-clown-college/"
+  },
+  {
+   "champ": "Fiddlesticks",
+   "champZh": "远古恐惧",
+   "augs": [
+    "点亮他们！"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fiddlesticks-light-em-up-121/"
+  },
+  {
+   "champ": "Fiddlesticks",
+   "champZh": "远古恐惧",
+   "augs": [
+    "物理转魔法",
+    "有始有终",
+    "科学狂人",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fiddlesticks-adapt-932/"
+  },
+  {
+   "champ": "Fiddlesticks",
+   "champZh": "远古恐惧",
+   "augs": [
+    "虚空裂隙"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fiddlesticks-void-rift-933/"
+  },
+  {
+   "champ": "Fiora",
+   "champZh": "无双剑姬",
+   "augs": [
+    "任务：钢化你心",
+    "坦克引擎",
+    "歌利亚巨人",
+    "科学狂人",
+    "男爵之手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fiora-quest-steel-your-heart-718/"
+  },
+  {
+   "champ": "Fiora",
+   "champZh": "无双剑姬",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fiora-blade-waltz/"
+  },
+  {
+   "champ": "Fiora",
+   "champZh": "无双剑姬",
+   "augs": [
+    "秘术冲拳",
+    "一板一眼",
+    "古式佳酿",
+    "虚幻武器"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fiora-mystic-punch-719/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "任务：钢化你心",
+    "歌利亚巨人",
+    "重量级打击手",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-quest-steel-your-heart-808/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-dashing/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "唯快不破",
+    "冰寒"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-dont-blink-806/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "无限循环往复",
+    "循环往复",
+    "尤里卡",
+    "面包和黄油"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-infinite-recursion-804/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-infernal-conduit/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "虚空裂隙"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-void-rift-1007/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-void-rift-803/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-fan-the-hammer/"
+  },
+  {
+   "champ": "Fizz",
+   "champZh": "潮汐海灵",
+   "augs": [
+    "面包和奶酪",
+    "裁决使",
+    "尤里卡",
+    "任务：沃格勒特的巫师帽"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/fizz-bread-and-cheese-807/"
+  },
+  {
+   "champ": "Galio",
+   "champZh": "正义巨像",
+   "augs": [
+    "史上最大雪球",
+    "升级：雪球",
+    "雪球扭蛋机",
+    "任务：沃格勒特的巫师帽"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/galio-biggest-snowball-ever-999/"
+  },
+  {
+   "champ": "Galio",
+   "champZh": "正义巨像",
+   "augs": [
+    "吞噬灵魂",
+    "扇巴掌",
+    "无限循环往复",
+    "歌利亚巨人",
+    "坦克引擎",
+    "任务：钢化你心"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/galio-soul-eater-765/"
+  },
+  {
+   "champ": "Galio",
+   "champZh": "正义巨像",
+   "augs": [
+    "残忍",
+    "虚空裂隙",
+    "任务：沃格勒特的巫师帽",
+    "小丑学院"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/galio-cruelty-1042/"
+  },
+  {
+   "champ": "Galio",
+   "champZh": "正义巨像",
+   "augs": [
+    "祖母的辣椒油",
+    "超凡邪恶",
+    "霸符兄弟",
+    "慢炖"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/galio-grandmas-chili-oil-1023/"
+  },
+  {
+   "champ": "Galio",
+   "champZh": "正义巨像",
+   "augs": [
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/galio-executioner/"
+  },
+  {
+   "champ": "Galio",
+   "champZh": "正义巨像",
+   "augs": [
+    "魔法飞弹",
+    "裁决使",
+    "更万用的瞄准镜",
+    "穿针引线"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/galio-magic-missile-1072/"
+  },
+  {
+   "champ": "Gangplank",
+   "champZh": "海洋之灾",
+   "augs": [
+    "唯快不破"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/gangplank-dont-blink/"
+  },
+  {
+   "champ": "Gangplank",
+   "champZh": "海洋之灾",
+   "augs": [
+    "唯快不破",
+    "升级：无尽之刃",
+    "回归基本功",
+    "溢流",
+    "灵魂虹吸",
+    "家园卫士",
+    "冰寒",
+    "巨人杀手",
+    "大力",
+    "升级：收集者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/gangplank-dont-blink-797/"
+  },
+  {
+   "champ": "Gangplank",
+   "champZh": "海洋之灾",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/gangplank-back-to-basics/"
+  },
+  {
+   "champ": "Gangplank",
+   "champZh": "海洋之灾",
+   "augs": [
+    "回归基本功",
+    "升级：无尽之刃",
+    "溢流",
+    "唯快不破",
+    "灵魂虹吸",
+    "巨人杀手",
+    "大力",
+    "升级：收集者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/gangplank-back-to-basics-798/"
+  },
+  {
+   "champ": "Gangplank",
+   "champZh": "海洋之灾",
+   "augs": [
+    "秘术冲拳",
+    "升级：耀光",
+    "面包和黄油",
+    "升级：无尽之刃",
+    "升级：收集者",
+    "回归基本功",
+    "溢流",
+    "灵魂虹吸",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/gangplank-mystic-punch-796/"
+  },
+  {
+   "champ": "Gangplank",
+   "champZh": "海洋之灾",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/gangplank-ethereal-weapon/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "一板一眼"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-slow-and-steady/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "一板一眼",
+    "蛋白粉奶昔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-slow-and-steady-1026/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "一板一眼",
+    "蛋白粉奶昔",
+    "急救用具",
+    "旋转至胜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-slow-and-steady-1122/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-blade-waltz/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "利刃华尔兹",
+    "扳机炼狱",
+    "一板一眼",
+    "升级：无尽之刃",
+    "回归基本功",
+    "旋转至胜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-blade-waltz-689/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "双发快射",
+    "踢踏舞",
+    "一板一眼",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-double-tap-1076/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "吸血习性"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-vampirism/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "灵巧"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-deft/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "珠光护手"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-jeweled-gauntlet/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "艾卡西亚的陷落",
+    "蛋白粉奶昔",
+    "一板一眼",
+    "易损"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-void-immolation-1064/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "质变：棱彩阶",
+    "属性叠属性叠属性！",
+    "一板一眼"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-transmute-prismatic-1084/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "闪电打击"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-lightning-strikes/"
+  },
+  {
+   "champ": "Garen",
+   "champZh": "德玛西亚之力",
+   "augs": [
+    "魄罗之王的弹跳",
+    "一板一眼",
+    "旋转至胜",
+    "大力"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/garen-bounce-of-the-poro-king-1078/"
+  },
+  {
+   "champ": "Gnar",
+   "champZh": "迷失之牙",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/gnar-fan-the-hammer/"
+  },
+  {
+   "champ": "Gnar",
+   "champZh": "迷失之牙",
+   "augs": [
+    "连拨击锤",
+    "双刀流",
+    "接二连三",
+    "任务：沃格勒特的巫师帽",
+    "灵巧"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/gnar-fan-the-hammer-934/"
+  },
+  {
+   "champ": "Gragas",
+   "champZh": "酒桶",
+   "augs": [
+    "物理转魔法",
+    "歌利亚巨人",
+    "科学狂人",
+    "扇巴掌",
+    "超凡邪恶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/gragas-adapt-940/"
+  },
+  {
+   "champ": "Gragas",
+   "champZh": "酒桶",
+   "augs": [
+    "祖母的辣椒油",
+    "火上浇油",
+    "冰寒",
+    "折磨者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/gragas-grandmas-chili-oil-1101/"
+  },
+  {
+   "champ": "Gragas",
+   "champZh": "酒桶",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/gragas-ethereal-weapon/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "一板一眼"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-slow-and-steady/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "亮出你的剑"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-draw-your-sword/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "亮出你的剑",
+    "更万用的瞄准镜",
+    "升级：狂妄"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-draw-your-sword-790/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "唯快不破",
+    "一板一眼",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-dont-blink-787/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-back-to-basics/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "神射法师",
+    "一板一眼",
+    "巨人杀手",
+    "全凭身法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-marksmage-1047/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "神射法师",
+    "吸血习性",
+    "物理转魔法",
+    "狂热者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-marksmage-788/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "神射法师",
+    "物理转魔法",
+    "一板一眼",
+    "狂热者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-marksmage-1014/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "神射法师",
+    "物理转魔法",
+    "狂热者",
+    "回归基本功"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-marksmage-1016/"
+  },
+  {
+   "champ": "Graves",
+   "champZh": "法外狂徒",
+   "augs": [
+    "缩小引擎",
+    "升级：狂妄",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/graves-shrink-engine-789/"
+  },
+  {
+   "champ": "Gwen",
+   "champZh": "灵罗娃娃",
+   "augs": [
+    "神射法师",
+    "虚幻武器",
+    "巨人杀手",
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/gwen-marksmage-1091/"
+  },
+  {
+   "champ": "Gwen",
+   "champZh": "灵罗娃娃",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/gwen-ethereal-weapon/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "会心治疗",
+    "炼狱导管",
+    "终极刷新",
+    "负重爆气",
+    "旋转至胜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-critical-healing-702/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "你肩上的恶魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-devil-on-your-shoulder-705/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "你肩上的恶魔",
+    "裁决使",
+    "古式佳酿",
+    "面包和黄油"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-devil-on-your-shoulder-1146/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "古式佳酿"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-rabble-rousing/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "回归基本功",
+    "旋转至胜",
+    "吸血习性",
+    "负重爆气"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-back-to-basics-703/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "扳机炼狱"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-triggered-inferno-704/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "溢流",
+    "飞身踢",
+    "由心及物",
+    "海洋龙魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-overflow-973/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "珠光护手",
+    "升级：无尽之刃",
+    "面包和奶酪",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-jeweled-gauntlet-1126/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "终极唤醒"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-ultimate-awakening/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "终极唤醒",
+    "魔法飞弹",
+    "罪恶快感",
+    "古式佳酿"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-ultimate-awakening-1060/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "缩小引擎",
+    "飞身踢",
+    "无限循环往复",
+    "吞噬灵魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-shrink-engine-1057/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-ethereal-weapon/"
+  },
+  {
+   "champ": "Hecarim",
+   "champZh": "战争之影",
+   "augs": [
+    "虚幻武器",
+    "秘术冲拳",
+    "终极唤醒"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hecarim-ethereal-weapon-706/"
+  },
+  {
+   "champ": "Heimerdinger",
+   "champZh": "大发明家",
+   "augs": [
+    "杀戮时间到了"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/heimerdinger-its-killing-time/"
+  },
+  {
+   "champ": "Heimerdinger",
+   "champZh": "大发明家",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破",
+    "仆从大师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/heimerdinger-void-rift-660/"
+  },
+  {
+   "champ": "Hwei",
+   "champZh": "异画师",
+   "augs": [
+    "残忍"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/hwei-cruelty/"
+  },
+  {
+   "champ": "Hwei",
+   "champZh": "异画师",
+   "augs": [
+    "残忍",
+    "超凡邪恶",
+    "缩小引擎",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hwei-cruelty-678/"
+  },
+  {
+   "champ": "Hwei",
+   "champZh": "异画师",
+   "augs": [
+    "虚空裂隙",
+    "超凡邪恶",
+    "缩小引擎",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/hwei-void-rift-679/"
+  },
+  {
+   "champ": "Illaoi",
+   "champZh": "海兽祭司",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/illaoi-blade-waltz/"
+  },
+  {
+   "champ": "Illaoi",
+   "champZh": "海兽祭司",
+   "augs": [
+    "玻璃大炮"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/illaoi-glass-cannon/"
+  },
+  {
+   "champ": "Illaoi",
+   "champZh": "海兽祭司",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/illaoi-ethereal-weapon/"
+  },
+  {
+   "champ": "Illaoi",
+   "champZh": "海兽祭司",
+   "augs": [
+    "虚幻武器",
+    "任务：钢化你心",
+    "利刃华尔兹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/illaoi-ethereal-weapon-793/"
+  },
+  {
+   "champ": "Irelia",
+   "champZh": "刀锋舞者",
+   "augs": [
+    "珠光护手",
+    "尤里卡",
+    "裁决使",
+    "面包和黄油"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/irelia-jeweled-gauntlet-1073/"
+  },
+  {
+   "champ": "Irelia",
+   "champZh": "刀锋舞者",
+   "augs": [
+    "秘术冲拳",
+    "虚幻武器",
+    "全凭身法",
+    "循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/irelia-mystic-punch-634/"
+  },
+  {
+   "champ": "Ivern",
+   "champZh": "翠神",
+   "augs": [
+    "蛋白粉奶昔",
+    "全心为你",
+    "急救用具"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ivern-protein-shake-869/"
+  },
+  {
+   "champ": "Janna",
+   "champZh": "风暴之怒",
+   "augs": [
+    "死亡之环",
+    "溢流",
+    "终极刷新",
+    "急救用具",
+    "扇巴掌"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/janna-circle-of-death-957/"
+  },
+  {
+   "champ": "Janna",
+   "champZh": "风暴之怒",
+   "augs": [
+    "老练狙神"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/janna-skilled-sniper/"
+  },
+  {
+   "champ": "JarvanIV",
+   "champZh": "德玛西亚皇子",
+   "augs": [
+    "俯冲轰炸"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/jarvaniv-dive-bomber/"
+  },
+  {
+   "champ": "JarvanIV",
+   "champZh": "德玛西亚皇子",
+   "augs": [
+    "俯冲轰炸",
+    "最终都市列车",
+    "小丑学院",
+    "自我毁灭",
+    "捐赠",
+    "有始有终"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jarvaniv-dive-bomber-691/"
+  },
+  {
+   "champ": "JarvanIV",
+   "champZh": "德玛西亚皇子",
+   "augs": [
+    "坦克引擎",
+    "任务：钢化你心",
+    "尖端发明家",
+    "重量级打击手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jarvaniv-tank-engine-1035/"
+  },
+  {
+   "champ": "Jax",
+   "champZh": "武器大师",
+   "augs": [
+    "升级：耀光"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/jax-upgrade-sheen/"
+  },
+  {
+   "champ": "Jax",
+   "champZh": "武器大师",
+   "augs": [
+    "升级：耀光",
+    "物理转魔法",
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jax-upgrade-sheen-767/"
+  },
+  {
+   "champ": "Jax",
+   "champZh": "武器大师",
+   "augs": [
+    "吞噬灵魂",
+    "无限循环往复",
+    "扇巴掌",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jax-soul-eater-766/"
+  },
+  {
+   "champ": "Jax",
+   "champZh": "武器大师",
+   "augs": [
+    "砍伤",
+    "升级：耀光",
+    "暗影疾奔",
+    "接二连三"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jax-gash/"
+  },
+  {
+   "champ": "Jax",
+   "champZh": "武器大师",
+   "augs": [
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jax-mystic-punch-768/"
+  },
+  {
+   "champ": "Jayce",
+   "champZh": "未来守护者",
+   "augs": [
+    "一板一眼"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/jayce-slow-and-steady/"
+  },
+  {
+   "champ": "Jayce",
+   "champZh": "未来守护者",
+   "augs": [
+    "一板一眼",
+    "老练狙神"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jayce-slow-and-steady-757/"
+  },
+  {
+   "champ": "Jayce",
+   "champZh": "未来守护者",
+   "augs": [
+    "珠光护手",
+    "一板一眼",
+    "老练狙神",
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/jayce-jeweled-gauntlet-1077/"
+  },
+  {
+   "champ": "Jayce",
+   "champZh": "未来守护者",
+   "augs": [
+    "纯粹主义者 - 术师"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/jayce-purist-caster-574/"
+  },
+  {
+   "champ": "Jhin",
+   "champZh": "戏命师",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/jhin-back-to-basics/"
+  },
+  {
+   "champ": "Kaisa",
+   "champZh": "虚空之女",
+   "augs": [
+    "会心治疗",
+    "暴击飞弹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kaisa-critical-healing-1125/"
+  },
+  {
+   "champ": "Kaisa",
+   "champZh": "虚空之女",
+   "augs": [
+    "神射法师",
+    "狂热者",
+    "物法皆修",
+    "虚幻武器"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kaisa-marksmage-1039/"
+  },
+  {
+   "champ": "Kaisa",
+   "champZh": "虚空之女",
+   "augs": [
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kaisa-mystic-punch-889/"
+  },
+  {
+   "champ": "Kaisa",
+   "champZh": "虚空之女",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kaisa-ethereal-weapon/"
+  },
+  {
+   "champ": "Kaisa",
+   "champZh": "虚空之女",
+   "augs": [
+    "虚幻武器",
+    "物理转魔法",
+    "任务：沃格勒特的巫师帽",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kaisa-ethereal-weapon-890/"
+  },
+  {
+   "champ": "Kalista",
+   "champZh": "复仇之矛",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kalista-dashing/"
+  },
+  {
+   "champ": "Kalista",
+   "champZh": "复仇之矛",
+   "augs": [
+    "暗影疾奔"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kalista-shadow-runner/"
+  },
+  {
+   "champ": "Kalista",
+   "champZh": "复仇之矛",
+   "augs": [
+    "珠光护手",
+    "神射法师",
+    "连拨击锤",
+    "双刀流",
+    "接二连三",
+    "回归基本功"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kalista-jeweled-gauntlet-654/"
+  },
+  {
+   "champ": "Kalista",
+   "champZh": "复仇之矛",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kalista-fan-the-hammer/"
+  },
+  {
+   "champ": "Karma",
+   "champZh": "天启者",
+   "augs": [
+    "小猫咪找妈妈",
+    "急救用具",
+    "至高天诺言",
+    "全心为你"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/karma-im-a-baby-kitty-where-is-mama-661/"
+  },
+  {
+   "champ": "Karma",
+   "champZh": "天启者",
+   "augs": [
+    "珠光护手",
+    "尤里卡",
+    "任务：沃格勒特的巫师帽",
+    "有始有终",
+    "杀戮时间到了"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/karma-jeweled-gauntlet-662/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "你肩上的恶魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-devil-on-your-shoulder-772/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "小丑学院"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-clown-college/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "尤里卡"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-eureka/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "无限循环往复"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-infinite-recursion/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "玻璃大炮",
+    "小丑学院",
+    "俯冲轰炸",
+    "最终都市列车"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-glass-cannon-769/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "由心及物",
+    "海洋龙魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-mind-to-matter-770/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "终极刷新"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-ultimate-revolution/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "终极刷新",
+    "小丑学院",
+    "俯冲轰炸",
+    "最终都市列车"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-ultimate-revolution-771/"
+  },
+  {
+   "champ": "Karthus",
+   "champZh": "死亡颂唱者",
+   "augs": [
+    "虚空裂隙",
+    "终极刷新"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/karthus-void-rift-1056/"
+  },
+  {
+   "champ": "Kassadin",
+   "champZh": "虚空行者",
+   "augs": [
+    "全凭身法",
+    "狂徒豪气",
+    "暗影疾奔",
+    "你摸不到"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kassadin-dashing-1079/"
+  },
+  {
+   "champ": "Kassadin",
+   "champZh": "虚空行者",
+   "augs": [
+    "唯快不破",
+    "冰寒",
+    "由心及物"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kassadin-dont-blink-906/"
+  },
+  {
+   "champ": "Kassadin",
+   "champZh": "虚空行者",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破",
+    "由心及物"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kassadin-void-rift-905/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "一板一眼"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-slow-and-steady/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "一板一眼",
+    "虚空裂隙"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-slow-and-steady-1123/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "扳机炼狱"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-triggered-inferno-599/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "易损"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-vulnerability/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "灵巧"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-deft/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "物法皆修"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-master-of-duality/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "珠光护手",
+    "易损"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-jeweled-gauntlet-598/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-mystic-punch-601/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-ethereal-weapon/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "虚空裂隙"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-void-rift-606/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "虚空裂隙",
+    "超凡邪恶",
+    "缩小引擎",
+    "双发快射"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-void-rift-1111/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "蛋白粉奶昔",
+    "一板一眼"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-protein-shake-600/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "蛋白粉奶昔",
+    "一板一眼",
+    "终极不可阻挡",
+    "旋转至胜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-protein-shake-1083/"
+  },
+  {
+   "champ": "Katarina",
+   "champZh": "不祥之刃",
+   "augs": [
+    "闪电打击"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/katarina-lightning-strikes/"
+  },
+  {
+   "champ": "Kayle",
+   "champZh": "正义天使",
+   "augs": [
+    "亮出你的剑"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kayle-draw-your-sword/"
+  },
+  {
+   "champ": "Kayle",
+   "champZh": "正义天使",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kayle-infernal-conduit/"
+  },
+  {
+   "champ": "Kayle",
+   "champZh": "正义天使",
+   "augs": [
+    "物法皆修",
+    "神射法师",
+    "狂热者",
+    "双刀流",
+    "超凡邪恶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kayle-master-of-duality-763/"
+  },
+  {
+   "champ": "Kayle",
+   "champZh": "正义天使",
+   "augs": [
+    "神射法师"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kayle-marksmage/"
+  },
+  {
+   "champ": "Kayle",
+   "champZh": "正义天使",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kayle-ethereal-weapon/"
+  },
+  {
+   "champ": "Kayle",
+   "champZh": "正义天使",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kayle-void-rift-762/"
+  },
+  {
+   "champ": "Kayle",
+   "champZh": "正义天使",
+   "augs": [
+    "魔法飞弹"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kayle-magic-missile/"
+  },
+  {
+   "champ": "Kayn",
+   "champZh": "影流之镰",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kayn-dashing/"
+  },
+  {
+   "champ": "Kayn",
+   "champZh": "影流之镰",
+   "augs": [
+    "珠光护手",
+    "暗影疾奔",
+    "面包和黄油",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kayn-jeweled-gauntlet-1143/"
+  },
+  {
+   "champ": "Kayn",
+   "champZh": "影流之镰",
+   "augs": [
+    "量子计算"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kayn-quantum-computing/"
+  },
+  {
+   "champ": "Kennen",
+   "champZh": "狂暴之心",
+   "augs": [
+    "小丑学院"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kennen-clown-college/"
+  },
+  {
+   "champ": "Kennen",
+   "champZh": "狂暴之心",
+   "augs": [
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kennen-adapt-827/"
+  },
+  {
+   "champ": "Khazix",
+   "champZh": "虚空掠夺者",
+   "augs": [
+    "升级：狂妄",
+    "缩小引擎",
+    "最终形态",
+    "罪恶快感"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/khazix-upgrade-hubris-902/"
+  },
+  {
+   "champ": "Kindred",
+   "champZh": "永猎双子",
+   "augs": [
+    "叠角龙"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kindred-stackosaurusrex/"
+  },
+  {
+   "champ": "Kindred",
+   "champZh": "永猎双子",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/kindred-back-to-basics/"
+  },
+  {
+   "champ": "Kled",
+   "champZh": "暴怒骑士",
+   "augs": [
+    "一板一眼",
+    "大力",
+    "小丑学院",
+    "最终都市列车",
+    "歌利亚巨人",
+    "升级：无尽之刃"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kled-slow-and-steady-750/"
+  },
+  {
+   "champ": "Kled",
+   "champZh": "暴怒骑士",
+   "augs": [
+    "重量级打击手",
+    "歌利亚巨人",
+    "坦克引擎",
+    "任务：钢化你心"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/kled-heavy-hitter-751/"
+  },
+  {
+   "champ": "KSante",
+   "champZh": "纳祖芒荣耀",
+   "augs": [
+    "全凭身法",
+    "狂徒豪气",
+    "坦克引擎",
+    "任务：钢化你心"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ksante-dashing-867/"
+  },
+  {
+   "champ": "KSante",
+   "champZh": "纳祖芒荣耀",
+   "augs": [
+    "精怪魔法"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ksante-fey-magic/"
+  },
+  {
+   "champ": "KSante",
+   "champZh": "纳祖芒荣耀",
+   "augs": [
+    "蛋白粉奶昔",
+    "急救用具",
+    "狂徒豪气",
+    "回归基本功",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ksante-protein-shake-868/"
+  },
+  {
+   "champ": "Leblanc",
+   "champZh": "诡术妖姬",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/leblanc-dashing/"
+  },
+  {
+   "champ": "Leblanc",
+   "champZh": "诡术妖姬",
+   "augs": [
+    "量子计算"
+   ],
+   "types": [
+    "entertainment",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/leblanc-quantum-computing/"
+  },
+  {
+   "champ": "Leblanc",
+   "champZh": "诡术妖姬",
+   "augs": [
+    "霸符兄弟",
+    "海洋龙魂",
+    "由心及物",
+    "溢流"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/leblanc-buff-buddies-996/"
+  },
+  {
+   "champ": "LeeSin",
+   "champZh": "盲僧",
+   "augs": [
+    "砸开那颗蛋",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/leesin-crack-open-that-egg-1024/"
+  },
+  {
+   "champ": "Leona",
+   "champZh": "曙光女神",
+   "augs": [
+    "残忍",
+    "任务：钢化你心",
+    "坦克引擎",
+    "歌利亚巨人",
+    "循环往复",
+    "无限循环往复",
+    "尖端发明家",
+    "重量级打击手",
+    "飞身踢"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/leona-cruelty-755/"
+  },
+  {
+   "champ": "Leona",
+   "champZh": "曙光女神",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/leona-infernal-conduit/"
+  },
+  {
+   "champ": "Lillia",
+   "champZh": "含羞蓓蕾",
+   "augs": [
+    "你肩上的恶魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lillia-devil-on-your-shoulder-642/"
+  },
+  {
+   "champ": "Lillia",
+   "champZh": "含羞蓓蕾",
+   "augs": [
+    "唯快不破",
+    "冰寒"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lillia-dont-blink-641/"
+  },
+  {
+   "champ": "Lillia",
+   "champZh": "含羞蓓蕾",
+   "augs": [
+    "旋转至胜"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/lillia-spin-to-win/"
+  },
+  {
+   "champ": "Lillia",
+   "champZh": "含羞蓓蕾",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/lillia-infernal-conduit/"
+  },
+  {
+   "champ": "Lillia",
+   "champZh": "含羞蓓蕾",
+   "augs": [
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lillia-adapt-644/"
+  },
+  {
+   "champ": "Lillia",
+   "champZh": "含羞蓓蕾",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lillia-ethereal-weapon-643/"
+  },
+  {
+   "champ": "Lillia",
+   "champZh": "含羞蓓蕾",
+   "augs": [
+    "虚空裂隙",
+    "闪闪现现"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lillia-void-rift-1097/"
+  },
+  {
+   "champ": "Lissandra",
+   "champZh": "冰霜女巫",
+   "augs": [
+    "唯快不破"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/lissandra-dont-blink/"
+  },
+  {
+   "champ": "Lissandra",
+   "champZh": "冰霜女巫",
+   "augs": [
+    "虚空裂隙",
+    "穿针引线",
+    "冰寒",
+    "家园卫士"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lissandra-void-rift-1069/"
+  },
+  {
+   "champ": "Lucian",
+   "champZh": "圣枪游侠",
+   "augs": [
+    "小丑学院"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lucian-clown-college-979/"
+  },
+  {
+   "champ": "Lucian",
+   "champZh": "圣枪游侠",
+   "augs": [
+    "易损"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/lucian-vulnerability/"
+  },
+  {
+   "champ": "Lucian",
+   "champZh": "圣枪游侠",
+   "augs": [
+    "珠光护手"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/lucian-jeweled-gauntlet/"
+  },
+  {
+   "champ": "Lucian",
+   "champZh": "圣枪游侠",
+   "augs": [
+    "珠光护手",
+    "易损",
+    "升级：无尽之刃",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lucian-jeweled-gauntlet-648/"
+  },
+  {
+   "champ": "Lucian",
+   "champZh": "圣枪游侠",
+   "augs": [
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lucian-mystic-punch-1068/"
+  },
+  {
+   "champ": "Lucian",
+   "champZh": "圣枪游侠",
+   "augs": [
+    "秘术冲拳",
+    "双刀流",
+    "全凭身法",
+    "循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lucian-mystic-punch-647/"
+  },
+  {
+   "champ": "Lucian",
+   "champZh": "圣枪游侠",
+   "augs": [
+    "面包和果酱",
+    "魔法飞弹",
+    "任务：沃格勒特的巫师帽",
+    "神射法师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lucian-bread-and-jam-649/"
+  },
+  {
+   "champ": "Lux",
+   "champZh": "光辉女郎",
+   "augs": [
+    "尤里卡",
+    "珠光护手",
+    "任务：沃格勒特的巫师帽"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lux-eureka-1034/"
+  },
+  {
+   "champ": "Lux",
+   "champZh": "光辉女郎",
+   "augs": [
+    "扇巴掌",
+    "无限循环往复",
+    "超凡邪恶",
+    "吞噬灵魂",
+    "尤里卡",
+    "缩小引擎",
+    "魔法飞弹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lux-slap-around-625/"
+  },
+  {
+   "champ": "Lux",
+   "champZh": "光辉女郎",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/lux-ethereal-weapon/"
+  },
+  {
+   "champ": "Lux",
+   "champZh": "光辉女郎",
+   "augs": [
+    "虚幻武器",
+    "珠光护手",
+    "魔法飞弹",
+    "尤里卡",
+    "有始有终"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/lux-ethereal-weapon-624/"
+  },
+  {
+   "champ": "Malphite",
+   "champZh": "熔岩巨兽",
+   "augs": [
+    "尤里卡",
+    "全凭身法",
+    "任务：沃格勒特的巫师帽",
+    "终极刷新"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/malphite-eureka-1030/"
+  },
+  {
+   "champ": "Malphite",
+   "champZh": "熔岩巨兽",
+   "augs": [
+    "终极刷新"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/malphite-ultimate-revolution/"
+  },
+  {
+   "champ": "Malzahar",
+   "champZh": "虚空先知",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/malzahar-infernal-conduit/"
+  },
+  {
+   "champ": "Malzahar",
+   "champZh": "虚空先知",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/malzahar-ethereal-weapon/"
+  },
+  {
+   "champ": "Maokai",
+   "champZh": "扭曲树精",
+   "augs": [
+    "巨像的勇气",
+    "蛋白粉奶昔",
+    "急救用具"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/maokai-courage-of-the-colossus-708/"
+  },
+  {
+   "champ": "Maokai",
+   "champZh": "扭曲树精",
+   "augs": [
+    "死亡之环"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/maokai-circle-of-death/"
+  },
+  {
+   "champ": "Maokai",
+   "champZh": "扭曲树精",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/maokai-void-rift-709/"
+  },
+  {
+   "champ": "Maokai",
+   "champZh": "扭曲树精",
+   "augs": [
+    "蛋白粉奶昔",
+    "巨像的勇气",
+    "恶趣味",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/maokai-protein-shake-1081/"
+  },
+  {
+   "champ": "Maokai",
+   "champZh": "扭曲树精",
+   "augs": [
+    "蛋白粉奶昔",
+    "死亡之环",
+    "急救用具",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/maokai-protein-shake-711/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "升级：收集者",
+    "裁决使",
+    "地狱三头犬",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-upgrade-collector-1037/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "升级：狂妄",
+    "裁决使",
+    "无限循环往复",
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-upgrade-hubris-1017/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "双刀流",
+    "战争交响乐",
+    "最终形态",
+    "你肩上的恶魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-dual-wield-1110/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "双刀流",
+    "接二连三",
+    "砍伤"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-dual-wield-722/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "星界躯体",
+    "死亡之环",
+    "急救用具",
+    "作弊：我能回城！"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-celestial-body-1044/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "死亡之环"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-circle-of-death/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "秘术冲拳"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-mystic-punch/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "秘术冲拳",
+    "全凭身法",
+    "循环往复",
+    "面包和黄油"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-mystic-punch-721/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "裁决使",
+    "双发快射",
+    "升级：无尽之刃",
+    "升级：收集者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-executioner-720/"
+  },
+  {
+   "champ": "MasterYi",
+   "champZh": "无极剑圣",
+   "augs": [
+    "裁决使",
+    "接二连三",
+    "升级：收集者",
+    "地狱三头犬"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/masteryi-executioner/"
+  },
+  {
+   "champ": "Mel",
+   "champZh": "流光镜影",
+   "augs": [
+    "易损",
+    "珠光护手",
+    "巨人杀手",
+    "科学狂人",
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/mel-vulnerability-792/"
+  },
+  {
+   "champ": "Mel",
+   "champZh": "流光镜影",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/mel-infernal-conduit/"
+  },
+  {
+   "champ": "Mel",
+   "champZh": "流光镜影",
+   "augs": [
+    "老练狙神"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/mel-skilled-sniper/"
+  },
+  {
+   "champ": "Mel",
+   "champZh": "流光镜影",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/mel-void-rift-791/"
+  },
+  {
+   "champ": "Mel",
+   "champZh": "流光镜影",
+   "augs": [
+    "裁决使",
+    "面包和黄油",
+    "虚空裂隙",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/mel-executioner-1090/"
+  },
+  {
+   "champ": "Milio",
+   "champZh": "明烛",
+   "augs": [
+    "尤里卡",
+    "珠光护手",
+    "残忍",
+    "回归基本功"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/milio-eureka-1029/"
+  },
+  {
+   "champ": "MissFortune",
+   "champZh": "赏金猎人",
+   "augs": [
+    "任务：沃格勒特的巫师帽"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/missfortune-quest-wooglets-witchcap/"
+  },
+  {
+   "champ": "MissFortune",
+   "champZh": "赏金猎人",
+   "augs": [
+    "尤里卡",
+    "冰寒",
+    "魔法飞弹",
+    "面包和奶酪"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/missfortune-eureka-926/"
+  },
+  {
+   "champ": "MissFortune",
+   "champZh": "赏金猎人",
+   "augs": [
+    "尤里卡",
+    "溢流",
+    "霸符兄弟",
+    "速度恶魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/missfortune-eureka-1087/"
+  },
+  {
+   "champ": "MissFortune",
+   "champZh": "赏金猎人",
+   "augs": [
+    "由心及物",
+    "海洋龙魂",
+    "尤里卡",
+    "无限循环往复",
+    "缩小引擎",
+    "冰寒"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/missfortune-mind-to-matter-925/"
+  },
+  {
+   "champ": "MissFortune",
+   "champZh": "赏金猎人",
+   "augs": [
+    "老练狙神"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/missfortune-skilled-sniper/"
+  },
+  {
+   "champ": "MissFortune",
+   "champZh": "赏金猎人",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/missfortune-void-rift-923/"
+  },
+  {
+   "champ": "MonkeyKing",
+   "champZh": "齐天大圣",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/monkeyking-blade-waltz/"
+  },
+  {
+   "champ": "Mordekaiser",
+   "champZh": "铁铠冥魂",
+   "augs": [
+    "圣火",
+    "战争交响乐"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/mordekaiser-holy-fire-1015/"
+  },
+  {
+   "champ": "Mordekaiser",
+   "champZh": "铁铠冥魂",
+   "augs": [
+    "死亡之环",
+    "蛋白粉奶昔",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/mordekaiser-circle-of-death-944/"
+  },
+  {
+   "champ": "Mordekaiser",
+   "champZh": "铁铠冥魂",
+   "augs": [
+    "祖母的辣椒油",
+    "会心治疗",
+    "蛋白粉奶昔",
+    "死亡之环"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/mordekaiser-grandmas-chili-oil-1124/"
+  },
+  {
+   "champ": "Mordekaiser",
+   "champZh": "铁铠冥魂",
+   "augs": [
+    "蛋白粉奶昔"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/mordekaiser-protein-shake/"
+  },
+  {
+   "champ": "Morgana",
+   "champZh": "堕落天使",
+   "augs": [
+    "冰寒",
+    "侵蚀"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/morgana-ice-cold-651/"
+  },
+  {
+   "champ": "Morgana",
+   "champZh": "堕落天使",
+   "augs": [
+    "海洋龙魂",
+    "由心及物",
+    "霸符兄弟",
+    "注魔",
+    "溢流",
+    "缩小引擎",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/morgana-ocean-soul-652/"
+  },
+  {
+   "champ": "Morgana",
+   "champZh": "堕落天使",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/morgana-infernal-conduit/"
+  },
+  {
+   "champ": "Morgana",
+   "champZh": "堕落天使",
+   "augs": [
+    "老练狙神"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/morgana-skilled-sniper/"
+  },
+  {
+   "champ": "Morgana",
+   "champZh": "堕落天使",
+   "augs": [
+    "裁决使"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/morgana-executioner/"
+  },
+  {
+   "champ": "Naafiri",
+   "champZh": "百裂冥犬",
+   "augs": [
+    "扳机炼狱",
+    "利刃华尔兹",
+    "最终都市列车"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/naafiri-triggered-inferno-842/"
+  },
+  {
+   "champ": "Naafiri",
+   "champZh": "百裂冥犬",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/naafiri-infernal-conduit/"
+  },
+  {
+   "champ": "Naafiri",
+   "champZh": "百裂冥犬",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/naafiri-ethereal-weapon/"
+  },
+  {
+   "champ": "Naafiri",
+   "champZh": "百裂冥犬",
+   "augs": [
+    "虚幻武器",
+    "易损",
+    "砍伤",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/naafiri-ethereal-weapon-844/"
+  },
+  {
+   "champ": "Nami",
+   "champZh": "唤潮鲛姬",
+   "augs": [
+    "残忍",
+    "扇巴掌",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nami-cruelty-646/"
+  },
+  {
+   "champ": "Nasus",
+   "champZh": "沙漠死神",
+   "augs": [
+    "缩小引擎",
+    "任务：钢化你心",
+    "无限循环往复",
+    "升级：狂妄",
+    "物法皆修"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nasus-shrink-engine-780/"
+  },
+  {
+   "champ": "Nautilus",
+   "champZh": "深海泰坦",
+   "augs": [
+    "巨像的勇气"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/nautilus-courage-of-the-colossus/"
+  },
+  {
+   "champ": "Nautilus",
+   "champZh": "深海泰坦",
+   "augs": [
+    "蛋白粉奶昔",
+    "巨像的勇气",
+    "吞噬灵魂",
+    "任务：钢化你心",
+    "坦克引擎",
+    "飞身踢",
+    "重量级打击手",
+    "尖端发明家",
+    "星界躯体",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nautilus-protein-shake-801/"
+  },
+  {
+   "champ": "Neeko",
+   "champZh": "万花通灵",
+   "augs": [
+    "有始有终"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/neeko-from-beginning-to-end/"
+  },
+  {
+   "champ": "Neeko",
+   "champZh": "万花通灵",
+   "augs": [
+    "残忍"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/neeko-cruelty-589/"
+  },
+  {
+   "champ": "Neeko",
+   "champZh": "万花通灵",
+   "augs": [
+    "物法皆修"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/neeko-master-of-duality/"
+  },
+  {
+   "champ": "Neeko",
+   "champZh": "万花通灵",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/neeko-void-rift-588/"
+  },
+  {
+   "champ": "Neeko",
+   "champZh": "万花通灵",
+   "augs": [
+    "踢踏舞"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/neeko-tap-dancer/"
+  },
+  {
+   "champ": "Neeko",
+   "champZh": "万花通灵",
+   "augs": [
+    "魄罗爆破手"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/neeko-poro-blaster/"
+  },
+  {
+   "champ": "Nidalee",
+   "champZh": "狂野女猎手",
+   "augs": [
+    "史上最大雪球",
+    "升级：雪球",
+    "弹球"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nidalee-biggest-snowball-ever-828/"
+  },
+  {
+   "champ": "Nocturne",
+   "champZh": "永恒梦魇",
+   "augs": [
+    "俯冲轰炸",
+    "最终都市列车",
+    "小丑学院",
+    "自我毁灭"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nocturne-dive-bomber-778/"
+  },
+  {
+   "champ": "Nocturne",
+   "champZh": "永恒梦魇",
+   "augs": [
+    "量子计算"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nocturne-quantum-computing-777/"
+  },
+  {
+   "champ": "Nocturne",
+   "champZh": "永恒梦魇",
+   "augs": [
+    "量子计算",
+    "感受燃烧",
+    "神圣干预"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nocturne-quantum-computing-776/"
+  },
+  {
+   "champ": "Nunu",
+   "champZh": "雪原双子",
+   "augs": [
+    "死亡之环"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/nunu-circle-of-death/"
+  },
+  {
+   "champ": "Nunu",
+   "champZh": "雪原双子",
+   "augs": [
+    "死亡之环",
+    "会心治疗",
+    "重量级打击手",
+    "歌利亚巨人",
+    "坦克引擎",
+    "由心及物",
+    "任务：钢化你心"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/nunu-circle-of-death-953/"
+  },
+  {
+   "champ": "Nunu",
+   "champZh": "雪原双子",
+   "augs": [
+    "溢流"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/nunu-overflow/"
+  },
+  {
+   "champ": "Ornn",
+   "champZh": "山隐之焰",
+   "augs": [
+    "精怪魔法"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ornn-fey-magic/"
+  },
+  {
+   "champ": "Ornn",
+   "champZh": "山隐之焰",
+   "augs": [
+    "精怪魔法",
+    "无限循环往复",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ornn-fey-magic-671/"
+  },
+  {
+   "champ": "Pantheon",
+   "champZh": "不屈之枪",
+   "augs": [
+    "任务：钢化你心"
+   ],
+   "types": [
+    "blackTech",
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/pantheon-quest-steel-your-heart/"
+  },
+  {
+   "champ": "Pantheon",
+   "champZh": "不屈之枪",
+   "augs": [
+    "任务：钢化你心",
+    "坦克引擎",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/pantheon-quest-steel-your-heart-591/"
+  },
+  {
+   "champ": "Pantheon",
+   "champZh": "不屈之枪",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/pantheon-back-to-basics/"
+  },
+  {
+   "champ": "Pantheon",
+   "champZh": "不屈之枪",
+   "augs": [
+    "易损",
+    "裁决使",
+    "吸血习性",
+    "回归基本功"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/pantheon-vulnerability-1113/"
+  },
+  {
+   "champ": "Pantheon",
+   "champZh": "不屈之枪",
+   "augs": [
+    "虚幻武器",
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/pantheon-ethereal-weapon-1050/"
+  },
+  {
+   "champ": "Pantheon",
+   "champZh": "不屈之枪",
+   "augs": [
+    "量子计算",
+    "回归基本功",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/pantheon-quantum-computing-592/"
+  },
+  {
+   "champ": "Pyke",
+   "champZh": "血港鬼影",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/pyke-dashing/"
+  },
+  {
+   "champ": "Pyke",
+   "champZh": "血港鬼影",
+   "augs": [
+    "歌利亚巨人",
+    "科学狂人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/pyke-goliath-914/"
+  },
+  {
+   "champ": "Pyke",
+   "champZh": "血港鬼影",
+   "augs": [
+    "缩小引擎",
+    "扇巴掌",
+    "歌利亚巨人",
+    "吞噬灵魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/pyke-shrink-engine-968/"
+  },
+  {
+   "champ": "Qiyana",
+   "champZh": "元素女皇",
+   "augs": [
+    "注魔",
+    "海洋龙魂",
+    "全凭身法",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/qiyana-juiced-622/"
+  },
+  {
+   "champ": "Quinn",
+   "champZh": "德玛西亚之翼",
+   "augs": [
+    "狂徒豪气"
+   ],
+   "types": [
+    "bug"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/quinn-outlaws-grit/"
+  },
+  {
+   "champ": "Quinn",
+   "champZh": "德玛西亚之翼",
+   "augs": [
+    "量子计算"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/quinn-quantum-computing/"
+  },
+  {
+   "champ": "Quinn",
+   "champZh": "德玛西亚之翼",
+   "augs": [
+    "魄罗爆破手",
+    "双刀流",
+    "巨人杀手",
+    "双发快射"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/quinn-poro-blaster-985/"
+  },
+  {
+   "champ": "Rakan",
+   "champZh": "幻翎",
+   "augs": [
+    "残忍"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rakan-cruelty-676/"
+  },
+  {
+   "champ": "Rammus",
+   "champZh": "披甲龙龟",
+   "augs": [
+    "升级：荆棘之甲",
+    "红包",
+    "当心小蛋糕！"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rammus-upgrade-thornmail-712/"
+  },
+  {
+   "champ": "Rammus",
+   "champZh": "披甲龙龟",
+   "augs": [
+    "砍伤",
+    "虚幻武器",
+    "任务：钢化你心",
+    "吞噬灵魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rammus-gash-1131/"
+  },
+  {
+   "champ": "Rammus",
+   "champZh": "披甲龙龟",
+   "augs": [
+    "祖母的辣椒油",
+    "升级：荆棘之甲"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rammus-grandmas-chili-oil-1099/"
+  },
+  {
+   "champ": "Rammus",
+   "champZh": "披甲龙龟",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rammus-ethereal-weapon/"
+  },
+  {
+   "champ": "Rammus",
+   "champZh": "披甲龙龟",
+   "augs": [
+    "蛋白粉奶昔",
+    "砍伤"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rammus-protein-shake-1027/"
+  },
+  {
+   "champ": "RekSai",
+   "champZh": "虚空遁地兽",
+   "augs": [
+    "万用瞄准镜"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/reksai-scoped-weapons/"
+  },
+  {
+   "champ": "RekSai",
+   "champZh": "虚空遁地兽",
+   "augs": [
+    "最万用的瞄准镜"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/reksai-scopiest-weapons/"
+  },
+  {
+   "champ": "RekSai",
+   "champZh": "虚空遁地兽",
+   "augs": [
+    "更万用的瞄准镜"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/reksai-scopier-weapons/"
+  },
+  {
+   "champ": "Rell",
+   "champZh": "镕铁少女",
+   "augs": [
+    "巨像的勇气"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rell-courage-of-the-colossus/"
+  },
+  {
+   "champ": "Rell",
+   "champZh": "镕铁少女",
+   "augs": [
+    "巨像的勇气",
+    "负重爆气",
+    "任务：钢化你心",
+    "恶趣味"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rell-courage-of-the-colossus-1098/"
+  },
+  {
+   "champ": "Rell",
+   "champZh": "镕铁少女",
+   "augs": [
+    "歌利亚巨人",
+    "巨像的勇气",
+    "飞身踢",
+    "残忍"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rell-kkk/"
+  },
+  {
+   "champ": "Rell",
+   "champZh": "镕铁少女",
+   "augs": [
+    "残忍"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rell-cruelty/"
+  },
+  {
+   "champ": "Rell",
+   "champZh": "镕铁少女",
+   "augs": [
+    "残忍",
+    "坦克引擎",
+    "任务：钢化你心",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rell-cruelty-951/"
+  },
+  {
+   "champ": "Renata",
+   "champZh": "炼金男爵",
+   "augs": [
+    "任务：沃格勒特的巫师帽",
+    "科学狂人",
+    "男爵之手",
+    "歌利亚巨人",
+    "狂热者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/renata-quest-wooglets-witchcap-813/"
+  },
+  {
+   "champ": "Renata",
+   "champZh": "炼金男爵",
+   "augs": [
+    "扇巴掌"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/renata-slap-around/"
+  },
+  {
+   "champ": "Renata",
+   "champZh": "炼金男爵",
+   "augs": [
+    "残忍"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/renata-cruelty/"
+  },
+  {
+   "champ": "Rengar",
+   "champZh": "傲之追猎者",
+   "augs": [
+    "万用瞄准镜"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rengar-scoped-weapons/"
+  },
+  {
+   "champ": "Rengar",
+   "champZh": "傲之追猎者",
+   "augs": [
+    "最万用的瞄准镜"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rengar-scopiest-weapons/"
+  },
+  {
+   "champ": "Rengar",
+   "champZh": "傲之追猎者",
+   "augs": [
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rengar-vampirism-997/"
+  },
+  {
+   "champ": "Rengar",
+   "champZh": "傲之追猎者",
+   "augs": [
+    "更万用的瞄准镜"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rengar-scopier-weapons/"
+  },
+  {
+   "champ": "Rengar",
+   "champZh": "傲之追猎者",
+   "augs": [
+    "更万用的瞄准镜",
+    "万用瞄准镜",
+    "最万用的瞄准镜",
+    "最终都市列车"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rengar-scopier-weapons-1062/"
+  },
+  {
+   "champ": "Rengar",
+   "champZh": "傲之追猎者",
+   "augs": [
+    "死亡之环"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rengar-circle-of-death-620/"
+  },
+  {
+   "champ": "Riven",
+   "champZh": "放逐之刃",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/riven-ethereal-weapon/"
+  },
+  {
+   "champ": "Rumble",
+   "champZh": "机械公敌",
+   "augs": [
+    "易损"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rumble-vulnerability/"
+  },
+  {
+   "champ": "Rumble",
+   "champZh": "机械公敌",
+   "augs": [
+    "珠光护手",
+    "易损",
+    "巨人杀手",
+    "回归基本功"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rumble-jeweled-gauntlet-760/"
+  },
+  {
+   "champ": "Rumble",
+   "champZh": "机械公敌",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/rumble-ethereal-weapon/"
+  },
+  {
+   "champ": "Rumble",
+   "champZh": "机械公敌",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/rumble-void-rift-759/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "任务：沃格勒特的巫师帽"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-quest-wooglets-witchcap/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "任务：沃格勒特的巫师帽",
+    "由心及物",
+    "物理转魔法",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-quest-wooglets-witchcap-1094/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "坦克引擎"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-tank-engine/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "坦克引擎",
+    "由心及物",
+    "物理转魔法",
+    "魔法飞弹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-tank-engine-1139/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "坦克引擎",
+    "超凡邪恶",
+    "物理转魔法",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-tank-engine-978/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "歌利亚巨人"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-goliath/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "歌利亚巨人",
+    "坦克引擎",
+    "物理转魔法",
+    "科学狂人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-goliath-1054/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "歌利亚巨人",
+    "由心及物",
+    "物理转魔法",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-goliath-984/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "歌利亚巨人",
+    "科学狂人",
+    "物理转魔法",
+    "由心及物"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-0/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "溢流"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-overflow/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "物理转魔法"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-adapt/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "物理转魔法",
+    "由心及物",
+    "吸血习性",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-adapt-1018/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "物理转魔法",
+    "由心及物",
+    "坦克引擎",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-adapt-1093/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "物理转魔法",
+    "由心及物",
+    "歌利亚巨人",
+    "任务：沃格勒特的巫师帽"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-adapt-865/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "由心及物"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-mind-to-matter/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "由心及物",
+    "溢流",
+    "无限循环往复",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-mind-to-matter-866/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "由心及物",
+    "溢流",
+    "物理转魔法",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-mind-to-matter-1013/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "由心及物",
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-mind-to-matter-1082/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "由心及物",
+    "物理转魔法",
+    "溢流",
+    "回归基本功"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-qqq/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "科学狂人"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-mad-scientist/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "终极刷新"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-ultimate-revolution/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "虚空裂隙",
+    "物理转魔法",
+    "坦克引擎",
+    "科学狂人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-void-rift-971/"
+  },
+  {
+   "champ": "Ryze",
+   "champZh": "符文法师",
+   "augs": [
+    "魔法转物理",
+    "由心及物",
+    "任务：沃格勒特的巫师帽",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ryze-escapade-1022/"
+  },
+  {
+   "champ": "Samira",
+   "champZh": "沙漠玫瑰",
+   "augs": [
+    "亮出你的剑"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/samira-draw-your-sword/"
+  },
+  {
+   "champ": "Samira",
+   "champZh": "沙漠玫瑰",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/samira-blade-waltz/"
+  },
+  {
+   "champ": "Samira",
+   "champZh": "沙漠玫瑰",
+   "augs": [
+    "小丑学院"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/samira-clown-college/"
+  },
+  {
+   "champ": "Samira",
+   "champZh": "沙漠玫瑰",
+   "augs": [
+    "易损"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/samira-vulnerability/"
+  },
+  {
+   "champ": "Samira",
+   "champZh": "沙漠玫瑰",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/samira-ethereal-weapon/"
+  },
+  {
+   "champ": "Sejuani",
+   "champZh": "北地之怒",
+   "augs": [
+    "珠光护手",
+    "裁决使",
+    "尤里卡",
+    "溢流"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sejuani-jeweled-gauntlet-636/"
+  },
+  {
+   "champ": "Sejuani",
+   "champZh": "北地之怒",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sejuani-fan-the-hammer/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "万用瞄准镜",
+    "更万用的瞄准镜",
+    "最万用的瞄准镜",
+    "家园卫士"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-scoped-weapons-799/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "亮出你的剑"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-draw-your-sword/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "双刀流"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-dual-wield/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "叠角龙"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-stackosaurusrex/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "物法皆修"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-master-of-duality-800/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "物法皆修",
+    "属性叠属性叠属性！",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-master-of-duality-987/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-ethereal-weapon/"
+  },
+  {
+   "champ": "Senna",
+   "champZh": "涤魂圣枪",
+   "augs": [
+    "蛋白粉奶昔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/senna-protein-shake-1021/"
+  },
+  {
+   "champ": "Seraphine",
+   "champZh": "星籁歌姬",
+   "augs": [
+    "山脉龙魂"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/seraphine-mountainsoul/"
+  },
+  {
+   "champ": "Seraphine",
+   "champZh": "星籁歌姬",
+   "augs": [
+    "扇巴掌"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/seraphine-slap-around/"
+  },
+  {
+   "champ": "Seraphine",
+   "champZh": "星籁歌姬",
+   "augs": [
+    "扇巴掌",
+    "循环往复",
+    "超凡邪恶",
+    "负重爆气",
+    "无限循环往复",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/seraphine-slap-around-737/"
+  },
+  {
+   "champ": "Seraphine",
+   "champZh": "星籁歌姬",
+   "augs": [
+    "残忍",
+    "扇巴掌",
+    "缩小引擎",
+    "超凡邪恶",
+    "负重爆气",
+    "无限循环往复",
+    "循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/seraphine-cruelty-736/"
+  },
+  {
+   "champ": "Sett",
+   "champZh": "腕豪",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sett-back-to-basics/"
+  },
+  {
+   "champ": "Sett",
+   "champZh": "腕豪",
+   "augs": [
+    "小丑学院"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sett-clown-college/"
+  },
+  {
+   "champ": "Sett",
+   "champZh": "腕豪",
+   "augs": [
+    "歌利亚巨人",
+    "科学狂人",
+    "任务：钢化你心",
+    "坦克引擎",
+    "重量级打击手",
+    "飞身踢"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sett-goliath-871/"
+  },
+  {
+   "champ": "Sett",
+   "champZh": "腕豪",
+   "augs": [
+    "珠光护手"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sett-jeweled-gauntlet/"
+  },
+  {
+   "champ": "Sett",
+   "champZh": "腕豪",
+   "augs": [
+    "珠光护手",
+    "最万用的瞄准镜",
+    "更万用的瞄准镜",
+    "闪电打击"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sett-jeweled-gauntlet-1118/"
+  },
+  {
+   "champ": "Sett",
+   "champZh": "腕豪",
+   "augs": [
+    "量子计算"
+   ],
+   "types": [
+    "blackTech",
+    "bug"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sett-quantum-computing/"
+  },
+  {
+   "champ": "Sett",
+   "champZh": "腕豪",
+   "augs": [
+    "飞身踢",
+    "坦克引擎",
+    "吞噬灵魂",
+    "重量级打击手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sett-dropkick-1132/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "一板一眼"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-slow-and-steady/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "仆从大师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-minionmancer/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "吸血习性"
+   ],
+   "types": [
+    "blackTech",
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-vampirism/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "唯快不破"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-dont-blink/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "回归基本功"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-back-to-basics/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "小丑学院"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-clown-college/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "小丑学院",
+    "俯冲轰炸",
+    "最终都市列车",
+    "自我毁灭"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-clown-college-695/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "小丑学院",
+    "无限循环往复",
+    "裁决使",
+    "暗影疾奔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-clown-college-992/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "裁决使"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-executioner/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "量子计算"
+   ],
+   "types": [
+    "strong",
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-quantum-computing/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "面包和果酱",
+    "尤里卡",
+    "炼狱导管",
+    "循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-bread-and-jam-1041/"
+  },
+  {
+   "champ": "Shaco",
+   "champZh": "恶魔小丑",
+   "augs": [
+    "魄罗爆破手"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shaco-poro-blaster/"
+  },
+  {
+   "champ": "Shen",
+   "champZh": "暮光之眼",
+   "augs": [
+    "回归基本功",
+    "歌利亚巨人",
+    "飞身踢",
+    "科学狂人",
+    "重量级打击手",
+    "魔法转物理"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shen-back-to-basics-748/"
+  },
+  {
+   "champ": "Shyvana",
+   "champZh": "龙血武姬",
+   "augs": [
+    "双发快射",
+    "魔法转物理",
+    "最终形态"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shyvana-double-tap-1080/"
+  },
+  {
+   "champ": "Shyvana",
+   "champZh": "龙血武姬",
+   "augs": [
+    "神射法师"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/shyvana-marksmage/"
+  },
+  {
+   "champ": "Shyvana",
+   "champZh": "龙血武姬",
+   "augs": [
+    "终极唤醒",
+    "面包和奶酪",
+    "魔法飞弹",
+    "老练狙神"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shyvana-ultimate-awakening-966/"
+  },
+  {
+   "champ": "Shyvana",
+   "champZh": "龙血武姬",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/shyvana-ethereal-weapon-1128/"
+  },
+  {
+   "champ": "Singed",
+   "champZh": "炼金术士",
+   "augs": [
+    "你肩上的恶魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/singed-devil-on-your-shoulder-811/"
+  },
+  {
+   "champ": "Singed",
+   "champZh": "炼金术士",
+   "augs": [
+    "扇巴掌",
+    "吞噬灵魂",
+    "坦克引擎",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/singed-slap-around-1031/"
+  },
+  {
+   "champ": "Singed",
+   "champZh": "炼金术士",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/singed-infernal-conduit/"
+  },
+  {
+   "champ": "Singed",
+   "champZh": "炼金术士",
+   "augs": [
+    "缩小引擎",
+    "巨像的勇气"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/singed-shrink-engine-1038/"
+  },
+  {
+   "champ": "Singed",
+   "champZh": "炼金术士",
+   "augs": [
+    "虚幻武器",
+    "踢踏舞"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/singed-ethereal-weapon-812/"
+  },
+  {
+   "champ": "Singed",
+   "champZh": "炼金术士",
+   "augs": [
+    "飞身踢",
+    "虚空裂隙",
+    "古式佳酿",
+    "逃跑计划"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/singed-dropkick-1061/"
+  },
+  {
+   "champ": "Sion",
+   "champZh": "亡灵战神",
+   "augs": [
+    "回归基本功",
+    "珠光护手",
+    "缩小引擎",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sion-back-to-basics-612/"
+  },
+  {
+   "champ": "Sion",
+   "champZh": "亡灵战神",
+   "augs": [
+    "坦克引擎",
+    "任务：钢化你心",
+    "星界躯体",
+    "飞身踢",
+    "歌利亚巨人",
+    "尖端发明家",
+    "科学狂人",
+    "吞噬灵魂",
+    "重量级打击手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sion-tank-engine-613/"
+  },
+  {
+   "champ": "Sion",
+   "champZh": "亡灵战神",
+   "augs": [
+    "终极刷新"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sion-ultimate-revolution-616/"
+  },
+  {
+   "champ": "Sion",
+   "champZh": "亡灵战神",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sion-fan-the-hammer/"
+  },
+  {
+   "champ": "Sivir",
+   "champZh": "战争女神",
+   "augs": [
+    "侵蚀",
+    "火上浇油"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sivir-erosion-707/"
+  },
+  {
+   "champ": "Sivir",
+   "champZh": "战争女神",
+   "augs": [
+    "易损"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sivir-vulnerability/"
+  },
+  {
+   "champ": "Sivir",
+   "champZh": "战争女神",
+   "augs": [
+    "老练狙神"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sivir-skilled-sniper/"
+  },
+  {
+   "champ": "Sivir",
+   "champZh": "战争女神",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sivir-ethereal-weapon/"
+  },
+  {
+   "champ": "Skarner",
+   "champZh": "上古领主",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/skarner-blade-waltz/"
+  },
+  {
+   "champ": "Smolder",
+   "champZh": "炽炎雏龙",
+   "augs": [
+    "万用瞄准镜"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/smolder-scoped-weapons/"
+  },
+  {
+   "champ": "Smolder",
+   "champZh": "炽炎雏龙",
+   "augs": [
+    "亮出你的剑"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/smolder-draw-your-sword/"
+  },
+  {
+   "champ": "Smolder",
+   "champZh": "炽炎雏龙",
+   "augs": [
+    "最万用的瞄准镜"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/smolder-scopiest-weapons/"
+  },
+  {
+   "champ": "Smolder",
+   "champZh": "炽炎雏龙",
+   "augs": [
+    "更万用的瞄准镜"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/smolder-scopier-weapons/"
+  },
+  {
+   "champ": "Smolder",
+   "champZh": "炽炎雏龙",
+   "augs": [
+    "珠光护手"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/smolder-jeweled-gauntlet/"
+  },
+  {
+   "champ": "Smolder",
+   "champZh": "炽炎雏龙",
+   "augs": [
+    "珠光护手",
+    "升级：无尽之刃",
+    "更万用的瞄准镜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/smolder-jeweled-gauntlet-814/"
+  },
+  {
+   "champ": "Smolder",
+   "champZh": "炽炎雏龙",
+   "augs": [
+    "秘术冲拳",
+    "更万用的瞄准镜",
+    "科学狂人",
+    "回归基本功"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/smolder-mystic-punch-815/"
+  },
+  {
+   "champ": "Sona",
+   "champZh": "琴瑟仙女",
+   "augs": [
+    "珠光护手",
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sona-jeweled-gauntlet-833/"
+  },
+  {
+   "champ": "Soraka",
+   "champZh": "众星之子",
+   "augs": [
+    "信念者的强化",
+    "蛋白粉奶昔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/soraka-empowered-by-the-faithful-1127/"
+  },
+  {
+   "champ": "Soraka",
+   "champZh": "众星之子",
+   "augs": [
+    "坦克引擎",
+    "急救用具",
+    "坚韧",
+    "古式佳酿"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/soraka-tank-engine-1020/"
+  },
+  {
+   "champ": "Soraka",
+   "champZh": "众星之子",
+   "augs": [
+    "蛋白粉奶昔",
+    "全心为你",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/soraka-protein-shake-619/"
+  },
+  {
+   "champ": "Swain",
+   "champZh": "诺克萨斯统领",
+   "augs": [
+    "扇巴掌"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/swain-slap-around/"
+  },
+  {
+   "champ": "Swain",
+   "champZh": "诺克萨斯统领",
+   "augs": [
+    "残忍"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/swain-cruelty/"
+  },
+  {
+   "champ": "Swain",
+   "champZh": "诺克萨斯统领",
+   "augs": [
+    "飞身踢",
+    "坦克引擎",
+    "吞噬灵魂",
+    "任务：钢化你心"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/swain-dropkick-1135/"
+  },
+  {
+   "champ": "Sylas",
+   "champZh": "解脱者",
+   "augs": [
+    "全凭身法"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sylas-dashing/"
+  },
+  {
+   "champ": "Sylas",
+   "champZh": "解脱者",
+   "augs": [
+    "最终形态"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sylas-final-form/"
+  },
+  {
+   "champ": "Sylas",
+   "champZh": "解脱者",
+   "augs": [
+    "注魔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sylas-juiced-916/"
+  },
+  {
+   "champ": "Sylas",
+   "champZh": "解脱者",
+   "augs": [
+    "神射法师"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sylas-marksmage/"
+  },
+  {
+   "champ": "Sylas",
+   "champZh": "解脱者",
+   "augs": [
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/sylas-purist-caster-917/"
+  },
+  {
+   "champ": "Sylas",
+   "champZh": "解脱者",
+   "augs": [
+    "终极唤醒"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/sylas-ultimate-awakening/"
+  },
+  {
+   "champ": "Syndra",
+   "champZh": "暗黑元首",
+   "augs": [
+    "扇巴掌",
+    "吞噬灵魂",
+    "无限循环往复",
+    "缩小引擎",
+    "尤里卡",
+    "循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/syndra-slap-around-745/"
+  },
+  {
+   "champ": "Syndra",
+   "champZh": "暗黑元首",
+   "augs": [
+    "残忍"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/syndra-cruelty/"
+  },
+  {
+   "champ": "Syndra",
+   "champZh": "暗黑元首",
+   "augs": [
+    "珠光护手",
+    "易损",
+    "魔法飞弹",
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/syndra-jeweled-gauntlet-744/"
+  },
+  {
+   "champ": "Syndra",
+   "champZh": "暗黑元首",
+   "augs": [
+    "裁决使"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/syndra-executioner/"
+  },
+  {
+   "champ": "TahmKench",
+   "champZh": "河流之王",
+   "augs": [
+    "任务：钢化你心",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tahmkench-quest-steel-your-heart-786/"
+  },
+  {
+   "champ": "TahmKench",
+   "champZh": "河流之王",
+   "augs": [
+    "坦克引擎",
+    "任务：钢化你心",
+    "歌利亚巨人",
+    "飞身踢"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tahmkench-tank-engine-785/"
+  },
+  {
+   "champ": "TahmKench",
+   "champZh": "河流之王",
+   "augs": [
+    "歌利亚巨人",
+    "任务：钢化你心",
+    "坦克引擎",
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tahmkench-goliath-972/"
+  },
+  {
+   "champ": "TahmKench",
+   "champZh": "河流之王",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "blackTech",
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/tahmkench-ethereal-weapon/"
+  },
+  {
+   "champ": "TahmKench",
+   "champZh": "河流之王",
+   "augs": [
+    "连拨击锤",
+    "歌利亚巨人",
+    "科学狂人",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tahmkench-fan-the-hammer-784/"
+  },
+  {
+   "champ": "Talon",
+   "champZh": "刀锋之影",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/talon-ethereal-weapon/"
+  },
+  {
+   "champ": "Talon",
+   "champZh": "刀锋之影",
+   "augs": [
+    "质变：混沌",
+    "有始有终",
+    "暗影疾奔"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/talon-transmute-chaos-1102/"
+  },
+  {
+   "champ": "Teemo",
+   "champZh": "迅捷斥候",
+   "augs": [
+    "尤里卡",
+    "缩小引擎",
+    "科学狂人",
+    "无限循环往复",
+    "杀戮时间到了"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/teemo-eureka-929/"
+  },
+  {
+   "champ": "Teemo",
+   "champZh": "迅捷斥候",
+   "augs": [
+    "神射法师"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/teemo-marksmage/"
+  },
+  {
+   "champ": "Teemo",
+   "champZh": "迅捷斥候",
+   "augs": [
+    "秘术冲拳",
+    "双刀流",
+    "灵巧"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/teemo-mystic-punch-927/"
+  },
+  {
+   "champ": "Thresh",
+   "champZh": "魂锁典狱长",
+   "augs": [
+    "任务：钢化你心",
+    "缩小引擎",
+    "吞噬灵魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/thresh-quest-steel-your-heart-993/"
+  },
+  {
+   "champ": "Thresh",
+   "champZh": "魂锁典狱长",
+   "augs": [
+    "残忍"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/thresh-cruelty/"
+  },
+  {
+   "champ": "Thresh",
+   "champZh": "魂锁典狱长",
+   "augs": [
+    "神射法师",
+    "闪电打击",
+    "双刀流",
+    "物理转魔法",
+    "接二连三",
+    "穿针引线"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/thresh-marksmage-958/"
+  },
+  {
+   "champ": "Tristana",
+   "champZh": "麦林炮手",
+   "augs": [
+    "亮出你的剑"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/tristana-draw-your-sword/"
+  },
+  {
+   "champ": "Tristana",
+   "champZh": "麦林炮手",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/tristana-fan-the-hammer/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "最万用的瞄准镜",
+    "亮出你的剑",
+    "更万用的瞄准镜",
+    "灵巧"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-scopiest-weapons-1119/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "扇巴掌",
+    "杀戮时间到了",
+    "无限循环往复",
+    "男爵之手",
+    "科学狂人",
+    "尤里卡",
+    "缩小引擎",
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-slap-around-673/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "扇巴掌",
+    "纯粹主义者 - 术师",
+    "狂热者",
+    "终极唤醒"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-slap-around-1074/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "无限循环往复",
+    "缩小引擎",
+    "纯粹主义者 - 术师",
+    "老练狙神",
+    "循环往复",
+    "吞噬灵魂",
+    "扇巴掌"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-infinite-recursion-675/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "更万用的瞄准镜",
+    "灵巧",
+    "最万用的瞄准镜",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-scopier-weapons-1120/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "残忍",
+    "无限循环往复",
+    "注魔",
+    "霸符兄弟"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-cruelty-1106/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "纯粹主义者 - 术师",
+    "无限循环往复",
+    "扇巴掌",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-purist-caster-1121/"
+  },
+  {
+   "champ": "Trundle",
+   "champZh": "巨魔之王",
+   "augs": [
+    "老练狙神"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/trundle-skilled-sniper/"
+  },
+  {
+   "champ": "Tryndamere",
+   "champZh": "蛮族之王",
+   "augs": [
+    "双刀流",
+    "小丑学院",
+    "终极唤醒",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tryndamere-dual-wield-1109/"
+  },
+  {
+   "champ": "Tryndamere",
+   "champZh": "蛮族之王",
+   "augs": [
+    "巨人杀手",
+    "双刀流",
+    "小丑学院",
+    "地狱三头犬"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tryndamere-giant-slayer-1063/"
+  },
+  {
+   "champ": "Tryndamere",
+   "champZh": "蛮族之王",
+   "augs": [
+    "更万用的瞄准镜",
+    "罪恶快感",
+    "秘术冲拳",
+    "升级：无尽之刃",
+    "双发快射",
+    "暴击律动"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tryndamere-scopier-weapons-910/"
+  },
+  {
+   "champ": "Tryndamere",
+   "champZh": "蛮族之王",
+   "augs": [
+    "死亡之环",
+    "回归基本功",
+    "会心治疗",
+    "物理转魔法",
+    "一板一眼"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tryndamere-circle-of-death-911/"
+  },
+  {
+   "champ": "Tryndamere",
+   "champZh": "蛮族之王",
+   "augs": [
+    "物法皆修"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/tryndamere-master-of-duality/"
+  },
+  {
+   "champ": "Tryndamere",
+   "champZh": "蛮族之王",
+   "augs": [
+    "物法皆修",
+    "狂热者",
+    "由暴生急",
+    "踢踏舞"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tryndamere-master-of-duality-912/"
+  },
+  {
+   "champ": "Tryndamere",
+   "champZh": "蛮族之王",
+   "augs": [
+    "终极刷新",
+    "更万用的瞄准镜",
+    "升级：无尽之刃",
+    "会心防御"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/tryndamere-ultimate-revolution-1149/"
+  },
+  {
+   "champ": "TwistedFate",
+   "champZh": "卡牌大师",
+   "augs": [
+    "珠光护手",
+    "巨人杀手",
+    "裁决使",
+    "魔法飞弹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/twistedfate-jeweled-gauntlet-983/"
+  },
+  {
+   "champ": "TwistedFate",
+   "champZh": "卡牌大师",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/twistedfate-ethereal-weapon/"
+  },
+  {
+   "champ": "Twitch",
+   "champZh": "瘟疫之源",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/twitch-infernal-conduit/"
+  },
+  {
+   "champ": "Twitch",
+   "champZh": "瘟疫之源",
+   "augs": [
+    "神射法师"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/twitch-marksmage/"
+  },
+  {
+   "champ": "Twitch",
+   "champZh": "瘟疫之源",
+   "augs": [
+    "精怪魔法"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/twitch-fey-magic/"
+  },
+  {
+   "champ": "Twitch",
+   "champZh": "瘟疫之源",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/twitch-ethereal-weapon/"
+  },
+  {
+   "champ": "Twitch",
+   "champZh": "瘟疫之源",
+   "augs": [
+    "踢踏舞",
+    "双刀流",
+    "巨人杀手",
+    "最万用的瞄准镜"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/twitch-tap-dancer-1009/"
+  },
+  {
+   "champ": "Twitch",
+   "champZh": "瘟疫之源",
+   "augs": [
+    "魔法飞弹",
+    "面包和果酱",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/twitch-magic-missile-841/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "任务：钢化你心",
+    "坦克引擎",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-quest-steel-your-heart-628/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "最万用的瞄准镜"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-scopiest-weapons/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "最万用的瞄准镜",
+    "小丑学院",
+    "一板一眼",
+    "吸血习性",
+    "升级：无尽之刃"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-scopiest-weapons-627/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "小丑学院",
+    "有始有终",
+    "虚幻武器",
+    "巨人杀手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-clown-college-1103/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "珠光护手"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-jeweled-gauntlet/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-ethereal-weapon/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "虚幻武器",
+    "珠光护手",
+    "易损",
+    "小丑学院",
+    "冰寒",
+    "升级：无尽之刃",
+    "玻璃大炮",
+    "神射法师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-ethereal-weapon-626/"
+  },
+  {
+   "champ": "Udyr",
+   "champZh": "兽灵行者",
+   "augs": [
+    "虚空裂隙"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/udyr-void-rift-629/"
+  },
+  {
+   "champ": "Urgot",
+   "champZh": "无畏战车",
+   "augs": [
+    "一板一眼"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/urgot-slow-and-steady/"
+  },
+  {
+   "champ": "Urgot",
+   "champZh": "无畏战车",
+   "augs": [
+    "亮出你的剑",
+    "珠光护手",
+    "利刃华尔兹"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/urgot-draw-your-sword-723/"
+  },
+  {
+   "champ": "Urgot",
+   "champZh": "无畏战车",
+   "augs": [
+    "任务：钢化你心",
+    "亮出你的剑",
+    "回归基本功",
+    "扇巴掌"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/urgot-quest-steel-your-heart-1067/"
+  },
+  {
+   "champ": "Urgot",
+   "champZh": "无畏战车",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/urgot-blade-waltz/"
+  },
+  {
+   "champ": "Urgot",
+   "champZh": "无畏战车",
+   "augs": [
+    "踢踏舞",
+    "物法皆修",
+    "一板一眼",
+    "魔法转物理"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/urgot-tap-dancer-1136/"
+  },
+  {
+   "champ": "Varus",
+   "champZh": "惩戒之箭",
+   "augs": [
+    "物理转魔法",
+    "物法皆修",
+    "神射法师",
+    "穿针引线"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/varus-adapt-1036/"
+  },
+  {
+   "champ": "Varus",
+   "champZh": "惩戒之箭",
+   "augs": [
+    "虚幻武器",
+    "超凡邪恶",
+    "缩小引擎",
+    "无限循环往复"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/varus-ethereal-weapon-698/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "会心防御",
+    "升级：无尽之刃",
+    "灵魂虹吸"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-tank-it-or-leave-it-739/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "双刀流"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-dual-wield/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "双发快射"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-double-tap-1052/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "接二连三"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-twice-thrice/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "暗影疾奔",
+    "一板一眼",
+    "升级：无尽之刃"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-shadow-runner-740/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-ethereal-weapon/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "蛋白粉奶昔",
+    "接二连三",
+    "急救用具"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-protein-shake-1033/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-fan-the-hammer/"
+  },
+  {
+   "champ": "Vayne",
+   "champZh": "暗夜猎手",
+   "augs": [
+    "连拨击锤",
+    "双刀流",
+    "接二连三",
+    "双发快射"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vayne-fan-the-hammer-738/"
+  },
+  {
+   "champ": "Veigar",
+   "champZh": "邪恶小法师",
+   "augs": [
+    "尤里卡"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/veigar-eureka/"
+  },
+  {
+   "champ": "Veigar",
+   "champZh": "邪恶小法师",
+   "augs": [
+    "无限循环往复",
+    "循环往复",
+    "缩小引擎",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/veigar-infinite-recursion-938/"
+  },
+  {
+   "champ": "Veigar",
+   "champZh": "邪恶小法师",
+   "augs": [
+    "神射法师",
+    "穿针引线",
+    "升级：耀光",
+    "狂热者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/veigar-marksmage-937/"
+  },
+  {
+   "champ": "Veigar",
+   "champZh": "邪恶小法师",
+   "augs": [
+    "超凡邪恶",
+    "溢流",
+    "扇巴掌",
+    "珠光护手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/veigar-phenomenal-evil-939/"
+  },
+  {
+   "champ": "Veigar",
+   "champZh": "邪恶小法师",
+   "augs": [
+    "轨道镭射"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/veigar-orbitallaser/"
+  },
+  {
+   "champ": "Vi",
+   "champZh": "皮城执法官",
+   "augs": [
+    "全凭身法",
+    "虚幻武器",
+    "最终都市列车",
+    "双发快射"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vi-dashing-852/"
+  },
+  {
+   "champ": "Vi",
+   "champZh": "皮城执法官",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vi-blade-waltz/"
+  },
+  {
+   "champ": "Vi",
+   "champZh": "皮城执法官",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vi-fan-the-hammer-851/"
+  },
+  {
+   "champ": "Viego",
+   "champZh": "破败之王",
+   "augs": [
+    "珠光护手"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/viego-jeweled-gauntlet/"
+  },
+  {
+   "champ": "Viego",
+   "champZh": "破败之王",
+   "augs": [
+    "珠光护手",
+    "升级：无尽之刃",
+    "更万用的瞄准镜",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/viego-jeweled-gauntlet-854/"
+  },
+  {
+   "champ": "Viktor",
+   "champZh": "奥术先驱",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/viktor-ethereal-weapon/"
+  },
+  {
+   "champ": "Viktor",
+   "champZh": "奥术先驱",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/viktor-void-rift-663/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "循环往复"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-recursion/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "歌利亚巨人",
+    "任务：钢化你心",
+    "物理转魔法",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-goliath-1055/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "死亡之环",
+    "歌利亚巨人"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-circle-of-death-832/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "炼狱导管"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-infernal-conduit/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "炼狱导管",
+    "循环往复",
+    "尤里卡",
+    "面包和果酱"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-infernal-conduit-831/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "物理转魔法",
+    "任务：钢化你心",
+    "坦克引擎",
+    "踢踏舞"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-adapt-969/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "纯粹主义者 - 术师"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-purist-caster-1058/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "虚幻武器",
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-ethereal-weapon-982/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "虚空裂隙",
+    "循环往复",
+    "唯快不破"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-void-rift-829/"
+  },
+  {
+   "champ": "Vladimir",
+   "champZh": "猩红收割者",
+   "augs": [
+    "面包和果酱"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/vladimir-bread-and-jam/"
+  },
+  {
+   "champ": "Volibear",
+   "champZh": "不灭狂雷",
+   "augs": [
+    "古式佳酿",
+    "秘术冲拳",
+    "小丑学院",
+    "急救用具"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/volibear-rabble-rousing-1075/"
+  },
+  {
+   "champ": "Volibear",
+   "champZh": "不灭狂雷",
+   "augs": [
+    "灵巧",
+    "狂热者",
+    "秘术冲拳",
+    "物法皆修"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/volibear-deft-990/"
+  },
+  {
+   "champ": "Volibear",
+   "champZh": "不灭狂雷",
+   "augs": [
+    "物法皆修",
+    "物理转魔法"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/volibear-master-of-duality-594/"
+  },
+  {
+   "champ": "Volibear",
+   "champZh": "不灭狂雷",
+   "augs": [
+    "秘术冲拳",
+    "任务：钢化你心",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/volibear-mystic-punch-595/"
+  },
+  {
+   "champ": "Warwick",
+   "champZh": "祖安怒兽",
+   "augs": [
+    "死亡之环",
+    "会心治疗",
+    "急救用具",
+    "狂热者"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/warwick-circle-of-death-856/"
+  },
+  {
+   "champ": "Warwick",
+   "champZh": "祖安怒兽",
+   "augs": [
+    "量子计算",
+    "罪恶快感",
+    "炼狱龙魂"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/warwick-quantum-computing-1048/"
+  },
+  {
+   "champ": "Xayah",
+   "champZh": "逆羽",
+   "augs": [
+    "升级：无尽之刃",
+    "升级：收集者",
+    "灵魂虹吸",
+    "吸血习性",
+    "暴击律动",
+    "灵巧",
+    "会心治疗",
+    "双发快射",
+    "会心防御",
+    "狂热者",
+    "由暴生急",
+    "地狱三头犬",
+    "踢踏舞",
+    "战争交响乐",
+    "罪恶快感"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/xayah-upgrade-infinity-edge-935/"
+  },
+  {
+   "champ": "XinZhao",
+   "champZh": "德邦总管",
+   "augs": [
+    "物法皆修"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/xinzhao-master-of-duality/"
+  },
+  {
+   "champ": "XinZhao",
+   "champZh": "德邦总管",
+   "augs": [
+    "物法皆修",
+    "蛋白粉奶昔",
+    "狂热者",
+    "歌利亚巨人",
+    "踢踏舞"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/xinzhao-master-of-duality-693/"
+  },
+  {
+   "champ": "XinZhao",
+   "champZh": "德邦总管",
+   "augs": [
+    "科学狂人",
+    "回归基本功",
+    "物法皆修",
+    "双刀流"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/xinzhao-mad-scientist-988/"
+  },
+  {
+   "champ": "XinZhao",
+   "champZh": "德邦总管",
+   "augs": [
+    "秘术冲拳",
+    "任务：沃格勒特的巫师帽",
+    "会心治疗",
+    "台风"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/xinzhao-mystic-punch-1004/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "会心治疗",
+    "吸血习性",
+    "升级：无尽之刃",
+    "一板一眼"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-critical-healing-1145/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "会心治疗",
+    "蛋白粉奶昔",
+    "灵巧",
+    "强力护盾",
+    "任务：钢化你心",
+    "会心防御"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-critical-healing-839/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "巨像的勇气",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-courage-of-the-colossus-1046/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "快中求稳"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-swift-and-safe/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "暗影疾奔"
+   ],
+   "types": [
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-shadow-runner/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "暗影疾奔",
+    "无休回复",
+    "会心治疗",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-shadow-runner-981/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "暗影疾奔",
+    "狂徒豪气",
+    "快中求稳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-shadow-runner-1147/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "秘术冲拳",
+    "古式佳酿",
+    "会心治疗",
+    "会心防御",
+    "一板一眼"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-mystic-punch-838/"
+  },
+  {
+   "champ": "Yasuo",
+   "champZh": "疾风剑豪",
+   "augs": [
+    "秘术冲拳",
+    "回归基本功",
+    "一板一眼",
+    "升级：无尽之刃"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yasuo-mystic-punch-1141/"
+  },
+  {
+   "champ": "Yone",
+   "champZh": "封魔剑魂",
+   "augs": [
+    "一板一眼",
+    "大力",
+    "升级：无尽之刃",
+    "秘术冲拳"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yone-slow-and-steady-668/"
+  },
+  {
+   "champ": "Yone",
+   "champZh": "封魔剑魂",
+   "augs": [
+    "会心治疗"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/yone-critical-healing/"
+  },
+  {
+   "champ": "Yone",
+   "champZh": "封魔剑魂",
+   "augs": [
+    "会心治疗",
+    "灵巧",
+    "强力护盾",
+    "任务：钢化你心"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yone-critical-healing-670/"
+  },
+  {
+   "champ": "Yone",
+   "champZh": "封魔剑魂",
+   "augs": [
+    "秘术冲拳",
+    "古式佳酿",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yone-mystic-punch-669/"
+  },
+  {
+   "champ": "Yorick",
+   "champZh": "牧魂人",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/yorick-ethereal-weapon/"
+  },
+  {
+   "champ": "Yorick",
+   "champZh": "牧魂人",
+   "augs": [
+    "裁决使",
+    "卡皮巴拉空投",
+    "循环往复",
+    "重量级打击手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yorick-executioner-1096/"
+  },
+  {
+   "champ": "Yunara",
+   "champZh": "不破之誓",
+   "augs": [
+    "双发快射",
+    "闪电打击",
+    "逃跑计划"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yunara-double-tap-1053/"
+  },
+  {
+   "champ": "Yunara",
+   "champZh": "不破之誓",
+   "augs": [
+    "暴击飞弹",
+    "双刀流",
+    "升级：无尽之刃",
+    "吸血习性"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yunara-critical-missile-1019/"
+  },
+  {
+   "champ": "Yunara",
+   "champZh": "不破之誓",
+   "augs": [
+    "注魔",
+    "霸符兄弟",
+    "升级：无尽之刃"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yunara-juiced-597/"
+  },
+  {
+   "champ": "Yunara",
+   "champZh": "不破之誓",
+   "augs": [
+    "物法皆修"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/yunara-master-of-duality/"
+  },
+  {
+   "champ": "Yunara",
+   "champZh": "不破之誓",
+   "augs": [
+    "物法皆修",
+    "神射法师",
+    "狂热者",
+    "双刀流"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yunara-master-of-duality-596/"
+  },
+  {
+   "champ": "Yunara",
+   "champZh": "不破之誓",
+   "augs": [
+    "踢踏舞"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/yunara-tap-dancer/"
+  },
+  {
+   "champ": "Yuumi",
+   "champZh": "魔法猫咪",
+   "augs": [
+    "死亡之环"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/yuumi-circle-of-death/"
+  },
+  {
+   "champ": "Yuumi",
+   "champZh": "魔法猫咪",
+   "augs": [
+    "死亡之环",
+    "坚韧",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yuumi-circle-of-death-959/"
+  },
+  {
+   "champ": "Yuumi",
+   "champZh": "魔法猫咪",
+   "augs": [
+    "死亡之环",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/yuumi-circle-of-death-991/"
+  },
+  {
+   "champ": "Zaahen",
+   "champZh": "不落魔锋",
+   "augs": [
+    "最万用的瞄准镜",
+    "更万用的瞄准镜",
+    "裁决使"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zaahen-scopiest-weapons-609/"
+  },
+  {
+   "champ": "Zaahen",
+   "champZh": "不落魔锋",
+   "augs": [
+    "利刃华尔兹"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zaahen-blade-waltz/"
+  },
+  {
+   "champ": "Zaahen",
+   "champZh": "不落魔锋",
+   "augs": [
+    "升级：雪球"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zaahen-snowball-upgrade/"
+  },
+  {
+   "champ": "Zaahen",
+   "champZh": "不落魔锋",
+   "augs": [
+    "终极刷新"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zaahen-ultimate-revolution-608/"
+  },
+  {
+   "champ": "Zaahen",
+   "champZh": "不落魔锋",
+   "augs": [
+    "轨道镭射"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zaahen-orbitallaser/"
+  },
+  {
+   "champ": "Zaahen",
+   "champZh": "不落魔锋",
+   "augs": [
+    "连拨击锤"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zaahen-fan-the-hammer/"
+  },
+  {
+   "champ": "Zac",
+   "champZh": "生化魔人",
+   "augs": [
+    "死亡之环"
+   ],
+   "types": [
+    "god"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zac-circle-of-death/"
+  },
+  {
+   "champ": "Zac",
+   "champZh": "生化魔人",
+   "augs": [
+    "死亡之环",
+    "蛋白粉奶昔",
+    "急救用具",
+    "坦克引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zac-circle-of-death-836/"
+  },
+  {
+   "champ": "Zac",
+   "champZh": "生化魔人",
+   "augs": [
+    "蛋白粉奶昔",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zac-protein-shake-837/"
+  },
+  {
+   "champ": "Zed",
+   "champZh": "影流之主",
+   "augs": [
+    "升级：收集者",
+    "升级：狂妄",
+    "霸符兄弟",
+    "珠光护手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zed-upgrade-collector-1070/"
+  },
+  {
+   "champ": "Zed",
+   "champZh": "影流之主",
+   "augs": [
+    "回归基本功",
+    "霸符兄弟"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zed-back-to-basics-685/"
+  },
+  {
+   "champ": "Zed",
+   "champZh": "影流之主",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zed-ethereal-weapon/"
+  },
+  {
+   "champ": "Zed",
+   "champZh": "影流之主",
+   "augs": [
+    "虚幻武器",
+    "秘术冲拳",
+    "无限循环往复",
+    "霸符兄弟"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zed-ethereal-weapon-684/"
+  },
+  {
+   "champ": "Zed",
+   "champZh": "影流之主",
+   "augs": [
+    "裁决使"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zed-executioner/"
+  },
+  {
+   "champ": "Zeri",
+   "champZh": "祖安花火",
+   "augs": [
+    "一板一眼"
+   ],
+   "types": [
+    "trap"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zeri-slow-and-steady/"
+  },
+  {
+   "champ": "Zeri",
+   "champZh": "祖安花火",
+   "augs": [
+    "升级：无尽之刃"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zeri-upgrade-infinity-edge/"
+  },
+  {
+   "champ": "Zeri",
+   "champZh": "祖安花火",
+   "augs": [
+    "古式佳酿",
+    "歌利亚巨人",
+    "坦克引擎",
+    "会心治疗"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zeri-rabble-rousing-860/"
+  },
+  {
+   "champ": "Zeri",
+   "champZh": "祖安花火",
+   "augs": [
+    "巨人杀手",
+    "珠光护手"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zeri-giant-slayer-1065/"
+  },
+  {
+   "champ": "Zeri",
+   "champZh": "祖安花火",
+   "augs": [
+    "精怪魔法"
+   ],
+   "types": [
+    "strong",
+    "blackTech"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zeri-fey-magic/"
+  },
+  {
+   "champ": "Ziggs",
+   "champZh": "爆破鬼才",
+   "augs": [
+    "作弊：我能回城！",
+    "物理转魔法",
+    "扇巴掌",
+    "缩小引擎"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ziggs-cheating-1095/"
+  },
+  {
+   "champ": "Ziggs",
+   "champZh": "爆破鬼才",
+   "augs": [
+    "无限循环往复",
+    "缩小引擎",
+    "尤里卡",
+    "循环往复",
+    "负重爆气",
+    "急急小子",
+    "家园卫士"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/ziggs-infinite-recursion-818/"
+  },
+  {
+   "champ": "Zilean",
+   "champZh": "时光守护者",
+   "augs": [
+    "由心及物",
+    "海洋龙魂",
+    "霸符兄弟",
+    "无限循环往复",
+    "尤里卡"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zilean-mind-to-matter-726/"
+  },
+  {
+   "champ": "Zilean",
+   "champZh": "时光守护者",
+   "augs": [
+    "终极刷新"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zilean-ultimate-revolution-725/"
+  },
+  {
+   "champ": "Zoe",
+   "champZh": "暮光星灵",
+   "augs": [
+    "升级：雪球"
+   ],
+   "types": [
+    "blackTech",
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zoe-snowball-upgrade/"
+  },
+  {
+   "champ": "Zoe",
+   "champZh": "暮光星灵",
+   "augs": [
+    "升级：雪球",
+    "史上最大雪球",
+    "神圣雪球",
+    "雪球扭蛋机"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zoe-snowball-upgrade-749/"
+  },
+  {
+   "champ": "Zoe",
+   "champZh": "暮光星灵",
+   "augs": [
+    "史上最大雪球"
+   ],
+   "types": [
+    "blackTech",
+    "entertainment"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zoe-biggest-snowball-ever/"
+  },
+  {
+   "champ": "Zyra",
+   "champZh": "荆棘之兴",
+   "augs": [
+    "虚幻武器"
+   ],
+   "types": [
+    "strong"
+   ],
+   "url": "https://arammayhem.com/zh-cn/combo/zyra-ethereal-weapon/"
+  },
+  {
+   "champ": "Zyra",
+   "champZh": "荆棘之兴",
+   "augs": [
+    "虚空裂隙",
+    "唯快不破",
+    "扇巴掌",
+    "超凡邪恶"
+   ],
+   "types": [],
+   "url": "https://arammayhem.com/zh-cn/combo/zyra-void-rift-877/"
+  }
+ ]
+}
