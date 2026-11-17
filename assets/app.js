@@ -10,7 +10,9 @@
   const pct = n => (n == null ? '—' : Number(n).toFixed(1) + '%');
   const wan = n => (n == null ? '' : n >= 10000 ? (n / 10000).toFixed(1) + '万' : String(n));
   const norm = s => String(s || '').toLowerCase().replace(/[\s·・.]/g, '');
-  const LOW = 1000; // 搭配场次少于这个数的标橙色，提醒样本少
+  const LOW = 1000;
+  // 推荐组合的标签（arammayhem 的 types）
+  const TAG = { god: '神组合', strong: '强势', blackTech: '黑科技', entertainment: '娱乐', bug: 'bug', trap: '陷阱' }; // 搭配场次少于这个数的标橙色，提醒样本少
 
   const fromCatalog = new URLSearchParams(location.hash.slice(1)).get('from') === 'catalog';
   const catalogRole = new URLSearchParams(location.hash.slice(1)).get('role') || 'fighter';
@@ -136,6 +138,13 @@
           <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t"><button class="aug-info" type="button" data-aug="${esc(a.n)}" data-rarity="${esc(a.r)}" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button></span>
           <span class="w num">${pct(a.w)}</span><span class="g num${a.g < LOW ? ' low' : ''}">${wan(a.g)}场</span></li>`).join('') || '<li class="empty">这个稀有度暂无数据</li>'}</ol>
       </div>
+      ${(h.combos || []).length ? `<div class="card">
+        <h3>推荐组合 <em>arammayhem 整理的玩法组合 · 点「看攻略」查看完整说明</em></h3>
+        <ul class="combos">${h.combos.map(c => `<li${c.t.includes('trap') ? ' class="trap"' : ''}>
+          ${augIc(c.a[0], '')}<span class="t">${c.a.map(esc).join(' + ')}</span>
+          <span class="tags">${c.t.map(t => `<span class="tag tag-${esc(t)}">${esc(TAG[t] || t)}</span>`).join('')}</span>
+          <a class="guide" href="${esc(c.u)}" target="_blank" rel="noopener">看攻略 ↗</a></li>`).join('')}</ul>
+      </div>` : ''}
       <div class="card">
         <h3>推荐出装 <em>至少 3% 对局会出的成装里，按胜率排前 6</em></h3>
         <ol class="rank items">${h.items.map((it, i) => `<li>
@@ -156,7 +165,7 @@
 
   function renderMeta() {
     $('#meta').innerHTML = `<span>版本 <b>${esc(D.meta.patch)}</b></span><span>数据截至 <b>${esc(D.meta.date)}</b></span><button class="theme" data-theme-toggle>${isLight() ? '☾ 深色' : '☀ 浅色'}</button>`;
-    $('#foot').innerHTML = `<span>数据来源：<a href="https://github.com/czgreat/aramhex-data" target="_blank" rel="noopener">海克斯大乱斗统计数据（AramHex）</a>，国服对局统计，CC BY-NC 4.0，自动检查更新。海克斯效果说明来自 <a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）</a>。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
+    $('#foot').innerHTML = `<span>数据来源：<a href="https://github.com/czgreat/aramhex-data" target="_blank" rel="noopener">海克斯大乱斗统计数据（AramHex）</a>，国服对局统计，CC BY-NC 4.0，自动检查更新。海克斯效果说明来自 <a href="https://hexdata.com.cn" target="_blank" rel="noopener">Hexdata（hexdata.com.cn）</a>。推荐组合 Data: <a href="https://arammayhem.com/data/" target="_blank" rel="noopener">arammayhem.com</a>（CC BY 4.0）。场次标橙色的样本少于 ${LOW} 场，仅供参考。</span><span>非官方工具，与 Riot Games 无关联</span>`;
   }
 
   function select(name) {

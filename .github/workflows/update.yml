@@ -1,12 +1,13 @@
 name: 自动更新
 
-# 每 6 小时检查一次 AramHex 公开数据（github.com/czgreat/aramhex-data），有新的一期才生成网页数据并提交。
+# 每 6 小时检查一次 AramHex 公开数据（github.com/czgreat/aramhex-data）和 arammayhem 推荐组合（arammayhem.com/data），有变化才生成网页数据并提交。
 on:
   push:
     branches: [main]
     paths:
       - '.github/workflows/update.yml'
       - 'scripts/fetch-aramhex.mjs'
+      - 'scripts/fetch-arammayhem.mjs'
       - 'scripts/build-data.mjs'
       - 'scripts/fetch-descriptions.mjs'
   schedule:
@@ -38,6 +39,8 @@ jobs:
           node-version: 20
       - name: 下载 AramHex 数据
         run: node scripts/fetch-aramhex.mjs
+      - name: 下载 arammayhem 推荐组合（失败会沿用旧数据）
+        run: node scripts/fetch-arammayhem.mjs
       - name: 生成网页数据
         run: node scripts/build-data.mjs
       - name: 更新海克斯效果说明（Hexdata 详情页，每次最多 25 页）
