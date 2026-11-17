@@ -30,6 +30,7 @@
   const icMap = m => new Map(Object.entries(m || {}).map(([k, v]) => [ik(k), v]));
   const AUG_IC = icMap(window.HEX_AUG_ICONS), ITEM_IC = icMap(window.HEX_ITEM_ICONS);
   const AUG_DESC = icMap(window.HEX_AUG_DESCRIPTIONS);
+  const AUG_RAR = new Map(HEROES.flatMap(h => h.augs.map(a => [ik(a.n), a.r])));
   const AUG_META = icMap(window.HEX_AUG_DESCRIPTION_META);
   const augDescription = n => AUG_DESC.get(ik(n)) || '这个海克斯的效果描述暂未收录，请以游戏内为准。';
   const augIc = (n, r) => {
@@ -120,6 +121,9 @@
     const h = HEROES.find(x => x.name === state.hero) || HEROES[0];
     const rars = ['全部', '棱彩', '黄金', '白银'];
     const augs = h.augs.filter(a => state.rar === '全部' || a.r === state.rar).slice(0, 50);
+    // 每行底部的胜率条：按当前列表的最高、最低胜率换算长度，差距更明显
+    const bar = list => { const ws = list.map(x => x.w), hi = Math.max(...ws), lo = Math.min(...ws); return w => `--p:${hi > lo ? Math.round(12 + 88 * (w - lo) / (hi - lo)) : 100}%`; };
+    const augBar = bar(augs.length ? augs : [{ w: 0 }]), itemBar = bar(h.items.length ? h.items : [{ w: 0 }]);
     $('#detail').innerHTML = `
       ${fromCatalog ? `<a class="detail-from-catalog" href="${esc(catalogReturn)}">← 返回英雄分类</a>` : ''}
       <button class="btn back" data-back>← 返回</button>
@@ -128,26 +132,24 @@
         <div><h1>${esc(h.name)}<small>${esc(h.title)}</small></h1>
           <p class="sub">胜率 <b class="num">${pct(h.wr)}</b> · ${wan(h.games)}场</p></div>
       </div>
-      <div class="data-freshness"><span>数据截至 ${esc(D.meta.date || '未知')}（版本 ${esc(D.meta.patch)}）</span></div>
       ${!h.augs.length ? '<div class="card"><p class="empty">暂时没有这位英雄的数据（可能是新英雄），等数据来源更新后会自动补上。</p></div>' : `
       <div class="card">
-        <h3>海克斯胜率排名 <em>这位英雄带该海克斯时的胜率 · 悬停图标或名称查看效果</em></h3>
+        <h3>海克斯胜率排名 <em>带这个海克斯时的胜率 · 悬停或点名称看效果</em></h3>
         <div class="tabs">${rars.map(r => `<button data-rar="${r}" aria-selected="${state.rar === r}">${r === '全部' ? '' : `<span class="rar ${r}"></span>`}${r}</button>`).join('')}</div>
-        <p class="coverage-note">按胜率从高到低，显示前 ${augs.length} 个；场次太少的搭配已去掉。</p>
-        <ol class="rank">${augs.map((a, i) => `<li class="aug-row">
+        <ol class="rank">${augs.map((a, i) => `<li class="aug-row" style="${augBar(a.w)}">
           <span class="n num">${i + 1}</span>${augIc(a.n, a.r)}<span class="t"><button class="aug-info" type="button" data-aug="${esc(a.n)}" data-rarity="${esc(a.r)}" aria-label="${esc(a.n)}：查看效果描述">${esc(a.n)}</button></span>
           <span class="w num">${pct(a.w)}</span><span class="g num${a.g < LOW ? ' low' : ''}">${wan(a.g)}场</span></li>`).join('') || '<li class="empty">这个稀有度暂无数据</li>'}</ol>
       </div>
       ${(h.combos || []).length ? `<div class="card">
-        <h3>推荐组合 <em>arammayhem 整理的玩法组合 · 点「看攻略」查看完整说明</em></h3>
+        <h3>推荐组合 <em>点「看攻略」看详细玩法</em></h3>
         <ul class="combos">${h.combos.map(c => `<li${c.t.includes('trap') ? ' class="trap"' : ''}>
-          ${augIc(c.a[0], '')}<span class="t">${c.a.map(esc).join(' + ')}</span>
+          <span class="cicons">${c.a.map(n => augIc(n, AUG_RAR.get(ik(n)) || '')).join('')}</span><span class="t">${c.a.map(esc).join(' + ')}</span>
           <span class="tags">${c.t.map(t => `<span class="tag tag-${esc(t)}">${esc(TAG[t] || t)}</span>`).join('')}</span>
           <a class="guide" href="${esc(c.u)}" target="_blank" rel="noopener">看攻略 ↗</a></li>`).join('')}</ul>
       </div>` : ''}
       <div class="card">
-        <h3>推荐出装 <em>至少 3% 对局会出的成装里，按胜率排前 6</em></h3>
-        <ol class="rank items">${h.items.map((it, i) => `<li>
+        <h3>推荐出装 <em>常见成装里胜率前 6</em></h3>
+        <ol class="rank items">${h.items.map((it, i) => `<li style="${itemBar(it.w)}">
           <span class="n num">${i + 1}</span>${itemIc(it.n)}<span class="t">${esc(it.n)}</span>
           <span class="w num">${pct(it.w)}</span><span class="g num${it.g < LOW ? ' low' : ''}">${wan(it.g)}场</span></li>`).join('')}</ol>
       </div>`}`;
