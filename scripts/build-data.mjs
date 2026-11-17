@@ -2,6 +2,7 @@
 // 输入：data/heroes.json（英雄中文名、称号、头像编号、外号）+ data/open/aramhex.json（fetch-aramhex.mjs 下载）
 // 用法：node scripts/build-data.mjs
 import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -41,6 +42,14 @@ const out = heroes.map(h => {
 
 const data = { meta: { patch: patch(src.source.patch), date: src.source.date || '', matches: src.source.matches || null }, heroes: out };
 await writeFile(join(ROOT, 'data', 'data.js'), '/* 自动生成，勿手改：由 scripts/build-data.mjs 生成；数据来源：AramHex（github.com/czgreat/aramhex-data，CC BY-NC 4.0）；推荐组合 Data: arammayhem.com（CC BY 4.0） */\nwindow.HEX_DATA = ' + JSON.stringify(data) + ';\n');
+// 页面引用 data/data.js 时带上内容指纹，数据一变网址就变，浏览器不会继续用旧缓存
+const js = await readFile(join(ROOT, 'data', 'data.js'));
+const ver = createHash('sha256').update(js).digest('hex').slice(0, 10);
+for (const f of ['index.html', 'heroes.html']) {
+  const html = await readFile(join(ROOT, f), 'utf8');
+  const next = html.replace(/data\/data\.js(\?v=[\w-]+)?"/g, `data/data.js?v=${ver}"`);
+  if (next !== html) await writeFile(join(ROOT, f), next);
+}
 const done = out.filter(h => h.augs.length);
 console.log(`网页数据：版本 ${data.meta.patch}，截至 ${data.meta.date}；有海克斯排名的英雄 ${done.length}/${out.length}`);
 if (done.length < 150) throw new Error('有数据的英雄太少，数据可能有问题，本次不更新');
