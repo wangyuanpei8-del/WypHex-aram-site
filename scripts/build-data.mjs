@@ -14,7 +14,12 @@ try { combos = JSON.parse(await readFile(join(ROOT, 'data', 'open', 'arammayhem-
 // 显示顺序：神组合、强势、黑科技、娱乐、bug，陷阱放最后
 const TYPE_ORDER = ['god', 'strong', 'blackTech', 'entertainment', 'bug', 'trap'];
 const rank = c => Math.min(...(c.types.length ? c.types : ['none']).map(t => { const i = TYPE_ORDER.indexOf(t); return i < 0 ? 5.5 : i; }));
-const combosOf = h => combos.filter(c => c.champ === h.key || (!h.key && c.champZh === h.title))
+// 只保留当前版本还在的海克斯：组合里有任何一个海克斯不在 AramHex 本期对局数据里，就当作已移除，整条不显示
+const ak = n => String(n).replace(/[\s·・!！?？:：,，.。'"“”（）()-]/g, '').toLowerCase();
+const current = new Set(src.heroes.flatMap(h => h.augs.map(a => ak(a.name))));
+const alive = c => current.size < 100 || c.augs.every(a => current.has(ak(a)));
+const removed = combos.filter(c => !alive(c)).length;
+const combosOf = h => combos.filter(c => alive(c) && (c.champ === h.key || (!h.key && c.champZh === h.title)))
   .sort((a, b) => rank(a) - rank(b)).map(c => ({ a: c.augs, t: c.types, u: c.url }));
 
 // 客户端版本号 16.22，游戏里叫 26.22
@@ -39,5 +44,5 @@ await writeFile(join(ROOT, 'data', 'data.js'), '/* 自动生成，勿手改：�
 const done = out.filter(h => h.augs.length);
 console.log(`网页数据：版本 ${data.meta.patch}，截至 ${data.meta.date}；有海克斯排名的英雄 ${done.length}/${out.length}`);
 if (done.length < 150) throw new Error('有数据的英雄太少，数据可能有问题，本次不更新');
-console.log(`推荐组合：${out.reduce((s, h) => s + h.combos.length, 0)}/${combos.length} 个对上了英雄`);
+console.log(`推荐组合：显示 ${out.reduce((s, h) => s + h.combos.length, 0)} 个，去掉含已移除海克斯的 ${removed} 个（共 ${combos.length} 个）`);
 if (miss.length) console.log(`提醒：${miss.length} 位英雄在 AramHex 里没找到：${miss.join('、')}`);
