@@ -186,3 +186,21 @@ a { color: inherit; }
 }
 
 .detail { scroll-margin-top:80px; }
+
+/* 稀有度彩色边：棱彩紫、黄金金、白银银 */
+.ic-wrap.r-棱彩 { box-shadow: 0 0 0 2px #a98bff; border-radius: 7px; }
+.ic-wrap.r-黄金 { box-shadow: 0 0 0 2px var(--goldr); border-radius: 7px; }
+.ic-wrap.r-白银 { box-shadow: 0 0 0 2px var(--silver); border-radius: 7px; }
+/* 胜率条：每行底部一条淡金色细线，越长胜率越高 */
+.rank li[style] { background: linear-gradient(90deg, rgba(201, 169, 97, 0.45), rgba(201, 169, 97, 0.15)) no-repeat left bottom / var(--p) 3px; }
+.rank .g { white-space: nowrap; }
+.combos .cicons { display: flex; gap: 6px; padding: 2px; }
+@media (max-width: 860px) {
+  .rank li { grid-template-columns: 18px 28px minmax(0, 1fr) 50px 64px; gap: 8px; }
+  .detail { gap: 12px; }
+  .ava.lg { width: 48px; height: 48px; border-radius: 12px; }
+  .hero-head { gap: 12px; }
+  .hero-head h1 { font-size: 22px; }
+  .card { padding: 14px; }
+  .card h3 em { flex-basis: 100%; }
+}
