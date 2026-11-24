@@ -511,18 +511,6 @@
    "champ": "Azir",
    "champZh": "沙漠皇帝",
    "augs": [
-    "物理转魔法",
-    "超凡邪恶",
-    "物法皆修",
-    "巨人杀手"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/azir-adapt-1117/"
-  },
-  {
-   "champ": "Azir",
-   "champZh": "沙漠皇帝",
-   "augs": [
     "神射法师"
    ],
    "types": [
@@ -1623,18 +1611,6 @@
    "champ": "Galio",
    "champZh": "正义巨像",
    "augs": [
-    "史上最大雪球",
-    "升级：雪球",
-    "雪球扭蛋机",
-    "任务：沃格勒特的巫师帽"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/galio-biggest-snowball-ever-999/"
-  },
-  {
-   "champ": "Galio",
-   "champZh": "正义巨像",
-   "augs": [
     "吞噬灵魂",
     "扇巴掌",
     "无限循环往复",
@@ -1677,18 +1653,6 @@
    ],
    "types": [],
    "url": "https://arammayhem.com/zh-cn/combo/galio-executioner/"
-  },
-  {
-   "champ": "Galio",
-   "champZh": "正义巨像",
-   "augs": [
-    "魔法飞弹",
-    "裁决使",
-    "更万用的瞄准镜",
-    "穿针引线"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/galio-magic-missile-1072/"
   },
   {
    "champ": "Gangplank",
@@ -3603,18 +3567,6 @@
    "champ": "MasterYi",
    "champZh": "无极剑圣",
    "augs": [
-    "升级：收集者",
-    "裁决使",
-    "地狱三头犬",
-    "吸血习性"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/masteryi-upgrade-collector-1037/"
-  },
-  {
-   "champ": "MasterYi",
-   "champZh": "无极剑圣",
-   "augs": [
     "升级：狂妄",
     "裁决使",
     "无限循环往复",
@@ -4712,52 +4664,6 @@
    "champ": "Ryze",
    "champZh": "符文法师",
    "augs": [
-    "坦克引擎"
-   ],
-   "types": [
-    "strong"
-   ],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-tank-engine/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "坦克引擎",
-    "由心及物",
-    "物理转魔法",
-    "魔法飞弹"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-tank-engine-1139/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "坦克引擎",
-    "超凡邪恶",
-    "物理转魔法",
-    "歌利亚巨人"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-tank-engine-978/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "歌利亚巨人"
-   ],
-   "types": [
-    "god"
-   ],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-goliath/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
     "歌利亚巨人",
     "坦克引擎",
     "物理转魔法",
@@ -4765,30 +4671,6 @@
    ],
    "types": [],
    "url": "https://arammayhem.com/zh-cn/combo/ryze-goliath-1054/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "歌利亚巨人",
-    "由心及物",
-    "物理转魔法",
-    "坦克引擎"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-goliath-984/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "歌利亚巨人",
-    "科学狂人",
-    "物理转魔法",
-    "由心及物"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-0/"
   },
   {
    "champ": "Ryze",
@@ -4811,18 +4693,6 @@
     "god"
    ],
    "url": "https://arammayhem.com/zh-cn/combo/ryze-adapt/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "物理转魔法",
-    "由心及物",
-    "吸血习性",
-    "歌利亚巨人"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-adapt-1018/"
   },
   {
    "champ": "Ryze",
@@ -4875,51 +4745,6 @@
    "champ": "Ryze",
    "champZh": "符文法师",
    "augs": [
-    "由心及物",
-    "溢流",
-    "物理转魔法",
-    "歌利亚巨人"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-mind-to-matter-1013/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "由心及物",
-    "物理转魔法"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-mind-to-matter-1082/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "由心及物",
-    "物理转魔法",
-    "溢流",
-    "回归基本功"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-qqq/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "科学狂人"
-   ],
-   "types": [
-    "god"
-   ],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-mad-scientist/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
     "终极刷新"
    ],
    "types": [
@@ -4938,18 +4763,6 @@
    ],
    "types": [],
    "url": "https://arammayhem.com/zh-cn/combo/ryze-void-rift-971/"
-  },
-  {
-   "champ": "Ryze",
-   "champZh": "符文法师",
-   "augs": [
-    "魔法转物理",
-    "由心及物",
-    "任务：沃格勒特的巫师帽",
-    "歌利亚巨人"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/ryze-escapade-1022/"
   },
   {
    "champ": "Samira",
@@ -6129,18 +5942,6 @@
    "champ": "Trundle",
    "champZh": "巨魔之王",
    "augs": [
-    "纯粹主义者 - 术师",
-    "无限循环往复",
-    "扇巴掌",
-    "缩小引擎"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/trundle-purist-caster-1121/"
-  },
-  {
-   "champ": "Trundle",
-   "champZh": "巨魔之王",
-   "augs": [
     "老练狙神"
    ],
    "types": [
@@ -6896,17 +6697,6 @@
    "url": "https://arammayhem.com/zh-cn/combo/warwick-circle-of-death-856/"
   },
   {
-   "champ": "Warwick",
-   "champZh": "祖安怒兽",
-   "augs": [
-    "量子计算",
-    "罪恶快感",
-    "炼狱龙魂"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/warwick-quantum-computing-1048/"
-  },
-  {
    "champ": "Xayah",
    "champZh": "逆羽",
    "augs": [
@@ -7046,17 +6836,6 @@
    ],
    "types": [],
    "url": "https://arammayhem.com/zh-cn/combo/yasuo-shadow-runner-981/"
-  },
-  {
-   "champ": "Yasuo",
-   "champZh": "疾风剑豪",
-   "augs": [
-    "暗影疾奔",
-    "狂徒豪气",
-    "快中求稳"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/yasuo-shadow-runner-1147/"
   },
   {
    "champ": "Yasuo",
@@ -7440,16 +7219,6 @@
    ],
    "types": [],
    "url": "https://arammayhem.com/zh-cn/combo/zeri-rabble-rousing-860/"
-  },
-  {
-   "champ": "Zeri",
-   "champZh": "祖安花火",
-   "augs": [
-    "巨人杀手",
-    "珠光护手"
-   ],
-   "types": [],
-   "url": "https://arammayhem.com/zh-cn/combo/zeri-giant-slayer-1065/"
   },
   {
    "champ": "Zeri",
